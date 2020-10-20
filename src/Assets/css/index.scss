@@ -693,4 +693,44 @@ $white-color: rgb(223, 223, 223);
     }
 }
 /*----- end collection sum -----*/
+/*----- collection parallax -----*/
+.collection-parallax {
+    height: 600px;
+    padding-top: 70px;
+    margin-top: 20px;
+    background : {
+        image: url("../images/section-collection-parallax/parallax.jpg");
+        size: cover;
+        repeat: no-repeat;
+    }
+    .container {
+        .row {
+            .col {
+                .content {
+                    color: white; 
+                    font-weight: bold;
+                    .title {
+                        font-size: 70px;
+                    }
+                    .des {
+                        font-size: 25px;
+                    }
+                    .link {
+                        margin-top: 20px;
+                        a {
+                            color: white;  
+                            font-size: 30px;
+                            text-decoration: underline;
+                            transition: .3s;
+                            &:hover {
+                                color: $hover-color-red
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*----- end collection parallax -----*/
 

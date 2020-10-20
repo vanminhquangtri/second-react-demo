@@ -1,0 +1,608 @@
+* {
+    // font-family: 'Spectral', serif;
+    box-sizing: border-box;
+}
+$hover-color-red: rgb(211, 9, 9);
+$hover-color-gray: rgb(235, 235, 235);
+$white-color: rgb(223, 223, 223);
+/*----- top-bar -----*/
+.top-bar {
+    .container {
+        .row{
+            align-items: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .col-3 {
+                .search-form {
+                    border-bottom: 1px solid black;
+                    padding: 5px 0;
+                    form {
+                        text-align: right;
+                        display: flex;
+                        justify-content: space-between;
+                        input, button {
+                            border: none;
+                            outline: none;
+                            background: transparent;
+                        }
+                        input {
+                            flex: 1;
+                        }
+                    }
+                }
+            }
+            .col-auto {
+                flex: 1;
+                text-align: right;
+                .account-currency {
+                    float: right;
+                    position: relative;
+                    a, span {
+                        display: inline-block;
+                        padding: 0 10px;
+                        color: black;
+                        &:hover {
+                            color: $hover-color-red;
+                        }
+                    }
+                    .currency {
+                        cursor: pointer;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        &:hover {
+                            span, .icon {
+                                color: $hover-color-red
+                            }
+                        }
+                    }
+                    .icon {
+                        font-size: 13px;
+                        margin-right: 3px;
+                        display: inline-block;
+                        color: rgb(102, 101, 101);
+                        &:hover {
+                            color: $hover-color-red;
+                        }
+                    }
+                    .currency-list {
+                        text-align: left;
+                        position: absolute;
+                        z-index: 1;
+                        width: 100%;
+                        top: 100%;
+                        max-height: 0;
+                        background: white;
+                        overflow: hidden;
+                        transition: .3s;
+                        ul {
+                            margin: 0;
+                            padding: 0;
+                            list-style-type: none;
+                            li {
+                                padding: 10px;
+                                cursor: pointer;
+                                display: flex;
+                                align-items: center;
+                                &:hover {
+                                    color: $hover-color-red;
+                                    text-decoration: underline;
+                                    background: $hover-color-gray;
+                                    * {
+                                        color: $hover-color-red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*----- button back to top -----*/
+.back-top-btn {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 10px;
+    bottom: 30px;
+    background: black;
+    border-radius: 10px;
+    border: 1px solid white;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    transition: .5s;
+    .icon {
+        margin: auto;
+    }
+}
+/*----- footer -----*/
+.footer {
+    background: black;
+    color: $white-color;
+    padding: 30px 0;
+    .row {
+        .title {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+        .title.social {
+            margin-top: 30px;
+        }
+        .col-3 {
+            .payment {
+                img {
+                    width: 100%;
+                    margin: 15px 0 20px 0;
+                }
+            }
+            .subscribe-form {
+                border: 1px solid white;
+                display: flex;
+                padding: 5px;
+                input, button {
+                    border: none;
+                    outline: none;
+                    background: transparent;
+                    color: $white-color;
+                }
+                input {
+                    flex: 1;
+                }
+                ::placeholder {
+                    color: $white-color;
+                }
+            }
+            .social-links {
+                display: flex;
+                justify-content: space-between;
+                a {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid $white-color;
+                    line-height: 40px;
+                    border-radius: 50%;
+                    text-align: center;
+                    .icon {
+                        color: $white-color
+                    }
+                    &:hover {
+                        border: 1px solid $hover-color-red;
+                        .icon {
+                            color: $hover-color-red
+                        }
+                    }
+                }
+            }
+        }
+        .col-2 {
+            a {
+                color: $white-color;
+                display: block;
+                transition: .3s;
+                margin-bottom: 5px;
+                &:hover {
+                    color: $hover-color-red;
+                }
+            }
+        }
+    }
+}
+/*----- end footer -----*/
+/*----- top nav -----*/
+.top-nav {
+    background: black;
+    .container {
+        .row {
+            .col {
+                display: flex;
+                .nav {
+                    width: 90%;
+                    ul {
+                        padding: 0;
+                        margin: 0;
+                        list-style-type: none;
+                        display: flex;
+                        flex-wrap: wrap;
+                        li {
+                            margin-right: 20px;
+                            padding: 10px 0;
+                            a {
+                                color: $white-color;
+                                display: block;
+                                transition: .3s;
+                                font-weight: bold;
+                                &:hover {
+                                    color: $hover-color-red;
+                                }
+                                .icon {
+                                    margin-left: 5px;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .cart {
+                    width: 10%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    .cart-amount {
+                        text-align: right;
+                        position: relative;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        cursor: pointer;
+                        .icon {
+                            fill: $white-color;
+                            width: 50px;
+                            height: 50px;
+                        }
+                        .current-amount{
+                            color: $white-color;
+                            font-size: 30px;
+                            font-weight: bold;
+                            display: inline-block;
+                            background: red;
+                            padding: 0 15px;
+                            margin-left: 10px;
+                        }
+                        .cart-top-up {
+                            box-shadow: 1px 3px 4px rgb(197, 197, 197);
+                            position: absolute;
+                            top: 100%;
+                            width: 400%;
+                            right: 0;
+                            z-index: 100;
+                            background: white;
+                            text-align: left;
+                            padding-bottom: 15px;
+                            display: none;
+                            .icon {
+                                width: 15px;
+                                height: 15px;
+                                &:hover {
+                                    color: $hover-color-red !important;
+                                }
+                            }
+                            .title {
+                                padding: 5px 15px;
+                                font-weight: bold;
+                            }
+                            .empty-cart {
+                                display: flex;
+                                .content {
+                                    margin: auto;
+                                    text-align: center;
+                                    padding: 20px;
+                                    p {
+                                        margin: 0;
+                                    }
+                                    .announce {
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+                            .added-cart {
+                                .added-product {
+                                    margin-bottom: 10px;
+                                    .container-fluid {
+                                        .row {
+                                            align-items: center;
+                                            .img {
+                                                img {
+                                                    width: 100%;
+                                                }
+                                            }
+                                            .title {
+                                                a {
+                                                    color: black;
+                                                    font-weight: 300 !important;
+                                                }
+                                            }
+                                            .amount {
+                                                height: 90px;
+                                                .cal {
+                                                    height: 100%;
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    align-items: center;
+                                                    justify-content: space-between;
+                                                    .icon {
+                                                        font-size: 16px;
+                                                        color: black;
+                                                    }
+                                                    .money {
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        font-weight: bold;
+                                                        text-align: center;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .total {
+                                    text-align: right;
+                                    padding: 15px;
+                                    font-weight: bold;
+                                    font-size: 17px;
+                                }
+                                .navigate{
+                                    padding: 0;
+                                    margin: 0;
+                                    .col {
+                                        padding: 0 15px;
+                                        .content {
+                                            text-align: center;
+                                            padding: 5px;
+                                            a {
+                                                color: $white-color;
+                                            }
+                                        }
+                                        .view {
+                                            background: black;
+                                            width: 100%;
+                                        }
+                                        .check-out {
+                                            background: red;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            .cart-top-up {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*----- end top nav -----*/
+/*----- top slide -----*/
+.home {
+    padding: 20px 0;
+    .top-slide {
+        height: 400px;
+        overflow: hidden;
+        .container-fluid {
+            .row {
+                .col {
+                    padding: 0;
+                    #top-slide {
+                        .carousel-inner {
+                            .carousel-item {
+                                .carousel-caption {
+                                    padding: 160px 0 0 0;
+                                    top: 0;
+                                    z-index: 0.5;
+                                    left: 12%;
+                                    right: 12%;
+                                    .animate__animated {
+                                        animation-duration: .7s;
+                                    }
+                                    .title {
+                                        animation-delay: .3s;
+                                    }
+                                    .des {
+                                        animation-delay: .7s;
+                                    }
+                                    .link {
+                                        animation-delay: 1s;
+                                    }
+                                }
+                                .carousel-caption.slide-1, .carousel-caption.slide-3 {
+                                    text-align: left;
+                                    .title {
+                                        margin-bottom: 40px;
+                                        span {
+                                            background: white;
+                                            color: black;
+                                            padding: 10px;
+                                            border-radius: 10px;
+                                            font-size: 40px;
+                                        }
+                                    }
+                                    .des {
+                                        margin-bottom: 40px;
+                                        font-size: 20px;
+                                        background: white;
+                                        color: black;
+                                        font-style: italic;
+                                        padding: 0 10px;
+                                        border-radius: 10px;
+                                    }
+                                    .link {
+                                        a {
+                                            font-size: 20px;
+                                            background: white;
+                                            color: black;
+                                            font-weight: bold;
+                                            padding: 10px;
+                                            border-radius: 10px;
+                                            transition: .3s;
+                                            &:hover {
+                                                color: $hover-color-red
+                                            }
+                                        }
+                                    }
+                                }
+                                .carousel-caption.slide-2 {
+                                    text-align: center;
+                                    .title {
+                                        margin: 30px;
+                                        span {
+                                            color: white;
+                                            font-size: 40px;
+                                            font-weight: bold;
+                                        }
+                                    }
+                                    .des {
+                                        margin-bottom: 20px;
+                                        font-size: 20px;
+                                        color: white;
+                                        font-style: italic;
+                                        font-weight: bold;
+                                    }
+                                    .link {
+                                        a {
+                                            font-size: 20px;
+                                            background: white;
+                                            color: black;
+                                            font-weight: bold;
+                                            padding: 10px;
+                                            border-radius: 10px;
+                                            transition: .3s;
+                                            &:hover {
+                                                color: $hover-color-red
+                                            }
+                                        }
+                                    }
+                                }
+                                .carousel-caption.slide-3 {
+                                    text-align: right;
+                                    .title {
+                                        float:  left !important;
+                                    }
+                                    .des {
+                                        clear: left;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*----- end top slide -----*/
+/*----- brand slide -----*/
+.brand-slide {
+    .container {
+        .row {
+            .col {
+                .tns-outer {
+                    position: relative;
+                    height: 150px;
+                    display: flex;
+                    align-items: center;
+                    
+                    cursor: pointer;
+                    .brand-item {
+                        text-align: center;
+                    }
+                    .tns-controls {
+                        position: absolute;
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        top: 35%;
+                        z-index: 1;
+                        button {
+                            background-color: transparent !important;
+                            border: none;
+                            outline: none;
+                            color: transparent !important;
+                            background : {
+                                size: 70%;
+                                repeat: no-repeat;
+                            }
+                            &:first-child{
+                                width: 50px;
+                                height: 50px;
+                                background : {
+                                    image: url("../images/section-brand-slide/pre.svg");
+                                    position: center left;
+                                }
+                            }
+                            &:last-child{
+                                width: 50px;
+                                height: 50px;
+                                background : {
+                                    image: url("../images/section-brand-slide/next.svg");
+                                    position: center right;
+                                }
+                            }
+                        }
+                    }
+                    button[data-action=stop], button[data-action=start] {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+/*----- end brand slide -----*/
+/*----- collection sum -----*/
+.collection-sum {
+    .container {
+        .row {
+            height: 510px;
+            overflow: hidden;
+            .col-4 {
+                background : {
+                    image: url("../images/section-collection-sum/all.jpg");
+                    size: cover;
+                    position: center;
+                    repeat: no-repeat;
+                }
+                a {
+                    text-decoration: none;
+                    .content {
+                        width: 100%;
+                        height: 100%;
+                        text-align: right;
+                        color: white;
+                        font-weight: bold;
+                        padding-top: 30%;
+                        .off {
+                            background: rgba($color: #000000, $alpha: 0.7);
+                            display: inline-flex;
+                            flex-direction: column;
+                            height: 85px;
+                            width: 85px;
+                            border-radius: 50%;
+                            justify-content: center;
+                            align-items: center;
+                            span {
+                                &:first-child {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                        .title {
+                            background: rgba($color: #000000, $alpha: 0.8);
+                            margin: 20px 0;
+                            display: inline-block;
+                            padding: 10px;
+                        }
+                        .des {
+                            background: rgba($color: red, $alpha: 0.8);
+                            display: inline-block;
+                            padding: 10px;
+                        }
+                    }
+                }
+                transition: .3s;
+                &:hover {
+                    transform: scale(1.1)
+                }
+            }
+        }
+    }
+}
+/*----- end collection sum -----*/
+

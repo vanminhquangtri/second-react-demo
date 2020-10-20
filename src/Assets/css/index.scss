@@ -195,6 +195,7 @@ $white-color: rgb(223, 223, 223);
 /*----- top nav -----*/
 .top-nav {
     background: black;
+    transition: 0.5s;
     .container {
         .row {
             .col {
@@ -551,54 +552,141 @@ $white-color: rgb(223, 223, 223);
     .container {
         .row {
             height: 510px;
-            overflow: hidden;
-            .col-4 {
-                background : {
-                    image: url("../images/section-collection-sum/all.jpg");
-                    size: cover;
-                    position: center;
-                    repeat: no-repeat;
-                }
+            margin: 0;
+            padding: 0;
+            .col-4.all {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
                 a {
                     text-decoration: none;
-                    .content {
-                        width: 100%;
+                    .wrapper {
                         height: 100%;
-                        text-align: right;
-                        color: white;
-                        font-weight: bold;
-                        padding-top: 30%;
-                        .off {
-                            background: rgba($color: #000000, $alpha: 0.7);
-                            display: inline-flex;
-                            flex-direction: column;
-                            height: 85px;
-                            width: 85px;
-                            border-radius: 50%;
-                            justify-content: center;
-                            align-items: center;
-                            span {
-                                &:first-child {
-                                    font-size: 20px;
+                        transition: .3s;
+                        background : {
+                            image: url("../images/section-collection-sum/all.jpg");
+                            size: cover;
+                            position: center;
+                            repeat: no-repeat;
+                        }
+                        .content {
+                            text-align: right;
+                            color: white;
+                            font-weight: bold;
+                            padding-top: 30%;
+                            padding-right: 20px;
+                            .off {
+                                background: rgba($color: #000000, $alpha: 0.7);
+                                display: inline-flex;
+                                flex-direction: column;
+                                height: 85px;
+                                width: 85px;
+                                border-radius: 50%;
+                                justify-content: center;
+                                align-items: center;
+                                span {
+                                    &:first-child {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                            .title {
+                                background: rgba($color: #000000, $alpha: 0.8);
+                                margin: 20px 0;
+                                display: inline-block;
+                                padding: 10px;
+                            }
+                            .des {
+                                background: rgba($color: red, $alpha: 0.8);
+                                display: inline-block;
+                                padding: 10px;
+                            }
+                        }
+                    }
+                    
+                }
+                &:hover {
+                    .wrapper {
+                        transform: scale(1.1)
+                    }
+                }
+            }
+            .col-8 {
+                margin: 0;
+                padding: 0;
+                .row {
+                    height: 50%;
+                    .col-4 {
+                        padding: 0; 
+                        position: relative;
+                        overflow: hidden;
+                        a {
+                            color: white;
+                            .background {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                left: 0;
+                                z-index: -1;
+                                transition: .3s;
+                                background : {
+                                    size: cover;
+                                    position: center;
+                                    repeat: no-repeat;
+                                }
+                            }
+                            .featured {
+                                background : {
+                                    image: url("../images/section-collection-sum/featured.jpg");
+                                }
+                            }
+                            .hot {
+                                background : {
+                                    image: url("../images/section-collection-sum/hot.jpg");
+                                }
+                            }
+                            .latest {
+                                background : {
+                                    image: url("../images/section-collection-sum/latest.jpg");
+                                }
+                            }
+                            .minimal {
+                                background : {
+                                    image: url("../images/section-collection-sum/minimal.jpg");
+                                }
+                            }
+                            .modern {
+                                background : {
+                                    image: url("../images/section-collection-sum/modern.jpg");
+                                }
+                            }
+                            .summer {
+                                background : {
+                                    image: url("../images/section-collection-sum/summer.jpg");
+                                }
+                            }
+                            .title {
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-end;
+                                padding-left: 15px;
+                                padding-bottom: 10px;
+                                font-weight: bold;
+                                font-size: 20px;
+                            }
+                        }
+                        &:hover {
+                            a {
+                                text-decoration-color: $hover-color-red;
+                                .background {
+                                    transform: scale(1.1)
                                 }
                             }
                         }
-                        .title {
-                            background: rgba($color: #000000, $alpha: 0.8);
-                            margin: 20px 0;
-                            display: inline-block;
-                            padding: 10px;
-                        }
-                        .des {
-                            background: rgba($color: red, $alpha: 0.8);
-                            display: inline-block;
-                            padding: 10px;
-                        }
                     }
-                }
-                transition: .3s;
-                &:hover {
-                    transform: scale(1.1)
                 }
             }
         }

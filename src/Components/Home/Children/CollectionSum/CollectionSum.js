@@ -8,17 +8,60 @@ const CollectionSum = (props) => {
                 <div className="row">
                     <div className="col-4 all">
                         <NavLink to = "/" exact = {true}>
-                            <div className="content">
-                                <span className="off">
-                                        <span>50%</span>
-                                        <span>OFF</span>
-                                </span><br/>
-                                <span className="title">ALL COLLECTIONS</span><br/>
-                                <span className="des">FOR WOMEN</span>
+                            <div className="wrapper">
+                                <div className="content">
+                                    <span className="off">
+                                            <span>50%</span>
+                                            <span>OFF</span>
+                                    </span><br/>
+                                    <span className="title">ALL COLLECTIONS</span><br/>
+                                    <span className="des">FOR WOMEN</span>
+                                </div>
                             </div>
                         </NavLink>
                     </div>
-                    <div className="col-8"></div>
+                    <div className="col-8">
+                        <div className="row">
+                            <div className="col-4">
+                                <NavLink to = "/" exact = {true}>
+                                    <div className="background featured"></div>
+                                    <div className="title">Featured Collection</div>
+                                </NavLink>
+                            </div>
+                            <div className="col-4">
+                                <NavLink to = "/" exact = {true}>
+                                    <div className="background hot"></div>
+                                    <div className="title">Hot Collection</div>
+                                </NavLink>
+                            </div>
+                            <div className="col-4">
+                                <NavLink to = "/" exact = {true}>
+                                    <div className="background latest"></div>
+                                    <div className="title">Latest Collection</div>
+                                </NavLink>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-4">
+                                <NavLink to = "/" exact = {true}>
+                                    <div className="background minimal"></div>
+                                    <div className="title">Minimal Collection</div>
+                                </NavLink>
+                            </div>
+                            <div className="col-4">
+                                <NavLink to = "/" exact = {true}>
+                                    <div className="background modern"></div>
+                                    <div className="title">Modern Collection</div>
+                                </NavLink>
+                            </div>
+                            <div className="col-4">
+                                <NavLink to = "/" exact = {true}>
+                                    <div className="background summer"></div>
+                                    <div className="title">Summer Collection</div>
+                                </NavLink>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

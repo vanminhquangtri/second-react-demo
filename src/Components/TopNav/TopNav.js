@@ -94,7 +94,7 @@ const TopNav = (props) => {
                                                 <div className="row">
                                                     <div className="col-3 img">
                                                         <img 
-                                                            src = {require("../../Assets/images/products/featured/Cool Women Casual Print Tank Party Dresses casual Sexy Pink White Sling Beach Dress/main/15_70377e00-c069-42f5-a161-63211392c786_1024x1024.jpg")} alt="added product"
+                                                            src = {require("../../Assets/images/products/featured/Cool Women Casual/main/main.jpg")} alt="added product"
                                                         />
                                                     </div>
                                                     <div className="col-6 title">
@@ -122,7 +122,7 @@ const TopNav = (props) => {
                                                 <div className="row">
                                                     <div className="col-3 img">
                                                         <img 
-                                                            src = {require("../../Assets/images/products/featured/Cool Women Casual Print Tank Party Dresses casual Sexy Pink White Sling Beach Dress/main/15_70377e00-c069-42f5-a161-63211392c786_1024x1024.jpg")} alt="added product"
+                                                            src = {require("../../Assets/images/products/featured/Cool Women Casual/main/main.jpg")} alt="added product"
                                                         />
                                                     </div>
                                                     <div className="col-6 title">
@@ -150,7 +150,7 @@ const TopNav = (props) => {
                                                 <div className="row">
                                                     <div className="col-3 img">
                                                         <img 
-                                                            src = {require("../../Assets/images/products/featured/Cool Women Casual Print Tank Party Dresses casual Sexy Pink White Sling Beach Dress/main/15_70377e00-c069-42f5-a161-63211392c786_1024x1024.jpg")} alt="added product"
+                                                            src = {require("../../Assets/images/products/featured/Cool Women Casual/main/main.jpg")} alt="added product"
                                                         />
                                                     </div>
                                                     <div className="col-6 title">

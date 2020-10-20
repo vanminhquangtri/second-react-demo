@@ -19,52 +19,52 @@ const CustomerSay = () => {
                                 />
                                 <div className="content">
                                     <div className="say">
-                                        "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme & template is so Special. Because we have unique and vary clean simple design."
+                                        "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme &#38; template is so Special. Because we have unique and vary clean simple design."
                                     </div>
                                     <div>
-                                        by <strong>RICARDO SANTOS</strong>
+                                        by <strong>RICARDO B.</strong>
                                     </div>
                                 </div>
                             </div>
                             <div className="comment">
                                 <img 
                                     className="avatar"
-                                    src = {require("../../../../Assets/images/section-customer-say/1.webp")}
+                                    src = {require("../../../../Assets/images/section-customer-say/2.webp")}
                                 />
                                 <div className="content">
                                     <div className="say">
-                                        "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme & template is so Special. Because we have unique and vary clean simple design."
+                                        "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme &#38; template is so Special. Because we have unique and vary clean simple design."
                                     </div>
                                     <div>
-                                        by <strong>RICARDO SANTOS</strong>
+                                        by <strong>JENIFER L.</strong>
                                     </div>
                                 </div>
                             </div>
                             <div className="comment">
                                 <img 
                                     className="avatar"
-                                    src = {require("../../../../Assets/images/section-customer-say/1.webp")}
+                                    src = {require("../../../../Assets/images/section-customer-say/3.webp")}
                                 />
                                 <div className="content">
                                     <div className="say">
-                                        "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme & template is so Special. Because we have unique and vary clean simple design."
+                                        "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme &#38; template is so Special. Because we have unique and vary clean simple design."
                                     </div>
                                     <div>
-                                        by <strong>RICARDO SANTOS</strong>
+                                        by <strong>LEONARDO D.</strong>
                                     </div>
                                 </div>
                             </div>
                             <div className="comment">
                                 <img 
                                     className="avatar"
-                                    src = {require("../../../../Assets/images/section-customer-say/1.webp")}
+                                    src = {require("../../../../Assets/images/section-customer-say/4.webp")}
                                 />
                                 <div className="content">
                                     <div className="say">
-                                        "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme & template is so Special. Because we have unique and vary clean simple design."
+                                        "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme &#38; template is so Special. Because we have unique and vary clean simple design."
                                     </div>
                                     <div>
-                                        by <strong>RICARDO SANTOS</strong>
+                                        by <strong>ANGELIA J.</strong>
                                     </div>
                                 </div>
                             </div>

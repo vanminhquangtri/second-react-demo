@@ -3,6 +3,7 @@ import BrandSlide from './Children/BrandSlide/BrandSlide';
 import CollectionParallax from './Children/CollectionParallax/CollectionParallax';
 import CollectionSum from './Children/CollectionSum/CollectionSum';
 import CustomerSay from './Children/CustomerSay/CustomerSay';
+import Promotion from './Children/Promotion/Promotion';
 import TopSlide from './Children/TopSlide/TopSlide';
 
 const Home = (props) => {
@@ -13,6 +14,7 @@ const Home = (props) => {
             <CollectionSum></CollectionSum>
             <CollectionParallax></CollectionParallax>
             <CustomerSay></CustomerSay>
+            <Promotion></Promotion>
         </section>
     )
 };

@@ -816,5 +816,90 @@ $white-color: rgb(223, 223, 223);
         }
     }
 }
-/*----- end ccustomer say -----*/
+/*----- end customer say -----*/
+/*----- promotion -----*/
+.promotion {
+    padding-top: 30px;
+    .container {
+        .row {
+            height: 400px;
+            margin: 0;
+            padding: 0;
+            .col-4 {
+                padding: 0;
+                overflow: hidden;
+                a {
+                    text-decoration: none;
+                    .wrapper {
+                        height: 100%;
+                        transition: .3s;
+                        background: {
+                            position: center;
+                            size: cover;
+                            repeat: no-repeat;
+                        }
+                        .content {
+                            padding-top: 160px;
+                            color: white;
+                            font-weight: bold;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .shop, .des {
+                                background: rgba($color: red, $alpha: 0.7);
+                                display: inline;
+                                padding: 5px;
+                                border-radius: 10px;
+                            }
+                            .title {
+                                background: rgba($color: black, $alpha: 0.7);
+                                display: inline;
+                                padding: 5px;
+                                margin: 20px 0;
+                                border-radius: 10px;
+                            }
+                        }
+                    }
+                }
+                .wrapper.coat {
+                    background-image: url("../images/section-promotion/1.jpg")
+                }
+                .wrapper.men {
+                    background-image: url("../images/section-promotion/2.jpg");
+                    .des {
+                        border-radius: 50% !important;
+                        width: 100px;
+                        height: 100px;
+                        line-height: 100px;
+                        text-align: center;
+                        display: flex;
+                    }
+                }
+                .wrapper.women {
+                    background-image: url("../images/section-promotion/3.jpg");
+                    .des {
+                        background: rgba($color: black, $alpha: 0.7) !important;
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 50% !important;
+                        display: flex;
+                        margin-top: 15px;
+                        span {
+                            margin: auto;
+                            display: block;
+                            text-align: center;
+                        }
+                    }
+                }
+                &:hover {
+                    .wrapper {
+                        transform: scale(1.15)
+                    }
+                }
+            }
+        }
+    }
+}
+/*----- end promotion -----*/
 

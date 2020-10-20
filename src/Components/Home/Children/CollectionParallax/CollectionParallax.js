@@ -4,7 +4,6 @@ import {NavLink} from "react-router-dom";
 const CollectionParallax = (props) => {
     useEffect(() => {
         const CP = document.querySelector(".collection-parallax"); // CP stand for .collection-parallax
-        console.log(CP);
         const CPPos = CP.getBoundingClientRect().y;
         let startBgPos = 120;
         CP.style.backgroundPosition = `100% ${startBgPos}%`;

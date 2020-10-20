@@ -733,4 +733,88 @@ $white-color: rgb(223, 223, 223);
     }
 }
 /*----- end collection parallax -----*/
+/*----- customer say -----*/
+.customer-say {
+    background: $hover-color-gray;
+    .container {
+        .row {
+            height: 400px;
+            align-items: center;
+            .col {
+                .title {
+                    text-align: center;
+                    position: relative;
+                    margin-bottom: 40px;
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width: 30%;
+                        top: 100%;
+                        left: 35%;
+                        right: 3%;
+                        border: 1px solid blue;
+                    }
+                }
+                .tns-outer {
+                    .tns-controls {
+                        position: absolute;
+                        z-index: 1;
+                        top: 100%;
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                        opacity: 0;
+                        transition: .5s;
+                        button {
+                            margin: 10px;
+                            border: none;
+                            outline: none;
+                            background: transparent;
+                            color: transparent;
+                            width: 30px;
+                            height: 30px;
+                            background : {
+                                size: cover;
+                                position: center;
+                                repeat: no-repeat;
+                            }
+                        }
+                        button[data-controls=prev] {
+                            background-image: url("../images/section-customer-say/pre.svg");
+                        }
+                        button[data-controls=next] {
+                            background-image: url("../images/section-customer-say/next.svg");
+                        }
+                    }
+                    .tns-ovh {
+                        .tns-inner {
+                            .tns-slider {
+                                .tns-item {
+                                    display: inline-flex;
+                                    align-items: flex-start;
+                                    .avatar {
+                                        margin-top: 5px;
+                                    }
+                                    .content {
+                                        padding: 0 10px;
+                                        .say {
+                                            font-size: 15px;
+                                            font-style: italic
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:hover {
+                        .tns-controls {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*----- end ccustomer say -----*/
 

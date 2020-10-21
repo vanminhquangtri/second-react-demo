@@ -19,14 +19,12 @@ const TopNav = (props) => {
                 topNav.style.right = "0";
                 topNav.style.left = "0";
                 topNav.style.zIndex = 100;
-                topNav.style.opacity = 0.8;
                 nextEl.style.marginTop = topNavHeight + "px";
             } else {
                 topNav.style.position = "relative";
                 topNav.style.top = "unset";
                 topNav.style.right = "unset";
                 topNav.style.left = "unset";
-                topNav.style.opacity = 1;
                 nextEl.style.marginTop = "unset"
             }
         })

@@ -1,4 +1,5 @@
 import React from 'react';
+import BestSell from './Children/BestSell/BestSell';
 import BrandSlide from './Children/BrandSlide/BrandSlide';
 import CollectionParallax from './Children/CollectionParallax/CollectionParallax';
 import CollectionSum from './Children/CollectionSum/CollectionSum';
@@ -12,6 +13,7 @@ const Home = (props) => {
             <TopSlide></TopSlide>
             <BrandSlide></BrandSlide>
             <CollectionSum></CollectionSum>
+            <BestSell></BestSell>
             <CollectionParallax></CollectionParallax>
             <CustomerSay></CustomerSay>
             <Promotion></Promotion>

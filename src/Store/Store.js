@@ -7,7 +7,7 @@ const Product = [
     category: "Featured",
     price: 410,
     sale__off: false,
-    best__sell: true,
+    best__sell: false,
     main__image: require("../Assets/images/products/Featured/Featured Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Featured/Featured Beauty Women Clothing White/side1.jpg"),
@@ -83,7 +83,7 @@ const Product = [
     category: "Featured",
     price: 270,
     sale__off: false,
-    best__sell: false,
+    best__sell: true,
     main__image: require("../Assets/images/products/Featured/Featured Fashion Women Digital/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Featured/Featured Fashion Women Digital/side1.jpg"),
@@ -161,7 +161,7 @@ const Product = [
     category: "Hot",
     price: 300,
     sale__off: false,
-    best__sell: true,
+    best__sell: false,
     main__image: require("../Assets/images/products/Hot/Hot Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Hot/Hot Beauty Women Clothing White/side1.jpg"),
@@ -218,7 +218,7 @@ const Product = [
     category: "Hot",
     price: 220,
     sale__off: false,
-    best__sell: false,
+    best__sell: true,
     main__image: require("../Assets/images/products/Hot/Hot Fashion For Female High/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Hot/Hot Fashion For Female High/side1.jpg"),
@@ -315,7 +315,7 @@ const Product = [
     category: "Latest",
     price: 395,
     sale__off: false,
-    best__sell: true,
+    best__sell: false,
     main__image: require("../Assets/images/products/Latest/Latest Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Latest/Latest Beauty Women Clothing White/side1.jpg"),
@@ -334,7 +334,7 @@ const Product = [
     category: "Latest",
     price: 385,
     sale__off: false,
-    best__sell: false,
+    best__sell: true,
     main__image: require("../Assets/images/products/Latest/Latest Black Sporting Leggings/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Latest/Latest Black Sporting Leggings/side1.jpg"),
@@ -469,7 +469,7 @@ const Product = [
     category: "Minimal",
     price: 392,
     sale__off: false,
-    best__sell: true,
+    best__sell: false,
     main__image: require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing White/side1.jpg"),
@@ -507,7 +507,7 @@ const Product = [
     category: "Minimal",
     price: 372,
     sale__off: false,
-    best__sell: false,
+    best__sell: true,
     main__image: require("../Assets/images/products/Minimal/Minimal Cool Women Casual/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Minimal/Minimal Cool Women Casual/side1.jpg"),
@@ -777,7 +777,7 @@ const Product = [
     category: "Summer",
     price: 250,
     sale__off: false,
-    best__sell: true,
+    best__sell: false,
     main__image: require("../Assets/images/products/Summer/Summer Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Summer/Summer Beauty Women Clothing White/side1.jpg"),
@@ -796,7 +796,7 @@ const Product = [
     category: "Summer",
     price: 210,
     sale__off: false,
-    best__sell: false,
+    best__sell: true,
     main__image: require("../Assets/images/products/Summer/Summer Black Sporting Leggings/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Summer/Summer Black Sporting Leggings/side1.jpg"),
@@ -815,7 +815,7 @@ const Product = [
     category: "Summer",
     price: 230,
     sale__off: false,
-    best__sell: false,
+    best__sell: true,
     main__image: require("../Assets/images/products/Summer/Summer Cool Women Casual/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Summer/Summer Cool Women Casual/side1.jpg"),
@@ -834,7 +834,7 @@ const Product = [
     category: "Summer",
     price: 225,
     sale__off: false,
-    best__sell: false,
+    best__sell: true,
     main__image: require("../Assets/images/products/Summer/Summer Fashion For Female High/main/main.jpg"),
     slide__image: [
         require("../Assets/images/products/Summer/Summer Fashion For Female High/side1.jpg"),
@@ -929,5 +929,4 @@ const reducer = (init = Product, action) => {
     return init;
 }
 const Store = redux.createStore(reducer);
-console.log(Store.getState());
 export default Store;

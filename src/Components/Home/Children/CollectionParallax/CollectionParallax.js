@@ -5,14 +5,14 @@ const CollectionParallax = (props) => {
     useEffect(() => {
         const CP = document.querySelector(".collection-parallax"); // CP stand for .collection-parallax
         const CPPos = CP.getBoundingClientRect().y;
-        let startBgPos = 120;
+        let startBgPos = 50;
         CP.style.backgroundPosition = `100% ${startBgPos}%`;
-        var startY = 0;
-        const speed = 0.1;
+        var startY = 2000;
+        const speed = 0.05;
         window.addEventListener("scroll", (ev)=>{
         const currentY = window.scrollY;
         if (currentY + window.innerHeight >= CPPos) {  
-            CP.style.backgroundPosition = `100% ${startBgPos - (currentY-startY) * speed}%`;
+            CP.style.backgroundPosition = `100% ${startBgPos - (currentY - startY) * speed}%`;
         } else {CP.style.backgroundPosition = `100% 120%`;}
         })
     })

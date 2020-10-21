@@ -7,9 +7,25 @@ import {faShoppingCart, faSearchPlus} from "@fortawesome/free-solid-svg-icons";
 import {jsx, css} from '@emotion/core';
 import {Modal, Button} from "react-bootstrap";
 import ModalDetail from './ModalDetail';
+import {connect} from "react-redux";
 
 const ProductModal = (props) => {
     const {Products} = props;
+    const {Currency} = props.Data;
+    const showPrice = (currency) => {
+        switch (currency) {
+            case "USD":
+                return "$ " + Products.price.toFixed(2)
+            case "EUR":
+                return "€ " + (Products.price * 0.84).toFixed(2)
+
+            case "GBP":
+                return "£ " + (Products.price * 0.76).toFixed(2)
+
+            default:
+                return "$ " + Products.price.toFixed(2)
+        }
+    }
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -27,7 +43,7 @@ const ProductModal = (props) => {
                 >
                     <div className="info">
                         <div className="name">{Products.name}</div>
-                        <div className="price">${Products.price}</div>
+                        <div className="price">{showPrice(Currency)}</div>
                     </div>
                 </NavLink>
                 <div className="overlay">
@@ -69,5 +85,9 @@ const ProductModal = (props) => {
         </div>
     );
 };
-
-export default ProductModal;
+const mapStateToProps = (state) => {
+    return {
+        Data: state
+    }
+}
+export default connect(mapStateToProps)(ProductModal)

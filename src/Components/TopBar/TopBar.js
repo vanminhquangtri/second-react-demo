@@ -1,10 +1,28 @@
 import React, {useEffect} from 'react';
 import logo from "../../Assets/images/section-top-bar/logo.webp";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSearch, faChevronDown, faPoundSign, faEuroSign, faDollarSign} from "@fortawesome/free-solid-svg-icons";
+import {faSearch, faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import {NavLink} from "react-router-dom";
+import {connect} from "react-redux";
 
 const TopBar = (props) => {
+    const {dispatch} = props;
+    const {Currency} = props.Data;
+    const showCurrency = (currency) => {
+        switch (currency) {
+            case "USD":
+                return (<span>$ <strong>{currency}</strong></span>)
+
+            case "EUR":
+                return (<span>€ <strong>{currency}</strong></span>)
+
+            case "GBP":
+                return (<span>£ <strong>{currency}</strong></span>)
+
+            default:
+                return (<span>$ <strong>{currency}</strong></span>)
+        }
+    }
     useEffect(() => {
         // accordion animation of currency list
         const currency = document.querySelector(".currency");
@@ -18,7 +36,7 @@ const TopBar = (props) => {
                 currencyList.style.borderBottom = "1px solid black";
             }
         })
-    })
+    }, [])
     return (
         <section className="top-bar">
             <div className="container">
@@ -41,23 +59,19 @@ const TopBar = (props) => {
                             <NavLink to="/acount/login">Login</NavLink>
                             <NavLink to="/acount/register">Register</NavLink>
                             <span className="currency" style = {{"paddingRight": 0}}>
-                                <FontAwesomeIcon icon = {faPoundSign} className="icon"/>
-                                GBP &nbsp; 
+                                {showCurrency(Currency)} &nbsp; 
                                 <FontAwesomeIcon icon = {faChevronDown} className="icon" style = {{"margin": 0}}/>
                             </span>
                             <div className="currency-list">
                                 <ul>
-                                    <li>
-                                        <FontAwesomeIcon icon = {faDollarSign} className="icon"/>
-                                        USD
+                                    <li onClick = {() => {dispatch({type: "USE"})}}>
+                                        $ USD
                                     </li>
-                                    <li>
-                                        <FontAwesomeIcon icon = {faEuroSign} className="icon"/>
-                                        EUR
+                                    <li onClick = {() => {dispatch({type: "EUR"})}}>
+                                        € EUR
                                     </li>
-                                    <li>
-                                        <FontAwesomeIcon icon = {faPoundSign} className="icon"/>
-                                        GBP
+                                    <li onClick = {() => {dispatch({type: "GBP"})}}>
+                                        $ GBP
                                     </li>
                                 </ul>
                             </div>
@@ -69,4 +83,9 @@ const TopBar = (props) => {
     );
 };
 
-export default TopBar;
+const mapStateToProps = (state) => {
+    return {
+        Data: state
+    }
+}
+export default connect(mapStateToProps)(TopBar)

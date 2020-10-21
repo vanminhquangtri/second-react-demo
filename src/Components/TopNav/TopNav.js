@@ -206,5 +206,4 @@ const TopNav = (props) => {
         </section>
     );
 };
-
-export default TopNav;
+export default TopNav

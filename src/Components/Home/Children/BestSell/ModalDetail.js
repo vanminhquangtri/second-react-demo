@@ -6,7 +6,6 @@ const settings = {
     controls: false,
     items: 1
 }
-
 const ModalDetail = (props) => {
     const {Products} = props;
     useEffect(() => {

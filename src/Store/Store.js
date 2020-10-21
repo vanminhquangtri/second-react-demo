@@ -980,8 +980,28 @@ const Product = [
 },
 /* end category Summer*/
 ]
-const reducer = (init = Product, action) => {
+const currency = ["USD", "EUR", "GBP"];
+const Currency_reducer = (init = currency, action) => {
+    switch (action.type) {
+        case "USD":
+            return "USD"
+        
+        case "EUR":
+            return "EUR"
+    
+        case "GBP":
+            return "GBP"
+
+        default:
+            return "USD";
+    }
+}
+const Product_reducer = (init = Product, action) => {
     return init;
 }
-const Store = redux.createStore(reducer);
+const All_reducer = redux.combineReducers({
+    Products: Product_reducer,
+    Currency: Currency_reducer
+})
+const Store = redux.createStore(All_reducer);
 export default Store;

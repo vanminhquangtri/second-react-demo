@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import ProductModal from './ProductModal';
 
 const BestSell = (props) => {
-    const {Products} = props;
+    const {Products} = props.Data;
     return (
         <section className="best-sell">
             <div className="container">
@@ -36,7 +36,7 @@ const BestSell = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        Products: state
+        Data: state
     }
 }
 export default connect(mapStateToProps)(BestSell)

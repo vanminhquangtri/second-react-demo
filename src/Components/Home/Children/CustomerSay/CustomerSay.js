@@ -14,6 +14,7 @@ const CustomerSay = () => {
                         <TinySlider settings = {settings} className="slide">
                             <div className="comment">
                                 <img 
+                                    alt="avatar"
                                     className="avatar"
                                     src = {require("../../../../Assets/images/section-customer-say/1.webp")}
                                 />
@@ -28,6 +29,7 @@ const CustomerSay = () => {
                             </div>
                             <div className="comment">
                                 <img 
+                                    alt="avatar"
                                     className="avatar"
                                     src = {require("../../../../Assets/images/section-customer-say/2.webp")}
                                 />
@@ -42,6 +44,7 @@ const CustomerSay = () => {
                             </div>
                             <div className="comment">
                                 <img 
+                                    alt="avatar"
                                     className="avatar"
                                     src = {require("../../../../Assets/images/section-customer-say/3.webp")}
                                 />
@@ -56,6 +59,7 @@ const CustomerSay = () => {
                             </div>
                             <div className="comment">
                                 <img 
+                                    alt="avatar"
                                     className="avatar"
                                     src = {require("../../../../Assets/images/section-customer-say/4.webp")}
                                 />

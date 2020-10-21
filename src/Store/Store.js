@@ -10,6 +10,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Featured/Featured Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Featured/Featured Beauty Women Clothing White/main/main.jpg"),
         require("../Assets/images/products/Featured/Featured Beauty Women Clothing White/side1.jpg"),
         require("../Assets/images/products/Featured/Featured Beauty Women Clothing White/side2.jpg"),
         require("../Assets/images/products/Featured/Featured Beauty Women Clothing White/side3.jpg"),
@@ -29,6 +30,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Featured/Featured Black Sporting Leggings/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Featured/Featured Black Sporting Leggings/main/main.jpg"),
         require("../Assets/images/products/Featured/Featured Black Sporting Leggings/side1.jpg"),
         require("../Assets/images/products/Featured/Featured Black Sporting Leggings/side2.jpg"),
         require("../Assets/images/products/Featured/Featured Black Sporting Leggings/side3.jpg"),
@@ -48,6 +50,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Featured/Featured Cool Women Casual/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Featured/Featured Cool Women Casual/main/main.jpg"),
         require("../Assets/images/products/Featured/Featured Cool Women Casual/side1.jpg"),
         require("../Assets/images/products/Featured/Featured Cool Women Casual/side2.jpg"),
         require("../Assets/images/products/Featured/Featured Cool Women Casual/side3.jpg"),
@@ -67,6 +70,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Featured/Featured Fashion For Female High/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Featured/Featured Fashion For Female High/main/main.jpg"),
         require("../Assets/images/products/Featured/Featured Fashion For Female High/side1.jpg"),
         require("../Assets/images/products/Featured/Featured Fashion For Female High/side2.jpg"),
         require("../Assets/images/products/Featured/Featured Fashion For Female High/side3.jpg"),
@@ -86,6 +90,7 @@ const Product = [
     best__sell: true,
     main__image: require("../Assets/images/products/Featured/Featured Fashion Women Digital/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Featured/Featured Fashion Women Digital/main/main.jpg"),
         require("../Assets/images/products/Featured/Featured Fashion Women Digital/side1.jpg"),
         require("../Assets/images/products/Featured/Featured Fashion Women Digital/side2.jpg"),
         require("../Assets/images/products/Featured/Featured Fashion Women Digital/side3.jpg"),
@@ -105,6 +110,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Featured/Featured Women Print Fashion Low/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Featured/Featured Women Print Fashion Low/main/main.jpg"),
         require("../Assets/images/products/Featured/Featured Women Print Fashion Low/side1.jpg"),
         require("../Assets/images/products/Featured/Featured Women Print Fashion Low/side2.jpg"),
         require("../Assets/images/products/Featured/Featured Women Print Fashion Low/side3.jpg"),
@@ -124,6 +130,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Featured/Featured Beauty Women Clothing/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Featured/Featured Beauty Women Clothing/main/main.jpg"),
         require("../Assets/images/products/Featured/Featured Beauty Women Clothing/side1.jpg"),
         require("../Assets/images/products/Featured/Featured Beauty Women Clothing/side2.jpg"),
         require("../Assets/images/products/Featured/Featured Beauty Women Clothing/side3.jpg"),
@@ -143,6 +150,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Featured/Featured New Fashion Women Leggings/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Featured/Featured New Fashion Women Leggings/main/main.jpg"),
         require("../Assets/images/products/Featured/Featured New Fashion Women Leggings/side1.jpg"),
         require("../Assets/images/products/Featured/Featured New Fashion Women Leggings/side2.jpg"),
         require("../Assets/images/products/Featured/Featured New Fashion Women Leggings/side3.jpg"),
@@ -164,6 +172,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Hot/Hot Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Hot/Hot Beauty Women Clothing White/main/main.jpg"),
         require("../Assets/images/products/Hot/Hot Beauty Women Clothing White/side1.jpg"),
         require("../Assets/images/products/Hot/Hot Beauty Women Clothing White/side2.jpg"),
         require("../Assets/images/products/Hot/Hot Beauty Women Clothing White/side3.jpg"),
@@ -183,6 +192,8 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Hot/Hot Black Sporting Leggings/main/main.jpg"),
     slide__image: [
+        
+        require("../Assets/images/products/Hot/Hot Black Sporting Leggings/main/main.jpg"),
         require("../Assets/images/products/Hot/Hot Black Sporting Leggings/side1.jpg"),
         require("../Assets/images/products/Hot/Hot Black Sporting Leggings/side2.jpg"),
         require("../Assets/images/products/Hot/Hot Black Sporting Leggings/side3.jpg"),
@@ -202,6 +213,8 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Hot/Hot Cool Women Casual/main/main.jpg"),
     slide__image: [
+        
+        require("../Assets/images/products/Hot/Hot Cool Women Casual/main/main.jpg"),
         require("../Assets/images/products/Hot/Hot Cool Women Casual/side1.jpg"),
         require("../Assets/images/products/Hot/Hot Cool Women Casual/side2.jpg"),
         require("../Assets/images/products/Hot/Hot Cool Women Casual/side3.jpg"),
@@ -221,6 +234,8 @@ const Product = [
     best__sell: true,
     main__image: require("../Assets/images/products/Hot/Hot Fashion For Female High/main/main.jpg"),
     slide__image: [
+        
+        require("../Assets/images/products/Hot/Hot Fashion For Female High/main/main.jpg"),
         require("../Assets/images/products/Hot/Hot Fashion For Female High/side1.jpg"),
         require("../Assets/images/products/Hot/Hot Fashion For Female High/side2.jpg"),
         require("../Assets/images/products/Hot/Hot Fashion For Female High/side3.jpg"),
@@ -240,6 +255,8 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Hot/Hot Fashion Women Digital/main/main.jpg"),
     slide__image: [
+        
+        require("../Assets/images/products/Hot/Hot Fashion Women Digital/main/main.jpg"),
         require("../Assets/images/products/Hot/Hot Fashion Women Digital/side1.jpg"),
         require("../Assets/images/products/Hot/Hot Fashion Women Digital/side2.jpg"),
         require("../Assets/images/products/Hot/Hot Fashion Women Digital/side3.jpg"),
@@ -259,6 +276,8 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Hot/Hot Women Print Fashion Low/main/main.jpg"),
     slide__image: [
+        
+        require("../Assets/images/products/Hot/Hot Women Print Fashion Low/main/main.jpg"),
         require("../Assets/images/products/Hot/Hot Women Print Fashion Low/side1.jpg"),
         require("../Assets/images/products/Hot/Hot Women Print Fashion Low/side2.jpg"),
         require("../Assets/images/products/Hot/Hot Women Print Fashion Low/side3.jpg"),
@@ -278,6 +297,8 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Hot/Hot Beauty Women Clothing/main/main.jpg"),
     slide__image: [
+        
+        require("../Assets/images/products/Hot/Hot Beauty Women Clothing/main/main.jpg"),
         require("../Assets/images/products/Hot/Hot Beauty Women Clothing/side1.jpg"),
         require("../Assets/images/products/Hot/Hot Beauty Women Clothing/side2.jpg"),
         require("../Assets/images/products/Hot/Hot Beauty Women Clothing/side3.jpg"),
@@ -297,6 +318,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Hot/Hot New Fashion Women Leggings/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Hot/Hot New Fashion Women Leggings/main/main.jpg"),
         require("../Assets/images/products/Hot/Hot New Fashion Women Leggings/side1.jpg"),
         require("../Assets/images/products/Hot/Hot New Fashion Women Leggings/side2.jpg"),
         require("../Assets/images/products/Hot/Hot New Fashion Women Leggings/side3.jpg"),
@@ -318,6 +340,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Latest/Latest Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Latest/Latest Beauty Women Clothing White/main/main.jpg"),
         require("../Assets/images/products/Latest/Latest Beauty Women Clothing White/side1.jpg"),
         require("../Assets/images/products/Latest/Latest Beauty Women Clothing White/side2.jpg"),
         require("../Assets/images/products/Latest/Latest Beauty Women Clothing White/side3.jpg"),
@@ -337,6 +360,7 @@ const Product = [
     best__sell: true,
     main__image: require("../Assets/images/products/Latest/Latest Black Sporting Leggings/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Latest/Latest Black Sporting Leggings/main/main.jpg"),
         require("../Assets/images/products/Latest/Latest Black Sporting Leggings/side1.jpg"),
         require("../Assets/images/products/Latest/Latest Black Sporting Leggings/side2.jpg"),
         require("../Assets/images/products/Latest/Latest Black Sporting Leggings/side3.jpg"),
@@ -356,6 +380,8 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Latest/Latest Cool Women Casual/main/main.jpg"),
     slide__image: [
+        
+        require("../Assets/images/products/Latest/Latest Cool Women Casual/main/main.jpg"),
         require("../Assets/images/products/Latest/Latest Cool Women Casual/side1.jpg"),
         require("../Assets/images/products/Latest/Latest Cool Women Casual/side2.jpg"),
         require("../Assets/images/products/Latest/Latest Cool Women Casual/side3.jpg"),
@@ -375,6 +401,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Latest/Latest Fashion For Female High/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Latest/Latest Fashion For Female High/main/main.jpg"),
         require("../Assets/images/products/Latest/Latest Fashion For Female High/side1.jpg"),
         require("../Assets/images/products/Latest/Latest Fashion For Female High/side2.jpg"),
         require("../Assets/images/products/Latest/Latest Fashion For Female High/side3.jpg"),
@@ -394,6 +421,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Latest/Latest Fashion Women Digital/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Latest/Latest Fashion Women Digital/main/main.jpg"),
         require("../Assets/images/products/Latest/Latest Fashion Women Digital/side1.jpg"),
         require("../Assets/images/products/Latest/Latest Fashion Women Digital/side2.jpg"),
         require("../Assets/images/products/Latest/Latest Fashion Women Digital/side3.jpg"),
@@ -413,6 +441,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Latest/Latest Women Print Fashion Low/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Latest/Latest Women Print Fashion Low/main/main.jpg"),
         require("../Assets/images/products/Latest/Latest Women Print Fashion Low/side1.jpg"),
         require("../Assets/images/products/Latest/Latest Women Print Fashion Low/side2.jpg"),
         require("../Assets/images/products/Latest/Latest Women Print Fashion Low/side3.jpg"),
@@ -432,6 +461,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Latest/Latest Beauty Women Clothing/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Latest/Latest Beauty Women Clothing/main/main.jpg"),
         require("../Assets/images/products/Latest/Latest Beauty Women Clothing/side1.jpg"),
         require("../Assets/images/products/Latest/Latest Beauty Women Clothing/side2.jpg"),
         require("../Assets/images/products/Latest/Latest Beauty Women Clothing/side3.jpg"),
@@ -451,6 +481,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Latest/Latest New Fashion Women Leggings/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Latest/Latest New Fashion Women Leggings/main/main.jpg"),
         require("../Assets/images/products/Latest/Latest New Fashion Women Leggings/side1.jpg"),
         require("../Assets/images/products/Latest/Latest New Fashion Women Leggings/side2.jpg"),
         require("../Assets/images/products/Latest/Latest New Fashion Women Leggings/side3.jpg"),
@@ -472,6 +503,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing White/main/main.jpg"),
         require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing White/side1.jpg"),
         require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing White/side2.jpg"),
         require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing White/side3.jpg"),
@@ -491,6 +523,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Minimal/Minimal Black Sporting Leggings/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Minimal/Minimal Black Sporting Leggings/main/main.jpg"),
         require("../Assets/images/products/Minimal/Minimal Black Sporting Leggings/side1.jpg"),
         require("../Assets/images/products/Minimal/Minimal Black Sporting Leggings/side2.jpg"),
         require("../Assets/images/products/Minimal/Minimal Black Sporting Leggings/side3.jpg"),
@@ -510,6 +543,7 @@ const Product = [
     best__sell: true,
     main__image: require("../Assets/images/products/Minimal/Minimal Cool Women Casual/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Minimal/Minimal Cool Women Casual/main/main.jpg"),
         require("../Assets/images/products/Minimal/Minimal Cool Women Casual/side1.jpg"),
         require("../Assets/images/products/Minimal/Minimal Cool Women Casual/side2.jpg"),
         require("../Assets/images/products/Minimal/Minimal Cool Women Casual/side3.jpg"),
@@ -529,6 +563,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Minimal/Minimal Fashion For Female High/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Minimal/Minimal Fashion For Female High/main/main.jpg"),
         require("../Assets/images/products/Minimal/Minimal Fashion For Female High/side1.jpg"),
         require("../Assets/images/products/Minimal/Minimal Fashion For Female High/side2.jpg"),
         require("../Assets/images/products/Minimal/Minimal Fashion For Female High/side3.jpg"),
@@ -548,6 +583,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Minimal/Minimal Fashion Women Digital/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Minimal/Minimal Fashion Women Digital/main/main.jpg"),
         require("../Assets/images/products/Minimal/Minimal Fashion Women Digital/side1.jpg"),
         require("../Assets/images/products/Minimal/Minimal Fashion Women Digital/side2.jpg"),
         require("../Assets/images/products/Minimal/Minimal Fashion Women Digital/side3.jpg"),
@@ -567,6 +603,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Minimal/Minimal Women Print Fashion Low/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Minimal/Minimal Women Print Fashion Low/main/main.jpg"),
         require("../Assets/images/products/Minimal/Minimal Women Print Fashion Low/side1.jpg"),
         require("../Assets/images/products/Minimal/Minimal Women Print Fashion Low/side2.jpg"),
         require("../Assets/images/products/Minimal/Minimal Women Print Fashion Low/side3.jpg"),
@@ -586,6 +623,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing/main/main.jpg"),
         require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing/side1.jpg"),
         require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing/side2.jpg"),
         require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing/side3.jpg"),
@@ -605,6 +643,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Minimal/Minimal New Fashion Women Leggings/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Minimal/Minimal New Fashion Women Leggings/main/main.jpg"),
         require("../Assets/images/products/Minimal/Minimal New Fashion Women Leggings/side1.jpg"),
         require("../Assets/images/products/Minimal/Minimal New Fashion Women Leggings/side2.jpg"),
         require("../Assets/images/products/Minimal/Minimal New Fashion Women Leggings/side3.jpg"),
@@ -626,6 +665,7 @@ const Product = [
     best__sell: true,
     main__image: require("../Assets/images/products/Modern/Modern Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Modern/Modern Beauty Women Clothing White/main/main.jpg"),
         require("../Assets/images/products/Modern/Modern Beauty Women Clothing White/side1.jpg"),
         require("../Assets/images/products/Modern/Modern Beauty Women Clothing White/side2.jpg"),
         require("../Assets/images/products/Modern/Modern Beauty Women Clothing White/side3.jpg"),
@@ -645,6 +685,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Modern/Modern Black Sporting Leggings/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Modern/Modern Black Sporting Leggings/main/main.jpg"),
         require("../Assets/images/products/Modern/Modern Black Sporting Leggings/side1.jpg"),
         require("../Assets/images/products/Modern/Modern Black Sporting Leggings/side2.jpg"),
         require("../Assets/images/products/Modern/Modern Black Sporting Leggings/side3.jpg"),
@@ -664,6 +705,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Modern/Modern Cool Women Casual/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Modern/Modern Cool Women Casual/main/main.jpg"),
         require("../Assets/images/products/Modern/Modern Cool Women Casual/side1.jpg"),
         require("../Assets/images/products/Modern/Modern Cool Women Casual/side2.jpg"),
         require("../Assets/images/products/Modern/Modern Cool Women Casual/side3.jpg"),
@@ -683,6 +725,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Modern/Modern Fashion For Female High/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Modern/Modern Fashion For Female High/main/main.jpg"),
         require("../Assets/images/products/Modern/Modern Fashion For Female High/side1.jpg"),
         require("../Assets/images/products/Modern/Modern Fashion For Female High/side2.jpg"),
         require("../Assets/images/products/Modern/Modern Fashion For Female High/side3.jpg"),
@@ -702,6 +745,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Modern/Modern Fashion Women Digital/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Modern/Modern Fashion Women Digital/main/main.jpg"),
         require("../Assets/images/products/Modern/Modern Fashion Women Digital/side1.jpg"),
         require("../Assets/images/products/Modern/Modern Fashion Women Digital/side2.jpg"),
         require("../Assets/images/products/Modern/Modern Fashion Women Digital/side3.jpg"),
@@ -721,6 +765,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Modern/Modern Women Print Fashion Low/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Modern/Modern Women Print Fashion Low/main/main.jpg"),
         require("../Assets/images/products/Modern/Modern Women Print Fashion Low/side1.jpg"),
         require("../Assets/images/products/Modern/Modern Women Print Fashion Low/side2.jpg"),
         require("../Assets/images/products/Modern/Modern Women Print Fashion Low/side3.jpg"),
@@ -740,6 +785,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Modern/Modern Beauty Women Clothing/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Modern/Modern Beauty Women Clothing/main/main.jpg"),
         require("../Assets/images/products/Modern/Modern Beauty Women Clothing/side1.jpg"),
         require("../Assets/images/products/Modern/Modern Beauty Women Clothing/side2.jpg"),
         require("../Assets/images/products/Modern/Modern Beauty Women Clothing/side3.jpg"),
@@ -759,6 +805,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Modern/Modern New Fashion Women Leggings/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Modern/Modern New Fashion Women Leggings/main/main.jpg"),
         require("../Assets/images/products/Modern/Modern New Fashion Women Leggings/side1.jpg"),
         require("../Assets/images/products/Modern/Modern New Fashion Women Leggings/side2.jpg"),
         require("../Assets/images/products/Modern/Modern New Fashion Women Leggings/side3.jpg"),
@@ -780,6 +827,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Summer/Summer Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Summer/Summer Beauty Women Clothing White/main/main.jpg"),
         require("../Assets/images/products/Summer/Summer Beauty Women Clothing White/side1.jpg"),
         require("../Assets/images/products/Summer/Summer Beauty Women Clothing White/side2.jpg"),
         require("../Assets/images/products/Summer/Summer Beauty Women Clothing White/side3.jpg"),
@@ -799,6 +847,7 @@ const Product = [
     best__sell: true,
     main__image: require("../Assets/images/products/Summer/Summer Black Sporting Leggings/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Summer/Summer Black Sporting Leggings/main/main.jpg"),
         require("../Assets/images/products/Summer/Summer Black Sporting Leggings/side1.jpg"),
         require("../Assets/images/products/Summer/Summer Black Sporting Leggings/side2.jpg"),
         require("../Assets/images/products/Summer/Summer Black Sporting Leggings/side3.jpg"),
@@ -818,6 +867,7 @@ const Product = [
     best__sell: true,
     main__image: require("../Assets/images/products/Summer/Summer Cool Women Casual/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Summer/Summer Cool Women Casual/main/main.jpg"),
         require("../Assets/images/products/Summer/Summer Cool Women Casual/side1.jpg"),
         require("../Assets/images/products/Summer/Summer Cool Women Casual/side2.jpg"),
         require("../Assets/images/products/Summer/Summer Cool Women Casual/side3.jpg"),
@@ -837,6 +887,7 @@ const Product = [
     best__sell: true,
     main__image: require("../Assets/images/products/Summer/Summer Fashion For Female High/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Summer/Summer Fashion For Female High/main/main.jpg"),
         require("../Assets/images/products/Summer/Summer Fashion For Female High/side1.jpg"),
         require("../Assets/images/products/Summer/Summer Fashion For Female High/side2.jpg"),
         require("../Assets/images/products/Summer/Summer Fashion For Female High/side3.jpg"),
@@ -856,6 +907,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Summer/Summer Fashion Women Digital/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Summer/Summer Fashion Women Digital/main/main.jpg"),
         require("../Assets/images/products/Summer/Summer Fashion Women Digital/side1.jpg"),
         require("../Assets/images/products/Summer/Summer Fashion Women Digital/side2.jpg"),
         require("../Assets/images/products/Summer/Summer Fashion Women Digital/side3.jpg"),
@@ -875,6 +927,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Summer/Summer Women Print Fashion Low/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Summer/Summer Women Print Fashion Low/main/main.jpg"),
         require("../Assets/images/products/Summer/Summer Women Print Fashion Low/side1.jpg"),
         require("../Assets/images/products/Summer/Summer Women Print Fashion Low/side2.jpg"),
         require("../Assets/images/products/Summer/Summer Women Print Fashion Low/side3.jpg"),
@@ -894,6 +947,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Summer/Summer Beauty Women Clothing/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Summer/Summer Beauty Women Clothing/main/main.jpg"),
         require("../Assets/images/products/Summer/Summer Beauty Women Clothing/side1.jpg"),
         require("../Assets/images/products/Summer/Summer Beauty Women Clothing/side2.jpg"),
         require("../Assets/images/products/Summer/Summer Beauty Women Clothing/side3.jpg"),
@@ -913,6 +967,7 @@ const Product = [
     best__sell: false,
     main__image: require("../Assets/images/products/Summer/Summer New Fashion Women Leggings/main/main.jpg"),
     slide__image: [
+        require("../Assets/images/products/Summer/Summer New Fashion Women Leggings/main/main.jpg"),
         require("../Assets/images/products/Summer/Summer New Fashion Women Leggings/side1.jpg"),
         require("../Assets/images/products/Summer/Summer New Fashion Women Leggings/side2.jpg"),
         require("../Assets/images/products/Summer/Summer New Fashion Women Leggings/side3.jpg"),

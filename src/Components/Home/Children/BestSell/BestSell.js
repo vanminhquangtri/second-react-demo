@@ -1,11 +1,9 @@
-/**@jsx jsx */
-import {jsx, css} from '@emotion/core';
+import React from 'react';
 import {connect} from "react-redux";
 import ProductModal from './ProductModal';
 
 const BestSell = (props) => {
     const {Products} = props;
-    console.log(Products);
     return (
         <section className="best-sell">
             <div className="container">
@@ -22,10 +20,12 @@ const BestSell = (props) => {
                                     <ProductModal
                                         key={index}
                                         Products = {product}
+                                        className="best-sell-modal"
                                     >
                                     </ProductModal>
                                 )
                             }
+                            return "";
                         })
                     }
                 </div>

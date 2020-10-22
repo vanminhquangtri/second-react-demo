@@ -984,7 +984,7 @@ const Product_reducer = (init = Product, action) => {
     return init;
 }
 /*currency*/
-const currency = ["USD", "EUR", "GBP"];
+const currency = ["USD", "EUR", "GBP"]
 const Currency_reducer = (init = currency, action) => {
     switch (action.type) {
         case "USD":
@@ -1003,15 +1003,19 @@ const Currency_reducer = (init = currency, action) => {
 /*shopping cart*/
 const Cart = [];
 const Cart_reducer = (init = Cart, action) => {
+    const product = Product.find((product, index) => {
+        return product.id === action.id;
+    })
     switch (action.type) {
         case "ADD":
-            Cart.push(action.id)
-            break;
-        
+            return [
+                ...init,
+                product
+            ]
         case "REMOVE":
-            Cart.splice(Cart.indexOf(action.id), 1);
-            break;
-
+            const currentCart = [...init];
+            currentCart.splice(currentCart.indexOf(product), 1)
+            return currentCart;
         default:
             break;
     }

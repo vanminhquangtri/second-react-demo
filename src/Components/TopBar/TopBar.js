@@ -64,7 +64,7 @@ const TopBar = (props) => {
                             </span>
                             <div className="currency-list">
                                 <ul>
-                                    <li onClick = {() => {dispatch({type: "USE"})}}>
+                                    <li onClick = {() => {dispatch({type: "USD"})}}>
                                         $ USD
                                     </li>
                                     <li onClick = {() => {dispatch({type: "EUR"})}}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Assets/css/index.scss';
 import {BrowserRouter as Router} from "react-router-dom";
 import RouterURL from './Components/RouterURL/RouterURL';
@@ -7,9 +7,13 @@ import BackToTop from './Components/BackToTop/BackToTop';
 import Footer from './Components/Footer/Footer';
 import TopNav from './Components/TopNav/TopNav';
 import Store from "./Store/Store";
-import {Provider} from "react-redux"
+import {Provider} from "react-redux";
+import Rotate from "./Components/GeneralModules/RotateCartAmount";
 
 const App = (props) => {
+    useEffect(() => {
+        Rotate()
+    })
     return (
         <Provider store = {Store}>
             <Router>

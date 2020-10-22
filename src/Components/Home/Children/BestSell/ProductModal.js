@@ -10,7 +10,7 @@ import ModalDetail from './ModalDetail';
 import {connect} from "react-redux";
 
 const ProductModal = (props) => {
-    const {Products} = props;
+    const {Products, dispatch} = props;
     const {Currency} = props.Data;
     const showPrice = (currency) => {
         switch (currency) {
@@ -56,15 +56,25 @@ const ProductModal = (props) => {
                     </div>
                     <div className="cart-zoom">
                         <div className="row">
-                            <div className="col-6" title="add to shopping cart">
+                            <div 
+                                className="col-6 add-to-cart" 
+                                title="add to shopping cart"
+                                onClick = {()=>{dispatch({type: "ADD", id: Products.id})}}
+                            >
                                 <div className="icon-container">
-                                    <FontAwesomeIcon icon = {faShoppingCart} className="icon"/>
+                                    <FontAwesomeIcon 
+                                        icon = {faShoppingCart} 
+                                        className="icon"
+                                    />
                                 </div>
                             </div>
                             <div className="col-6">
                                 <div className="icon-container">
                                     <Button variant="primary" onClick={()=>handleShow()}  title="see more details">
-                                        <FontAwesomeIcon icon = {faSearchPlus} className="icon"/>
+                                        <FontAwesomeIcon 
+                                            icon = {faSearchPlus} 
+                                            className="icon"
+                                        />
                                     </Button>
                                     <Modal show={show} onHide={handleClose}>
                                         <Modal.Header closeButton>

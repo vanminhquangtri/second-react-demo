@@ -95,7 +95,6 @@ const TopNav = (props) => {
                             </ul>
                         </div>
                         <ShoppingCart></ShoppingCart>
-                        
                     </div>
                 </div>
             </div>

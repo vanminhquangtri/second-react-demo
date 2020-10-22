@@ -980,6 +980,10 @@ const Product = [
 },
 /* end category Summer*/
 ]
+const Product_reducer = (init = Product, action) => {
+    return init;
+}
+/*currency*/
 const currency = ["USD", "EUR", "GBP"];
 const Currency_reducer = (init = currency, action) => {
     switch (action.type) {
@@ -996,12 +1000,28 @@ const Currency_reducer = (init = currency, action) => {
             return "USD";
     }
 }
-const Product_reducer = (init = Product, action) => {
+/*shopping cart*/
+const Cart = [];
+const Cart_reducer = (init = Cart, action) => {
+    switch (action.type) {
+        case "ADD":
+            Cart.push(action.id)
+            break;
+        
+        case "REMOVE":
+            Cart.splice(Cart.indexOf(action.id), 1);
+            break;
+
+        default:
+            break;
+    }
     return init;
 }
+
 const All_reducer = redux.combineReducers({
     Products: Product_reducer,
-    Currency: Currency_reducer
+    Currency: Currency_reducer,
+    Cart: Cart_reducer,
 })
 const Store = redux.createStore(All_reducer);
 export default Store;

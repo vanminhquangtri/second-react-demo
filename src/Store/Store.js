@@ -17,7 +17,7 @@ const Product = [
         require("../Assets/images/products/Featured/Featured Beauty Women Clothing White/side4.jpg"),
         require("../Assets/images/products/Featured/Featured Beauty Women Clothing White/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "black", "red"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, Summer and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -37,7 +37,7 @@ const Product = [
         require("../Assets/images/products/Featured/Featured Black Sporting Leggings/side4.jpg"),
         require("../Assets/images/products/Featured/Featured Black Sporting Leggings/side5.jpg")
     ],
-    color: "orange",
+    color: ["white", "black", "orange" ],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -57,7 +57,7 @@ const Product = [
         require("../Assets/images/products/Featured/Featured Cool Women Casual/side4.jpg"),
         require("../Assets/images/products/Featured/Featured Cool Women Casual/side5.jpg")
     ],
-    color: "orange",
+    color: ["white", "black", "orange" ],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -77,7 +77,7 @@ const Product = [
         require("../Assets/images/products/Featured/Featured Fashion For Female High/side4.jpg"),
         require("../Assets/images/products/Featured/Featured Fashion For Female High/side5.jpg")
     ],
-    color: "black",
+    color: ["red", "black", "orange" ],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -97,7 +97,7 @@ const Product = [
         require("../Assets/images/products/Featured/Featured Fashion Women Digital/side4.jpg"),
         require("../Assets/images/products/Featured/Featured Fashion Women Digital/side5.jpg")
     ],
-    color: "blue",
+    color: ["white", "blue", "orange" ],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -117,7 +117,7 @@ const Product = [
         require("../Assets/images/products/Featured/Featured Women Print Fashion Low/side4.jpg"),
         require("../Assets/images/products/Featured/Featured Women Print Fashion Low/side5.jpg")
     ],
-    color: "pink",
+    color: ["white", "pink", "orange" ],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -137,7 +137,7 @@ const Product = [
         require("../Assets/images/products/Featured/Featured Beauty Women Clothing/side4.jpg"),
         require("../Assets/images/products/Featured/Featured Beauty Women Clothing/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "blue", "orange" ],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -157,7 +157,7 @@ const Product = [
         require("../Assets/images/products/Featured/Featured New Fashion Women Leggings/side4.jpg"),
         require("../Assets/images/products/Featured/Featured New Fashion Women Leggings/side5.jpg")
     ],
-    color: "red",
+    color: ["red", "blue", "orange" ],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -179,7 +179,7 @@ const Product = [
         require("../Assets/images/products/Hot/Hot Beauty Women Clothing White/side4.jpg"),
         require("../Assets/images/products/Hot/Hot Beauty Women Clothing White/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "blue", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -200,7 +200,7 @@ const Product = [
         require("../Assets/images/products/Hot/Hot Black Sporting Leggings/side4.jpg"),
         require("../Assets/images/products/Hot/Hot Black Sporting Leggings/side5.jpg")
     ],
-    color: "white",
+    color: ["black", "blue", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -221,7 +221,7 @@ const Product = [
         require("../Assets/images/products/Hot/Hot Cool Women Casual/side4.jpg"),
         require("../Assets/images/products/Hot/Hot Cool Women Casual/side5.jpg")
     ],
-    color: "red",
+    color: ["black", "blue", "red"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -242,7 +242,7 @@ const Product = [
         require("../Assets/images/products/Hot/Hot Fashion For Female High/side4.jpg"),
         require("../Assets/images/products/Hot/Hot Fashion For Female High/side5.jpg")
     ],
-    color: "pink",
+    color: ["white", "pink", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -263,7 +263,7 @@ const Product = [
         require("../Assets/images/products/Hot/Hot Fashion Women Digital/side4.jpg"),
         require("../Assets/images/products/Hot/Hot Fashion Women Digital/side5.jpg")
     ],
-    color: "pink",
+    color: ["black", "pink", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -284,7 +284,7 @@ const Product = [
         require("../Assets/images/products/Hot/Hot Women Print Fashion Low/side4.jpg"),
         require("../Assets/images/products/Hot/Hot Women Print Fashion Low/side5.jpg")
     ],
-    color: "black",
+    color: ["white", "blue", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -305,7 +305,7 @@ const Product = [
         require("../Assets/images/products/Hot/Hot Beauty Women Clothing/side4.jpg"),
         require("../Assets/images/products/Hot/Hot Beauty Women Clothing/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "pink", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -347,7 +347,7 @@ const Product = [
         require("../Assets/images/products/Latest/Latest Beauty Women Clothing White/side4.jpg"),
         require("../Assets/images/products/Latest/Latest Beauty Women Clothing White/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "red", "black"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -367,7 +367,7 @@ const Product = [
         require("../Assets/images/products/Latest/Latest Black Sporting Leggings/side4.jpg"),
         require("../Assets/images/products/Latest/Latest Black Sporting Leggings/side5.jpg")
     ],
-    color: "black",
+    color: ["white", "red", "black"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -388,7 +388,7 @@ const Product = [
         require("../Assets/images/products/Latest/Latest Cool Women Casual/side4.jpg"),
         require("../Assets/images/products/Latest/Latest Cool Women Casual/side5.jpg")
     ],
-    color: "white",
+    color: ["orange", "blue", "black"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -408,7 +408,7 @@ const Product = [
         require("../Assets/images/products/Latest/Latest Fashion For Female High/side4.jpg"),
         require("../Assets/images/products/Latest/Latest Fashion For Female High/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "red", "black"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -428,7 +428,7 @@ const Product = [
         require("../Assets/images/products/Latest/Latest Fashion Women Digital/side4.jpg"),
         require("../Assets/images/products/Latest/Latest Fashion Women Digital/side5.jpg")
     ],
-    color: "black",
+    color: ["white", "red", "black"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -448,7 +448,7 @@ const Product = [
         require("../Assets/images/products/Latest/Latest Women Print Fashion Low/side4.jpg"),
         require("../Assets/images/products/Latest/Latest Women Print Fashion Low/side5.jpg")
     ],
-    color: "black",
+    color: ["white", "red", "black"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -468,7 +468,7 @@ const Product = [
         require("../Assets/images/products/Latest/Latest Beauty Women Clothing/side4.jpg"),
         require("../Assets/images/products/Latest/Latest Beauty Women Clothing/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "red", "black"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -488,7 +488,7 @@ const Product = [
         require("../Assets/images/products/Latest/Latest New Fashion Women Leggings/side4.jpg"),
         require("../Assets/images/products/Latest/Latest New Fashion Women Leggings/side5.jpg")
     ],
-    color: "red",
+    color: ["white", "red", "black"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -510,7 +510,7 @@ const Product = [
         require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing White/side4.jpg"),
         require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing White/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "blue", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -530,7 +530,7 @@ const Product = [
         require("../Assets/images/products/Minimal/Minimal Black Sporting Leggings/side4.jpg"),
         require("../Assets/images/products/Minimal/Minimal Black Sporting Leggings/side5.jpg")
     ],
-    color: "black",
+    color: ["white", "blue", "black"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -550,7 +550,7 @@ const Product = [
         require("../Assets/images/products/Minimal/Minimal Cool Women Casual/side4.jpg"),
         require("../Assets/images/products/Minimal/Minimal Cool Women Casual/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "black", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -570,7 +570,7 @@ const Product = [
         require("../Assets/images/products/Minimal/Minimal Fashion For Female High/side4.jpg"),
         require("../Assets/images/products/Minimal/Minimal Fashion For Female High/side5.jpg")
     ],
-    color: "orange",
+    color: ["white", "red", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -590,7 +590,7 @@ const Product = [
         require("../Assets/images/products/Minimal/Minimal Fashion Women Digital/side4.jpg"),
         require("../Assets/images/products/Minimal/Minimal Fashion Women Digital/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "blue", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -610,7 +610,7 @@ const Product = [
         require("../Assets/images/products/Minimal/Minimal Women Print Fashion Low/side4.jpg"),
         require("../Assets/images/products/Minimal/Minimal Women Print Fashion Low/side5.jpg")
     ],
-    color: "black",
+    color: ["black", "blue", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -630,7 +630,7 @@ const Product = [
         require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing/side4.jpg"),
         require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "blue", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -650,7 +650,7 @@ const Product = [
         require("../Assets/images/products/Minimal/Minimal New Fashion Women Leggings/side4.jpg"),
         require("../Assets/images/products/Minimal/Minimal New Fashion Women Leggings/side5.jpg")
     ],
-    color: "red",
+    color: ["red", "blue", "orange"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -672,7 +672,7 @@ const Product = [
         require("../Assets/images/products/Modern/Modern Beauty Women Clothing White/side4.jpg"),
         require("../Assets/images/products/Modern/Modern Beauty Women Clothing White/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "yellow", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -692,7 +692,7 @@ const Product = [
         require("../Assets/images/products/Modern/Modern Black Sporting Leggings/side4.jpg"),
         require("../Assets/images/products/Modern/Modern Black Sporting Leggings/side5.jpg")
     ],
-    color: "black",
+    color: ["white", "yellow", "black"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -712,7 +712,7 @@ const Product = [
         require("../Assets/images/products/Modern/Modern Cool Women Casual/side4.jpg"),
         require("../Assets/images/products/Modern/Modern Cool Women Casual/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "yellow", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -732,7 +732,7 @@ const Product = [
         require("../Assets/images/products/Modern/Modern Fashion For Female High/side4.jpg"),
         require("../Assets/images/products/Modern/Modern Fashion For Female High/side5.jpg")
     ],
-    color: "yellow",
+    color: ["white", "yellow", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -752,7 +752,7 @@ const Product = [
         require("../Assets/images/products/Modern/Modern Fashion Women Digital/side4.jpg"),
         require("../Assets/images/products/Modern/Modern Fashion Women Digital/side5.jpg")
     ],
-    color: "black",
+    color: ["white", "black", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -772,7 +772,7 @@ const Product = [
         require("../Assets/images/products/Modern/Modern Women Print Fashion Low/side4.jpg"),
         require("../Assets/images/products/Modern/Modern Women Print Fashion Low/side5.jpg")
     ],
-    color: "black",
+    color: ["white", "yellow", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -792,7 +792,7 @@ const Product = [
         require("../Assets/images/products/Modern/Modern Beauty Women Clothing/side4.jpg"),
         require("../Assets/images/products/Modern/Modern Beauty Women Clothing/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "yellow", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -812,7 +812,7 @@ const Product = [
         require("../Assets/images/products/Modern/Modern New Fashion Women Leggings/side4.jpg"),
         require("../Assets/images/products/Modern/Modern New Fashion Women Leggings/side5.jpg")
     ],
-    color: "red",
+    color: ["red", "yellow", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -834,7 +834,7 @@ const Product = [
         require("../Assets/images/products/Summer/Summer Beauty Women Clothing White/side4.jpg"),
         require("../Assets/images/products/Summer/Summer Beauty Women Clothing White/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "red", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, Summer and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -854,7 +854,7 @@ const Product = [
         require("../Assets/images/products/Summer/Summer Black Sporting Leggings/side4.jpg"),
         require("../Assets/images/products/Summer/Summer Black Sporting Leggings/side5.jpg")
     ],
-    color: "black",
+    color: ["white", "red", "black"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, Summer and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -874,7 +874,7 @@ const Product = [
         require("../Assets/images/products/Summer/Summer Cool Women Casual/side4.jpg"),
         require("../Assets/images/products/Summer/Summer Cool Women Casual/side5.jpg")
     ],
-    color: "blue",
+    color: ["white", "red", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, Summer and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -894,7 +894,7 @@ const Product = [
         require("../Assets/images/products/Summer/Summer Fashion For Female High/side4.jpg"),
         require("../Assets/images/products/Summer/Summer Fashion For Female High/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "red", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, Summer and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -914,7 +914,7 @@ const Product = [
         require("../Assets/images/products/Summer/Summer Fashion Women Digital/side4.jpg"),
         require("../Assets/images/products/Summer/Summer Fashion Women Digital/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "red", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -934,7 +934,7 @@ const Product = [
         require("../Assets/images/products/Summer/Summer Women Print Fashion Low/side4.jpg"),
         require("../Assets/images/products/Summer/Summer Women Print Fashion Low/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "red", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -954,7 +954,7 @@ const Product = [
         require("../Assets/images/products/Summer/Summer Beauty Women Clothing/side4.jpg"),
         require("../Assets/images/products/Summer/Summer Beauty Women Clothing/side5.jpg")
     ],
-    color: "white",
+    color: ["white", "red", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },
@@ -974,7 +974,7 @@ const Product = [
         require("../Assets/images/products/Summer/Summer New Fashion Women Leggings/side4.jpg"),
         require("../Assets/images/products/Summer/Summer New Fashion Women Leggings/side5.jpg")
     ],
-    color: "red",
+    color: ["white", "red", "blue"],
     material: "cotton",
     description: "Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialty of our Shopify Theme is Advance Feature List. You can easily setup your store Because Our fashion shopify Theme have Advance Theme",
 },

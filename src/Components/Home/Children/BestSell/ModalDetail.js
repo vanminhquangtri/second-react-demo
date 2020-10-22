@@ -1,7 +1,10 @@
-// direct child of ProductModal Component
-import React, {useEffect} from 'react';
+/**@jsx jsx*/
+import {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import TinySlider from "tiny-slider-react";
+import {connect} from "react-redux";
+import {jsx, css} from "@emotion/core";
+
 const settings = {
     nav: true,
     controls: false,
@@ -9,6 +12,21 @@ const settings = {
 }
 const ModalDetail = (props) => {
     const {Products} = props;
+    const {Currency} = props.Data;
+    const showPrice = (currency) => {
+        switch (currency) {
+            case "USD":
+                return "$ " + Products.price.toFixed(2)
+            case "EUR":
+                return "€ " + (Products.price * 0.84).toFixed(2)
+
+            case "GBP":
+                return "£ " + (Products.price * 0.76).toFixed(2)
+
+            default:
+                return "$ " + Products.price.toFixed(2)
+        }
+    }
     useEffect(() => {
         const navBtn = document.querySelectorAll(".tns-nav button");
         Products.slide__image.forEach((image, index) => {
@@ -43,17 +61,17 @@ const ModalDetail = (props) => {
                             <div className="title">
                                 <div className="row name">
                                     <div className="col-4">Name:</div>
-                                    <div className="col-8">Modern Beauty Women Clothing White</div>
+                                    <div className="col-8">{Products.name}</div>
                                 </div>
                                 <div className="row cat">
                                     <div className="col-4">Collection:</div>
-                                    <div className="col-8">Featured</div>
+                                    <div className="col-8">{Products.category}</div>
                                 </div>
                             </div>
                             <div className="info">
                                 <div className="row price">
                                     <div className="col-4">Price</div>
-                                    <div className="col-8">Product price</div>
+                                    <div className="col-8"><strong>{showPrice(Currency)}</strong></div>
                                 </div>
                                 <div className="row availability">
                                     <div className="col-4">Availability</div>
@@ -61,13 +79,21 @@ const ModalDetail = (props) => {
                                 </div>
                                 <div className="row des">
                                     <div className="col-4">Description</div>
-                                    <div className="col-8">Fashion & Clothing Shopify Themes & TemplateOur Fashion shopify theme is a best, popular, modern and clean. Also the main specialt...</div>
+                                    <div className="col-8">{Products.description}</div>
                                 </div>
                                 <div className="row colors">
                                     <div className="col-4">Color</div>
                                     <div className="col-8">
                                         <div className="colors-container">
-                                            <div className="color"></div>
+                                            {
+                                                Products.color.map((color, index) => {
+                                                    return (
+                                                        <div key={index} className="color" css = {css`
+                                                            background-color: ${color}
+                                                        `}></div>
+                                                    )
+                                                })
+                                            }
                                         </div>
                                     </div>
                                 </div>
@@ -110,5 +136,9 @@ const ModalDetail = (props) => {
         </div>
     );
 };
-
-export default ModalDetail;
+const mapStateToProps = (state) => {
+    return {
+        Data: state
+    }
+}
+export default connect(mapStateToProps)(ModalDetail)

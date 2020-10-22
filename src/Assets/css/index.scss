@@ -1142,6 +1142,24 @@ $white-color: rgb(223, 223, 223);
                                             font-weight: bold;
                                         }
                                     }
+                                    .colors {
+                                        margin-top: 10px;
+                                        margin-bottom: 10px;
+                                        .col-8 {
+                                            .colors-container {
+                                            display: flex;
+                                            flex-direction: row;
+                                            justify-content: flex-start;
+                                            padding-left: 2px;
+                                                .color {
+                                                    width: 30px;
+                                                    height: 20px;
+                                                    margin-right: 10px;
+                                                    box-shadow: 1px 1px 3px 3px rgb(209, 209, 209);
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                                 .action {
                                     .quantity {

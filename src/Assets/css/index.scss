@@ -202,16 +202,21 @@ $white-color: rgb(223, 223, 223);
                 display: flex;
                 .nav {
                     width: 90%;
-                    ul {
+                    > ul {
                         padding: 0;
                         margin: 0;
                         list-style-type: none;
                         display: flex;
                         flex-wrap: wrap;
-                        li {
+                        .active {
+                            color: $hover-color-red;
+                            text-decoration: underline;
+                        }
+                        > li {
                             margin-right: 20px;
                             padding: 10px 0;
-                            a {
+                            position: relative;
+                            > a {
                                 color: $white-color;
                                 display: block;
                                 transition: .3s;
@@ -224,8 +229,48 @@ $white-color: rgb(223, 223, 223);
                                     font-size: 14px;
                                 }
                             }
+                            .sub-menu {
+                                position: absolute;
+                                z-index: 99;
+                                background: white;
+                                display: flex;
+                                flex-direction: column;
+                                list-style-type: none;
+                                padding: 0;
+                                margin: 0;
+                                display: none;
+                                li {
+                                    a {
+                                        color: black;
+                                        transition: .3s;
+                                        font-weight: bold;
+                                        display: block;
+                                        padding: 10px;
+                                        white-space: nowrap;
+                                        &:hover {
+                                            color: $hover-color-red;
+                                            background: $hover-color-gray;
+                                        }
+                                    }
+                                }
+                            }
+                            &:hover {
+                                .sub-menu {
+                                    display: flex;
+                                }
+                            }
+                        }
+                        
+                        .home {
+                            a {
+                                .icon {
+                                    font-size: 20px !important;
+                                    margin-left: 0;
+                                }
+                            }
                         }
                     }
+                    
                 }
                 .cart {
                     width: 10%;

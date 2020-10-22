@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChevronDown, faTimes} from "@fortawesome/free-solid-svg-icons";
+import {faChevronDown, faTimes, faHome} from "@fortawesome/free-solid-svg-icons";
 
 const TopNav = (props) => {
     useEffect(() => {
@@ -37,40 +37,59 @@ const TopNav = (props) => {
                         <div className="nav">
                             <ul>
                                 <li className="home">
-                                    <NavLink to = "/" exact = {true} activeClassName="active">HOME</NavLink>
+                                    <NavLink to = "/" exact = {true} activeClassName="active">
+                                        <FontAwesomeIcon icon = {faHome} className="icon"/>
+                                    </NavLink>
                                 </li>
                                 <li>
                                     <NavLink to = "/" exact = {true} activeClassName="active">
                                         SHOP
                                         <FontAwesomeIcon icon = {faChevronDown} className="icon"/>
                                     </NavLink>
+                                    <ul className="sub-menu">
+                                        <li>
+                                            <NavLink to="/featured-collection" exact={true} activeClassName="active">Feature Collection</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/latest-collection" exact={true} activeClassName="active">Latest Collection</NavLink>
+                                        </li>
+                                        <li>
+                                        <   NavLink to="/hot-collection" exact={true} activeClassName="active">Hot Collection</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/minimal-collection" exact={true} activeClassName="active">Minimal Collection</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/modern-collection" exact={true} activeClassName="active">Modern Collection</NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to="/summer-collection" exact={true} activeClassName="active">Summer Collection</NavLink>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    <NavLink to = "/" exact = {true} activeClassName="active">COLLECTION</NavLink>
+                                    <NavLink to = "/latest-collection" exact = {true} activeClassName="active">LATEST COLLECTION</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to = "/" exact = {true} activeClassName="active">FASHION CLOTHS</NavLink>
+                                    <NavLink to = "/featured-collection" exact = {true} activeClassName="active">FEATURED COLLECTION</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to = "/" exact = {true} activeClassName="active">WOMEN'S TOP</NavLink>
+                                    <NavLink to = "/modern-collection" exact = {true} activeClassName="active">MODERN COLLECTION</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to = "/" exact = {true} activeClassName="active">
-                                        SPECIAL COLLECTION
-                                        <FontAwesomeIcon icon = {faChevronDown} className="icon"/>
-                                    </NavLink>
+                                    <NavLink to = "/minimal-collection" exact = {true} activeClassName="active">MINIMAL COLLECTION</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to = "/" exact = {true} activeClassName="active">BLOG</NavLink>
+                                    <NavLink to = "/blog" exact = {true} activeClassName="active">BLOG</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to = "/" exact = {true} activeClassName="active">CONTACT</NavLink>
+                                    <NavLink to = "/contact" exact = {true} activeClassName="active">CONTACT</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to = "/" exact = {true} activeClassName="active">FAQS</NavLink>
+                                    <NavLink to = "/faqs" exact = {true} activeClassName="active">FAQS</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to = "/" exact = {true} activeClassName="active">ABOUT US</NavLink>
+                                    <NavLink to = "/about" exact = {true} activeClassName="active">ABOUT US</NavLink>
                                 </li>
                             </ul>
                         </div>

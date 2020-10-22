@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChevronDown, faTimes, faHome} from "@fortawesome/free-solid-svg-icons";
+import {faChevronDown, faTimes, faHome, faRemoveFormat, faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 
 const TopNav = (props) => {
     useEffect(() => {
@@ -31,7 +31,7 @@ const TopNav = (props) => {
     },[])
     return (
         <section className="top-nav">
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
                     <div className="col">
                         <div className="nav">
@@ -106,93 +106,6 @@ const TopNav = (props) => {
                                     </div>
                                     <div className="added-cart">
                                         <div className="title">Recently added 1 items(s)</div>
-                                        <div className="added-product">
-                                            <div className="container-fluid">
-                                                <div className="row">
-                                                    <div className="col-3 img">
-                                                        <img 
-                                                            src = {require("../../Assets/images/products/Featured/Featured Cool Women Casual/main/main.jpg")} alt="added product"
-                                                        />
-                                                    </div>
-                                                    <div className="col-6 title">
-                                                        <NavLink
-                                                            to = "/"
-                                                            exact = {true}
-                                                        >
-                                                            Cool Women Casual Print Tank Party Dresses casual Sexy Pink White Sling Beach Dress
-                                                        </NavLink>
-                                                    </div>
-                                                    <div className="col-3 amount">
-                                                        <div className="cal">
-                                                            <FontAwesomeIcon icon = {faTimes} className="icon"/>
-                                                            <div className="money">
-                                                                <span className="unit">1 x</span>
-                                                                <span className="price">$410.00</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="added-product">
-                                            <div className="container-fluid">
-                                                <div className="row">
-                                                    <div className="col-3 img">
-                                                        <img 
-                                                            src = {require("../../Assets/images/products/Featured/Featured Cool Women Casual/main/main.jpg")} alt="added product"
-                                                        />
-                                                    </div>
-                                                    <div className="col-6 title">
-                                                        <NavLink
-                                                            to = "/"
-                                                            exact = {true}
-                                                        >
-                                                            Cool Women Casual Print Tank Party Dresses casual Sexy Pink White Sling Beach Dress
-                                                        </NavLink>
-                                                    </div>
-                                                    <div className="col-3 amount">
-                                                        <div className="cal">
-                                                            <FontAwesomeIcon icon = {faTimes} className="icon"/>
-                                                            <div className="money">
-                                                                <span className="unit">1 x</span>
-                                                                <span className="price">$410.00</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="added-product">
-                                            <div className="container-fluid">
-                                                <div className="row">
-                                                    <div className="col-3 img">
-                                                        <img 
-                                                            src = {require("../../Assets/images/products/Featured/Featured Cool Women Casual/main/main.jpg")} alt="added product"
-                                                        />
-                                                    </div>
-                                                    <div className="col-6 title">
-                                                        <NavLink
-                                                            to = "/"
-                                                            exact = {true}
-                                                        >
-                                                            Cool Women Casual Print Tank Party Dresses casual Sexy Pink White Sling Beach Dress
-                                                        </NavLink>
-                                                    </div>
-                                                    <div className="col-3 amount">
-                                                        <div className="cal">
-                                                            <FontAwesomeIcon icon = {faTimes} className="icon"/>
-                                                            <div className="money">
-                                                                <span className="unit">1 x</span>
-                                                                <span className="price">$410.00</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="total">
-                                            <span>Total: $1,015.00</span>
-                                        </div>
                                         <div className="row navigate">
                                             <div className="col">
                                                 <div className="content view">
@@ -214,6 +127,37 @@ const TopNav = (props) => {
                                                     </NavLink>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div className="added-product">
+                                            <div className="container-fluid">
+                                                <div className="row">
+                                                    <div className="col-2 img">
+                                                        <img 
+                                                            src = {require("../../Assets/images/products/Featured/Featured Cool Women Casual/main/main.jpg")} alt="added product"
+                                                        />
+                                                    </div>
+                                                    <div className="col-7 title">
+                                                        <NavLink
+                                                            to = "/"
+                                                            exact = {true}
+                                                        >
+                                                            Cool Women Casual Print Tank
+                                                        </NavLink>
+                                                    </div>
+                                                    <div className="col-2 amount">
+                                                        <div className="cal">
+                                                            <FontAwesomeIcon icon = {faTrashAlt} className="icon"/>
+                                                            <div className="money">
+                                                                <span className="unit">1 x</span>
+                                                                <span className="price">$410.00</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="total">
+                                            <span>Total: $1,015.00</span>
                                         </div>
                                     </div>
                                 </div>

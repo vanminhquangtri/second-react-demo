@@ -1,5 +1,6 @@
 import React from 'react';
 import {Switch, Route} from "react-router-dom";
+import AllCollection from '../Collections/AllCollection';
 import FeaturedCollection from '../Collections/FeaturedCollection';
 import HotCollection from '../Collections/HotCollection';
 import LatestCollection from '../Collections/LatestCollection';
@@ -17,6 +18,7 @@ const RouterURL = (props) => {
             <Route path = "/minimal-collection" exact = {true} component = {MinimalCollection}></Route>
             <Route path = "/hot-collection" exact = {true} component = {HotCollection}></Route>
             <Route path = "/summer-collection" exact = {true} component = {SummerCollection}></Route>
+            <Route path = "/all-collection" exact = {true} component = {AllCollection}></Route>
             <Route component = {Home}></Route>
         </Switch>
     );

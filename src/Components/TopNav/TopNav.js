@@ -9,8 +9,8 @@ const TopNav = (props) => {
         const topNav = document.querySelector(".top-nav");        
         const topNavPos = topNav.getBoundingClientRect().y;
         const topNavHeight = topNav.getBoundingClientRect().height;
-        const nextEl = topNav.nextElementSibling;
         window.addEventListener("scroll", (ev) => {
+            const nextEl = topNav.nextElementSibling; // define inside event to avoid re-render change the next element
             const y = window.scrollY;
             if (y >= topNavPos + 10){
                 // 10 is padding=top of top-nav (10px)
@@ -28,7 +28,7 @@ const TopNav = (props) => {
                 nextEl.style.marginTop = "unset"
             }
         })
-    })
+    },[])
     return (
         <section className="top-nav">
             <div className="container">
@@ -42,7 +42,7 @@ const TopNav = (props) => {
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to = "/" exact = {true} activeClassName="active">
+                                    <NavLink to = "/all-collection" exact = {true} activeClassName="active">
                                         SHOP
                                         <FontAwesomeIcon icon = {faChevronDown} className="icon"/>
                                     </NavLink>

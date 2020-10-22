@@ -1076,6 +1076,114 @@ $white-color: rgb(223, 223, 223);
                                 }
                             }
                         }
+                        .col-6.info {
+                            .col-4 {
+                                font-size: 15px;
+                            }
+                            .col-8 {
+                                font-size: 15px;
+                            }
+                            .content {
+                                .title {
+                                    .name {
+                                        .col-8 {
+                                            font-weight: bold;
+                                        }
+                                    }
+                                }
+                                .info {
+                                    .availability {
+                                        .col-8 {
+                                            font-weight: bold;
+                                        }
+                                    }
+                                }
+                                .action {
+                                    .quantity {
+                                        align-items: center;
+                                        margin-bottom: 10px;
+                                        .col-8 {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: flex-start;
+                                            .button, input {
+                                                height: 30px;
+                                            }
+                                            .button {
+                                                display: inline-block;
+                                                background: $hover-color-gray;
+                                                line-height: 30px;
+                                                width: 40px;
+                                                text-align: center;
+                                                font-size: 20px;
+                                                font-weight: bold;
+                                                cursor: pointer;
+                                                &:active {
+                                                    background: red;
+                                                    color: white;
+                                                }
+                                            }
+                                            input {
+                                                width: 40px;
+                                                text-align: center;
+                                                border: none;
+                                                outline: none;
+                                                font-weight: bold;
+                                            }
+                                            // remove default scroll of number input tag
+                                            input::-webkit-outer-spin-button,
+                                            input::-webkit-inner-spin-button {
+                                            -webkit-appearance: none;
+                                            margin: 0;
+                                            }
+                                            /* Firefox */
+                                            input[type=number] {
+                                                -moz-appearance: textfield;
+                                            }
+                                        }
+                                    }
+                                    .sub-total {
+                                        .col-8 {
+                                            font-weight: bold;
+                                        }
+                                    }
+                                    .cart-link {
+                                        font-size: 18px;
+                                        color: white;
+                                        text-align: center;
+                                        margin-top: 20px;
+                                        .cart {
+                                            .content {
+                                                background: red;
+                                                border-radius: 5px;
+                                                height: 40px;
+                                                line-height: 40px;
+                                                transition: .3s;
+                                                cursor: pointer;
+                                                &:hover {
+                                                    background: black;
+                                                    color: white;
+                                                }
+                                                &:active {
+                                                    background: green;
+                                                }
+                                            }
+                                        }
+                                        .link {
+                                            .content {
+                                                background: black;
+                                                border-radius: 5px;
+                                                height: 40px;
+                                                line-height: 40px;
+                                                a {
+                                                    color: white;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

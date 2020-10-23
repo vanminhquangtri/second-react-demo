@@ -984,20 +984,31 @@ const Product_reducer = (init = Product, action) => {
     return init;
 }
 /*currency*/
-const currency = ["USD", "EUR", "GBP"]
+const currency = {
+    currency: "USD"
+}
 const Currency_reducer = (init = currency, action) => {
     switch (action.type) {
         case "USD":
-            return "USD"
+            return {
+                ...init,
+                currency: "USD"
+            }
         
         case "EUR":
-            return "EUR"
+            return {
+                ...init,
+                currency: "EUR"
+            }
     
         case "GBP":
-            return "GBP"
+            return {
+                ...init,
+                currency: "GBP"
+            }
 
         default:
-            return "USD";
+            return init
     }
 }
 /*shopping cart*/

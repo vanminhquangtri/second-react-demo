@@ -87,7 +87,7 @@ const ShoppingCart = (props) => {
                                                                 <FontAwesomeIcon icon = {faTrashAlt} className="icon"/>
                                                                 <div className="money">
                                                                     <span className="unit">1 x</span>
-                                                                    <span className="price">{showPrice(Currency, item)}</span>
+                                                                    <span className="price">{showPrice(Currency.currency, item)}</span>
                                                                 </div>
                                                             </div>
                                                         </div>

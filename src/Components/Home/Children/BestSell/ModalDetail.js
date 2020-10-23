@@ -71,7 +71,7 @@ const ModalDetail = (props) => {
                             <div className="info">
                                 <div className="row price">
                                     <div className="col-4">Price</div>
-                                    <div className="col-8"><strong>{showPrice(Currency)}</strong></div>
+                                    <div className="col-8"><strong>{showPrice(Currency.currency)}</strong></div>
                                 </div>
                                 <div className="row availability">
                                     <div className="col-4">Availability</div>

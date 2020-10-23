@@ -59,7 +59,7 @@ const TopBar = (props) => {
                             <NavLink to="/acount/login">Login</NavLink>
                             <NavLink to="/acount/register">Register</NavLink>
                             <span className="currency" style = {{"paddingRight": 0}}>
-                                {showCurrency(Currency)} &nbsp; 
+                                {showCurrency(Currency.currency)} &nbsp; 
                                 <FontAwesomeIcon icon = {faChevronDown} className="icon" style = {{"margin": 0}}/>
                             </span>
                             <div className="currency-list">

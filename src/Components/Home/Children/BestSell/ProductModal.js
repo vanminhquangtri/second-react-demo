@@ -43,7 +43,7 @@ const ProductModal = (props) => {
                 >
                     <div className="info">
                         <div className="name">{Products.name}</div>
-                        <div className="price">{showPrice(Currency)}</div>
+                        <div className="price">{showPrice(Currency.currency)}</div>
                     </div>
                 </NavLink>
                 <div className="overlay">

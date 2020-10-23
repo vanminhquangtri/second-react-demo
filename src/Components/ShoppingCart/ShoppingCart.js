@@ -117,7 +117,7 @@ const ShoppingCart = (props) => {
                                                                 {item.name}
                                                             </NavLink>
                                                         </div>
-                                                        <div className="col-2 amount">
+                                                        <div className="col-3 amount">
                                                             <div className="cal">
                                                                 <FontAwesomeIcon icon = {faTrashAlt} className="icon"/>
                                                                 <div className="money">
@@ -133,7 +133,7 @@ const ShoppingCart = (props) => {
                                     })
                                 }
                                 <div className="total">
-                                    <span>Total: $1,015.00</span>
+                                    <span>Total: <strong>$1,015.00</strong></span>
                                 </div>
                             </div>
                         )

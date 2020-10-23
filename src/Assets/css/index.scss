@@ -339,6 +339,8 @@ $white-color: rgb(223, 223, 223);
                             .added-cart {
                                 .added-product {
                                     margin-top: 10px;
+                                    border-bottom: 1px solid $hover-color-gray;
+                                    padding-bottom: 2px;
                                     .container-fluid {
                                         .row {
                                             align-items: flex-start;
@@ -350,8 +352,10 @@ $white-color: rgb(223, 223, 223);
                                                 }
                                             }
                                             .title {
-                                                line-height: 0;
                                                 text-align: left;
+                                                padding: 0 10px;
+                                                font-size: 16px;
+                                                margin-top: -3px;
                                                 a {
                                                     color: black;
                                                 }
@@ -372,6 +376,7 @@ $white-color: rgb(223, 223, 223);
                                                         flex-direction: column;
                                                         font-weight: bold;
                                                         text-align: center;
+                                                        font-size: 16px;
                                                     }
                                                 }
                                             }

@@ -42,7 +42,6 @@ const TopBar = (props) => {
             const clickClassName = target.getAttribute("class");
             if ( (clickClassName === null) || (clickClassName !== null && clickClassName !== "currency-sign" && (!clickClassName.includes("currency-sign")
             ))){
-                console.log(clickClassName);
                 currencyList.style.maxHeight = null;
                 currencyList.style.borderBottom = null;
             }

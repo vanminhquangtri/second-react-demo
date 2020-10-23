@@ -7,7 +7,6 @@ import {jsx, css} from "@emotion/core";
 import urlSlug from "url-slug";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faShareSquare } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons'
 library.add(fab)
 

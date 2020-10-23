@@ -5,8 +5,9 @@ import {faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
 
 const ShoppingCart = (props) => {
-    const {Cart} = props.Data;
+    const {Cart, Products} = props.Data;
     const {Currency} = props.Data;
+    // format price (currency and decimal)
     const showPrice = (currency, item) => {
         switch (currency) {
             case "USD":
@@ -21,6 +22,40 @@ const ShoppingCart = (props) => {
                 return "$ " + item.price.toFixed(2)
         }
     }
+    // count quantity of a product in Shopping Cart
+    const countProduct = (id) => {
+        let count = 0;
+        Cart.forEach((product) => {
+            if (product.id === id) {
+                count += 1;
+            }
+        })
+        return count;
+    }
+    /*Remove duplicate product in Cart arr based on ID*/
+    const currentCart = [...Cart];
+    // get ID list of current Cart
+    let currentIdList = [];
+    currentCart.forEach((product) => {
+        currentIdList.push(product.id);
+    })
+    // removed duplicated ID
+    let removedDuplicateIdList = [];
+    currentIdList.forEach((id) => {
+        if (!removedDuplicateIdList.includes(id)){
+            removedDuplicateIdList.push(id)
+        }
+    })
+    // create product array base on ID list
+    let splicedProductsList = [];
+    removedDuplicateIdList.forEach((id) => {
+        Products.forEach((product)=>{
+            if (product.id === id){
+                splicedProductsList.push(product)
+            }
+        })
+    })
+    /*End remove duplicate product in Cart arr based on ID*/
     return (
         <div className="cart">
             <div className="cart-amount">
@@ -64,7 +99,7 @@ const ShoppingCart = (props) => {
                                     </div>
                                 </div>
                                 {
-                                    Cart.map((item, index) => {
+                                    splicedProductsList.map((item, index) => {
                                         return (
                                             <div className="added-product" key={index}>
                                                 <div className="container-fluid">
@@ -86,7 +121,7 @@ const ShoppingCart = (props) => {
                                                             <div className="cal">
                                                                 <FontAwesomeIcon icon = {faTrashAlt} className="icon"/>
                                                                 <div className="money">
-                                                                    <span className="unit">1 x</span>
+                                                                    <span className="unit">{countProduct(item.id)} x</span>
                                                                     <span className="price">{showPrice(Currency.currency, item)}</span>
                                                                 </div>
                                                             </div>
@@ -102,7 +137,7 @@ const ShoppingCart = (props) => {
                                 </div>
                             </div>
                         )
-                    }  
+                    }
                 </div>
             </div>
         </div>

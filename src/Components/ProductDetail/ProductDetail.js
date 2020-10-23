@@ -63,11 +63,17 @@ const ProductDetail = (props) => {
                                             {
                                                 Product.slide__image.map((image, index) => {
                                                     return (
-                                                        <img
-                                                            src = {image}
-                                                            alt = {Product.name}
+                                                        // <img
+                                                        //     src = {image}
+                                                        //     alt = {Product.name}
+                                                        //     key = {index}
+                                                        // />
+                                                        <div className="img-container"
+                                                            css = {css`
+                                                                background-image: url(${image})
+                                                            `}
                                                             key = {index}
-                                                        />
+                                                        ></div>
                                                     )
                                                 })
                                             }

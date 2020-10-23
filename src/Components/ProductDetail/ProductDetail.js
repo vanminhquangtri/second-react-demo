@@ -47,6 +47,11 @@ const ProductDetail = (props) => {
                     if (urlSlug(Product.name) === nameSlug) {
                         return (
                             <div className="container current-product" key = {index}>
+                                <div className="row title">
+                                    <div className="col">
+                                        <h3 className="product-title">{Product.name}</h3>
+                                    </div>
+                                </div>
                                 <div className="row with-slide">
                                     <div className="col-6 image">
                                         <TinySlider settings = {settings}>
@@ -67,30 +72,30 @@ const ProductDetail = (props) => {
                                         <div className="content">
                                             <div className="title">
                                                 <div className="row name">
-                                                    <div className="col-4">Name:</div>
-                                                    <div className="col-8">{Product.name}</div>
+                                                    <div className="col-3">Name:</div>
+                                                    <div className="col-9">{Product.name}</div>
                                                 </div>
                                                 <div className="row cat">
-                                                    <div className="col-4">Collection:</div>
-                                                    <div className="col-8">{Product.category}</div>
+                                                    <div className="col-3">Collection:</div>
+                                                    <div className="col-9">{Product.category}</div>
                                                 </div>
                                             </div>
                                             <div className="info">
                                                 <div className="row price">
-                                                    <div className="col-4">Price</div>
-                                                    <div className="col-8"><strong>{showPrice(Currency.currency, Product)}</strong></div>
+                                                    <div className="col-3">Price</div>
+                                                    <div className="col-9"><strong>{showPrice(Currency.currency, Product)}</strong></div>
                                                 </div>
                                                 <div className="row availability">
-                                                    <div className="col-4">Availability</div>
-                                                    <div className="col-8">Yes</div>
+                                                    <div className="col-3">Availability</div>
+                                                    <div className="col-9">Yes</div>
                                                 </div>
                                                 <div className="row des">
-                                                    <div className="col-4">Description</div>
-                                                    <div className="col-8">{Product.description}</div>
+                                                    <div className="col-3">Description</div>
+                                                    <div className="col-9">{Product.description}</div>
                                                 </div>
                                                 <div className="row colors">
-                                                    <div className="col-4">Color</div>
-                                                    <div className="col-8">
+                                                    <div className="col-3">Color</div>
+                                                    <div className="col-9">
                                                         <div className="colors-container">
                                                             {
                                                                 Product.color.map((color, index) => {
@@ -107,16 +112,16 @@ const ProductDetail = (props) => {
                                             </div>
                                             <div className="action">
                                                 <div className="row quantity">
-                                                    <div className="col-4">Quantity</div>
-                                                    <div className="col-8">
+                                                    <div className="col-3">Quantity</div>
+                                                    <div className="col-9">
                                                         <span className="button">-</span>
                                                         <input type="number" defaultValue="1" placeholder="1" min="1"/>
                                                         <span className="button">+</span>
                                                     </div>
                                                 </div>
                                                 <div className="row sub-total">
-                                                    <div className="col-4">Total</div>
-                                                    <div className="col-8">
+                                                    <div className="col-3">Total</div>
+                                                    <div className="col-9">
                                                         $410.00
                                                     </div>
                                                 </div>

@@ -8,6 +8,7 @@ import MinimalCollection from '../Collections/MinimalCollection';
 import ModernCollection from '../Collections/ModernCollection';
 import SummerCollection from '../Collections/SummerCollection';
 import Home from '../Home/Home';
+import ProductDetail from '../ProductDetail/ProductDetail';
 const RouterURL = (props) => {
     return (
         <Switch>
@@ -19,6 +20,7 @@ const RouterURL = (props) => {
             <Route path = "/hot-collection" exact = {true} component = {HotCollection}></Route>
             <Route path = "/summer-collection" exact = {true} component = {SummerCollection}></Route>
             <Route path = "/all-collection" exact = {true} component = {AllCollection}></Route>
+            <Route path = "/product/:nameSlug" exact = {true} component = {ProductDetail}></Route>
             <Route component = {Home}></Route>
         </Switch>
     );

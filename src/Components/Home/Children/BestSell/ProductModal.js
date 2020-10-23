@@ -8,6 +8,7 @@ import {jsx, css} from '@emotion/core';
 import {Modal, Button} from "react-bootstrap";
 import ModalDetail from './ModalDetail';
 import {connect} from "react-redux";
+import urlSlug from "url-slug";
 
 const ProductModal = (props) => {
     const {Products, dispatch} = props;
@@ -38,7 +39,7 @@ const ProductModal = (props) => {
                     className="product-img"
                 />
                 <NavLink
-                    to = "/"
+                    to = {`/product/${urlSlug(Products.name)}`}
                     exact = {true}
                 >
                     <div className="info">

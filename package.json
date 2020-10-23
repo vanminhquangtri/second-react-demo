@@ -24,7 +24,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",
-    "tiny-slider-react": "^0.5.3"
+    "tiny-slider-react": "^0.5.3",
+    "url-slug": "^2.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

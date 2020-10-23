@@ -11,16 +11,16 @@ const TopBar = (props) => {
     const showCurrency = (currency) => {
         switch (currency) {
             case "USD":
-                return (<span>$ <strong>{currency}</strong></span>)
+                return (<span className="currency-sign">$ <strong className="currency-sign">{currency}</strong></span>)
 
             case "EUR":
-                return (<span>€ <strong>{currency}</strong></span>)
+                return (<span className="currency-sign">€ <strong className="currency-sign">{currency}</strong></span>)
 
             case "GBP":
-                return (<span>£ <strong>{currency}</strong></span>)
+                return (<span className="currency-sign">£ <strong className="currency-sign">{currency}</strong></span>)
 
             default:
-                return (<span>$ <strong>{currency}</strong></span>)
+                return (<span className="currency-sign">$ <strong className="currency-sign">{currency}</strong></span>)
         }
     }
     useEffect(() => {
@@ -34,6 +34,17 @@ const TopBar = (props) => {
             } else {
                 currencyList.style.maxHeight = currencyList.scrollHeight + "px";
                 currencyList.style.borderBottom = "1px solid black";
+            }
+        })
+        // hide currency list if click outside
+        document.addEventListener("click", (ev) => {
+            const target = ev.target;
+            const clickClassName = target.getAttribute("class");
+            if ( (clickClassName === null) || (clickClassName !== null && clickClassName !== "currency-sign" && (!clickClassName.includes("currency-sign")
+            ))){
+                console.log(clickClassName);
+                currencyList.style.maxHeight = null;
+                currencyList.style.borderBottom = null;
             }
         })
     }, [])
@@ -60,17 +71,17 @@ const TopBar = (props) => {
                             <NavLink to="/acount/register">Register</NavLink>
                             <span className="currency" style = {{"paddingRight": 0}}>
                                 {showCurrency(Currency.currency)} &nbsp; 
-                                <FontAwesomeIcon icon = {faChevronDown} className="icon" style = {{"margin": 0}}/>
+                                <FontAwesomeIcon icon = {faChevronDown} className="icon currency-sign" style = {{"margin": 0}}/>
                             </span>
                             <div className="currency-list">
-                                <ul>
-                                    <li onClick = {() => {dispatch({type: "USD"})}}>
+                                <ul className="currency-sign">
+                                    <li className="currency-sign" onClick = {() => {dispatch({type: "USD"})}}>
                                         $ USD
                                     </li>
-                                    <li onClick = {() => {dispatch({type: "EUR"})}}>
+                                    <li className="currency-sign" onClick = {() => {dispatch({type: "EUR"})}}>
                                         € EUR
                                     </li>
-                                    <li onClick = {() => {dispatch({type: "GBP"})}}>
+                                    <li className="currency-sign" onClick = {() => {dispatch({type: "GBP"})}}>
                                         $ GBP
                                     </li>
                                 </ul>

@@ -1258,10 +1258,178 @@ $white-color: rgb(223, 223, 223);
     }
 }
 /*----- end best sell -----*/
-
-.accordion {
-    max-height: 132px !important;
-    border-bottom: 1px solid black;    
+/*----- all collection -----*/
+.all-collection {
+    padding-top: 0;
 }
-
-
+/*----- end all collection -----*/
+/*----- product detail -----*/
+.product-detail {
+    padding: 30px 0;
+    .container.current-product {
+        .row.with-slide {
+            .col-6.image {
+                padding: 0;
+                .tns-outer {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    .tns-nav {
+                        display: flex;
+                        justify-content: center;
+                        z-index: 1;
+                        margin-top: 5px;
+                        button {
+                            margin: 0 10px;
+                            height: 50px;
+                            width: 45px;
+                            border: none;
+                            outline: none;
+                            background: transparent;
+                            background: {
+                                position: center;
+                                size: cover;
+                                repeat: no-repeat;
+                            };
+                        }
+                    }
+                    .tns-ovh {
+                        .tns-inner {
+                            .tns-slider {
+                                img {
+                                    height: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .col-6.info {
+                .col-4 {
+                    font-size: 15px;
+                }
+                .col-8 {
+                    font-size: 15px;
+                }
+                .content {
+                    .title {
+                        .name {
+                            .col-8 {
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    .info {
+                        .availability {
+                            .col-8 {
+                                font-weight: bold;
+                            }
+                        }
+                        .colors {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            .col-8 {
+                                .colors-container {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-start;
+                                padding-left: 2px;
+                                    .color {
+                                        width: 30px;
+                                        height: 20px;
+                                        margin-right: 10px;
+                                        box-shadow: 1px 1px 3px 3px rgb(209, 209, 209);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .action {
+                        .quantity {
+                            align-items: center;
+                            margin-bottom: 10px;
+                            .col-8 {
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                .button, input {
+                                    height: 30px;
+                                }
+                                .button {
+                                    display: inline-block;
+                                    background: $hover-color-gray;
+                                    line-height: 30px;
+                                    width: 40px;
+                                    text-align: center;
+                                    font-size: 20px;
+                                    font-weight: bold;
+                                    cursor: pointer;
+                                    &:active {
+                                        background: red;
+                                        color: white;
+                                    }
+                                }
+                                input {
+                                    width: 40px;
+                                    text-align: center;
+                                    border: none;
+                                    outline: none;
+                                    font-weight: bold;
+                                }
+                                // remove default scroll of number input tag
+                                input::-webkit-outer-spin-button,
+                                input::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                                }
+                                /* Firefox */
+                                input[type=number] {
+                                    -moz-appearance: textfield;
+                                }
+                            }
+                        }
+                        .sub-total {
+                            .col-8 {
+                                font-weight: bold;
+                            }
+                        }
+                        .cart-link {
+                            font-size: 18px;
+                            color: white;
+                            text-align: center;
+                            margin-top: 20px;
+                            .cart {
+                                .content {
+                                    background: red;
+                                    border-radius: 5px;
+                                    height: 40px;
+                                    line-height: 40px;
+                                    transition: .3s;
+                                    cursor: pointer;
+                                    &:hover {
+                                        background: black;
+                                        color: white;
+                                    }
+                                    &:active {
+                                        background: green;
+                                    }
+                                }
+                            }
+                            .link {
+                                .content {
+                                    background: black;
+                                    border-radius: 5px;
+                                    height: 40px;
+                                    line-height: 40px;
+                                    a {
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*----- end product detail -----*/

@@ -46,7 +46,7 @@ const ShoppingCart = (props) => {
             removedDuplicateIdList.push(id)
         }
     })
-    // create product array base on ID list
+    // create product array base on ID list, use this array to render shopping cart
     let splicedProductsList = [];
     removedDuplicateIdList.forEach((id) => {
         Products.forEach((product)=>{

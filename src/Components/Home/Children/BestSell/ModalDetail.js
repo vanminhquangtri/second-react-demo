@@ -11,9 +11,9 @@ const settings = {
     items: 1
 }
 const ModalDetail = (props) => {
-    const {Products} = props;
+    const {Products, dispatch} = props;
     const {Currency} = props.Data;
-    const showPrice = (currency) => {
+    const showPrice = (currency, item) => {
         switch (currency) {
             case "USD":
                 return "$ " + Products.price.toFixed(2)
@@ -110,12 +110,16 @@ const ModalDetail = (props) => {
                                 <div className="row sub-total">
                                     <div className="col-4">Total</div>
                                     <div className="col-8">
-                                        $410.00
+                                        {showPrice(Currency.currency, Products.price)}
                                     </div>
                                 </div>
                                 <div className="row cart-link">
                                     <div className="col-6 cart">
-                                        <div className="content">Add To Cart</div>
+                                        <div className="content"
+                                        onClick = {()=>{dispatch({type: "ADD", id: Products.id})}}
+                                        >
+                                            Add To Cart
+                                        </div>
                                     </div>
                                     <div className="col-6 link">
                                         <div className="content">

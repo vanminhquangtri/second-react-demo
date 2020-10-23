@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
+import urlSlug from "url-slug";
 // start component
 const ShoppingCart = (props) => {
     const {Cart, Products} = props.Data;
@@ -155,7 +156,7 @@ const ShoppingCart = (props) => {
                                                         </div>
                                                         <div className="col-7 title">
                                                             <NavLink
-                                                                to = "/"
+                                                                to = {`/product/${urlSlug(item.name)}`}
                                                                 exact = {true}
                                                             >
                                                                 {item.name}

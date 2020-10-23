@@ -33,6 +33,7 @@ const ProductDetail = (props) => {
         }
     }
     useEffect(() => {
+        // set slide image for background of each nav button
         const navBtn = document.querySelectorAll(".tns-nav button");
         const currentProduct = Products.find((product) => {
             return urlSlug(product.name) === nameSlug;
@@ -44,6 +45,39 @@ const ProductDetail = (props) => {
                 }
             }
         })
+        // zoom image on hover
+        const imgContainers = document.querySelectorAll(".img-container");
+        for (let i = 0; i <imgContainers.length; i++){
+            imgContainers[i].addEventListener("mousemove", (ev) => {
+            const imgContainerPos = imgContainers[i].getBoundingClientRect();
+            const imgContainerX = imgContainerPos.x;
+            const imgContainerY = imgContainerPos.y;
+            const imgContainerW = imgContainerPos.width;
+            const imgContainerH = imgContainerPos.height;
+            const speed = 0.25;
+            var startXM = imgContainerX;
+            var startYM = imgContainerY;
+                imgContainers[i].style.backgroundSize = "200% 200%";
+                const xM = ev.pageX;
+                const yM = ev.pageY;
+                const xChange = xM - startXM;
+                const yChange = yM - startYM;
+                var HozPos = xChange * speed;
+                var VerPos = yChange * speed;
+                if (HozPos >= 100){
+                    HozPos = 100
+                }
+                if (VerPos >= 100){
+                    VerPos = 100
+                }
+                imgContainers[i].style.backgroundPosition = `${HozPos}% ${VerPos}%`;
+                imgContainers[i].addEventListener("mouseleave", () => {
+                    imgContainers[i].style.backgroundSize = "cover";
+                    imgContainers[i].style.backgroundPosition = "center";
+                })
+            })
+        }
+        
     })
     return (
         <section className="product-detail">
@@ -63,11 +97,6 @@ const ProductDetail = (props) => {
                                             {
                                                 Product.slide__image.map((image, index) => {
                                                     return (
-                                                        // <img
-                                                        //     src = {image}
-                                                        //     alt = {Product.name}
-                                                        //     key = {index}
-                                                        // />
                                                         <div className="img-container"
                                                             css = {css`
                                                                 background-image: url(${image})

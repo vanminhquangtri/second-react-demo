@@ -1305,16 +1305,17 @@ $white-color: rgb(223, 223, 223);
             .col-6.image {
                 .tns-outer {
                     display: flex;
-                    flex-direction: column-reverse;
+                    flex-direction: row;
                     .tns-nav {
                         display: flex;
-                        justify-content: center;
+                        flex-direction: column;
                         z-index: 1;
-                        margin-top: 5px;
+                        margin-right: 10px;
                         button {
-                            margin: 0 10px;
-                            height: 50px;
-                            width: 45px;
+                            margin-bottom: 10px;
+                            // height: 50px;
+                            width: 80px;
+                            height: 100px;
                             border: none;
                             outline: none;
                             background: transparent;
@@ -1329,7 +1330,7 @@ $white-color: rgb(223, 223, 223);
                         .tns-inner {
                             .tns-slider {
                                 img {
-                                    height: auto;
+                                    height: 650px;
                                 }
                             }
                         }
@@ -1455,6 +1456,58 @@ $white-color: rgb(223, 223, 223);
                                     line-height: 40px;
                                     a {
                                         color: white;
+                                    }
+                                }
+                            }
+                        }
+                        .refund {
+                            margin-top: 10px;
+                        }
+                        .payment {
+                            margin-top: 10px;
+                            align-items: center;
+                            .col-9 {
+                                .payment-card {
+                                    display: flex;
+                                    flex-direction: row;
+                                    .icon {
+                                        width: 50px;
+                                        height: 45px;
+                                        margin-right: 5px;
+                                        transition: .3s;
+                                        color: $hover-color-red;
+                                        &:hover {
+                                            color: black;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .share {
+                            margin-top: 10px;
+                            align-items: center;
+                            .col-9 {
+                                .link {
+                                    display: flex;
+                                    flex-direction: row;
+                                    .link-container {
+                                        width: 40px;
+                                        height: 40px;
+                                        margin-right: 10px;
+                                        border: 1px solid $hover-color-red;
+                                        border-radius: 50%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        line-height: 40px;
+                                        .icon {
+                                            transition: .3s;
+                                            color: $hover-color-red;
+                                            margin: auto;
+                                            &:hover {
+                                                color: black;
+                                            }
+                                        }
                                     }
                                 }
                             }

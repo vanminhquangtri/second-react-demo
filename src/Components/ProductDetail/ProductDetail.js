@@ -5,6 +5,12 @@ import TinySlider from "tiny-slider-react";
 import {connect} from "react-redux";
 import {jsx, css} from "@emotion/core";
 import urlSlug from "url-slug";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faShareSquare } from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons'
+library.add(fab)
+
 const settings = {
     nav: true,
     controls: false,
@@ -137,6 +143,56 @@ const ProductDetail = (props) => {
                                                             >
                                                                 View Details
                                                             </NavLink>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="row refund">
+                                                    <div className="col-3">Refund policy</div>
+                                                    <div className="col-9">
+                                                        Our policy lasts 30 days. If 30 days have gone by since your purchase, unfortunately we can’t offer you a refund or exchange.
+                                                    </div>
+                                                </div>
+                                                <div className="row payment">
+                                                    <div className="col-3">Payment accepted</div>
+                                                    <div className="col-9">
+                                                        <div className="payment-card">
+                                                            <FontAwesomeIcon icon={['fab', 'cc-visa']} className="icon" title="Visa Card"/>
+                                                            <FontAwesomeIcon icon={['fab', 'cc-mastercard']} className="icon" title="Master Card"/>
+                                                            <FontAwesomeIcon icon={['fab', 'cc-amex']} className="icon" title="American Express"/>
+                                                            <FontAwesomeIcon icon={['fab', 'cc-discover']} className="icon" title="Discover Card"/>
+                                                            <FontAwesomeIcon icon={['fab', 'cc-paypal']} className="icon" title="Paypal"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="row share">
+                                                    <div className="col-3">Share</div>
+                                                    <div className="col-9">
+                                                        <div className="link">
+                                                            <div className="link-container" title="Facebook">
+                                                                <NavLink to = "/" exact={true}>
+                                                                    <FontAwesomeIcon icon={['fab', 'facebook-f']} className="icon"/>
+                                                                </NavLink>
+                                                            </div>
+                                                            <div className="link-container" title="Twitter">
+                                                                <NavLink to = "/" exact={true}>
+                                                                    <FontAwesomeIcon icon={['fab', 'twitter']} className="icon"/>
+                                                                </NavLink>
+                                                            </div>
+                                                            <div className="link-container" title="Google Plus">
+                                                                <NavLink to = "/" exact={true}>
+                                                                    <FontAwesomeIcon icon={['fab', 'google-plus-g']} className="icon"/>
+                                                                </NavLink>
+                                                            </div>
+                                                            <div className="link-container" title="Instagram">
+                                                                <NavLink to = "/" exact={true}>
+                                                                    <FontAwesomeIcon icon={['fab', 'instagram']} className="icon"/>
+                                                                </NavLink>
+                                                            </div>
+                                                            <div className="link-container" title="Linkedin">
+                                                                <NavLink to = "/" exact={true}>
+                                                                    <FontAwesomeIcon icon={['fab', 'linkedin-in']} className="icon"/>
+                                                                </NavLink>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

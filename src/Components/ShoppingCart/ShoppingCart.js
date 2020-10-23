@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
-
+// start component
 const ShoppingCart = (props) => {
     const {Cart, Products} = props.Data;
     const {Currency} = props.Data;
@@ -22,6 +22,41 @@ const ShoppingCart = (props) => {
                 return "$ " + item.price.toFixed(2)
         }
     }
+    // format thounds seperator
+    function formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
+    // format totalAmount of shopping Cart (currency and decimal)
+    const showTotalAmount = (currency, amount) => {
+        switch (currency) {
+            case "USD":
+                return amount.toFixed(2)
+                
+            case "EUR":
+                return (amount * 0.84).toFixed(2)
+
+            case "GBP":
+                return (amount * 0.76).toFixed(2)
+
+            default:
+                return amount.toFixed(2)
+        }
+    }
+    // return currency sign
+    const showCurrencySign = (currency) => {
+        switch (currency) {
+            case "USD":
+                return "$ "
+            case "EUR":
+                return "€ "
+
+            case "GBP":
+                return "£ "
+
+            default:
+                return "$ "
+        }
+    }
     // count quantity of a product in Shopping Cart
     const countProduct = (id) => {
         let count = 0;
@@ -32,7 +67,7 @@ const ShoppingCart = (props) => {
         })
         return count;
     }
-    /*Remove duplicate product in Cart arr based on ID*/
+    /* Remove duplicate product in Cart arr based on ID*/
     const currentCart = [...Cart];
     // get ID list of current Cart
     let currentIdList = [];
@@ -55,7 +90,16 @@ const ShoppingCart = (props) => {
             }
         })
     })
-    /*End remove duplicate product in Cart arr based on ID*/
+    /* End remove duplicate product in Cart arr based on ID*/
+    // Calculate total amount of Shopping Cart (re-use currentIdList)*/
+    var totalAmount = 0;
+    currentIdList.forEach((id) => {
+        Products.forEach((product)=>{
+            if (product.id === id){
+                totalAmount += product.price // (default is USD)
+            }
+        })
+    })
     return (
         <div className="cart">
             <div className="cart-amount">
@@ -133,7 +177,7 @@ const ShoppingCart = (props) => {
                                     })
                                 }
                                 <div className="total">
-                                    <span>Total: <strong>$1,015.00</strong></span>
+                            <span>Total: {showCurrencySign(Currency.currency)}{formatNumber(showTotalAmount(Currency.currency, totalAmount))}</span>
                                 </div>
                             </div>
                         )

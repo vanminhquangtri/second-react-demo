@@ -1,4 +1,3 @@
-// direct child of BestSell Component
 /**@jsx jsx */
 import {useState} from 'react';
 import {NavLink} from "react-router-dom";

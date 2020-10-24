@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import ProductModal from './ProductModal';
+import ProductModal from '../../../ProductModal/ProductModal';
 
 const BestSell = (props) => {
     const {Products} = props.Data;

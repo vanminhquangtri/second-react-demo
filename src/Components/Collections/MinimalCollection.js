@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import ProductModal from '../Home/Children/BestSell/ProductModal';
+import ProductModal from '../ProductModal/ProductModal';
 
 const MinimalCollection = (props) => {
     const {Products} = props.Data;

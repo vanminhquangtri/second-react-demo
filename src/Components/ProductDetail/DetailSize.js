@@ -3,9 +3,11 @@ import React from 'react';
 
 const DetailSize = (props) => {
     return (
-        <div className="col des">
+        <div className="col size">
             <div className="content">
-                Size
+                <img src = {require("../../Assets/images/section-product-detail/size-chart_2_1024x1024.webp")}
+                    alt="size"
+                />
             </div>
         </div>
     );

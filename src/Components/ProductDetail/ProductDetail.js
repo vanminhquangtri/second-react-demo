@@ -281,7 +281,7 @@ const ProductDetail = (props) => {
                                         </div>
                                     </div>
                                 </div>
-                                <TermDetail></TermDetail>
+                                <TermDetail Product = {Product}></TermDetail>
                             </div>
                         )
                     }

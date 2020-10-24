@@ -1559,9 +1559,23 @@ $white-color: rgb(223, 223, 223);
                     margin: 0;
                     .col {
                         display: flex;
-                        background: red;
-                        padding: 0;
-                        height: 30px;
+                        border: 1px solid $hover-color-gray;
+                        .content {
+                            padding: 10px 0;
+                        }
+                    }
+                    .col.des {
+                        .title {
+                            font-weight: bold;
+                        }
+                    }
+                    .col.size {
+                        .content {
+                            width: 100%;
+                            img {
+                                width: 100%;
+                            }
+                        }
                     }
                 }
             }
@@ -1569,3 +1583,4 @@ $white-color: rgb(223, 223, 223);
     }
 }
 /*----- end product detail -----*/
+

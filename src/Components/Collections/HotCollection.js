@@ -21,6 +21,7 @@ const HotCollection = (props) => {
                                         key={index}
                                         Products = {product}
                                         className="best-sell-modal hot-collection-modal"
+                                        navSlector = {"hot-collection"}
                                     >
                                     </ProductModal>
                                 )

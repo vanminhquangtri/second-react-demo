@@ -21,6 +21,7 @@ const ModernCollection = (props) => {
                                         key={index}
                                         Products = {product}
                                         className="best-sell-modal modern-collection-modal"
+                                        navSlector = {"modern-collection"}
                                     >
                                     </ProductModal>
                                 )

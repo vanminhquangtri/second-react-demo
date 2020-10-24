@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 import urlSlug from "url-slug";
 
 const ProductModal = (props) => {
-    const {Products, dispatch} = props;
+    const {Products, dispatch, navSlector} = props;
     const {Currency} = props.Data;
     const showPrice = (currency) => {
         switch (currency) {
@@ -81,9 +81,12 @@ const ProductModal = (props) => {
                                             <Modal.Title>{Products.name}</Modal.Title>
                                         </Modal.Header>
                                         <Modal.Body>
-                                            <ModalDetail
-                                                Products = {Products}
-                                            ></ModalDetail>
+                                            <div className = {navSlector}>
+                                                <ModalDetail
+                                                    Products = {Products}
+                                                    navSlector = {`${navSlector}`}
+                                                ></ModalDetail>
+                                            </div>
                                         </Modal.Body>
                                     </Modal>
                                 </div>

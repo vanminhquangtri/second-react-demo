@@ -69,7 +69,8 @@ const ModalDetail = (props) => {
         }
     }
     useEffect(() => {
-        NavImage(".tns-nav button", Products);
+        // use slide images for nav buttons
+        NavImage(`.${navSlector} .tns-nav button`, Products);
     })
     return (
         <div className="modal-detail">

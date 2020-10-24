@@ -21,6 +21,7 @@ const LatestCollection = (props) => {
                                         key={index}
                                         Products = {product}
                                         className="best-sell-modal latest-collection-modal"
+                                        navSlector = {"latest-collection"}
                                     >
                                     </ProductModal>
                                 )

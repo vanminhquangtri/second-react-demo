@@ -21,6 +21,7 @@ const MinimalCollection = (props) => {
                                         key={index}
                                         Products = {product}
                                         className="best-sell-modal minimal-collection-modal"
+                                        navSlector = {"minimal-collection"}
                                     >
                                     </ProductModal>
                                 )

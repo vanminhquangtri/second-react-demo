@@ -1,13 +1,13 @@
 /**@jsx jsx */
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faShoppingCart, faSearchPlus} from "@fortawesome/free-solid-svg-icons";
 import {jsx, css} from '@emotion/core';
 import {Modal, Button} from "react-bootstrap";
-import AlsoBoughtModalDetail from './AlsoBoughtModalDetail';
 import {connect} from "react-redux";
 import urlSlug from "url-slug";
+import ModalDetail from '../../ProductModal/ModalDetail';
 
 const ProductModal = (props) => {
     const {Products, dispatch} = props;
@@ -82,9 +82,10 @@ const ProductModal = (props) => {
                                         </Modal.Header>
                                         <Modal.Body>
                                             <div className="also-bought">
-                                                <AlsoBoughtModalDetail
+                                                <ModalDetail
                                                     Products = {Products}
-                                                ></AlsoBoughtModalDetail>
+                                                    navSlector = {"also-bought"}
+                                                ></ModalDetail>
                                             </div>
                                         </Modal.Body>
                                     </Modal>

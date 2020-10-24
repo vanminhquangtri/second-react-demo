@@ -52,8 +52,6 @@ const ProductDetail = (props) => {
             const imgContainerPos = imgContainers[i].getBoundingClientRect();
             const imgContainerX = imgContainerPos.x;
             const imgContainerY = imgContainerPos.y;
-            const imgContainerW = imgContainerPos.width;
-            const imgContainerH = imgContainerPos.height;
             const speed = 0.25;
             var startXM = imgContainerX;
             var startYM = imgContainerY;
@@ -77,7 +75,6 @@ const ProductDetail = (props) => {
                 })
             })
         }
-        
     })
     return (
         <section className="product-detail">

@@ -116,7 +116,7 @@ const ModalDetail = (props) => {
                                 <div className="row cart-link">
                                     <div className="col-6 cart">
                                         <div className="content"
-                                        onClick = {()=>{dispatch({type: "ADD", id: Products.id})}}
+                                        onClick = {()=>{dispatch({type: "ADD", id: Products.id, amount: 1})}}
                                         >
                                             Add To Cart
                                         </div>

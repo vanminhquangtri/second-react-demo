@@ -1017,16 +1017,17 @@ const Cart_reducer = (init = Cart, action) => {
     const product = Product.find((product, index) => {
         return product.id === action.id;
     })
+    const currentCart = [...init];
     switch (action.type) {
         case "ADD":
-            return [
-                ...init,
-                product
-            ]
-        case "REMOVE":
-            const currentCart = [...init];
-            currentCart.splice(currentCart.indexOf(product), 1)
+            for (let i = 0; i < action.amount; i++){
+                currentCart.push(product)
+            }
             return currentCart;
+        // case "REMOVE":
+        //     const currentCart = [...init];
+        //     currentCart.splice(currentCart.indexOf(product), 1)
+        //     return currentCart;
         default:
             break;
     }

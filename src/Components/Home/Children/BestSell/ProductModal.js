@@ -60,7 +60,7 @@ const ProductModal = (props) => {
                             <div 
                                 className="col-6 add-to-cart" 
                                 title="add to shopping cart"
-                                onClick = {()=>{dispatch({type: "ADD", id: Products.id})}}
+                                onClick = {()=>{dispatch({type: "ADD", id: Products.id, amount: 1})}}
                             >
                                 <div className="icon-container">
                                     <FontAwesomeIcon 

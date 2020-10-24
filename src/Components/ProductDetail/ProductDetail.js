@@ -21,6 +21,7 @@ const ProductDetail = (props) => {
     });
     const {added_quantity} = state;
     const {Products, Currency} = props.Data;
+    const {dispatch} = props;
     const {nameSlug} = props.match.params;
     // format thounds seperator
     function formatNumber(num) {
@@ -174,7 +175,9 @@ const ProductDetail = (props) => {
                                                 </div>
                                                 <div className="row cart-link">
                                                     <div className="col-6 cart">
-                                                        <div className="content">Add To Cart</div>
+                                                        <div className="content"
+                                                            onClick = {()=>{dispatch({type: "ADD", id: Product.id, quantity: added_quantity})}}
+                                                        >Add To Cart</div>
                                                     </div>
                                                     <div className="col-6 link">
                                                         <div className="content">

@@ -85,7 +85,7 @@ const ProductDetail = (props) => {
                             <div className="container current-product" key = {index}>
                                 <div className="row title">
                                     <div className="col">
-                                        <h3 className="product-title">{Product.name}</h3>
+                                        <h5 className="product-title">{Product.name}</h5>
                                     </div>
                                 </div>
                                 <div className="row with-slide">
@@ -172,7 +172,7 @@ const ProductDetail = (props) => {
                                                                 to="/"
                                                                 exact = {true}
                                                             >
-                                                                View Details
+                                                                Buy Now
                                                             </NavLink>
                                                         </div>
                                                     </div>

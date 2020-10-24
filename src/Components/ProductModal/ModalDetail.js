@@ -18,10 +18,11 @@ const ModalDetail = (props) => {
     const {Products, dispatch} = props;
     const {Currency} = props.Data;
     // fortmat price (currency and operator and decimal)
-    const showPrice = (currency, item) => {
+    const showPrice = (currency, amount) => {
         switch (currency) {
             case "USD":
                 return "$ " + Products.price.toFixed(2)
+
             case "EUR":
                 return "€ " + (Products.price * 0.84).toFixed(2)
 
@@ -30,6 +31,42 @@ const ModalDetail = (props) => {
 
             default:
                 return "$ " + Products.price.toFixed(2)
+        }
+    }
+    // format thounds seperator
+    function formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
+    // format totalAmount of each Modal (currency and decimal)
+    const showTotalAmount = (currency, amount) => {
+        switch (currency) {
+            case "USD":
+                return amount.toFixed(2)
+                
+            case "EUR":
+                return (amount * 0.84).toFixed(2)
+
+            case "GBP":
+                return (amount * 0.76).toFixed(2)
+
+            default:
+                return amount.toFixed(2)
+        }
+    }
+    // return currency sign
+    const showCurrencySign = (currency) => {
+        switch (currency) {
+            case "USD":
+                return "$ "
+
+            case "EUR":
+                return "€ "
+
+            case "GBP":
+                return "£ "
+
+            default:
+                return "$ "
         }
     }
     // change added_amount when fill in the input
@@ -61,7 +98,7 @@ const ModalDetail = (props) => {
         }
     }
     useEffect(() => {
-        //use slide images for nav buttons
+        // use slide images for nav buttons
         const navBtn = document.querySelectorAll(".tns-nav button");
         Products.slide__image.forEach((image, index) => {
             for (let i = 0; i < navBtn.length; i++){
@@ -151,7 +188,7 @@ const ModalDetail = (props) => {
                                 <div className="row sub-total">
                                     <div className="col-4">Total</div>
                                     <div className="col-8">
-                                        {showPrice(Currency.currency, Products.price)}
+                                        {showCurrencySign(Currency.currency)} {formatNumber(showTotalAmount(Currency.currency, Products.price * added_amount))} 
                                     </div>
                                 </div>
                                 <div className="row cart-link">

@@ -43,6 +43,35 @@ const ProductDetail = (props) => {
                 return "$ " + formatNumber((Product.price*quantity).toFixed(2))
         }
     }
+    // change added_quantity when fill in the input
+    const changeAddedAmount = (ev) => {
+        const target = ev.target;
+        let value = target.value;
+        if (value === "") {value = 0}
+        setState(() => {
+            return {
+                added_quantity: parseFloat(value)
+            }
+        })
+    }
+    // increase added_quantity when click plus button
+    const increaseAddedAmount = () => {
+        setState((prevState) => {
+            return {
+                added_quantity: prevState.added_quantity + 1
+            }
+        })
+    }
+    // decrease added_quantity when click substract button
+    const decreaseAddedAmount = () => {
+        if (added_quantity > 0) {
+            setState((prevState) => {
+                return {
+                    added_quantity: prevState.added_quantity - 1
+                }
+            })
+        }
+    }
     useEffect(() => {
         // set slide image for background of each nav button
         const navBtn = document.querySelectorAll(".tns-nav button");
@@ -162,9 +191,16 @@ const ProductDetail = (props) => {
                                                 <div className="row quantity">
                                                     <div className="col-3">Quantity</div>
                                                     <div className="col-9">
-                                                        <span className="button">-</span>
-                                                        <input type="number" defaultValue="1" placeholder="1" min="1"/>
-                                                        <span className="button">+</span>
+                                                    <span className="button decrease"
+                                                        onClick = {()=>decreaseAddedAmount()}
+                                                    >-</span>
+                                                    <input type="number" min="1" className="added-amount"
+                                                        value = {added_quantity}
+                                                        onChange = {(ev)=>changeAddedAmount(ev)}
+                                                    />
+                                                    <span className="button increase"
+                                                        onClick = {()=>{increaseAddedAmount()}}
+                                                    >+</span>
                                                     </div>
                                                 </div>
                                                 <div className="row sub-total">

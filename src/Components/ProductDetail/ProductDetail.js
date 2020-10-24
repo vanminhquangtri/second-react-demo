@@ -8,6 +8,7 @@ import urlSlug from "url-slug";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import TermDetail from './TermDetail';
 library.add(fab)
 
 const settings = {
@@ -280,7 +281,7 @@ const ProductDetail = (props) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="term"></div>
+                                <TermDetail></TermDetail>
                             </div>
                         )
                     }

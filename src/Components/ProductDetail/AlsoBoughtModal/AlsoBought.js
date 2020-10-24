@@ -1,6 +1,7 @@
 // direct child of component Product Detail
 import React from 'react';
-import {conect, connect} from "react-redux"
+import {connect} from "react-redux"
+import AlsoBoughtModal from './AlsoBoughtModal';
 
 const AlsoBought = (props) => {
     const {Product} = props;
@@ -12,17 +13,28 @@ const AlsoBought = (props) => {
             sameCatProducts.push(product);
         }
     })
-
     return (
-        <div className="also-bought">
-            <div className="container">
-                <div className="row titile">
+        <div className="row also-bought">
+            <div className="container-fluid">
+                <div className="row title-row">
                     <div className="col">
-                        <h4>Customers who bought this item also bought</h4>
+                        <h4 className="title">Customers who bought this item also bought</h4>
                     </div>
                 </div>
-                <div className="row other-products">
-                    {/* will render 6 of product same category */}
+                <div className="row other-products product-row">
+                    {
+                        sameCatProducts.map((product, index) => {
+                            if (index < 6) {
+                                return (
+                                    <AlsoBoughtModal 
+                                        Products = {product}
+                                        key = {index}
+                                    ></AlsoBoughtModal>
+                                )
+                            }
+                            return "";
+                        })
+                    }
                 </div>
             </div>
         </div>

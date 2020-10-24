@@ -1,11 +1,11 @@
 /**@jsx jsx */
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faShoppingCart, faSearchPlus} from "@fortawesome/free-solid-svg-icons";
 import {jsx, css} from '@emotion/core';
 import {Modal, Button} from "react-bootstrap";
-import ModalDetail from './ModalDetail';
+import AlsoBoughtModalDetail from './AlsoBoughtModalDetail';
 import {connect} from "react-redux";
 import urlSlug from "url-slug";
 
@@ -30,7 +30,7 @@ const ProductModal = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-        <div className="col-3">
+        <div className="col-2">
             <div className="content">
                 <img
                     src = {Products.main__image}
@@ -81,9 +81,11 @@ const ProductModal = (props) => {
                                             <Modal.Title>{Products.name}</Modal.Title>
                                         </Modal.Header>
                                         <Modal.Body>
-                                            <ModalDetail
-                                                Products = {Products}
-                                            ></ModalDetail>
+                                            <div className="also-bought">
+                                                <AlsoBoughtModalDetail
+                                                    Products = {Products}
+                                                ></AlsoBoughtModalDetail>
+                                            </div>
                                         </Modal.Body>
                                     </Modal>
                                 </div>

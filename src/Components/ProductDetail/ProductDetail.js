@@ -97,7 +97,7 @@ const ProductDetail = (props) => {
             const speed = 0.25;
             var startXM = imgContainerX;
             var startYM = imgContainerY;
-                imgContainers[i].style.backgroundSize = "200% 200%";
+                imgContainers[i].style.backgroundSize = "200% 230%";
                 const xM = ev.pageX;
                 const yM = ev.pageY;
                 const xChange = xM - startXM;

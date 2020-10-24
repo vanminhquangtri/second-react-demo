@@ -1,3 +1,4 @@
+/* dont re-use the ModalDetail Component to avoid confuse nav button of slide */
 /**@jsx jsx*/
 import {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
@@ -5,19 +6,19 @@ import TinySlider from "tiny-slider-react";
 import {connect} from "react-redux";
 import {jsx, css} from "@emotion/core";
 import urlSlug from "url-slug";
-import NavImage from '../GeneralModules/NavImage';
+import NavImage from '../../GeneralModules/NavImage';
 
 const settings = {
     nav: true,
     controls: false,
     items: 1
 }
-const ModalDetail = (props) => {
+const AlsoBoughtModalDetail = (props) => {
     const [state, setState] = useState({
         added_quantity: 1
     });
     const {added_quantity} = state;
-    const {Products, dispatch, navSlector} = props;
+    const {Products, dispatch} = props;
     const {Currency} = props.Data;
     // format thounds seperator
     function formatNumber(num) {
@@ -69,7 +70,8 @@ const ModalDetail = (props) => {
         }
     }
     useEffect(() => {
-        NavImage(".tns-nav button", Products);
+        // use slide images for nav buttons (this will change one page has more than 1 slide)
+        NavImage(".also-bought .tns-nav button", Products)
     })
     return (
         <div className="modal-detail">
@@ -186,4 +188,4 @@ const mapStateToProps = (state) => {
         Data: state
     }
 }
-export default connect(mapStateToProps)(ModalDetail)
+export default connect(mapStateToProps)(AlsoBoughtModalDetail)

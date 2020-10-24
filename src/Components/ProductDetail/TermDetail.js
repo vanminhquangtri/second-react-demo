@@ -25,8 +25,10 @@ const TermDetail = (props) => {
             titleButtons[i].addEventListener("click", () => {
                 titleButtons.forEach((btn) => {
                     btn.style.background = null;
+                    btn.style.color = "black";
                 })
-                titleButtons[i].style.background = "rgb(207, 207, 207)";
+                titleButtons[i].style.background = "rgb(211, 9, 9)";
+                titleButtons[i].style.color = "white";
             })
         }
     })

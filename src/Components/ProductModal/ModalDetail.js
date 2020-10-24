@@ -1,5 +1,5 @@
 /**@jsx jsx*/
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
 import TinySlider from "tiny-slider-react";
 import {connect} from "react-redux";
@@ -11,8 +11,13 @@ const settings = {
     items: 1
 }
 const ModalDetail = (props) => {
+    const [state, setState] = useState({
+        added_amount: 1
+    });
+    const {added_amount} = state;
     const {Products, dispatch} = props;
     const {Currency} = props.Data;
+    // fortmat price (currency and operator and decimal)
     const showPrice = (currency, item) => {
         switch (currency) {
             case "USD":
@@ -27,7 +32,36 @@ const ModalDetail = (props) => {
                 return "$ " + Products.price.toFixed(2)
         }
     }
+    // change added_amount when fill in the input
+    const changeAddedAmount = (ev) => {
+        const target = ev.target;
+        const value = parseFloat(target.value);
+        setState(() => {
+            return {
+                added_amount: value
+            }
+        })
+    }
+    // increase added_amount when click plus button
+    const increaseAddedAmount = () => {
+        setState((prevState) => {
+            return {
+                added_amount: prevState.added_amount + 1
+            }
+        })
+    }
+    // decrease added_amount when click substract button
+    const decreaseAddedAmount = () => {
+        if (added_amount > 0) {
+            setState((prevState) => {
+                return {
+                    added_amount: prevState.added_amount - 1
+                }
+            })
+        }
+    }
     useEffect(() => {
+        //use slide images for nav buttons
         const navBtn = document.querySelectorAll(".tns-nav button");
         Products.slide__image.forEach((image, index) => {
             for (let i = 0; i < navBtn.length; i++){
@@ -102,9 +136,16 @@ const ModalDetail = (props) => {
                                 <div className="row quantity">
                                     <div className="col-4">Quantity</div>
                                     <div className="col-8">
-                                        <span className="button">-</span>
-                                        <input type="number" defaultValue="1" placeholder="1" min="1"/>
-                                        <span className="button">+</span>
+                                        <span className="button decrease"
+                                            onClick = {()=>decreaseAddedAmount()}
+                                        >-</span>
+                                        <input type="number" min="1" className="added-amount"
+                                            value = {added_amount}
+                                            onChange = {(ev)=>changeAddedAmount(ev)}
+                                        />
+                                        <span className="button increase"
+                                            onClick = {()=>{increaseAddedAmount()}}
+                                        >+</span>
                                     </div>
                                 </div>
                                 <div className="row sub-total">
@@ -116,7 +157,7 @@ const ModalDetail = (props) => {
                                 <div className="row cart-link">
                                     <div className="col-6 cart">
                                         <div className="content"
-                                        onClick = {()=>{dispatch({type: "ADD", id: Products.id, amount: 1})}}
+                                        onClick = {()=>{dispatch({type: "ADD", id: Products.id, amount: added_amount})}}
                                         >
                                             Add To Cart
                                         </div>

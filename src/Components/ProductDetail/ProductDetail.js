@@ -1,5 +1,5 @@
 /**@jsx jsx*/
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
 import TinySlider from "tiny-slider-react";
 import {connect} from "react-redux";
@@ -16,20 +16,30 @@ const settings = {
     items: 1
 }
 const ProductDetail = (props) => {
+    const [state, setState] = useState({
+        added_quantity: 1
+    });
+    const {added_quantity} = state;
     const {Products, Currency} = props.Data;
     const {nameSlug} = props.match.params;
-    const showPrice = (currency, item) => {
+    // format thounds seperator
+    function formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
+    // fortmat money (currency and operator and decimal)
+    const showMoney = (currency, Product, quantity) => {
         switch (currency) {
             case "USD":
-                return "$ " + item.price.toFixed(2)
+                return "$ " + formatNumber((Product.price*quantity).toFixed(2))
+
             case "EUR":
-                return "€ " + (item.price * 0.84).toFixed(2)
+                return "€ " + formatNumber((Product.price*quantity * 0.84).toFixed(2))
 
             case "GBP":
-                return "£ " + (item.price * 0.76).toFixed(2)
+                return "£ " + formatNumber((Product.price*quantity * 0.76).toFixed(2))
 
             default:
-                return "$ " + item.price.toFixed(2)
+                return "$ " + formatNumber((Product.price*quantity).toFixed(2))
         }
     }
     useEffect(() => {
@@ -120,7 +130,7 @@ const ProductDetail = (props) => {
                                             <div className="info">
                                                 <div className="row price">
                                                     <div className="col-3">Price</div>
-                                                    <div className="col-9"><strong>{showPrice(Currency.currency, Product)}</strong></div>
+                                                    <div className="col-9"><strong>{showMoney(Currency.currency, Product, 1)}</strong></div>
                                                 </div>
                                                 <div className="row availability">
                                                     <div className="col-3">Availability</div>
@@ -159,7 +169,7 @@ const ProductDetail = (props) => {
                                                 <div className="row sub-total">
                                                     <div className="col-3">Total</div>
                                                     <div className="col-9">
-                                                        $410.00
+                                                        {showMoney(Currency.currency, Product, added_quantity)}
                                                     </div>
                                                 </div>
                                                 <div className="row cart-link">

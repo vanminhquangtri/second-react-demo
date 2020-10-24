@@ -1014,13 +1014,13 @@ const Currency_reducer = (init = currency, action) => {
 /*shopping cart*/
 const Cart = [];
 const Cart_reducer = (init = Cart, action) => {
-    const product = Product.find((product, index) => {
+    const product = Product.find((product) => {
         return product.id === action.id;
     })
     const currentCart = [...init];
     switch (action.type) {
         case "ADD":
-            for (let i = 0; i < action.amount; i++){
+            for (let i = 0; i < action.quantity; i++){
                 currentCart.push(product)
             }
             return currentCart;

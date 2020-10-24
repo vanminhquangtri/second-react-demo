@@ -8,54 +8,24 @@ import urlSlug from "url-slug";
 const ShoppingCart = (props) => {
     const {Cart, Products} = props.Data;
     const {Currency} = props.Data;
-    // format price (currency and decimal)
-    const showPrice = (currency, item) => {
-        switch (currency) {
-            case "USD":
-                return "$ " + item.price.toFixed(2)
-            case "EUR":
-                return "€ " + (item.price * 0.84).toFixed(2)
-
-            case "GBP":
-                return "£ " + (item.price * 0.76).toFixed(2)
-
-            default:
-                return "$ " + item.price.toFixed(2)
-        }
-    }
     // format thounds seperator
     function formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     }
-    // format totalAmount of shopping Cart (currency and decimal)
-    const showTotalAmount = (currency, amount) => {
+    // fortmat money (currency and operator and decimal)
+    const showMoney = (currency, quantity, item) => {
         switch (currency) {
             case "USD":
-                return amount.toFixed(2)
-                
+                return "$ " + formatNumber((item.price*quantity).toFixed(2))
+
             case "EUR":
-                return (amount * 0.84).toFixed(2)
+                return "€ " + formatNumber((item.price*quantity * 0.84).toFixed(2))
 
             case "GBP":
-                return (amount * 0.76).toFixed(2)
+                return "£ " + formatNumber((item.price*quantity * 0.76).toFixed(2))
 
             default:
-                return amount.toFixed(2)
-        }
-    }
-    // return currency sign
-    const showCurrencySign = (currency) => {
-        switch (currency) {
-            case "USD":
-                return "$ "
-            case "EUR":
-                return "€ "
-
-            case "GBP":
-                return "£ "
-
-            default:
-                return "$ "
+                return "$ " + formatNumber((item.price*quantity).toFixed(2))
         }
     }
     // count quantity of a product in Shopping Cart
@@ -101,6 +71,22 @@ const ShoppingCart = (props) => {
             }
         })
     })
+    // fortmat money (currency and operator and decimal)
+    const showMoneyTotal = (currency, amount) => {
+        switch (currency) {
+            case "USD":
+                return "$ " + formatNumber((amount).toFixed(2))
+
+            case "EUR":
+                return "€ " + formatNumber((amount * 0.84).toFixed(2))
+
+            case "GBP":
+                return "£ " + formatNumber((amount * 0.76).toFixed(2))
+
+            default:
+                return "$ " + formatNumber((amount).toFixed(2))
+        }
+    }
     return (
         <div className="cart">
             <div className="cart-amount">
@@ -167,7 +153,7 @@ const ShoppingCart = (props) => {
                                                                 <FontAwesomeIcon icon = {faTrashAlt} className="icon"/>
                                                                 <div className="money">
                                                                     <span className="unit">{countProduct(item.id)} x</span>
-                                                                    <span className="price">{showPrice(Currency.currency, item)}</span>
+                                                                    <span className="price">{showMoney(Currency.currency, 1, item)}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -178,7 +164,7 @@ const ShoppingCart = (props) => {
                                     })
                                 }
                                 <div className="total">
-                            <span>Total: {showCurrencySign(Currency.currency)}{formatNumber(showTotalAmount(Currency.currency, totalAmount))}</span>
+                                    <span>Total: { showMoneyTotal(Currency.currency, totalAmount) }</span>
                                 </div>
                             </div>
                         )

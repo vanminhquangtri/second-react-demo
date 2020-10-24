@@ -12,87 +12,56 @@ const settings = {
 }
 const ModalDetail = (props) => {
     const [state, setState] = useState({
-        added_amount: 1
+        added_quantity: 1
     });
-    const {added_amount} = state;
+    const {added_quantity} = state;
     const {Products, dispatch} = props;
     const {Currency} = props.Data;
-    // fortmat price (currency and operator and decimal)
-    const showPrice = (currency, amount) => {
-        switch (currency) {
-            case "USD":
-                return "$ " + Products.price.toFixed(2)
-
-            case "EUR":
-                return "€ " + (Products.price * 0.84).toFixed(2)
-
-            case "GBP":
-                return "£ " + (Products.price * 0.76).toFixed(2)
-
-            default:
-                return "$ " + Products.price.toFixed(2)
-        }
-    }
     // format thounds seperator
     function formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     }
-    // format totalAmount of each Modal (currency and decimal)
-    const showTotalAmount = (currency, amount) => {
+    // fortmat money (currency and operator and decimal)
+    const showMoney = (currency, quantity) => {
         switch (currency) {
             case "USD":
-                return amount.toFixed(2)
-                
-            case "EUR":
-                return (amount * 0.84).toFixed(2)
-
-            case "GBP":
-                return (amount * 0.76).toFixed(2)
-
-            default:
-                return amount.toFixed(2)
-        }
-    }
-    // return currency sign
-    const showCurrencySign = (currency) => {
-        switch (currency) {
-            case "USD":
-                return "$ "
+                return "$ " + formatNumber((Products.price*quantity).toFixed(2))
 
             case "EUR":
-                return "€ "
+                return "€ " + formatNumber((Products.price*quantity * 0.84).toFixed(2))
 
             case "GBP":
-                return "£ "
+                return "£ " + formatNumber((Products.price*quantity * 0.76).toFixed(2))
 
             default:
-                return "$ "
+                return "$ " + formatNumber((Products.price*quantity).toFixed(2))
         }
     }
-    // change added_amount when fill in the input
+    // change added_quantity when fill in the input
     const changeAddedAmount = (ev) => {
         const target = ev.target;
-        const value = parseFloat(target.value);
+        let value = target.value;
+        if (value === "") {value = 0}
         setState(() => {
             return {
-                added_amount: value
+                added_quantity: parseFloat(value)
             }
         })
     }
-    // increase added_amount when click plus button
+    // increase added_quantity when click plus button
     const increaseAddedAmount = () => {
         setState((prevState) => {
             return {
-                added_amount: prevState.added_amount + 1
+                added_quantity: prevState.added_quantity + 1
             }
         })
     }
-    // decrease added_amount when click substract button
+    // decrease added_quantity when click substract button
     const decreaseAddedAmount = () => {
-        if (added_amount > 0) {
+        if (added_quantity > 0) {
             setState((prevState) => {
                 return {
-                    added_amount: prevState.added_amount - 1
+                    added_quantity: prevState.added_quantity - 1
                 }
             })
         }
@@ -142,7 +111,7 @@ const ModalDetail = (props) => {
                             <div className="info">
                                 <div className="row price">
                                     <div className="col-4">Price</div>
-                                    <div className="col-8"><strong>{showPrice(Currency.currency)}</strong></div>
+                                    <div className="col-8"><strong>{showMoney(Currency.currency, 1)}</strong></div>
                                 </div>
                                 <div className="row availability">
                                     <div className="col-4">Availability</div>
@@ -177,7 +146,7 @@ const ModalDetail = (props) => {
                                             onClick = {()=>decreaseAddedAmount()}
                                         >-</span>
                                         <input type="number" min="1" className="added-amount"
-                                            value = {added_amount}
+                                            value = {added_quantity}
                                             onChange = {(ev)=>changeAddedAmount(ev)}
                                         />
                                         <span className="button increase"
@@ -188,13 +157,13 @@ const ModalDetail = (props) => {
                                 <div className="row sub-total">
                                     <div className="col-4">Total</div>
                                     <div className="col-8">
-                                        {showCurrencySign(Currency.currency)} {formatNumber(showTotalAmount(Currency.currency, Products.price * added_amount))} 
+                                        {showMoney(Currency.currency, added_quantity)} 
                                     </div>
                                 </div>
                                 <div className="row cart-link">
                                     <div className="col-6 cart">
                                         <div className="content"
-                                        onClick = {()=>{dispatch({type: "ADD", id: Products.id, amount: added_amount})}}
+                                        onClick = {()=>{dispatch({type: "ADD", id: Products.id, quantity: added_quantity})}}
                                         >
                                             Add To Cart
                                         </div>

@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom";
 import TinySlider from "tiny-slider-react";
 import {connect} from "react-redux";
 import {jsx, css} from "@emotion/core";
+import urlSlug from "url-slug";
 
 const settings = {
     nav: true,
@@ -171,7 +172,7 @@ const ModalDetail = (props) => {
                                     <div className="col-6 link">
                                         <div className="content">
                                             <NavLink
-                                                to="/"
+                                                to = {`/product/${urlSlug(Products.name)}`}
                                                 exact = {true}
                                             >
                                                 View Details

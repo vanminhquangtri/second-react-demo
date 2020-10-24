@@ -1232,7 +1232,7 @@ $white-color: rgb(223, 223, 223);
                                         margin-top: 20px;
                                         .cart {
                                             .content {
-                                                background: red;
+                                                background: $hover-color-red;
                                                 border-radius: 5px;
                                                 height: 40px;
                                                 line-height: 40px;
@@ -1450,7 +1450,7 @@ $white-color: rgb(223, 223, 223);
                             margin-top: 20px;
                             .cart {
                                 .content {
-                                    background: red;
+                                    background: $hover-color-red;
                                     border-radius: 5px;
                                     height: 40px;
                                     line-height: 40px;

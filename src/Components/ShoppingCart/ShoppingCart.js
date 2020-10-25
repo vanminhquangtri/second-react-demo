@@ -111,7 +111,7 @@ const ShoppingCart = (props) => {
                                     <div className="col">
                                         <div className="content view">
                                             <NavLink
-                                                to = "/"
+                                                to = "/shopping-cart"
                                                 exact = {true}
                                             >
                                                 View Cart

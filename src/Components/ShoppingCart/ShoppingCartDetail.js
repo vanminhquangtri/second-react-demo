@@ -2,7 +2,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faReplyAll, faPen, faTimesCircle} from "@fortawesome/free-solid-svg-icons";
+import {faReplyAll, faPen, faTimesCircle, faLock} from "@fortawesome/free-solid-svg-icons";
 
 const ShoppingCartDetail = (props) => {
     return (
@@ -136,8 +136,29 @@ const ShoppingCartDetail = (props) => {
                     </div>
                     <div className="col-3 total-amount">
                         <div className="content">
-                            <div className="title">Total Amount</div>
-                            <div className="info">Detail Info</div>
+                            <div className="title">Your Cart Total</div>
+                            <div className="info">
+                                <div className="money">
+                                    <span>€854.87</span>
+                                </div>
+                                <div className="check-out">
+                                    <div className="wrap">
+                                        <FontAwesomeIcon icon = {faLock} className = "icon"/>
+                                        <NavLink
+                                            to="/"
+                                            exact={true}
+                                        >
+                                            Proceed To Checkout
+                                        </NavLink>
+                                    </div>
+                                </div>
+                                <div className="payment-card">
+                                    <img
+                                        alt="payment-card"
+                                        src={require("../../Assets/images/section-shopping-cart-detail/payment.webp")}
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="col-3 shipping-fee">

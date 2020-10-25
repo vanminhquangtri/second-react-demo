@@ -14,7 +14,7 @@ const AlsoBought = (props) => {
         }
     })
     return (
-        <div className="row also-bought also">
+        <div className="row also-bought">
             <div className="container-fluid">
                 <div className="row title-row">
                     <div className="col">

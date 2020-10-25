@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import BestSell from './Children/BestSell/BestSell';
 import BrandSlide from './Children/BrandSlide/BrandSlide';
 import CollectionParallax from './Children/CollectionParallax/CollectionParallax';

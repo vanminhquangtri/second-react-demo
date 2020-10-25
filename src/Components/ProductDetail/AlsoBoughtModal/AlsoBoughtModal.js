@@ -9,7 +9,7 @@ import {connect} from "react-redux";
 import urlSlug from "url-slug";
 import ModalDetail from '../../ProductModal/ModalDetail';
 
-const AlsoBoughtModal = (props) => {
+const ProductModal = (props) => {
     const {Products, dispatch} = props;
     const {Currency} = props.Data;
     const showPrice = (currency) => {
@@ -103,4 +103,4 @@ const mapStateToProps = (state) => {
         Data: state
     }
 }
-export default connect(mapStateToProps)(AlsoBoughtModal)
+export default connect(mapStateToProps)(ProductModal)

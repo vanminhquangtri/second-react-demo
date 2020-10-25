@@ -9,7 +9,7 @@ import {connect} from "react-redux";
 import urlSlug from "url-slug";
 import ModalDetail from '../../ProductModal/ModalDetail';
 
-const AlsoBoughtModal = (props) => {
+const AlsoLikeModal = (props) => {
     const {Products, dispatch} = props;
     const {Currency} = props.Data;
     const showPrice = (currency) => {
@@ -81,10 +81,10 @@ const AlsoBoughtModal = (props) => {
                                             <Modal.Title>{Products.name}</Modal.Title>
                                         </Modal.Header>
                                         <Modal.Body>
-                                            <div className="also-bought">
+                                            <div className="also-like">
                                                 <ModalDetail
                                                     Products = {Products}
-                                                    navSlector = {"also-bought"}
+                                                    navSlector = {"also-like"}
                                                 ></ModalDetail>
                                             </div>
                                         </Modal.Body>
@@ -103,4 +103,4 @@ const mapStateToProps = (state) => {
         Data: state
     }
 }
-export default connect(mapStateToProps)(AlsoBoughtModal)
+export default connect(mapStateToProps)(AlsoLikeModal)

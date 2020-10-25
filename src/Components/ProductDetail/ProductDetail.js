@@ -10,6 +10,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import TermDetail from './TermDetail';
 import AlsoBought from './AlsoBoughtModal/AlsoBought';
+import AlsoLike from './AlsoLikeModal/AlsoLike';
 library.add(fab)
 
 const settings = {
@@ -284,6 +285,7 @@ const ProductDetail = (props) => {
                                 </div>
                                 <TermDetail Product = {Product}></TermDetail>
                                 <AlsoBought Product = {Product}></AlsoBought>
+                                <AlsoLike Product = {Product}></AlsoLike>
                             </div>
                         )
                     }

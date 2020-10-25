@@ -1,35 +1,35 @@
 // direct child of component Product Detail
 import React from 'react';
 import {connect} from "react-redux"
-import AlsoBoughtModal from './AlsoBoughtModal';
+import AlsoLikeModal from './AlsoLikeModal';
 
-const AlsoBought = (props) => {
+const AlsoLike = (props) => {
     const {Product} = props;
     const {Products} = props.Data;
-    // find other product in the same category
-    const sameCatProducts = []
+    // find other product not same category
+    const otherCatProducts = []
     Products.forEach((product) => {
-        if (product.category === Product.category && product.id !== Product.id) {
-            sameCatProducts.push(product);
+        if (product.category !== Product.category) {
+            otherCatProducts.push(product);
         }
     })
     return (
-        <div className="row also-bought also">
+        <div className="row also-like also">
             <div className="container-fluid">
                 <div className="row title-row">
                     <div className="col">
-                        <h4 className="title">Customers who bought this item also bought</h4>
+                        <h4 className="title">You may also like</h4>
                     </div>
                 </div>
                 <div className="row other-products product-row">
                     {
-                        sameCatProducts.map((product, index) => {
+                        otherCatProducts.map((product, index) => {
                             if (index < 6) {
                                 return (
-                                    <AlsoBoughtModal 
+                                    <AlsoLikeModal 
                                         Products = {product}
                                         key = {index}
-                                    ></AlsoBoughtModal>
+                                    ></AlsoLikeModal>
                                 )
                             }
                             return "";
@@ -46,4 +46,4 @@ const mapStateToProps = (state) => {
         Data: state
     }
 }
-export default connect(mapStateToProps)(AlsoBought)
+export default connect(mapStateToProps)(AlsoLike)

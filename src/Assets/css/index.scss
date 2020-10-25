@@ -1706,13 +1706,38 @@ $white-color: rgb(223, 223, 223);
 /*----- end product detail -----*/
 /*----- shopping cart detail -----*/
 .shopping-cart-detail {
+    padding-top: 20px;
     .container {
         .row.title {
             .col {
-
+                h4 {
+                    position: relative;
+                    font-weight: bold;
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                    display: inline-block;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 100%;
+                        border-top: 2px solid red;
+                    }
+                }
             }
             .col-auto {
-
+                a {
+                    color: black;
+                    text-decoration: underline;
+                    .icon {
+                        margin-right: 3px;
+                    }
+                    transition: .3s;
+                    &:hover {
+                        color: $hover-color-red;
+                    }
+                }
             }
         }
         .row.shipping-cart-content {
@@ -1724,15 +1749,77 @@ $white-color: rgb(223, 223, 223);
                     padding: 10px;
                 }
                 .info {
-                    padding: 10px;
-                    .product-row {
-                        .col-2.img {
-                            img {
-                                width: 45px;
-                                height: 65px
+                    .container {
+                        padding-top: 10px;
+                        .product-row {
+                            margin-bottom: 15px;
+                            .col-2.img {
+                                padding-left: 10px;
+                                img {
+                                    width: 55px;
+                                    height: 75px
+                                }
+                            }
+                            .col-10.product-detail {
+                                .row {
+                                    margin-bottom: 5px;
+                                }
+                                padding: 0;
+                                .row.name {
+                                    font-weight: bold;
+                                    a {
+                                        color: black;
+                                        transition: .3s;
+                                        &:hover {
+                                            color: $hover-color-red;
+                                        }
+                                    }
+                                }
+                                .row.price {
+                                    font-weight: bold;
+                                    font-size: 18px;
+                                }
+                                .row.quantity-title {
+                                    margin-bottom: 0;
+                                }
+                                .row.quantity-row {
+                                    align-items: center;
+                                    .wrap {
+                                        line-height: 30px;
+                                    }
+                                    .col-4.quantity {
+                                        input {
+                                            width: 100%;
+                                            text-align: center;
+                                            border: 1px solid $hover-color-gray;
+                                            border-radius: 5px;
+                                            outline: none;
+                                            height: 30px;
+                                        }
+                                    }
+                                    .col-3.update-quantity {
+                                        
+                                    }
+                                    .col-3.remove-product {
+                                    }
+                                    .col-3.update-quantity .wrap, .col-3.remove-product .wrap {
+                                        text-align: center;
+                                        background: $hover-color-gray;
+                                        border-radius: 5px;
+                                        cursor: pointer;
+                                        .icon {
+                                            margin-right: 3px;
+                                        }
+                                        &:hover {
+                                            background: $hover-color-red;
+                                            color: white;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
+                    
                 }
             }
             .col-6.order {

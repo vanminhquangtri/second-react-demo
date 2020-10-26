@@ -83,12 +83,11 @@ const ShoppingCartProduct = (props) => {
                 <div className="row quantity-row">
                     <div className="col-3 quantity">
                         <div className="wrap">
-                            <input
-                                type="number"
-                                defaultValue = {countProduct(Product.id)}
-                                min = {1}
-                                onChange = {(ev)=>{changeUpdateQuantity(ev)}}
-                            />
+                            <span className="decrease">-</span>
+                            <span className='count'>
+                                {countProduct(Product.id)}
+                            </span>
+                            <span className="increase">+</span>
                         </div>
                     </div>
                     <div className="col-3 update-quantity">

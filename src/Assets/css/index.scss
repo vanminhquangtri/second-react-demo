@@ -1802,6 +1802,17 @@ $white-color: rgb(223, 223, 223);
                                                 outline: none;
                                                 height: 30px;
                                             }
+                                            span {
+                                                font-weight: bold;
+                                                display: inline-block;
+                                                background: $hover-color-gray;
+                                                padding: 0 12px;
+                                                border-radius: 5px;
+                                            }
+                                            .count {
+                                                padding: 0 5px;
+                                                background: transparent;
+                                            }
                                         }
                                         .col-3.update-quantity .wrap, .col-3.remove-product .wrap {
                                             text-align: center;

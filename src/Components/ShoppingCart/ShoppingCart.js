@@ -39,28 +39,28 @@ const ShoppingCart = (props) => {
         return count;
     }
     /* Remove duplicate product in Cart arr based on ID*/
-    const currentCart = [...Cart];
-    // get ID list of current Cart
-    let currentIdList = [];
-    currentCart.forEach((product) => {
-        currentIdList.push(product.id);
-    })
-    // removed duplicated ID
-    let removedDuplicateIdList = [];
-    currentIdList.forEach((id) => {
-        if (!removedDuplicateIdList.includes(id)){
-            removedDuplicateIdList.push(id)
-        }
-    })
-    // create product array base on ID list, use this array to render shopping cart
-    let splicedProductsList = [];
-    removedDuplicateIdList.forEach((id) => {
-        Products.forEach((product)=>{
-            if (product.id === id){
-                splicedProductsList.push(product)
+        const currentCart = [...Cart];
+        // get ID list of current Cart
+        let currentIdList = [];
+        currentCart.forEach((product) => {
+            currentIdList.push(product.id);
+        })
+        // removed duplicated ID
+        let removedDuplicateIdList = [];
+        currentIdList.forEach((id) => {
+            if (!removedDuplicateIdList.includes(id)){
+                removedDuplicateIdList.push(id)
             }
         })
-    })
+        // create product array base on ID list, use this array to render shopping cart
+        let splicedProductsList = [];
+        removedDuplicateIdList.forEach((id) => {
+            Products.forEach((product)=>{
+                if (product.id === id){
+                    splicedProductsList.push(product)
+                }
+            })
+        })
     /* End remove duplicate product in Cart arr based on ID*/
     // Calculate total amount of Shopping Cart (re-use currentIdList)*/
     var totalAmount = 0;

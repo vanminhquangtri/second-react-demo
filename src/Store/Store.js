@@ -1027,10 +1027,42 @@ const Cart_reducer = (init = Cart, action) => {
         case "REMOVE":
             currentCart.splice(currentCart.indexOf(product), action.quantity)
             return currentCart;
+        case "UPDATE":
+            // ID
+            // NEW QUANTITY
+            // 1. remove all has ID
+            if (action.quantity === null) {
+                return currentCart;
+            } else {
+                var currentCount = 0;
+                currentCart.forEach((item) => {
+                    if (item.id === action.id){
+                        currentCount += 1;
+                    }
+                })
+                const difference = action.quantity - currentCount;
+                // if difference < 0, mean decrease : remove (difference) product right to left
+                if (difference < 0) {
+                    currentCart.reverse(); // to remove from right to left of original
+                    for (let k = 0; k < (-difference); k++) {
+                        currentCart.splice(currentCart.indexOf(product), 1)
+                    }
+                    currentCart.reverse();
+                    return currentCart;
+                }
+                // if difference >= 0, mean increase : push (difference) product to current cart
+                if (difference >= 0) {
+                    for (let k = 0; k < difference; k++) {
+                        currentCart.push(product)
+                    }
+                    return currentCart;
+                }
+                return currentCart;
+            }
         default:
             break;
     }
-    return init;
+    return currentCart;
 }
 
 const All_reducer = redux.combineReducers({

@@ -1,5 +1,5 @@
 // direct child of RouterURL
-import React from 'react';
+import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReplyAll, faPen, faTimesCircle, faLock} from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +9,18 @@ import urlSlug from "url-slug";
 const ShoppingCartDetail = (props) => {
     const {Cart, Products, Currency} = props.Data;
     const {dispatch} = props;
+    const [state, setState] = useState({
+        update_quantity: null
+    })
+    const changeUpdateQuantity = (ev) => {
+        let value = ev.target.value;
+        if (value === "") {value = 0} else {value = parseFloat(ev.target.value)};
+        setState(() => {
+            return {
+                update_quantity: value
+            }
+        })
+    }
     // format thounds seperator
     function formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
@@ -115,7 +127,7 @@ const ShoppingCartDetail = (props) => {
                                     {
                                         splicedProductsList.map((product, index) => {
                                             return (
-                                                <div className="row product-row">
+                                                <div className="row product-row" key = {index}>
                                                     <div className="col-2 img">
                                                         <img 
                                                             alt="product"
@@ -147,12 +159,13 @@ const ShoppingCartDetail = (props) => {
                                                                     <input
                                                                         type="number"
                                                                         defaultValue = {countProduct(product.id)}
-                                                                        min = {0}
+                                                                        min = {1}
+                                                                        onChange = {(ev)=>{changeUpdateQuantity(ev)}}
                                                                     />
                                                                 </div>
                                                             </div>
                                                             <div className="col-3 update-quantity">
-                                                                <div className="wrap">
+                                                                <div className="wrap" onClick = {()=>dispatch({type: "UPDATE", id: product.id, quantity: state.update_quantity})}>
                                                                     <FontAwesomeIcon icon = {faPen} className="icon"/>
                                                                     Update
                                                                 </div>

@@ -6,8 +6,8 @@ import {connect} from "react-redux";
 import urlSlug from "url-slug";
 // start component
 const ShoppingCart = (props) => {
-    const {Cart, Products} = props.Data;
-    const {Currency} = props.Data;
+    const {Cart, Products, Currency} = props.Data;
+    const {dispatch} = props;
     // format thounds seperator
     function formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
@@ -150,7 +150,11 @@ const ShoppingCart = (props) => {
                                                         </div>
                                                         <div className="col-3 amount">
                                                             <div className="cal">
-                                                                <FontAwesomeIcon icon = {faTrashAlt} className="icon"/>
+                                                                <FontAwesomeIcon 
+                                                                    icon = {faTrashAlt} 
+                                                                    className="icon"
+                                                                    onClick = {()=>{dispatch({type: "REMOVE", id: item.id, quantity: 1})}}
+                                                                />
                                                                 <div className="money">
                                                                     <span className="unit">{countProduct(item.id)} x</span>
                                                                     <span className="price">{showMoney(Currency.currency, 1, item)}</span>

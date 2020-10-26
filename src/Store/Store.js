@@ -1024,10 +1024,9 @@ const Cart_reducer = (init = Cart, action) => {
                 currentCart.push(product)
             }
             return currentCart;
-        // case "REMOVE":
-        //     const currentCart = [...init];
-        //     currentCart.splice(currentCart.indexOf(product), 1)
-        //     return currentCart;
+        case "REMOVE":
+            currentCart.splice(currentCart.indexOf(product), action.quantity)
+            return currentCart;
         default:
             break;
     }

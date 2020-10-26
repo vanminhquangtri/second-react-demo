@@ -1,55 +1,16 @@
 // direct child of RouterURL
-import React, {useState} from 'react';
+import React from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faReplyAll, faPen, faTimesCircle, faLock} from "@fortawesome/free-solid-svg-icons";
+import {faReplyAll, faLock} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
-import urlSlug from "url-slug";
+import ShoppingCartProduct from './ShoppingCartProduct';
 
 const ShoppingCartDetail = (props) => {
     const {Cart, Products, Currency} = props.Data;
-    const {dispatch} = props;
-    const [state, setState] = useState({
-        update_quantity: null
-    })
-    const changeUpdateQuantity = (ev) => {
-        let value = ev.target.value;
-        if (value === "") {value = 0} else {value = parseFloat(ev.target.value)};
-        setState(() => {
-            return {
-                update_quantity: value
-            }
-        })
-    }
     // format thounds seperator
     function formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-    }
-    // fortmat money (currency and operator and decimal)
-    const showMoney = (currency, quantity, item) => {
-        switch (currency) {
-            case "USD":
-                return "$ " + formatNumber((item.price*quantity).toFixed(2))
-
-            case "EUR":
-                return "€ " + formatNumber((item.price*quantity * 0.84).toFixed(2))
-
-            case "GBP":
-                return "£ " + formatNumber((item.price*quantity * 0.76).toFixed(2))
-
-            default:
-                return "$ " + formatNumber((item.price*quantity).toFixed(2))
-        }
-    }
-    // count quantity of a product in Shopping Cart
-    const countProduct = (id) => {
-        let count = 0;
-        Cart.forEach((product) => {
-            if (product.id === id) {
-                count += 1;
-            }
-        })
-        return count;
     }
     /* Remove duplicate product in Cart arr based on ID*/
         const currentCart = [...Cart];
@@ -127,58 +88,7 @@ const ShoppingCartDetail = (props) => {
                                     {
                                         splicedProductsList.map((product, index) => {
                                             return (
-                                                <div className="row product-row" key = {index}>
-                                                    <div className="col-2 img">
-                                                        <img 
-                                                            alt="product"
-                                                            src = {product.main__image}
-                                                        />
-                                                    </div>
-                                                    <div className="col-10 product-detail">
-                                                        <div className="row name">
-                                                            <div className="col">
-                                                                <NavLink
-                                                                    to = {`/product/${urlSlug(product.name)}`}
-                                                                    exact = {true}
-                                                                >
-                                                                    {product.name}
-                                                                </NavLink>
-                                                            </div>
-                                                        </div>
-                                                        <div className="row price">
-                                                            <div className="col">{showMoney(Currency.currency, 1, product)}</div>
-                                                        </div>
-                                                        <div className="row quantity-title">
-                                                            <div className="col">
-                                                                Quantity
-                                                            </div>
-                                                        </div>
-                                                        <div className="row quantity-row">
-                                                            <div className="col-3 quantity">
-                                                                <div className="wrap">
-                                                                    <input
-                                                                        type="number"
-                                                                        defaultValue = {countProduct(product.id)}
-                                                                        min = {1}
-                                                                        onChange = {(ev)=>{changeUpdateQuantity(ev)}}
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                            <div className="col-3 update-quantity">
-                                                                <div className="wrap" onClick = {()=>dispatch({type: "UPDATE", id: product.id, quantity: state.update_quantity})}>
-                                                                    <FontAwesomeIcon icon = {faPen} className="icon"/>
-                                                                    Update
-                                                                </div>
-                                                            </div>
-                                                            <div className="col-3 remove-product">
-                                                                <div className="wrap">
-                                                                    <FontAwesomeIcon icon = {faTimesCircle} className="icon"/>
-                                                                    Remove
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <ShoppingCartProduct Product = {product} key = {index}></ShoppingCartProduct>
                                             )
                                         })
                                     }

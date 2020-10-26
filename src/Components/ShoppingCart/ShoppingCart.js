@@ -153,7 +153,7 @@ const ShoppingCart = (props) => {
                                                                 <FontAwesomeIcon 
                                                                     icon = {faTrashAlt} 
                                                                     className="icon"
-                                                                    onClick = {()=>{dispatch({type: "REMOVE", id: item.id, quantity: 1})}}
+                                                                    onClick = {()=>{dispatch({type: "REMOVE", id: item.id})}}
                                                                 />
                                                                 <div className="money">
                                                                     <span className="unit">{countProduct(item.id)} x</span>

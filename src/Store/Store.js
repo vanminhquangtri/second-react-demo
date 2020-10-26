@@ -1025,7 +1025,15 @@ const Cart_reducer = (init = Cart, action) => {
             }
             return currentCart;
         case "REMOVE":
-            currentCart.splice(currentCart.indexOf(product), action.quantity)
+            var countRemove = 0;
+            currentCart.forEach((removedProduct) => {
+                if (removedProduct.id === action.id){
+                    countRemove += 1;
+                }
+            })
+            for (let j = 0; j < countRemove; j++){
+                currentCart.splice(currentCart.indexOf(product), 1)
+            }
             return currentCart;
         case "UPDATE":
             // ID

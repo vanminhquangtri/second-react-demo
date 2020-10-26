@@ -88,7 +88,7 @@ const ShoppingCartDetail = (props) => {
                                     {
                                         splicedProductsList.map((product, index) => {
                                             return (
-                                                <ShoppingCartProduct Product = {product} key = {product.name}></ShoppingCartProduct>
+                                                <ShoppingCartProduct Product = {product} key = {product.id}></ShoppingCartProduct>
                                             )
                                         })
                                     }
@@ -107,7 +107,7 @@ const ShoppingCartDetail = (props) => {
                                     <div className="wrap">
                                         <FontAwesomeIcon icon = {faLock} className = "icon"/>
                                         <NavLink
-                                            to="/"
+                                            to="/check-out"
                                             exact={true}
                                         >
                                             Proceed To Checkout

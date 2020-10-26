@@ -1,5 +1,6 @@
 import React from 'react';
 import {Switch, Route} from "react-router-dom";
+import CheckoutShoppingCart from '../CheckoutShoppingCart/CheckoutShoppingCart';
 import AllCollection from '../Collections/AllCollection';
 import FeaturedCollection from '../Collections/FeaturedCollection';
 import HotCollection from '../Collections/HotCollection';
@@ -23,6 +24,7 @@ const RouterURL = (props) => {
             <Route path = "/all-collection" exact = {true} component = {AllCollection}></Route>
             <Route path = "/product/:nameSlug" exact = {true} component = {ProductDetail}></Route>
             <Route path = "/shopping-cart" exact = {true} component = {ShoppingCartDetail}></Route>
+            <Route path = "/check-out" exact = {true} component = {CheckoutShoppingCart}></Route>
             <Route component = {Home}></Route>
         </Switch>
     );

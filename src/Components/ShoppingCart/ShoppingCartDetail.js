@@ -22,7 +22,7 @@ const ShoppingCartDetail = (props) => {
                         </NavLink>
                     </div>
                 </div>
-                <div className="row shipping-cart-content">
+                <div className="row shopping-cart-content">
                     <div className="col-6 order">
                         <div className="content">
                             <div className="title">Order Summary</div>
@@ -159,12 +159,6 @@ const ShoppingCartDetail = (props) => {
                                     />
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="col-3 shipping-fee">
-                        <div className="content">
-                            <div className="title">Estimated Shipping Fee</div>
-                            <div className="info">Detail Info</div>
                         </div>
                     </div>
                 </div>

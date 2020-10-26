@@ -8,7 +8,7 @@ $white-color: rgb(223, 223, 223);
 /*----- top-bar -----*/
 .top-bar {
     .container {
-        .row{
+        .row {
             align-items: center;
             padding-top: 10px;
             padding-bottom: 10px;
@@ -410,10 +410,12 @@ $white-color: rgb(223, 223, 223);
                                         .view {
                                             background: black;
                                             width: 100%;
+                                            font-weight: bold;
                                         }
                                         .check-out {
                                             background: red;
                                             width: 100%;
+                                            font-weight: bold;
                                         }
                                     }
                                 }
@@ -1708,7 +1710,7 @@ $white-color: rgb(223, 223, 223);
 .shopping-cart-detail {
     padding-top: 20px;
     .container {
-        .row.title {
+        .row.title { /*Your Shopping Cart*/
             .col {
                 h4 {
                     position: relative;
@@ -1740,7 +1742,7 @@ $white-color: rgb(223, 223, 223);
                 }
             }
         }
-        .row.shipping-cart-content {
+        .row.shopping-cart-content {
             .content {
                 border: 1px solid $hover-color-gray;
                     .title {
@@ -1795,7 +1797,7 @@ $white-color: rgb(223, 223, 223);
                                             input {
                                                 width: 100%;
                                                 text-align: center;
-                                                border: 1px solid $hover-color-gray;
+                                                border: 1px solid rgb(230, 230, 230);
                                                 border-radius: 5px;
                                                 outline: none;
                                                 height: 30px;

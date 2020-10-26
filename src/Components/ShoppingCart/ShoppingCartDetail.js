@@ -88,7 +88,7 @@ const ShoppingCartDetail = (props) => {
                                     {
                                         splicedProductsList.map((product, index) => {
                                             return (
-                                                <ShoppingCartProduct Product = {product} key = {index}></ShoppingCartProduct>
+                                                <ShoppingCartProduct Product = {product} key = {index} id = {product}></ShoppingCartProduct>
                                             )
                                         })
                                     }

@@ -9,20 +9,20 @@ import urlSlug from "url-slug";
 const ShoppingCartProduct = (props) => {
     const {Cart, Currency} = props.Data;
     const {Product, dispatch} = props;
-    const [state, setState] = useState({
-        update_quantity: null,
-        product: Product.name
-    })
-    const changeUpdateQuantity = (ev) => {
-        let value = ev.target.value;
-        if (value === "") {value = 0} else {value = parseFloat(ev.target.value)};
-        setState((prevState) => {
-            return {
-                ...prevState,
-                update_quantity: value
+    // count quantity of a product in Shopping Cart
+    const countProduct = (id) => {
+        let count = 0;
+        Cart.forEach((product) => {
+            if (product.id === id) {
+                count += 1;
             }
         })
+        return count;
     }
+    const [state, setState] = useState({
+        update_quantity: countProduct(Product.id),
+        name: Product.name
+    })
     // format thounds seperator
     function formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
@@ -43,18 +43,28 @@ const ShoppingCartProduct = (props) => {
                 return "$ " + formatNumber((item.price*quantity).toFixed(2))
         }
     }
-    // count quantity of a product in Shopping Cart
-    const countProduct = (id) => {
-        let count = 0;
-        Cart.forEach((product) => {
-            if (product.id === id) {
-                count += 1;
+    // increase added_quantity when click plus button
+    const increaseAddedAmount = () => {
+        setState((prevState) => {
+            return {
+                ...prevState,
+                update_quantity: prevState.update_quantity + 1
             }
         })
-        return count;
-    }    
+    }
+    // decrease added_quantity when click substract button
+    const decreaseAddedAmount = () => {
+        if (state.update_quantity > 0) {
+            setState((prevState) => {
+                return {
+                    ...prevState,
+                    update_quantity: prevState.update_quantity - 1
+                }
+            })
+        }
+    } 
     return (
-        <div className="row product-row">
+        <div className={`row product-row ${Product.name}`}>
             <div className="col-2 img">
                 <img 
                     alt="product"
@@ -83,11 +93,17 @@ const ShoppingCartProduct = (props) => {
                 <div className="row quantity-row">
                     <div className="col-3 quantity">
                         <div className="wrap">
-                            <span className="decrease">-</span>
+                            <span 
+                                className="decrease"
+                                onClick = {()=>{decreaseAddedAmount()}}
+                            >-</span>
                             <span className='count'>
-                                {countProduct(Product.id)}
+                                {state.update_quantity}
                             </span>
-                            <span className="increase">+</span>
+                            <span 
+                                className="increase"
+                                onClick = {()=>{increaseAddedAmount()}}
+                            >+</span>
                         </div>
                     </div>
                     <div className="col-3 update-quantity">

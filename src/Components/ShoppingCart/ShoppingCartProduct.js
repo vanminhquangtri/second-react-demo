@@ -8,7 +8,7 @@ import urlSlug from "url-slug";
 
 const ShoppingCartProduct = (props) => {
     const {Cart, Currency} = props.Data;
-    const {Product, dispatch, id} = props;
+    const {Product, dispatch} = props;
     // count quantity of a product in Shopping Cart
     const countProduct = (id) => {
         let count = 0;
@@ -64,7 +64,7 @@ const ShoppingCartProduct = (props) => {
         }
     } 
     return (
-        <div className={`row product-row ${Product.name}`} key = {id}>
+        <div className="row product-row">
             <div className="col-2 img">
                 <img 
                     alt="product"

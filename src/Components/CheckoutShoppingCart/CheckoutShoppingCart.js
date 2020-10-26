@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {NavLink} from "react-router-dom";
+import CheckoutContactShipping from './CheckoutContactShipping';
 
 const CheckoutShoppingCart = (props) => {
+    const [state, setState] = useState({
+        form_status: "contact"
+    })
     return (
         <section className="check-out">
             <div className="container">
@@ -11,11 +16,8 @@ const CheckoutShoppingCart = (props) => {
                 </div>
                 <div className="row payment">
                     <div className="col-7 payment-process">
-                        <div className="title">
-                            <h5>Form Detail</h5>
-                        </div>
                         <div className="content">
-                            Form
+                            <CheckoutContactShipping></CheckoutContactShipping>
                         </div>
                     </div>
                     <div className="col-5 summary">

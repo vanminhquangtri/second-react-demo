@@ -1802,12 +1802,17 @@ $white-color: rgb(223, 223, 223);
                                                 outline: none;
                                                 height: 30px;
                                             }
-                                            span {
+                                            span { // increase and decrease button
                                                 font-weight: bold;
                                                 display: inline-block;
                                                 background: $hover-color-gray;
                                                 padding: 0 12px;
                                                 border-radius: 5px;
+                                                cursor: pointer;
+                                                &:active {
+                                                    background: red;
+                                                    color: white;
+                                                }
                                             }
                                             .count {
                                                 padding: 0 5px;
@@ -1876,24 +1881,87 @@ $white-color: rgb(223, 223, 223);
 /*----- end shopping cart detail -----*/
 /*----- check out -----*/
 .check-out {
-    padding-top: 20px;
+    padding: 20px 0;
     .container {
         .row.title {
             .col {
-                .h4 {
-                    
+                h4 {
+                    position: relative;
+                    font-weight: bold;
+                    font-size: 25px;
+                    margin-bottom: 20px;
+                    display: inline-block;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 50%;
+                        border-top: 2px solid red;
+                    }
                 }
             }
         }
         .row.payment {
-            
             /*---payment form---*/
             .col-7.payment-process {
                 .title {
 
                 }
                 .content {
-
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        .form-field {
+                            font-weight: bold;
+                            font-size: 20px;
+                        }
+                        .field {
+                            margin: 5px 0;
+                            padding: 10px;
+                            border-radius: 10px;
+                            border: 1px solid rgb(207, 205, 205);
+                            color: rgb(129, 129, 129);
+                            outline: none;
+                        }
+                    }
+                    .navi {
+                        margin-top: 20px;
+                        .container {
+                            .row {
+                                .col-6 {
+                                    .wrap {
+                                        text-align: center;
+                                        padding: 5px;
+                                        border-radius: 10px;
+                                        font-size: 18px;
+                                        width: 90%;
+                                        margin: auto;
+                                        cursor: pointer;
+                                    }
+                                    .wrap.pre {
+                                        background: black;
+                                        a {
+                                            color: white;
+                                            display: inline-block;
+                                        }
+                                        .icon {
+                                            margin-right: 5px;
+                                            display: inline-block;
+                                        }
+                                    }
+                                    .wrap.next {
+                                        background: $hover-color-red;
+                                        color: white;
+                                        transition: .3s;
+                                        &:hover {
+                                            background: black;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             /*---order summary---*/
@@ -1901,6 +1969,7 @@ $white-color: rgb(223, 223, 223);
                 .title {
                     h5 {
                         font-weight: bold;
+                        margin-bottom: 25px;
                     }
                 }
                 .content {

@@ -28,7 +28,6 @@
     "tiny-slider-react": "^0.5.3",
     "url-slug": "^2.3.2"
   },
-  "homepage": "https://vanminhquangtri.github.io/second-react-demo/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

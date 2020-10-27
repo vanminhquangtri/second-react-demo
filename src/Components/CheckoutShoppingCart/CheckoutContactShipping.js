@@ -7,7 +7,7 @@ const CheckoutContactShipping = (props) => {
     const [state, setState] = useState({
         country: ""
     })
-    const {Countries, changeShippingFee} = props;
+    const {Countries, changeShippingFee, changeFormStt} = props;
     const currentCountry = Countries.find((ct) => {
         return ct.code === state.country
     })
@@ -23,8 +23,8 @@ const CheckoutContactShipping = (props) => {
     }
     return (
         <div className="contact-shipping">
-            <form>
-                <label className="form-field">Shipping Address</label>
+            <label className="form-field">Shipping Address</label>
+            <form onSubmit = {(ev)=>{changeFormStt(ev, "billing")}}>
                 <select name="country" className="field" onChange = {(ev)=> {changeCountry(ev)}}>
                     <option value="">Please Choose Your Country</option>
                     <option value="UK">UNITED KINGDOM</option>
@@ -50,7 +50,7 @@ const CheckoutContactShipping = (props) => {
                     <div className="container">
                         <div className="row">
                             <div className="col-6">
-                                <div className="wrap pre">
+                                <div className="wrap pre" >
                                     <NavLink
                                         to = "/shopping-cart"
                                         exact = {true}
@@ -62,7 +62,7 @@ const CheckoutContactShipping = (props) => {
                             </div>
                             <div className="col-6">
                                 <div className="wrap next">
-                                    <input className="field" name="street" type="submit" value="Continue to Payment Stage"/>
+                                    <input className="field" name="street" type="submit" value="Continue to Billing"/>
                                 </div>
                             </div>
                         </div>

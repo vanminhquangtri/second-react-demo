@@ -209,7 +209,6 @@ $white-color: rgb(223, 223, 223);
                 .nav {
                     width: 90%;
                     > ul {
-                        line-height: 100%; // keep all links central vertical
                         padding: 0;
                         margin: 0;
                         list-style-type: none;
@@ -223,7 +222,6 @@ $white-color: rgb(223, 223, 223);
                         > li {
                             margin-right: 20px;
                             position: relative;
-                            
                             > a {
                                 color: $white-color;
                                 display: block;
@@ -1910,13 +1908,13 @@ $white-color: rgb(223, 223, 223);
             /*---payment form---*/
             .col-7.payment-process {
                 .content {
+                    .form-field {
+                        font-weight: bold;
+                        font-size: 20px;
+                    }
                     form {
                         display: flex;
                         flex-direction: column;
-                        .form-field {
-                            font-weight: bold;
-                            font-size: 20px;
-                        }
                         .field {
                             margin: 5px 0;
                             padding: 10px;
@@ -1941,25 +1939,31 @@ $white-color: rgb(223, 223, 223);
                                             margin: auto;
                                             cursor: pointer;
                                             height: 100%;
+                                            transition: .3s;
                                         }
                                         .wrap.pre {
                                             background: black;
+                                            color: white;
                                             a {
                                                 color: white;
                                                 display: block;
+                                                text-decoration: none;
                                             }
                                             .icon {
                                                 margin-right: 5px;
                                                 display: inline-block;
+                                            }
+                                            &:hover {
+                                                background: red;
                                             }
                                         }
                                         .wrap.next {
                                             input {
                                                 background: $hover-color-red;
                                                 color: white;
-                                                transition: .3s;
                                                 padding: 0 10px;
                                                 margin: 0;
+                                                width: 100%;
                                                 &:hover {
                                                     background: black;
                                                 }
@@ -1997,6 +2001,8 @@ $white-color: rgb(223, 223, 223);
                             }
                             .quantity {
                                 text-align: center;
+                                color: $hover-color-red;
+                                font-weight: bold;
                             }
                             .price {
                                 text-align: right;

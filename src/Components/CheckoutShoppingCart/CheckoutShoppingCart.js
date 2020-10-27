@@ -2,11 +2,35 @@
 import React, {useState} from 'react';
 import CheckoutContactShipping from './CheckoutContactShipping';
 import {connect} from "react-redux";
+import CheckoutBilling from './CheckoutBilling';
 const CheckoutShoppingCart = (props) => {
     const {Products, Cart, Currency, Country} = props.Data;
     const [state, setState] = useState({
-        shipping_fee: 0
+        shipping_fee: 0,
+        form_stt: "contact-shipping"
     })
+    // update state shipping fee when choose city
+    const changeShippingFee = (ev) => {
+        ev.preventDefault();
+        let value = ev.target.value;
+        if (value === "") {value = 0};
+        setState((prevState) => {
+            return {
+                ...prevState,
+                shipping_fee: parseFloat(value)
+            }
+        })
+    }
+    // update state of form (contact-shipping, billing, payment)
+    const changeFormStt = (ev, value) => {
+        ev.preventDefault();
+        setState((prevState) => {
+            return {
+                ...prevState,
+                form_stt: value
+            }
+        })
+    }
     // count quantity of a product in Shopping Cart
     const countProduct = (id) => {
         let count = 0;
@@ -88,18 +112,6 @@ const CheckoutShoppingCart = (props) => {
                 return "$ " + value
         }
     }
-    // update shipping fee when choose city
-    const changeShippingFee = (ev) => {
-        ev.preventDefault();
-        let value = ev.target.value;
-        if (value === "") {value = 0};
-        setState((prevState) => {
-            return {
-                ...prevState,
-                shipping_fee: parseFloat(value)
-            }
-        })
-    }
     return (
         <section className="check-out">
             <div className="container">
@@ -111,10 +123,22 @@ const CheckoutShoppingCart = (props) => {
                 <div className="row payment">
                     <div className="col-7 payment-process">
                         <div className="content">
-                            <CheckoutContactShipping
-                                Countries = {Country}
-                                changeShippingFee = {changeShippingFee}
-                            />
+                            {
+                                ((state.form_stt === "contact-shipping") && (
+                                    <CheckoutContactShipping
+                                        Countries = {Country}
+                                        changeShippingFee = {changeShippingFee}
+                                        changeFormStt = {changeFormStt}
+                                    />
+                                )) ||
+                                ((state.form_stt === "billing") && (
+                                    <CheckoutBilling
+                                        Countries = {Country}
+                                        changeShippingFee = {changeShippingFee}
+                                        changeFormStt = {changeFormStt}
+                                    />
+                                ))
+                            }
                         </div>
                     </div>
                     <div className="col-5 summary">

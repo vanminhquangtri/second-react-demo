@@ -121,7 +121,7 @@ const ShoppingCart = (props) => {
                                     <div className="col">
                                         <div className="content check-out">
                                             <NavLink
-                                                to = "/"
+                                                to = "/check-out"
                                                 exact = {true}
                                             >
                                                 Checkout

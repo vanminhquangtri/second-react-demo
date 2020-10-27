@@ -61,9 +61,52 @@ const countryData = [
 ]
 
 const CheckoutShoppingCart = (props) => {
-    const {Cart, Currency} = props.Data;
+    const {Products, Cart, Currency} = props.Data;
     const [state, setState] = useState({
         shipping_fee: 0
+    })
+    // count quantity of a product in Shopping Cart
+    const countProduct = (id) => {
+        let count = 0;
+        Cart.forEach((product) => {
+            if (product.id === id) {
+                count += 1;
+            }
+        })
+        return count;
+    }
+    /* Remove duplicate product in Cart arr based on ID*/
+        const currentCart = [...Cart];
+        // get ID list of current Cart
+        let currentIdList = [];
+        currentCart.forEach((product) => {
+            currentIdList.push(product.id);
+        })
+        // removed duplicated ID
+        let removedDuplicateIdList = [];
+        currentIdList.forEach((id) => {
+            if (!removedDuplicateIdList.includes(id)){
+                removedDuplicateIdList.push(id)
+            }
+        })
+        // create product array base on ID list, use this array to render shopping cart
+        let splicedProductsList = [];
+        removedDuplicateIdList.forEach((id) => {
+            Products.forEach((product)=>{
+                if (product.id === id){
+                    splicedProductsList.push(product)
+                }
+            })
+        })
+    /* End remove duplicate product in Cart arr based on ID*/
+    // Calculate total amount of Shopping Cart (re-use currentIdList)*/
+    var totalAmount = 0;
+    currentIdList.forEach((id) => {
+        Products.forEach((product)=>{
+            if (product.id === id){
+                totalAmount += product.price // (default is USD)
+            }
+        })
     })
     // format thounds seperator
     function formatNumber(num) {
@@ -101,6 +144,7 @@ const CheckoutShoppingCart = (props) => {
                 return "$ " + formatNumber((amount).toFixed(2))
         }
     }
+    // update shipping fee when choose city
     const changeShippingFee = (ev) => {
         ev.preventDefault();
         let value = ev.target.value;
@@ -136,21 +180,33 @@ const CheckoutShoppingCart = (props) => {
                         <div className="content">
                             <table>
                                 <tbody>
-                                    <tr className="product">
+                                    {/* <tr className="product">
                                         <td className="name">Latest Beauty Women Clothing White</td>
                                         <td className="quantity">10</td>
                                         <td className="price">$ 200.00</td>
                                         <td className="amount">$ 2000.00</td>
-                                    </tr>
+                                    </tr> */}
+                                    {
+                                        splicedProductsList.map((product) => {
+                                            return (
+                                                <tr className="product" key = {product.id}>
+                                                    <td className="name">{product.name}</td>
+                                                    <td className="quantity">{countProduct(product.id)}</td>
+                                                    <td className="price">{showMoney(Currency.currency, 1, product)}</td>
+                                                    <td className="amount">{showMoneyTotal(Currency.currency, product.price * countProduct(product.id))}</td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
                                     <tr className="product">
                                         <td className="name">Shipping Fee</td>
-                                        <td className="quantity">1</td>
-                                        <td className="price">$ 200.00</td>
-                                        <td className="amount">{showMoneyTotal(Currency.currency,state.shipping_fee)}</td>
+                                        <td className="quantity">{state.shipping_fee === 0 ? 0 : 1}</td>
+                                        <td className="price">{showMoneyTotal(Currency.currency, state.shipping_fee)}</td>
+                                        <td className="amount">{showMoneyTotal(Currency.currency, state.shipping_fee)}</td>
                                     </tr>
                                         <tr className="total-amount">
                                         <td className="title" colSpan={3}>Total</td>
-                                        <td className="money">$ 2000.00</td>
+                                        <td className="money">{showMoneyTotal(Currency.currency, state.shipping_fee + totalAmount)}</td>
                                     </tr>
                                 </tbody>
                             </table>

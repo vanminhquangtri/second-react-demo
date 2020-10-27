@@ -1,67 +1,9 @@
+// direct child of RouterURL
 import React, {useState} from 'react';
 import CheckoutContactShipping from './CheckoutContactShipping';
 import {connect} from "react-redux";
-
-const countryData = [
-    // shipping fee default USD
-    {
-        code: "UK",
-        name: "UNITED KINGDOM",
-        regions : [
-            {
-                name: "London",
-                fee: 30,
-            },
-            {
-                name: "Manchester",
-                fee: 40,
-            },
-            {
-                name: "Liverpool",
-                fee: 50
-            }
-        ]
-    },
-    {
-        code: "US",
-        name: "UNITED STATES",
-        regions : [
-            {
-                name: "Las Vegas",
-                fee: 35,
-            },
-            {
-                name: "Los Angeles",
-                fee: 45,
-            },
-            {
-                name: "New York",
-                fee: 55
-            }
-        ]
-    },
-    {
-        code: "FR",
-        name: "FRANCE",
-        regions : [
-            {
-                name: "Paris",
-                fee: 32,
-            },
-            {
-                name: "Reims",
-                fee: 42,
-            },
-            {
-                name: "Lyon",
-                fee: 52
-            }
-        ]
-    }
-]
-
 const CheckoutShoppingCart = (props) => {
-    const {Products, Cart, Currency} = props.Data;
+    const {Products, Cart, Currency, Country} = props.Data;
     const [state, setState] = useState({
         shipping_fee: 0
     })
@@ -114,34 +56,36 @@ const CheckoutShoppingCart = (props) => {
     }
     // fortmat money (currency and operator and decimal)
     const showMoney = (currency, quantity, item) => {
+        const value = formatNumber((item.price * quantity * Currency.rate).toFixed(2));
         switch (currency) {
             case "USD":
-                return "$ " + formatNumber((item.price*quantity).toFixed(2))
+                return "$ " + value;
 
             case "EUR":
-                return "€ " + formatNumber((item.price*quantity * 0.84).toFixed(2))
+                return "€ " + value;
 
             case "GBP":
-                return "£ " + formatNumber((item.price*quantity * 0.76).toFixed(2))
+                return "£ " + value;
 
             default:
-                return "$ " + formatNumber((item.price*quantity).toFixed(2))
+                return "$ " + value;
         }
     }
     // fortmat money (currency and operator and decimal)
     const showMoneyTotal = (currency, amount) => {
+        const value = formatNumber((amount * Currency.rate).toFixed(2));
         switch (currency) {
             case "USD":
-                return "$ " + formatNumber((amount).toFixed(2))
+                return "$ " + value
 
             case "EUR":
-                return "€ " + formatNumber((amount * 0.84).toFixed(2))
+                return "€ " + value
 
             case "GBP":
-                return "£ " + formatNumber((amount * 0.76).toFixed(2))
+                return "£ " + value
 
             default:
-                return "$ " + formatNumber((amount).toFixed(2))
+                return "$ " + value
         }
     }
     // update shipping fee when choose city
@@ -168,7 +112,7 @@ const CheckoutShoppingCart = (props) => {
                     <div className="col-7 payment-process">
                         <div className="content">
                             <CheckoutContactShipping
-                                Countries = {countryData}
+                                Countries = {Country}
                                 changeShippingFee = {changeShippingFee}
                             />
                         </div>
@@ -180,12 +124,6 @@ const CheckoutShoppingCart = (props) => {
                         <div className="content">
                             <table>
                                 <tbody>
-                                    {/* <tr className="product">
-                                        <td className="name">Latest Beauty Women Clothing White</td>
-                                        <td className="quantity">10</td>
-                                        <td className="price">$ 200.00</td>
-                                        <td className="amount">$ 2000.00</td>
-                                    </tr> */}
                                     {
                                         splicedProductsList.map((product) => {
                                             return (

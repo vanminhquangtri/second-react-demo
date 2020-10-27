@@ -1,8 +1,8 @@
+// direct child of CheckoutShoppingCart
 import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReplyAll} from "@fortawesome/free-solid-svg-icons";
-
 const CheckoutContactShipping = (props) => {
     const [state, setState] = useState({
         country: ""

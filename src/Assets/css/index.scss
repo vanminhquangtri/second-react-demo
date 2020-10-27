@@ -395,6 +395,7 @@ $white-color: rgb(223, 223, 223);
                                     font-weight: bold;
                                     font-size: 17px;
                                 }
+                                // button view cart and check out
                                 .navigate{
                                     padding: 0;
                                     margin: 0;
@@ -403,8 +404,10 @@ $white-color: rgb(223, 223, 223);
                                         .content {
                                             text-align: center;
                                             padding: 5px;
+                                            font-size: 15px;
                                             a {
                                                 color: $white-color;
+                                                display: block;
                                             }
                                         }
                                         .view {
@@ -1257,6 +1260,7 @@ $white-color: rgb(223, 223, 223);
                                                 line-height: 40px;
                                                 a {
                                                     color: white;
+                                                    display: block;
                                                 }
                                             }
                                         }
@@ -1942,7 +1946,7 @@ $white-color: rgb(223, 223, 223);
                                             background: black;
                                             a {
                                                 color: white;
-                                                display: inline-block;
+                                                display: block;
                                             }
                                             .icon {
                                                 margin-right: 5px;
@@ -2019,4 +2023,3 @@ $white-color: rgb(223, 223, 223);
     }
 }
 /*----- end check out  -----*/
-

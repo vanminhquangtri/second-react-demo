@@ -1,4 +1,4 @@
-// direct child of RouterURL
+// direct child of ShoppingCartDetail, render each product in shopping cart
 import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -29,18 +29,19 @@ const ShoppingCartProduct = (props) => {
     }
     // fortmat money (currency and operator and decimal)
     const showMoney = (currency, quantity, item) => {
+        const value = formatNumber((item.price*quantity * Currency.rate).toFixed(2));
         switch (currency) {
             case "USD":
-                return "$ " + formatNumber((item.price*quantity).toFixed(2))
+                return "$ " + value;
 
             case "EUR":
-                return "€ " + formatNumber((item.price*quantity * 0.84).toFixed(2))
+                return "€ " + value;
 
             case "GBP":
-                return "£ " + formatNumber((item.price*quantity * 0.76).toFixed(2))
+                return "£ " + value;
 
             default:
-                return "$ " + formatNumber((item.price*quantity).toFixed(2))
+                return "$ " + value;
         }
     }
     // increase added_quantity when click plus button

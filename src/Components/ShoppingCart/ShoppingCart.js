@@ -14,18 +14,19 @@ const ShoppingCart = (props) => {
     }
     // fortmat money (currency and operator and decimal)
     const showMoney = (currency, quantity, item) => {
+        const value = formatNumber((item.price * quantity * Currency.rate).toFixed(2));
         switch (currency) {
             case "USD":
-                return "$ " + formatNumber((item.price*quantity).toFixed(2))
+                return "$ " + value;
 
             case "EUR":
-                return "€ " + formatNumber((item.price*quantity * 0.84).toFixed(2))
+                return "€ " + value;
 
             case "GBP":
-                return "£ " + formatNumber((item.price*quantity * 0.76).toFixed(2))
+                return "£ " + value;
 
             default:
-                return "$ " + formatNumber((item.price*quantity).toFixed(2))
+                return "$ " + value;
         }
     }
     // count quantity of a product in Shopping Cart
@@ -73,18 +74,19 @@ const ShoppingCart = (props) => {
     })
     // fortmat money (currency and operator and decimal)
     const showMoneyTotal = (currency, amount) => {
+        const value = formatNumber((amount * Currency.rate).toFixed(2));
         switch (currency) {
             case "USD":
-                return "$ " + formatNumber((amount).toFixed(2))
+                return "$ " + value;
 
             case "EUR":
-                return "€ " + formatNumber((amount * 0.84).toFixed(2))
+                return "€ " + value;
 
             case "GBP":
-                return "£ " + formatNumber((amount * 0.76).toFixed(2))
+                return "£ " + value;
 
             default:
-                return "$ " + formatNumber((amount).toFixed(2))
+                return "$ " + value;
         }
     }
     return (

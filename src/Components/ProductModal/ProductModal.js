@@ -13,17 +13,18 @@ const ProductModal = (props) => {
     const {Products, dispatch, navSlector} = props;
     const {Currency} = props.Data;
     const showPrice = (currency) => {
+        const value = (Products.price * Currency.rate).toFixed(2);
         switch (currency) {
             case "USD":
-                return "$ " + Products.price.toFixed(2)
+                return "$ " + value;
             case "EUR":
-                return "€ " + (Products.price * 0.84).toFixed(2)
+                return "€ " + value;
 
             case "GBP":
-                return "£ " + (Products.price * 0.76).toFixed(2)
+                return "£ " + value;
 
             default:
-                return "$ " + Products.price.toFixed(2)
+                return "$ " + value;
         }
     }
     const [show, setShow] = useState(false);

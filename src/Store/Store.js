@@ -1,5 +1,7 @@
+// default currency is USD
 const redux = require("redux");
 const Product = [
+/*---product data---*/
 /* category Featured*/
 {
     id: "FEA01",
@@ -983,35 +985,40 @@ const Product = [
 const Product_reducer = (init = Product, action) => {
     return init;
 }
-/*currency*/
+/*---end product data---*/
+/*---currency---*/
 const currency = {
-    currency: "USD"
+    currency: "USD",
+    rate: 1
 }
 const Currency_reducer = (init = currency, action) => {
     switch (action.type) {
         case "USD":
             return {
                 ...init,
-                currency: "USD"
+                currency: "USD",
+                rate: 1
             }
         
         case "EUR":
             return {
                 ...init,
-                currency: "EUR"
+                currency: "EUR",
+                rate: 0.84, // 1 USD = 0.84 * 1 EUR
             }
     
         case "GBP":
             return {
                 ...init,
-                currency: "GBP"
+                currency: "GBP",
+                rate: 0.76 // 1 USD = 0.76 * 1 GBP
             }
 
         default:
             return init
     }
 }
-/*shopping cart*/
+/*---shopping cart---*/
 const Cart = [];
 const Cart_reducer = (init = Cart, action) => {
     const product = Product.find((product) => {
@@ -1036,9 +1043,6 @@ const Cart_reducer = (init = Cart, action) => {
             }
             return currentCart;
         case "UPDATE":
-            // ID
-            // NEW QUANTITY
-            // 1. remove all has ID
             if (action.quantity === null) {
                 return currentCart;
             } else {
@@ -1072,11 +1076,71 @@ const Cart_reducer = (init = Cart, action) => {
     }
     return currentCart;
 }
-
+/*---countries data: name, code, regions (cities), shipping-fee---*/
+const countryData = [
+    {
+        code: "UK",
+        name: "UNITED KINGDOM",
+        regions : [
+            {
+                name: "London",
+                fee: 30,
+            },
+            {
+                name: "Manchester",
+                fee: 40,
+            },
+            {
+                name: "Liverpool",
+                fee: 50
+            }
+        ]
+    },
+    {
+        code: "US",
+        name: "UNITED STATES",
+        regions : [
+            {
+                name: "Las Vegas",
+                fee: 35,
+            },
+            {
+                name: "Los Angeles",
+                fee: 45,
+            },
+            {
+                name: "New York",
+                fee: 55
+            }
+        ]
+    },
+    {
+        code: "FR",
+        name: "FRANCE",
+        regions : [
+            {
+                name: "Paris",
+                fee: 32,
+            },
+            {
+                name: "Reims",
+                fee: 42,
+            },
+            {
+                name: "Lyon",
+                fee: 52
+            }
+        ]
+    }
+]
+const Country_reducer = (init = countryData, action) => {
+    return init
+}
 const All_reducer = redux.combineReducers({
     Products: Product_reducer,
     Currency: Currency_reducer,
     Cart: Cart_reducer,
+    Country: Country_reducer
 })
 const Store = redux.createStore(All_reducer);
 export default Store;

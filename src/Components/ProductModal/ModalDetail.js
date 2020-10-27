@@ -25,18 +25,19 @@ const ModalDetail = (props) => {
     }
     // fortmat money (currency and operator and decimal)
     const showMoney = (currency, quantity) => {
+        const value = formatNumber((Products.price * quantity * Currency.rate).toFixed(2));
         switch (currency) {
             case "USD":
-                return "$ " + formatNumber((Products.price*quantity).toFixed(2))
+                return "$ " + value;
 
             case "EUR":
-                return "€ " + formatNumber((Products.price*quantity * 0.84).toFixed(2))
+                return "€ " + value;
 
             case "GBP":
-                return "£ " + formatNumber((Products.price*quantity * 0.76).toFixed(2))
+                return "£ " + value;
 
             default:
-                return "$ " + formatNumber((Products.price*quantity).toFixed(2))
+                return "$ " + value;
         }
     }
     // change added_quantity when fill in the input

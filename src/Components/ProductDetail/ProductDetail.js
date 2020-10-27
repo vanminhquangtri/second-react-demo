@@ -33,18 +33,19 @@ const ProductDetail = (props) => {
     }
     // fortmat money (currency and operator and decimal)
     const showMoney = (currency, Product, quantity) => {
+        const value = formatNumber((Product.price * quantity * Currency.rate).toFixed(2));
         switch (currency) {
             case "USD":
-                return "$ " + formatNumber((Product.price*quantity).toFixed(2))
+                return "$ " + value;
 
             case "EUR":
-                return "€ " + formatNumber((Product.price*quantity * 0.84).toFixed(2))
+                return "€ " + value;
 
             case "GBP":
-                return "£ " + formatNumber((Product.price*quantity * 0.76).toFixed(2))
+                return "£ " + value;
 
             default:
-                return "$ " + formatNumber((Product.price*quantity).toFixed(2))
+                return "$ " + value;
         }
     }
     // change added_quantity when fill in the input

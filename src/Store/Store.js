@@ -1136,11 +1136,25 @@ const countryData = [
 const Country_reducer = (init = countryData, action) => {
     return init
 }
+/*---orders---*/
+const orders = []
+const Order_reducer = (init = orders, action) => {
+    const currentOrders = [...init]; 
+    switch (action.type) {
+        case "ADD_ORDER":
+            currentOrders.push(action.order)
+            return currentOrders
+        default:
+            break;
+    }
+    return currentOrders
+}
 const All_reducer = redux.combineReducers({
     Products: Product_reducer,
     Currency: Currency_reducer,
     Cart: Cart_reducer,
-    Country: Country_reducer
+    Country: Country_reducer,
+    Orders: Order_reducer
 })
 const Store = redux.createStore(All_reducer);
 export default Store;

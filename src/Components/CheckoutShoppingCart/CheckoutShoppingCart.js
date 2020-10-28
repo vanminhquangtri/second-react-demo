@@ -6,20 +6,19 @@ import CheckoutBilling from './CheckoutBilling';
 import CheckoutPayment from './CheckoutPayment';
 import CheckoutCompleted from './CheckoutCompleted';
 const CheckoutShoppingCart = (props) => {
-    const {Products, Cart, Currency, Country} = props.Data;
+    const {Products, Cart, Currency, Country, Orders} = props.Data;
+    const {dispatch} = props;
     const [state, setState] = useState({
         shipping_fee: 0,
         form_stt: "contact-shipping",
-        order_id: ""
+        order_info: {
+            order_id: "",
+        }
     })
-    // generate random number 
-    const n1 = Math.round(Math.random() * 9);
-    const n2 = Math.round(Math.random() * 9);
-    const n3 = Math.round(Math.random() * 9);
-    const n4 = Math.round(Math.random() * 9);
-    const n5 = Math.round(Math.random() * 9);
-    const n6 = Math.round(Math.random() * 9);
-    const n7 = Math.round(Math.random() * 9);
+    console.log(Orders);
+    const dispatchOrder = () => {
+        dispatch({type: "ADD_ORDER", order: state.order_info})
+    }
     // update state shipping fee when choose city
     const changeShippingFee = (ev, countryCode) => {
         ev.preventDefault();
@@ -47,7 +46,7 @@ const CheckoutShoppingCart = (props) => {
             }
         })
     }
-    // update state of form (contact-shipping, billing, payment)
+    // update state of form (contact-shipping, billing, payment or completed)
     const changeFormStt = (ev, value) => {
         ev.preventDefault();
         setState((prevState) => {
@@ -56,14 +55,26 @@ const CheckoutShoppingCart = (props) => {
                 form_stt: value
             }
         })
-    }
+    }    
+    // generate random number 
+    const n1 = Math.round(Math.random() * 9);
+    const n2 = Math.round(Math.random() * 9);
+    const n3 = Math.round(Math.random() * 9);
+    const n4 = Math.round(Math.random() * 9);
+    const n5 = Math.round(Math.random() * 9);
+    const n6 = Math.round(Math.random() * 9);
+    const n7 = Math.round(Math.random() * 9);
+    const newId = `ORDER-${n1}${n2}${n3}${n4}${n5}${n6}${n7}`;
     // update order_id (after click complete payment)
     const updateOrderId = (ev) => {
         ev.preventDefault();
         setState((prevState) => {
             return {
                 ...prevState,
-                order_id: `ORDER-${n1}${n2}${n3}${n4}${n5}${n6}${n7}`
+                order_info: {
+                    ...state.order_info,
+                    order_id: newId
+                }
             }
         })
     }
@@ -153,7 +164,7 @@ const CheckoutShoppingCart = (props) => {
             <div className="container">
                 <div className="row title">
                     <div className="col">
-                        <h4>Welcome to Payment Portal</h4>
+                        <h4 onClick = {()=>{dispatch({type: "ADD_ORDER", order: [1, 2, 3]})}}>Welcome to Payment Portal</h4>
                     </div>
                 </div>
                 <div className="row payment">
@@ -172,6 +183,7 @@ const CheckoutShoppingCart = (props) => {
                                         Countries = {Country}
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
+                                        updateOrderId = {updateOrderId}
                                     />
                                 )) ||
                                 ((state.form_stt === "payment") && (
@@ -180,6 +192,7 @@ const CheckoutShoppingCart = (props) => {
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
                                         updateOrderId = {updateOrderId}
+                                        dispatchOrder = {dispatchOrder}
                                     />
                                 )) ||
                                 ((state.form_stt === "completed") && (
@@ -187,7 +200,7 @@ const CheckoutShoppingCart = (props) => {
                                         Countries = {Country}
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
-                                        order_id = {state.order_id}
+                                        order_id = {state.order_info.order_id}
                                     />
                                 ))
                             }

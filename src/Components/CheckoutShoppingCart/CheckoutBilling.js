@@ -7,7 +7,7 @@ const CheckoutBilling = (props) => {
         country: "",
         reuse_contact_address: true
     })
-    const {Countries, changeFormStt} = props;
+    const {Countries, changeFormStt, updateOrderId} = props;
     const currentCountry = Countries.find((ct) => {
         return ct.code === state.country
     })
@@ -53,7 +53,7 @@ const CheckoutBilling = (props) => {
                 <label htmlFor="no">Use different address</label><br />
             </div>
             <form 
-                onSubmit = {(ev)=>{changeFormStt(ev, "payment")}}
+                onSubmit = {(ev)=>{changeFormStt(ev, "payment"); updateOrderId(ev)}}
                 id="billing-form"
             >
             {

@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGifts, faSearch} from "@fortawesome/free-solid-svg-icons";
 import {NavLink} from "react-router-dom";
 const CheckoutCompleted = (props) => {
-    const {changeFormStt} = props;
+    const {order_id} = props;
     return (
         <div className="check-out-form completed">
             <div className="congrat">
@@ -12,7 +12,7 @@ const CheckoutCompleted = (props) => {
             </div>
             <div className="order-number">
                 <h5>You order number is: </h5>
-                <h5 className="number">Order number ??? </h5>
+                <h5 className="number"> {order_id} </h5>
                 <h5>You will need this number to review your order detail</h5>
             </div>
             <div className="navigate">

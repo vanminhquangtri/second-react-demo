@@ -9,9 +9,17 @@ const CheckoutShoppingCart = (props) => {
     const {Products, Cart, Currency, Country} = props.Data;
     const [state, setState] = useState({
         shipping_fee: 0,
-        form_stt: "completed",
+        form_stt: "contact-shipping",
         order_id: ""
     })
+    // generate random number 
+    const n1 = Math.round(Math.random() * 9);
+    const n2 = Math.round(Math.random() * 9);
+    const n3 = Math.round(Math.random() * 9);
+    const n4 = Math.round(Math.random() * 9);
+    const n5 = Math.round(Math.random() * 9);
+    const n6 = Math.round(Math.random() * 9);
+    const n7 = Math.round(Math.random() * 9);
     // update state shipping fee when choose city
     const changeShippingFee = (ev, countryCode) => {
         ev.preventDefault();
@@ -52,7 +60,12 @@ const CheckoutShoppingCart = (props) => {
     // update order_id (after click complete payment)
     const updateOrderId = (ev) => {
         ev.preventDefault();
-        
+        setState((prevState) => {
+            return {
+                ...prevState,
+                order_id: `ORDER-${n1}${n2}${n3}${n4}${n5}${n6}${n7}`
+            }
+        })
     }
     // count quantity of a product in Shopping Cart
     const countProduct = (id) => {
@@ -166,6 +179,7 @@ const CheckoutShoppingCart = (props) => {
                                         Countries = {Country}
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
+                                        updateOrderId = {updateOrderId}
                                     />
                                 )) ||
                                 ((state.form_stt === "completed") && (
@@ -173,6 +187,7 @@ const CheckoutShoppingCart = (props) => {
                                         Countries = {Country}
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
+                                        order_id = {state.order_id}
                                     />
                                 ))
                             }

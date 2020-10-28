@@ -7,7 +7,7 @@ const CheckoutContactShipping = (props) => {
     const [state, setState] = useState({
         country: ""
     })
-    const {Countries, changeShippingFee, changeFormStt} = props;
+    const {Countries, changeShippingFee, changeFormStt, updateOrderInfo} = props;
     const currentCountry = Countries.find((ct) => {
         return ct.code === state.country
     })
@@ -27,15 +27,15 @@ const CheckoutContactShipping = (props) => {
                 onSubmit = {(ev)=>{changeFormStt(ev, "billing")}}
                 id="contact-shipping-form"
             >
-                <input className="field" name="first-name" type="text" placeholder="Your first name"/>
-                <input className="field" name="last-name" type="text" placeholder="Your last name"/>
-                <select name="country" className="field" onChange = {(ev)=> {changeCountry(ev)}}>
+                <input className="field" name="first-name" type="text" placeholder="Your first name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "first_name")}}/>
+                <input className="field" name="last-name" type="text" placeholder="Your last name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "last_name")}}/>
+                <select name="country" className="field" onChange = {(ev)=> {changeCountry(ev); updateOrderInfo(ev, "shipping", "country")}}>
                     <option value="">Please Choose Your Country</option>
                     <option value="UK">UNITED KINGDOM</option>
                     <option value="US">UNITED STATES</option>
                     <option value="FR">FRANCE</option>
                 </select>
-                <select name="city" className="field" onChange = {(ev)=>{changeShippingFee(ev, state.country)}}>
+                <select name="city" className="field" onChange = {(ev)=>{changeShippingFee(ev, state.country); updateOrderInfo(ev, "shipping", "city")}}>
                     {/* render city name base on country name */}
                     <option value="">Please Choose Your City</option>
                     {
@@ -46,10 +46,10 @@ const CheckoutContactShipping = (props) => {
                         })
                     }
                 </select>
-                <input className="field" name="street" type="text" placeholder="Street name: No. 20, Saint Maxim Street etc"/>
-                <input className="field" name="more" type="text" placeholder="More detail such as District, Ward etc"/>
-                <input className="field" name="phone" type="tel" placeholder="Your phone number"/>
-                <input className="field" name="email" type="email" placeholder="Email address"/>
+                <input className="field" name="street" type="text" placeholder="Street name: No. 20, Saint Maxim Street etc" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "street")}}/>
+                <input className="field" name="more" type="text" placeholder="More detail such as District, Ward etc" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "more")}}/>
+                <input className="field" name="phone" type="tel" placeholder="Your phone number" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "phone")}}/>
+                <input className="field" name="email" type="email" placeholder="Email address" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "email")}}/>
             </form>
             <div className="navigate">
                 <div className="container">

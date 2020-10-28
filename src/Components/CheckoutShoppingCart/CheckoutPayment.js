@@ -3,7 +3,7 @@ import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReplyAll} from "@fortawesome/free-solid-svg-icons";
 const CheckoutPayment = (props) => {
-    const {changeFormStt, dispatchOrder} = props;
+    const {changeFormStt, dispatchOrder, updateOrderInfo} = props;
     return (
         <div className="check-out-form payment">
             <label className="form-field">Payment</label>

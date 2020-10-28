@@ -13,8 +13,39 @@ const CheckoutShoppingCart = (props) => {
         form_stt: "contact-shipping",
         order_info: {
             order_id: "",
+            shipping: {
+                first_name: "",
+                last_name: "",
+                country: "",
+                city: "",
+                street: "",
+                more: "",
+                phone: "",
+                email: "",
+            },
+            billing: {
+                first_name: "",
+                last_name: "",
+                country: "",
+                city: "",
+                street: "",
+                more: ""
+            }
         }
     })
+    const updateOrderInfo = (ev, fieldName, propertyName) => { // not apply for order ID
+        ev.preventDefault();
+        const value = ev.target.value;
+        var currentOrderInfo = {...state.order_info};
+        currentOrderInfo[fieldName][propertyName] = value;
+        setState((prevState) => {
+            return {
+                ...prevState,
+                order_info: currentOrderInfo
+            }
+        })
+    }
+    // add order to store
     const dispatchOrder = () => {
         dispatch({type: "ADD_ORDER", order: state.order_info})
     }
@@ -175,6 +206,7 @@ const CheckoutShoppingCart = (props) => {
                                         Countries = {Country}
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
+                                        updateOrderInfo = {updateOrderInfo}
                                     />
                                 )) ||
                                 ((state.form_stt === "billing") && (
@@ -183,6 +215,7 @@ const CheckoutShoppingCart = (props) => {
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
                                         updateOrderId = {updateOrderId}
+                                        updateOrderInfo = {updateOrderInfo}
                                     />
                                 )) ||
                                 ((state.form_stt === "payment") && (

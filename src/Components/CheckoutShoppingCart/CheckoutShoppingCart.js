@@ -3,11 +3,12 @@ import React, {useState} from 'react';
 import CheckoutContactShipping from './CheckoutContactShipping';
 import {connect} from "react-redux";
 import CheckoutBilling from './CheckoutBilling';
+import CheckoutPayment from './CheckoutPayment';
 const CheckoutShoppingCart = (props) => {
     const {Products, Cart, Currency, Country} = props.Data;
     const [state, setState] = useState({
         shipping_fee: 0,
-        form_stt: "contact-shipping"
+        form_stt: "payment"
     })
     // update state shipping fee when choose city
     const changeShippingFee = (ev, countryCode) => {
@@ -148,6 +149,13 @@ const CheckoutShoppingCart = (props) => {
                                 )) ||
                                 ((state.form_stt === "billing") && (
                                     <CheckoutBilling
+                                        Countries = {Country}
+                                        changeShippingFee = {changeShippingFee}
+                                        changeFormStt = {changeFormStt}
+                                    />
+                                )) ||
+                                ((state.form_stt === "payment") && (
+                                    <CheckoutPayment
                                         Countries = {Country}
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}

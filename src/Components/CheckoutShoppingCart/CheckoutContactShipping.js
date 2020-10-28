@@ -35,7 +35,7 @@ const CheckoutContactShipping = (props) => {
                     <option value="US">UNITED STATES</option>
                     <option value="FR">FRANCE</option>
                 </select>
-                <select name="country" className="field" onChange = {(ev)=>{changeShippingFee(ev, state.country)}}>
+                <select name="city" className="field" onChange = {(ev)=>{changeShippingFee(ev, state.country)}}>
                     {/* render city name base on country name */}
                     <option value="">Please Choose Your City</option>
                     {

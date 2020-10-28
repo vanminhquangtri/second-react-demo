@@ -44,7 +44,7 @@ const CheckoutBilling = (props) => {
         
     }
     return (
-        <div className="check-out-form contact-shipping">
+        <div className="check-out-form billing">
             <label className="form-field">Billing Address</label>
             <div className="choose">
                 <input type="radio" id="yes" name="re-use" value="same" defaultChecked onInput = {(ev)=>{changeReuseContactAddress(ev)}}/> &nbsp;
@@ -52,12 +52,13 @@ const CheckoutBilling = (props) => {
                 <input type="radio" id="no" name="re-use" value="dif" onInput = {(ev)=>{changeReuseContactAddress(ev)}}/> &nbsp;
                 <label htmlFor="no">Use different address</label><br />
             </div>
+            <form 
+                onSubmit = {(ev)=>{changeFormStt(ev, "payment")}}
+                id="billing-form"
+            >
             {
                 !state.reuse_contact_address && (
-                    <form 
-                        onSubmit = {(ev)=>{changeFormStt(ev, "contact-shipping")}}
-                        id="billing-form"
-                    >
+                    <>
                         <input className="field" name="first-name" type="text" placeholder="Your first name"/>
                         <input className="field" name="last-name" type="text" placeholder="Your last name"/>
                         <select name="country" className="field" onChange = {(ev)=> {changeCountry(ev)}}>
@@ -66,7 +67,7 @@ const CheckoutBilling = (props) => {
                             <option value="US">UNITED STATES</option>
                             <option value="FR">FRANCE</option>
                         </select>
-                        <select name="country" className="field">
+                        <select name="city" className="field">
                             {/* render city name base on country name */}
                             <option value="">Please Choose Your City</option>
                             {
@@ -79,9 +80,10 @@ const CheckoutBilling = (props) => {
                         </select>
                         <input className="field" name="street" type="text" placeholder="Street name: No. 20, Saint Maxim Street etc"/>
                         <input className="field" name="more" type="text" placeholder="More detail such as District, Ward etc"/>                        
-                    </form>
+                    </>
                 )
             }
+            </form>
             <div className="navigate">
                 <div className="container">
                     <div className="row">

@@ -7,7 +7,7 @@ const CheckoutBilling = (props) => {
         country: "",
         reuse_contact_address: true
     })
-    const {Countries, changeFormStt, updateOrderId, orderInfo, updateOrderInfo, setBillingSameAsShipping} = props;
+    const {Countries, changeFormStt, updateOrderId, updateOrderInfo, setBillingSameAsShipping} = props;
     const currentCountry = Countries.find((ct) => {
         return ct.code === state.country
     })
@@ -59,15 +59,15 @@ const CheckoutBilling = (props) => {
             {
                 !state.reuse_contact_address && (
                     <>
-                        <input className="field" name="first-name" type="text" placeholder="Your first name"/>
-                        <input className="field" name="last-name" type="text" placeholder="Your last name"/>
-                        <select name="country" className="field" onChange = {(ev)=> {changeCountry(ev)}}>
+                        <input className="field" name="first-name" type="text" placeholder="Your first name" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "first_name")}}/>
+                        <input className="field" name="last-name" type="text" placeholder="Your last name" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "last_name")}}/>
+                        <select name="country" className="field" onChange = {(ev)=> {changeCountry(ev); updateOrderInfo(ev, "billing", "country")}}>
                             <option value="">Please Choose Your Country</option>
                             <option value="UK">UNITED KINGDOM</option>
                             <option value="US">UNITED STATES</option>
                             <option value="FR">FRANCE</option>
                         </select>
-                        <select name="city" className="field">
+                        <select name="city" className="field" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "city")}}>
                             {/* render city name base on country name */}
                             <option value="">Please Choose Your City</option>
                             {
@@ -78,8 +78,8 @@ const CheckoutBilling = (props) => {
                                 })
                             }
                         </select>
-                        <input className="field" name="street" type="text" placeholder="Street name: No. 20, Saint Maxim Street etc"/>
-                        <input className="field" name="more" type="text" placeholder="More detail such as District, Ward etc"/>                        
+                        <input className="field" name="street" type="text" placeholder="Street name: No. 20, Saint Maxim Street etc" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "street")}}/>
+                        <input className="field" name="more" type="text" placeholder="More detail such as District, Ward etc" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "more")}}/>                        
                     </>
                 )
             }

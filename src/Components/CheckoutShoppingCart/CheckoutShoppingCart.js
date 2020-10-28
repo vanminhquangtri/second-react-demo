@@ -259,7 +259,6 @@ const CheckoutShoppingCart = (props) => {
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
                                         updateOrderId = {updateOrderId}
-                                        orderInfo = {state.order_info}
                                         updateOrderInfo = {updateOrderInfo}
                                         setBillingSameAsShipping = {setBillingSameAsShipping}
                                     />

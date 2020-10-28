@@ -10,14 +10,29 @@ const CheckoutShoppingCart = (props) => {
         form_stt: "contact-shipping"
     })
     // update state shipping fee when choose city
-    const changeShippingFee = (ev) => {
+    const changeShippingFee = (ev, countryCode) => {
         ev.preventDefault();
         let value = ev.target.value;
-        if (value === "") {value = 0};
+        var fee = 0;
+        // find the current country
+        const currentCountry = Country.find((country) => {
+            return country.code === countryCode
+        })
+        // find city
+        if (currentCountry !== undefined){
+            currentCountry.regions.forEach((region)=>{
+                if (region.name === value) {
+                    fee = region.fee;
+                }
+                if (region.name === "") {
+                    fee = 0;
+                }
+            })
+        }   
         setState((prevState) => {
             return {
                 ...prevState,
-                shipping_fee: parseFloat(value)
+                shipping_fee: parseFloat(fee)
             }
         })
     }

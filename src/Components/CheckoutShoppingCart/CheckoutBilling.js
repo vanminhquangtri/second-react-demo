@@ -7,7 +7,7 @@ const CheckoutBilling = (props) => {
         country: "",
         reuse_contact_address: true
     })
-    const {Countries, changeShippingFee, changeFormStt} = props;
+    const {Countries, changeFormStt} = props;
     const currentCountry = Countries.find((ct) => {
         return ct.code === state.country
     })
@@ -44,7 +44,7 @@ const CheckoutBilling = (props) => {
         
     }
     return (
-        <div className="contact-shipping">
+        <div className="check-out-form contact-shipping">
             <label className="form-field">Billing Address</label>
             <div className="choose">
                 <input type="radio" id="yes" name="re-use" value="same" defaultChecked onInput = {(ev)=>{changeReuseContactAddress(ev)}}/> &nbsp;
@@ -54,52 +54,55 @@ const CheckoutBilling = (props) => {
             </div>
             {
                 !state.reuse_contact_address && (
-                    <form onSubmit = {(ev)=>{changeFormStt(ev, "contact-shipping")}}>
+                    <form 
+                        onSubmit = {(ev)=>{changeFormStt(ev, "contact-shipping")}}
+                        id="billing-form"
+                    >
+                        <input className="field" name="first-name" type="text" placeholder="Your first name"/>
+                        <input className="field" name="last-name" type="text" placeholder="Your last name"/>
                         <select name="country" className="field" onChange = {(ev)=> {changeCountry(ev)}}>
                             <option value="">Please Choose Your Country</option>
                             <option value="UK">UNITED KINGDOM</option>
                             <option value="US">UNITED STATES</option>
                             <option value="FR">FRANCE</option>
                         </select>
-                        <select name="country" className="field" onChange = {(ev)=>{changeShippingFee(ev)}}>
+                        <select name="country" className="field">
                             {/* render city name base on country name */}
                             <option value="">Please Choose Your City</option>
                             {
                                 (currentCountry !== undefined) && currentCountry.regions.map((region) => {
                                     return (
-                                        <option value = {region.fee} key = {region.name}>{region.name}</option>
+                                        <option value = {region.name} key = {region.name}>{region.name}</option>
                                     )
                                 })
                             }
                         </select>
                         <input className="field" name="street" type="text" placeholder="Street name: No. 20, Saint Maxim Street etc"/>
-                        <input className="field" name="more" type="text" placeholder="More detail such as District, Ward etc"/>
-                        <input className="field" name="phone" type="tel" placeholder="Your phone number"/>
-                        <input className="field" name="email" type="email" placeholder="Email address"/>
-                        <div className="navigate">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-6">
-                                        <div className="wrap pre">
-                                            <div className="wrap next"
-                                                onClick = {(ev)=>{changeFormStt(ev, "contact-shipping")}}
-                                            >
-                                                <FontAwesomeIcon icon = {faReplyAll} className="icon"/>
-                                                Return to Shipping Address
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-6">
-                                        <div className="wrap next">
-                                            <input className="field" name="street" type="submit" value="Continue to Payment Stage"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <input className="field" name="more" type="text" placeholder="More detail such as District, Ward etc"/>                        
                     </form>
                 )
             }
+            <div className="navigate">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-6">
+                            <div className="wrap pre">
+                                <div className="wrap next"
+                                    onClick = {(ev)=>{changeFormStt(ev, "contact-shipping")}}
+                                >
+                                    <FontAwesomeIcon icon = {faReplyAll} className="icon"/>
+                                    Return to Shipping Address
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-6">
+                            <div className="wrap next">
+                                <input form="billing-form" className="field" name="street" type="submit" value="Continue to Payment Stage"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

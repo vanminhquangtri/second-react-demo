@@ -12,7 +12,6 @@ const CheckoutContactShipping = (props) => {
         return ct.code === state.country
     })
     const changeCountry = (ev) => {
-        ev.preventDefault();
         const value = ev.target.value;
         setState((prevState) => {
             return {
@@ -22,22 +21,27 @@ const CheckoutContactShipping = (props) => {
         })
     }
     return (
-        <div className="contact-shipping">
+        <div className="check-out-form contact-shipping">
             <label className="form-field">Shipping Address</label>
-            <form onSubmit = {(ev)=>{changeFormStt(ev, "billing")}}>
+            <form 
+                onSubmit = {(ev)=>{changeFormStt(ev, "billing")}}
+                id="contact-shipping-form"
+            >
+                <input className="field" name="first-name" type="text" placeholder="Your first name"/>
+                <input className="field" name="last-name" type="text" placeholder="Your last name"/>
                 <select name="country" className="field" onChange = {(ev)=> {changeCountry(ev)}}>
                     <option value="">Please Choose Your Country</option>
                     <option value="UK">UNITED KINGDOM</option>
                     <option value="US">UNITED STATES</option>
                     <option value="FR">FRANCE</option>
                 </select>
-                <select name="country" className="field" onChange = {(ev)=>{changeShippingFee(ev)}}>
+                <select name="country" className="field" onChange = {(ev)=>{changeShippingFee(ev, state.country)}}>
                     {/* render city name base on country name */}
                     <option value="">Please Choose Your City</option>
                     {
                         (currentCountry !== undefined) && currentCountry.regions.map((region) => {
                             return (
-                                <option value = {region.fee} key = {region.name}>{region.name}</option>
+                                <option value = {region.name} key = {region.name}>{region.name}</option>
                             )
                         })
                     }
@@ -46,29 +50,29 @@ const CheckoutContactShipping = (props) => {
                 <input className="field" name="more" type="text" placeholder="More detail such as District, Ward etc"/>
                 <input className="field" name="phone" type="tel" placeholder="Your phone number"/>
                 <input className="field" name="email" type="email" placeholder="Email address"/>
-                <div className="navigate">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-6">
-                                <div className="wrap pre" >
-                                    <NavLink
-                                        to = "/shopping-cart"
-                                        exact = {true}
-                                    >
-                                        <FontAwesomeIcon icon = {faReplyAll} className="icon"/>
-                                        Return to Shopping Cart
-                                    </NavLink>
-                                </div>
+            </form>
+            <div className="navigate">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-6">
+                            <div className="wrap pre" >
+                                <NavLink
+                                    to = "/shopping-cart"
+                                    exact = {true}
+                                >
+                                    <FontAwesomeIcon icon = {faReplyAll} className="icon"/>
+                                    Return to Shopping Cart
+                                </NavLink>
                             </div>
-                            <div className="col-6">
-                                <div className="wrap next">
-                                    <input className="field" name="street" type="submit" value="Continue to Billing"/>
-                                </div>
+                        </div>
+                        <div className="col-6">
+                            <div className="wrap next">
+                                <input form="contact-shipping-form" className="field" name="street" type="submit" value="Continue to Billing"/>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     );
 };

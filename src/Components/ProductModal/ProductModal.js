@@ -34,7 +34,7 @@ const ProductModal = (props) => {
         <div className="col-3">
             <div className="content">
                 <img
-                    src = {Products.main__image}
+                    src = {Products.main__image.default}
                     alt = {Products.name}
                     className="product-img"
                 />

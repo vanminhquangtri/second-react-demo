@@ -9,7 +9,7 @@ const CheckoutPayment = (props) => {
             <label className="form-field">Payment</label>
             <div className="payment-card">
                 <img
-                    src = {require('../../Assets/images/section-checkout/payment.webp')}
+                    src = {require('../../Assets/images/section-checkout/payment.webp').default}
                     alt="payment-card"
                 />
             </div>

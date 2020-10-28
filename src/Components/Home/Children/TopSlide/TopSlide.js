@@ -11,7 +11,7 @@ const TopSlide = (props) => {
                         <div id="top-slide" className="carousel slide" data-ride="carousel" data-interval="5000">
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
-                                    <img className="d-block w-100" src={require("../../../../Assets/images/section-top-slide/1.jpg")} alt="First slide" />
+                                    <img className="d-block w-100" src={require("../../../../Assets/images/section-top-slide/1.jpg").default} alt="First slide" />
                                     <div className="carousel-caption slide-1">
                                         <h5 className="title animate__animated animate__bounceInDown">
                                             <span>
@@ -34,7 +34,7 @@ const TopSlide = (props) => {
                                     </div>
                                 </div>
                                 <div className="carousel-item">
-                                    <img className="d-block w-100" src={require("../../../../Assets/images/section-top-slide/2.jpg")} alt="First slide" />
+                                    <img className="d-block w-100" src={require("../../../../Assets/images/section-top-slide/2.jpg").default} alt="First slide" />
                                     <div className="carousel-caption slide-2">
                                         <h5 className="title animate__animated animate__bounceInDown">
                                             <span>
@@ -57,7 +57,7 @@ const TopSlide = (props) => {
                                     </div>
                                 </div>
                                 <div className="carousel-item">
-                                    <img className="d-block w-100" src={require("../../../../Assets/images/section-top-slide/3.webp")} alt="First slide" />
+                                    <img className="d-block w-100" src={require("../../../../Assets/images/section-top-slide/3.webp").default} alt="First slide" />
                                     <div className="carousel-caption slide-3">
                                         <h5 className="title animate__animated animate__slideInRight">
                                             <span>

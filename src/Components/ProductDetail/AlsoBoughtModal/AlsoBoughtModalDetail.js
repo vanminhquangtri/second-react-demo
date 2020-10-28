@@ -84,7 +84,7 @@ const AlsoBoughtModalDetail = (props) => {
                                 Products.slide__image.map((image, index) => {
                                     return (
                                         <img
-                                            src = {image}
+                                            src = {image.default}
                                             alt = {Products.name}
                                             key = {index}
                                         />

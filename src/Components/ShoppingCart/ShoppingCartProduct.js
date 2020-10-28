@@ -69,7 +69,7 @@ const ShoppingCartProduct = (props) => {
             <div className="col-2 img">
                 <img 
                     alt="product"
-                    src = {Product.main__image}
+                    src = {Product.main__image.default}
                 />
             </div>
             <div className="col-10 product-detail">

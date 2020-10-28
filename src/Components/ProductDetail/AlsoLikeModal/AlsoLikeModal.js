@@ -38,7 +38,7 @@ const AlsoLikeModal = (props) => {
         <div className="col-2">
             <div className="content">
                 <img
-                    src = {Products.main__image}
+                    src = {Products.main__image.default}
                     alt = {Products.name}
                     className="product-img"
                 />

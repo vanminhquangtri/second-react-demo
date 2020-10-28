@@ -3,7 +3,7 @@ const NavImage = function (selector, source) {
         source.slide__image.forEach((image, index) => {
             for (let i = 0; i < navBtn.length; i++){
                 if (index === i){
-                    navBtn[i].style.backgroundImage = `url(${image})`
+                    navBtn[i].style.backgroundImage = `url(${image.default})`
                 }
             }
         })

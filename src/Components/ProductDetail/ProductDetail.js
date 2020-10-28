@@ -86,7 +86,7 @@ const ProductDetail = (props) => {
         currentProduct.slide__image.forEach((image, index) => {
             for (let i = 0; i < navBtn.length; i++){
                 if (index === i){
-                    navBtn[i].style.backgroundImage = `url(${image})`
+                    navBtn[i].style.backgroundImage = `url(${image.default})`
                 }
             }
         })
@@ -141,7 +141,7 @@ const ProductDetail = (props) => {
                                                     return (
                                                         <div className="img-container"
                                                             css = {css`
-                                                                background-image: url(${image})
+                                                                background-image: url(${image.default})
                                                             `}
                                                             key = {index}
                                                         ></div>

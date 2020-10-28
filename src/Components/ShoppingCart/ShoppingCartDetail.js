@@ -118,7 +118,7 @@ const ShoppingCartDetail = (props) => {
                                 <div className="payment-card">
                                     <img
                                         alt="payment-card"
-                                        src={require("../../Assets/images/section-shopping-cart-detail/payment.webp")}
+                                        src={require("../../Assets/images/section-shopping-cart-detail/payment.webp").default}
                                     />
                                 </div>
                             </div>

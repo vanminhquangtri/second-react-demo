@@ -16,7 +16,7 @@ const CustomerSay = () => {
                                 <img 
                                     alt="avatar"
                                     className="avatar"
-                                    src = {require("../../../../Assets/images/section-customer-say/1.webp")}
+                                    src = {require("../../../../Assets/images/section-customer-say/1.webp").default}
                                 />
                                 <div className="content">
                                     <div className="say">
@@ -31,7 +31,7 @@ const CustomerSay = () => {
                                 <img 
                                     alt="avatar"
                                     className="avatar"
-                                    src = {require("../../../../Assets/images/section-customer-say/2.webp")}
+                                    src = {require("../../../../Assets/images/section-customer-say/2.webp").default}
                                 />
                                 <div className="content">
                                     <div className="say">
@@ -46,7 +46,7 @@ const CustomerSay = () => {
                                 <img 
                                     alt="avatar"
                                     className="avatar"
-                                    src = {require("../../../../Assets/images/section-customer-say/3.webp")}
+                                    src = {require("../../../../Assets/images/section-customer-say/3.webp").default}
                                 />
                                 <div className="content">
                                     <div className="say">
@@ -61,7 +61,7 @@ const CustomerSay = () => {
                                 <img 
                                     alt="avatar"
                                     className="avatar"
-                                    src = {require("../../../../Assets/images/section-customer-say/4.webp")}
+                                    src = {require("../../../../Assets/images/section-customer-say/4.webp").default}
                                 />
                                 <div className="content">
                                     <div className="say">

@@ -15,7 +15,6 @@ const CheckoutShoppingCart = (props) => {
             order_id: "",
         }
     })
-    console.log(Orders);
     const dispatchOrder = () => {
         dispatch({type: "ADD_ORDER", order: state.order_info})
     }

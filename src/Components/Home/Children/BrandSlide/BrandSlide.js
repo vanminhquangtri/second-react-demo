@@ -18,25 +18,25 @@ const BrandSlide = (props) => {
                     <div className="col">
                         <TinySlider settings={settings} className="slide">
                             <div className="brand-item">
-                                <img src = {require("../../../../Assets/images/section-brand-slide/1.webp")} alt="brand logo"/>
+                                <img src = {require("../../../../Assets/images/section-brand-slide/1.webp").default} alt="brand logo"/>
                             </div>
                             <div className="brand-item">
-                                <img src = {require("../../../../Assets/images/section-brand-slide/2.webp")} alt="brand logo"/>
+                                <img src = {require("../../../../Assets/images/section-brand-slide/2.webp").default} alt="brand logo"/>
                             </div>
                             <div className="brand-item">
-                                <img src = {require("../../../../Assets/images/section-brand-slide/3.webp")} alt="brand logo"/>
+                                <img src = {require("../../../../Assets/images/section-brand-slide/3.webp").default} alt="brand logo"/>
                             </div>
                             <div className="brand-item">
-                                <img src = {require("../../../../Assets/images/section-brand-slide/4.webp")} alt="brand logo"/>
+                                <img src = {require("../../../../Assets/images/section-brand-slide/4.webp").default} alt="brand logo"/>
                             </div>
                             <div className="brand-item">
-                                <img src = {require("../../../../Assets/images/section-brand-slide/5.webp")} alt="brand logo"/>
+                                <img src = {require("../../../../Assets/images/section-brand-slide/5.webp").default} alt="brand logo"/>
                             </div>
                             <div className="brand-item">
-                                <img src = {require("../../../../Assets/images/section-brand-slide/6.webp")} alt="brand logo"/>
+                                <img src = {require("../../../../Assets/images/section-brand-slide/6.webp").default} alt="brand logo"/>
                             </div>
                             <div className="brand-item">
-                                <img src = {require("../../../../Assets/images/section-brand-slide/7.webp")} alt="brand logo"/>
+                                <img src = {require("../../../../Assets/images/section-brand-slide/7.webp").default} alt="brand logo"/>
                             </div>
                         </TinySlider>
                     </div>

@@ -1,48 +1,9 @@
 // direct child of CheckoutShoppingCart
-import React, {useState} from 'react';
+import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReplyAll} from "@fortawesome/free-solid-svg-icons";
 const CheckoutPayment = (props) => {
-    const [state, setState] = useState({
-        country: "",
-        reuse_contact_address: true
-    })
-    const {Countries, changeFormStt} = props;
-    const currentCountry = Countries.find((ct) => {
-        return ct.code === state.country
-    })
-    // update country state
-    const changeCountry = (ev) => {
-        ev.preventDefault();
-        const value = ev.target.value;
-        setState((prevState) => {
-            return {
-                ...prevState,
-                country: value
-            }
-        })
-    }
-    // update reuse_contact_address state
-    const changeReuseContactAddress = (ev) => {
-        ev.preventDefault();
-        const value = ev.target.value;
-        if (value === "same") {
-            setState((prevState) => {
-                return {
-                    ...prevState,
-                    reuse_contact_address: true
-                }
-            })
-        } else {
-            setState((prevState) => {
-                return {
-                    ...prevState,
-                    reuse_contact_address: false
-                }
-            })
-        }
-        
-    }
+    const {changeFormStt} = props;
     return (
         <div className="check-out-form payment">
             <label className="form-field">Payment</label>
@@ -53,7 +14,7 @@ const CheckoutPayment = (props) => {
                 />
             </div>
             <form 
-                onSubmit = {(ev)=>{changeFormStt(ev, "billing")}}
+                onSubmit = {(ev)=>{changeFormStt(ev, "completed")}}
                 id="payment-form"
             >
                 <label className="label">Type of payment</label>

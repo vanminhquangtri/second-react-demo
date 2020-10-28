@@ -4,11 +4,13 @@ import CheckoutContactShipping from './CheckoutContactShipping';
 import {connect} from "react-redux";
 import CheckoutBilling from './CheckoutBilling';
 import CheckoutPayment from './CheckoutPayment';
+import CheckoutCompleted from './CheckoutCompleted';
 const CheckoutShoppingCart = (props) => {
     const {Products, Cart, Currency, Country} = props.Data;
     const [state, setState] = useState({
         shipping_fee: 0,
-        form_stt: "payment"
+        form_stt: "completed",
+        order_id: ""
     })
     // update state shipping fee when choose city
     const changeShippingFee = (ev, countryCode) => {
@@ -46,6 +48,11 @@ const CheckoutShoppingCart = (props) => {
                 form_stt: value
             }
         })
+    }
+    // update order_id (after click complete payment)
+    const updateOrderId = (ev) => {
+        ev.preventDefault();
+        
     }
     // count quantity of a product in Shopping Cart
     const countProduct = (id) => {
@@ -156,6 +163,13 @@ const CheckoutShoppingCart = (props) => {
                                 )) ||
                                 ((state.form_stt === "payment") && (
                                     <CheckoutPayment
+                                        Countries = {Country}
+                                        changeShippingFee = {changeShippingFee}
+                                        changeFormStt = {changeFormStt}
+                                    />
+                                )) ||
+                                ((state.form_stt === "completed") && (
+                                    <CheckoutCompleted
                                         Countries = {Country}
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}

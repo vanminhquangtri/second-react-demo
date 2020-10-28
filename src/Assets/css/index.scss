@@ -1938,6 +1938,36 @@ $white-color: rgb(223, 223, 223);
                             }
                         }
                     }
+                    .check-out-form.completed {
+                        .congrat {
+                            h3 {
+                                font-weight: bold;
+                            }
+                        }
+                        .order-number {
+                            .number {
+                                font-weight: bold;
+                            }
+                            h5 {
+                                &:last-child{
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                        .navigate {
+                            .col-6 {
+                                padding: 0;
+                                a {
+                                    color: rgb(45, 45, 253);
+                                    font-weight: bold;
+                                    font-size: 20px;
+                                    .icon {
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                     /*nav button (back or next)*/
                     .navigate { 
                         margin-top: 20px;

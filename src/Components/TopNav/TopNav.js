@@ -81,13 +81,10 @@ const TopNav = (props) => {
                                     <NavLink to = "/minimal-collection" exact = {true} activeClassName="active">MINIMAL COLLECTION</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to = "/blog" exact = {true} activeClassName="active">BLOG</NavLink>
+                                    <NavLink to = "/order" exact = {true} activeClassName="active">YOUR ORDER</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to = "/contact" exact = {true} activeClassName="active">CONTACT</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to = "/faqs" exact = {true} activeClassName="active">FAQS</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to = "/about" exact = {true} activeClassName="active">ABOUT US</NavLink>

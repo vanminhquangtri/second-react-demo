@@ -45,7 +45,7 @@ const CheckoutPayment = (props) => {
                                     onClick = {(ev)=>{changeFormStt(ev, "billing")}}
                                 >
                                     <FontAwesomeIcon icon = {faReplyAll} className="icon"/>
-                                    Return to Shipping Address
+                                    Return to Billing Address
                                 </div>
                             </div>
                         </div>

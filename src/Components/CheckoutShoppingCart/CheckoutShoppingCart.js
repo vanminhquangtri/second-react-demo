@@ -251,6 +251,7 @@ const CheckoutShoppingCart = (props) => {
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
                                         updateOrderInfo = {updateOrderInfo}
+                                        orderInfo = {state.order_info}
                                     />
                                 )) ||
                                 ((state.form_stt === "billing") && (
@@ -261,6 +262,7 @@ const CheckoutShoppingCart = (props) => {
                                         updateOrderId = {updateOrderId}
                                         updateOrderInfo = {updateOrderInfo}
                                         setBillingSameAsShipping = {setBillingSameAsShipping}
+                                        orderInfo = {state.order_info}
                                     />
                                 )) ||
                                 ((state.form_stt === "payment") && (

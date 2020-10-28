@@ -7,7 +7,7 @@ const CheckoutBilling = (props) => {
         country: "",
         reuse_contact_address: true
     })
-    const {Countries, changeFormStt, updateOrderId} = props;
+    const {Countries, changeFormStt, updateOrderId, orderInfo, updateOrderInfo, setBillingSameAsShipping} = props;
     const currentCountry = Countries.find((ct) => {
         return ct.code === state.country
     })
@@ -47,9 +47,9 @@ const CheckoutBilling = (props) => {
         <div className="check-out-form billing">
             <label className="form-field">Billing Address</label>
             <div className="choose">
-                <input type="radio" id="yes" name="re-use" value="same" defaultChecked onInput = {(ev)=>{changeReuseContactAddress(ev)}}/> &nbsp;
+                <input type="radio" id="yes" name="re-use" value="same" onInput = {(ev)=>{changeReuseContactAddress(ev); setBillingSameAsShipping(true)}}/> &nbsp;
                 <label htmlFor="yes">Same as shipping address</label><br />
-                <input type="radio" id="no" name="re-use" value="dif" onInput = {(ev)=>{changeReuseContactAddress(ev)}}/> &nbsp;
+                <input type="radio" id="no" name="re-use" value="dif" onInput = {(ev)=>{changeReuseContactAddress(ev); setBillingSameAsShipping(false)}}/> &nbsp;
                 <label htmlFor="no">Use different address</label><br />
             </div>
             <form 

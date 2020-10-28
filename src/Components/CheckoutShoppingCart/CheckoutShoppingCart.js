@@ -8,6 +8,7 @@ import CheckoutCompleted from './CheckoutCompleted';
 const CheckoutShoppingCart = (props) => {
     const {Products, Cart, Currency, Country, Orders} = props.Data;
     const {dispatch} = props;
+    console.log(Orders);
     const [state, setState] = useState({
         shipping_fee: 0,
         form_stt: "contact-shipping",
@@ -30,9 +31,11 @@ const CheckoutShoppingCart = (props) => {
                 city: "",
                 street: "",
                 more: ""
-            }
+            },
+            cart: Cart
         }
     })
+    // update info of order when fill form
     const updateOrderInfo = (ev, fieldName, propertyName) => { // not apply for order ID
         ev.preventDefault();
         const value = ev.target.value;
@@ -44,6 +47,47 @@ const CheckoutShoppingCart = (props) => {
                 order_info: currentOrderInfo
             }
         })
+    }
+    // set billing to be same shipping if choose same
+    const setBillingSameAsShipping = (condition) => {
+        if (condition === true){
+            const {first_name, last_name, country, city, street, more} = state.order_info.shipping;
+            setState((prevState) => {
+                return {
+                    ...prevState,
+                    order_info : {
+                        ...prevState.order_info,
+                        billing : {
+                            ...prevState.order_info.billing,
+                            first_name: first_name,
+                            last_name: last_name,
+                            country: country,
+                            city: city,
+                            street: street,
+                            more: more
+                        }
+                    }
+                }
+            })
+        } else {
+            setState((prevState) => {
+                return {
+                    ...prevState,
+                    order_info : {
+                        ...prevState.order_info,
+                        billing : {
+                            ...prevState.order_info.billing,
+                            first_name: "",
+                            last_name: "",
+                            country: "",
+                            city: "",
+                            street: "",
+                            more: ""
+                        }
+                    }
+                }
+            })
+        }
     }
     // add order to store
     const dispatchOrder = () => {
@@ -215,7 +259,9 @@ const CheckoutShoppingCart = (props) => {
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
                                         updateOrderId = {updateOrderId}
+                                        orderInfo = {state.order_info}
                                         updateOrderInfo = {updateOrderInfo}
+                                        setBillingSameAsShipping = {setBillingSameAsShipping}
                                     />
                                 )) ||
                                 ((state.form_stt === "payment") && (

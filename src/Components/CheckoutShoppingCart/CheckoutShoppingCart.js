@@ -36,7 +36,7 @@ const CheckoutShoppingCart = (props) => {
         },
         billing_same_shipping: true
     })
-    // update info of order when fill form
+    // update info of order when fill each field of form (input, select)
     const updateOrderInfo = (ev, fieldName, propertyName) => { // not apply for order ID
         ev.preventDefault();
         const value = ev.target.value;
@@ -49,7 +49,7 @@ const CheckoutShoppingCart = (props) => {
             }
         })
     }
-    // set billing information to be same with shipping if choose same
+    // set billing information to be same with shipping or not when choose "same as shipping" or "use different address"
     const setBillingSameAsShipping = (condition) => {
         if (condition === true){
             const {first_name, last_name, country, city, street, more} = state.order_info.shipping;
@@ -91,7 +91,7 @@ const CheckoutShoppingCart = (props) => {
             })
         }
     }
-    // change state of billing_same_shipping 
+    // change state of billing_same_shipping when choose "same as shipping" or "use different address"
     const changeStateBilling_same_shipping = (ev) => {
         ev.preventDefault();
         const value = ev.target.value;
@@ -111,16 +111,16 @@ const CheckoutShoppingCart = (props) => {
             })
         }
     }
-    // add order to store
+    // add order to store when press "complete payment"
     const dispatchOrder = () => {
         dispatch({type: "ADD_ORDER", order: state.order_info})
     }
-    // update state shipping fee when choose city
+    // update state shipping fee when choose city of form shipping
     const changeShippingFee = (ev, countryCode) => {
         ev.preventDefault();
         let value = ev.target.value;
         var fee = 0;
-        // find the current country
+        // find the current chosen country
         const currentCountry = Country.find((country) => {
             return country.code === countryCode
         })
@@ -142,7 +142,7 @@ const CheckoutShoppingCart = (props) => {
             }
         })
     }
-    // update state of form (contact-shipping, billing, payment or completed)
+    // update state of form (contact-shipping, billing, payment or completed) when press "return to ..." or "continue to ..."
     const changeFormStt = (ev, value) => {
         ev.preventDefault();
         setState((prevState) => {
@@ -161,7 +161,7 @@ const CheckoutShoppingCart = (props) => {
     const n6 = Math.round(Math.random() * 9);
     const n7 = Math.round(Math.random() * 9);
     const newId = `ORDER-${n1}${n2}${n3}${n4}${n5}${n6}${n7}`;
-    // update order_id (after click complete payment)
+    // update state order_id when press "continue to payment"
     const updateOrderId = (ev) => {
         ev.preventDefault();
         setState((prevState) => {
@@ -174,7 +174,7 @@ const CheckoutShoppingCart = (props) => {
             }
         })
     }
-    // count quantity of a product in Shopping Cart
+    // count quantity of a product in Shopping Cart to show to order summary
     const countProduct = (id) => {
         let count = 0;
         Cart.forEach((product) => {
@@ -279,7 +279,6 @@ const CheckoutShoppingCart = (props) => {
                                 ((state.form_stt === "billing") && (
                                     <CheckoutBilling
                                         Countries = {Country}
-                                        changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
                                         updateOrderId = {updateOrderId}
                                         updateOrderInfo = {updateOrderInfo}
@@ -294,7 +293,6 @@ const CheckoutShoppingCart = (props) => {
                                         Countries = {Country}
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
-                                        updateOrderId = {updateOrderId}
                                         dispatchOrder = {dispatchOrder}
                                     />
                                 )) ||

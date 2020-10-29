@@ -11,7 +11,13 @@ const CheckoutBilling = (props) => {
     const currentCountry = Countries.find((ct) => {
         return ct.code === state.country
     })
-    // update country state
+    // defind which checkbox to be checked on page load ("same as billing" or "use different address")
+    const defaultChecked = (condition) => {
+        if (condition === true) {
+            return true
+        } else {return false}
+    }
+    // update country state when choose country
     const changeCountry = (ev) => {
         ev.preventDefault();
         const value = ev.target.value;
@@ -22,7 +28,7 @@ const CheckoutBilling = (props) => {
             }
         })
     }
-    // update reuse_contact_address state
+    // update reuse_contact_address state when press "same as billing" or "use different address"
     const changeReuseContactAddress = (ev) => {
         ev.preventDefault();
         const value = ev.target.value;
@@ -42,13 +48,7 @@ const CheckoutBilling = (props) => {
             })
         }
     }
-    // defind which checkbox to be check on page load
-    const defaultChecked = (condition) => {
-        if (condition === true) {
-            return true
-        } else {return false}
-    }
-    // set billing same shipping on submit (dont fill any form of billing, just press continue to payment)
+    // set billing address same as shipping when choose "same as shipping" then press continue to payment
     const setBillingSameAsShippingOnSubmit = (condition) => {
         if (condition === true) {
             setBillingSameAsShipping(true)

@@ -2149,6 +2149,28 @@ $white-color: rgb(223, 223, 223);
             color: $hover-color-red;
             font-size: 20px;
         }
+        .row.order-contact {
+            margin-top: 20px;
+            .col {
+                h5 {
+                    font-weight: bold;
+                }
+                table {
+                    font-family: 'Roboto', sans-serif;
+                    box-shadow: 1px 1px 3px 3px $hover-color-gray;
+                    td {
+                        padding: 10px;
+                        
+                    }
+                    td.item {
+                        width: 100px;
+                    }
+                    td.value {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
     }
 }
 /*----- end order management -----*/

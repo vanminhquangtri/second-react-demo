@@ -5,8 +5,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPen, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
 import urlSlug from "url-slug";
+import OrderDetail from './OrderDetail';
 
-const ShoppingCartProduct = (props) => {
+const OrderManagement = (props) => {
     const {Orders} = props.Data;
     const [state, setState] = useState({
         stage: "verify",
@@ -101,7 +102,13 @@ const ShoppingCartProduct = (props) => {
                     </div>
                     )
                 }
-                
+                {
+                    stage === "success" && (
+                        <OrderDetail
+                            order_number = {state.order_number}
+                        />
+                    )
+                } 
             </div>
         </section>
     );
@@ -111,4 +118,4 @@ const mapStateToProps = (state) => {
         Data: state
     }
 }
-export default connect(mapStateToProps)(ShoppingCartProduct)
+export default connect(mapStateToProps)(OrderManagement)

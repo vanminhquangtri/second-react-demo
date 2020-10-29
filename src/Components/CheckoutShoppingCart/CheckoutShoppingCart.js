@@ -6,7 +6,7 @@ import CheckoutBilling from './CheckoutBilling';
 import CheckoutPayment from './CheckoutPayment';
 import CheckoutCompleted from './CheckoutCompleted';
 const CheckoutShoppingCart = (props) => {
-    const {Products, Cart, Currency, Country, Orders} = props.Data;
+    const {Products, Cart, Currency, Country} = props.Data;
     const {dispatch} = props;
     const [state, setState] = useState({
         form_stt: "contact-shipping",

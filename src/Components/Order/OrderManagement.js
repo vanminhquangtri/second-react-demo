@@ -1,10 +1,6 @@
 // direct child of ShoppingCartDetail, render each product in shopping cart
 import React, {useState} from 'react';
-import {NavLink} from "react-router-dom";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPen, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
-import urlSlug from "url-slug";
 import OrderDetail from './OrderDetail';
 
 const OrderManagement = (props) => {
@@ -15,26 +11,6 @@ const OrderManagement = (props) => {
         email: ""
     })
     const {stage} = state;
-    // update state of stage (verify, failed, success) when press "view order"
-    const updateState = (ev) => {
-        ev.preventDefault();
-        if (stage === "verify"){
-            setState((prevState) => {
-                return {
-                    ...prevState,
-                    stage: "failed"
-                }
-            })
-        }
-        if (stage === "failed"){
-            setState((prevState) => {
-                return {
-                    ...prevState,
-                    stage: "verify"
-                }
-            })
-        }
-    }
     // update state email and order number and change state to verify when fill each input tag
     const updateEmailAndOrderNumber = (ev, field) => {
         const value = ev.target.value;

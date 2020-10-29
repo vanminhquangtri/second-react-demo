@@ -1,13 +1,12 @@
 // direct child of ShoppingCartDetail, render each product in shopping cart
-import React, {useState} from 'react';
+import React from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGifts} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
-import urlSlug from "url-slug";
 
 const OrderDetail = (props) => {
-    const {Products, Cart, Currency, Country, Orders} = props.Data;
+    const {Products, Currency, Orders} = props.Data;
     const {order_number} = props;
     // find the order in the Store
     const currentOrder = Orders.find((order) => {

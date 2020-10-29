@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/second-react-demo/static/css/main.128ba475.chunk.css",
+    "main.js": "/second-react-demo/static/js/main.f2b03a54.chunk.js",
+    "main.js.map": "/second-react-demo/static/js/main.f2b03a54.chunk.js.map",
+    "runtime-main.js": "/second-react-demo/static/js/runtime-main.bcb2a9d0.js",
+    "runtime-main.js.map": "/second-react-demo/static/js/runtime-main.bcb2a9d0.js.map",
+    "static/css/2.c892ab69.chunk.css": "/second-react-demo/static/css/2.c892ab69.chunk.css",
+    "static/js/2.cc5fe5b7.chunk.js": "/second-react-demo/static/js/2.cc5fe5b7.chunk.js",
+    "static/js/2.cc5fe5b7.chunk.js.map": "/second-react-demo/static/js/2.cc5fe5b7.chunk.js.map",
+    "index.html": "/second-react-demo/index.html",
+    "static/css/2.c892ab69.chunk.css.map": "/second-react-demo/static/css/2.c892ab69.chunk.css.map",
+    "static/css/main.128ba475.chunk.css.map": "/second-react-demo/static/css/main.128ba475.chunk.css.map",
+    "static/js/2.cc5fe5b7.chunk.js.LICENSE.txt": "/second-react-demo/static/js/2.cc5fe5b7.chunk.js.LICENSE.txt",
+    "static/media/1.jpg": "/second-react-demo/static/media/1.7019d728.jpg",
+    "static/media/index.scss": "/second-react-demo/static/media/summer.be12d1e5.jpg",
+    "static/media/1.webp": "/second-react-demo/static/media/1.912f919b.webp",
+    "static/media/2.jpg": "/second-react-demo/static/media/2.743322e3.jpg",
+    "static/media/2.webp": "/second-react-demo/static/media/2.d448c7a0.webp",
+    "static/media/3.webp": "/second-react-demo/static/media/3.bb50f584.webp",
+    "static/media/4.webp": "/second-react-demo/static/media/4.dbfaf95c.webp",
+    "static/media/5.webp": "/second-react-demo/static/media/5.b4caf67d.webp",
+    "static/media/6.webp": "/second-react-demo/static/media/6.50f56488.webp",
+    "static/media/7.webp": "/second-react-demo/static/media/7.0ca2e193.webp",
+    "static/media/logo.66cae982.webp": "/second-react-demo/static/media/logo.66cae982.webp",
+    "static/media/main.jpg": "/second-react-demo/static/media/main.fd75edfb.jpg",
+    "static/media/payment.webp": "/second-react-demo/static/media/payment.5254bb14.webp",
+    "static/media/side1.jpg": "/second-react-demo/static/media/side1.4d3158f7.jpg",
+    "static/media/side2.jpg": "/second-react-demo/static/media/side2.498bb99f.jpg",
+    "static/media/side3.jpg": "/second-react-demo/static/media/side3.64b85a40.jpg",
+    "static/media/side4.jpg": "/second-react-demo/static/media/side4.5ebc92d6.jpg",
+    "static/media/side5.jpg": "/second-react-demo/static/media/side5.9b428e9d.jpg",
+    "static/media/size-chart_2_1024x1024.webp": "/second-react-demo/static/media/size-chart_2_1024x1024.04c18074.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bcb2a9d0.js",
+    "static/css/2.c892ab69.chunk.css",
+    "static/js/2.cc5fe5b7.chunk.js",
+    "static/css/main.128ba475.chunk.css",
+    "static/js/main.f2b03a54.chunk.js"
+  ]
+}

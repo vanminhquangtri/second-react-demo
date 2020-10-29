@@ -9,6 +9,7 @@ import MinimalCollection from '../Collections/MinimalCollection';
 import ModernCollection from '../Collections/ModernCollection';
 import SummerCollection from '../Collections/SummerCollection';
 import Home from '../Home/Home';
+import Order from '../Order/Order';
 import ProductDetail from '../ProductDetail/ProductDetail';
 import ShoppingCartDetail from '../ShoppingCart/ShoppingCartDetail';
 const RouterURL = (props) => {
@@ -25,6 +26,7 @@ const RouterURL = (props) => {
             <Route path = "/product/:nameSlug" exact = {true} component = {ProductDetail}></Route>
             <Route path = "/shopping-cart" exact = {true} component = {ShoppingCartDetail}></Route>
             <Route path = "/check-out" exact = {true} component = {CheckoutShoppingCart}></Route>
+            <Route path = "/order" exact = {true} component = {Order}></Route>
             <Route component = {Home}></Route>
         </Switch>
     );

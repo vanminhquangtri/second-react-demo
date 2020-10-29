@@ -27,15 +27,15 @@ const CheckoutContactShipping = (props) => {
                 onSubmit = {(ev)=>{changeFormStt(ev, "billing")}}
                 id="contact-shipping-form"
             >
-                <input className="field" name="first-name" type="text" placeholder="Your first name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "first_name")}} defaultValue = {orderInfo.shipping.first_name}/>
-                <input className="field" name="last-name" type="text" placeholder="Your last name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "last_name")}} defaultValue = {orderInfo.shipping.last_name}/>
-                <select name="country" className="field" onChange = {(ev)=> {changeCountry(ev); updateOrderInfo(ev, "shipping", "country")}} defaultValue = {orderInfo.shipping.country}>
+                <input required className="field" name="first-name" type="text" placeholder="Your first name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "first_name")}} defaultValue = {orderInfo.shipping.first_name}/>
+                <input required className="field" name="last-name" type="text" placeholder="Your last name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "last_name")}} defaultValue = {orderInfo.shipping.last_name}/>
+                <select required name="country" className="field" onChange = {(ev)=> {changeCountry(ev); updateOrderInfo(ev, "shipping", "country")}} defaultValue = {orderInfo.shipping.country}>
                     <option value="">Please Choose Your Country</option>
                     <option value="UK">UNITED KINGDOM</option>
                     <option value="US">UNITED STATES</option>
                     <option value="FR">FRANCE</option>
                 </select>
-                <select name="city" className="field" onChange = {(ev)=>{changeShippingFee(ev, state.country); updateOrderInfo(ev, "shipping", "city")}} defaultValue = {orderInfo.shipping.city}>
+                <select required name="city" className="field" onChange = {(ev)=>{changeShippingFee(ev, state.country); updateOrderInfo(ev, "shipping", "city")}} defaultValue = {orderInfo.shipping.city}>
                     {/* render city name base on country name */}
                     <option value="">Please Choose Your City</option>
                     {
@@ -46,10 +46,10 @@ const CheckoutContactShipping = (props) => {
                         })
                     }
                 </select>
-                <input className="field" name="street" type="text" placeholder="Street name: No. 20, Saint Maxim Street etc" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "street")}} defaultValue = {orderInfo.shipping.street}/>
-                <input className="field" name="more" type="text" placeholder="More detail such as District, Ward etc" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "more")}} defaultValue = {orderInfo.shipping.more}/>
-                <input className="field" name="phone" type="tel" placeholder="Your phone number" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "phone")}} defaultValue = {orderInfo.shipping.phone}/>
-                <input className="field" name="email" type="email" placeholder="Email address" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "email")}} defaultValue = {orderInfo.shipping.email}/>
+                <input required className="field" name="street" type="text" placeholder="Street name: No. 20, Saint Maxim Street etc" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "street")}} defaultValue = {orderInfo.shipping.street}/>
+                <input required className="field" name="more" type="text" placeholder="More detail such as District, Ward etc" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "more")}} defaultValue = {orderInfo.shipping.more}/>
+                <input required className="field" name="phone" type="tel" placeholder="Your phone number" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "phone")}} defaultValue = {orderInfo.shipping.phone}/>
+                <input required className="field" name="email" type="email" placeholder="Email address" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "email")}} defaultValue = {orderInfo.shipping.email}/>
             </form>
             <div className="navigate">
                 <div className="container">

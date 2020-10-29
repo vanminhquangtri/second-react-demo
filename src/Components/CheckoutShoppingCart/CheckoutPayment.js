@@ -18,7 +18,7 @@ const CheckoutPayment = (props) => {
                 id="payment-form"
             >
                 <label className="label">Type of payment</label>
-                <select name="card-type" className="field">
+                <select required name="card-type" className="field">
                     <option value="">Please choose type of payment</option>
                     <option value="Mastercard">Mastercard</option>
                     <option value="Visa">Visa</option>
@@ -27,14 +27,14 @@ const CheckoutPayment = (props) => {
                     <option value="Airtel">Airtel (Currently under maintenance)</option>
                 </select>
                 <label className="label">Card owner</label>
-                <input className="field" name="first-name" type="text" placeholder="Card Owner"/>
+                <input required className="field" name="first-name" type="text" placeholder="Card Owner"/>
                 <label className="label">Card number</label>
-                <input className="field" name="card-number" type="number" placeholder="Card Number"/>
+                <input required className="field" name="card-number" type="number" placeholder="Card Number"/>
                 <label className="label">Card expiration</label>
-                <input className="field" name="month" type="number" placeholder="Expired Month"/>                        
-                <input className="field" name="year" type="number" placeholder="Expired Year"/>
+                <input required className="field" name="month" type="number" placeholder="Expired Month"/>                        
+                <input required className="field" name="year" type="number" placeholder="Expired Year"/>
                 <label className="label">CVC code</label>
-                <input className="field" name="pass" type="password" placeholder="Card's CVC code"/>                        
+                <input required className="field" name="pass" type="password" placeholder="Card's CVC code"/>                        
             </form>
             <div className="navigate">
                 <div className="container">

@@ -7,8 +7,8 @@ import CheckoutPayment from './CheckoutPayment';
 import CheckoutCompleted from './CheckoutCompleted';
 const CheckoutShoppingCart = (props) => {
     const {Products, Cart, Currency, Country, Orders} = props.Data;
-    const {dispatch} = props;
     console.log(Orders);
+    const {dispatch} = props;
     const [state, setState] = useState({
         shipping_fee: 0,
         form_stt: "contact-shipping",
@@ -33,7 +33,8 @@ const CheckoutShoppingCart = (props) => {
                 more: ""
             },
             cart: Cart
-        }
+        },
+        billing_same_shipping: true
     })
     // update info of order when fill form
     const updateOrderInfo = (ev, fieldName, propertyName) => { // not apply for order ID
@@ -48,7 +49,7 @@ const CheckoutShoppingCart = (props) => {
             }
         })
     }
-    // set billing to be same shipping if choose same
+    // set billing information to be same with shipping if choose same
     const setBillingSameAsShipping = (condition) => {
         if (condition === true){
             const {first_name, last_name, country, city, street, more} = state.order_info.shipping;
@@ -70,6 +71,7 @@ const CheckoutShoppingCart = (props) => {
                 }
             })
         } else {
+            const {first_name, last_name, country, city, street, more} = state.order_info.billing;
             setState((prevState) => {
                 return {
                     ...prevState,
@@ -77,14 +79,34 @@ const CheckoutShoppingCart = (props) => {
                         ...prevState.order_info,
                         billing : {
                             ...prevState.order_info.billing,
-                            first_name: "",
-                            last_name: "",
-                            country: "",
-                            city: "",
-                            street: "",
-                            more: ""
+                            first_name: first_name,
+                            last_name: last_name,
+                            country: country,
+                            city: city,
+                            street: street,
+                            more: more
                         }
                     }
+                }
+            })
+        }
+    }
+    // change state of billing_same_shipping 
+    const changeStateBilling_same_shipping = (ev) => {
+        ev.preventDefault();
+        const value = ev.target.value;
+        if (value === "same") {
+            setState((prevState) => {
+                return {
+                    ...prevState,
+                    billing_same_shipping: true
+                }
+            })
+        } else {
+            setState((prevState) => {
+                return {
+                    ...prevState,
+                    billing_same_shipping: false
                 }
             })
         }
@@ -263,6 +285,8 @@ const CheckoutShoppingCart = (props) => {
                                         updateOrderInfo = {updateOrderInfo}
                                         setBillingSameAsShipping = {setBillingSameAsShipping}
                                         orderInfo = {state.order_info}
+                                        billing_same_shipping = {state.billing_same_shipping}
+                                        changeStateBilling_same_shipping = {changeStateBilling_same_shipping}
                                     />
                                 )) ||
                                 ((state.form_stt === "payment") && (

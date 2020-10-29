@@ -7,7 +7,7 @@ const CheckoutBilling = (props) => {
         country: "",
         reuse_contact_address: true
     })
-    const {Countries, changeFormStt, updateOrderId, updateOrderInfo, setBillingSameAsShipping, orderInfo} = props;
+    const {Countries, changeFormStt, updateOrderId, updateOrderInfo, setBillingSameAsShipping, orderInfo, billing_same_shipping, changeStateBilling_same_shipping} = props;
     const currentCountry = Countries.find((ct) => {
         return ct.code === state.country
     })
@@ -41,33 +41,44 @@ const CheckoutBilling = (props) => {
                 }
             })
         }
-        
+    }
+    // defind which checkbox to be check on page load
+    const defaultChecked = (condition) => {
+        if (condition === true) {
+            return true
+        } else {return false}
+    }
+    // set billing same shipping on submit (dont fill any form of billing, just press continue to payment)
+    const setBillingSameAsShippingOnSubmit = (condition) => {
+        if (condition === true) {
+            setBillingSameAsShipping(true)
+        }
     }
     return (
         <div className="check-out-form billing">
             <label className="form-field">Billing Address</label>
             <div className="choose">
-                <input type="radio" id="yes" name="re-use" value="same" onInput = {(ev)=>{changeReuseContactAddress(ev); setBillingSameAsShipping(true)}}/> &nbsp;
+                <input type="radio" id="yes" name="re-use" value="same" defaultChecked = {defaultChecked(billing_same_shipping)} onInput = {(ev)=>{changeReuseContactAddress(ev); setBillingSameAsShipping(true); changeStateBilling_same_shipping(ev)}}/> &nbsp;
                 <label htmlFor="yes">Same as shipping address</label><br />
-                <input type="radio" id="no" name="re-use" value="dif" onInput = {(ev)=>{changeReuseContactAddress(ev); setBillingSameAsShipping(false)}}/> &nbsp;
+                <input type="radio" id="no" name="re-use" value="dif" defaultChecked = {defaultChecked(!billing_same_shipping)} onInput = {(ev)=>{changeReuseContactAddress(ev); setBillingSameAsShipping(false); changeStateBilling_same_shipping(ev)}}/> &nbsp;
                 <label htmlFor="no">Use different address</label><br />
             </div>
             <form 
-                onSubmit = {(ev)=>{changeFormStt(ev, "payment"); updateOrderId(ev)}}
+                onSubmit = {(ev)=>{changeFormStt(ev, "payment"); updateOrderId(ev); setBillingSameAsShippingOnSubmit(billing_same_shipping)}}
                 id="billing-form"
             >
             {
-                !state.reuse_contact_address && (
+                (billing_same_shipping === false) && (
                     <>
-                        <input className="field" name="first-name" type="text" placeholder="Your first name" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "first_name")}} defaultValue = {orderInfo.billing.first_name}/>
-                        <input className="field" name="last-name" type="text" placeholder="Your last name" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "last_name")}} defaultValue = {orderInfo.billing.last_name}/>
-                        <select name="country" className="field" onChange = {(ev)=> {changeCountry(ev); updateOrderInfo(ev, "billing", "country")}} defaultValue = {orderInfo.billing.country}>
+                        <input required className="field" name="first-name" type="text" placeholder="Your first name" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "first_name")}} defaultValue = {orderInfo.billing.first_name}/>
+                        <input required className="field" name="last-name" type="text" placeholder="Your last name" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "last_name")}} defaultValue = {orderInfo.billing.last_name}/>
+                        <select required name="country" className="field" onChange = {(ev)=> {changeCountry(ev); updateOrderInfo(ev, "billing", "country")}} defaultValue = {orderInfo.billing.country}>
                             <option value="">Please Choose Your Country</option>
                             <option value="UK">UNITED KINGDOM</option>
                             <option value="US">UNITED STATES</option>
                             <option value="FR">FRANCE</option>
                         </select>
-                        <select name="city" className="field" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "city")}} defaultValue = {orderInfo.shipping.city}>
+                        <select required name="city" className="field" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "city")}} defaultValue = {orderInfo.shipping.city}>
                             {/* render city name base on country name */}
                             <option value="">Please Choose Your City</option>
                             {
@@ -78,8 +89,8 @@ const CheckoutBilling = (props) => {
                                 })
                             }
                         </select>
-                        <input className="field" name="street" type="text" placeholder="Street name: No. 20, Saint Maxim Street etc" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "street")}} defaultValue = {orderInfo.billing.street}/>
-                        <input className="field" name="more" type="text" placeholder="More detail such as District, Ward etc" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "more")}} defaultValue = {orderInfo.billing.more}/>                        
+                        <input required className="field" name="street" type="text" placeholder="Street name: No. 20, Saint Maxim Street etc" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "street")}} defaultValue = {orderInfo.billing.street}/>
+                        <input required className="field" name="more" type="text" placeholder="More detail such as District, Ward etc" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "more")}} defaultValue = {orderInfo.billing.more}/>                        
                     </>
                 )
             }

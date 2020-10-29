@@ -1745,6 +1745,7 @@ $white-color: rgb(223, 223, 223);
             }
         }
         .row.shopping-cart-content {
+            padding: unset;
             .content {
                 border: 1px solid $hover-color-gray;
                     .title {
@@ -1755,6 +1756,7 @@ $white-color: rgb(223, 223, 223);
             }
             /*---order summary---*/
             .col-6.order {
+                padding-top: 0;
                 .content {
                     .info {
                         .container {
@@ -2089,7 +2091,7 @@ $white-color: rgb(223, 223, 223);
 }
 /*----- end check out -----*/
 /*----- order management -----*/
-.order {
+.order-management {
     padding: 20px 0;
     .container {
         .row.title {

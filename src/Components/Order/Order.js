@@ -69,7 +69,7 @@ const ShoppingCartProduct = (props) => {
         }
     }
     return (
-        <section className="order">
+        <section className="order-management">
             <div className="container">
                 <div className="row title">
                     <div className="col">

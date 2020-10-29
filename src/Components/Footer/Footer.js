@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 import payment from "../../Assets/images/section-footer/payment.webp";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -24,31 +25,81 @@ const Footer = () => {
                     <div className="col-2">
                         <div className="title">The Service</div>
                         <div className="links">
-                            <a href="http://localhost:3000/">Faqs</a>
-                            <a href="http://localhost:3000/">Search</a>
-                            <a href="http://localhost:3000/">About Us</a>
-                            <a href="http://localhost:3000/">Contact Us</a>
-                            <a href="http://localhost:3000/">Privacy Policy</a>
+                            <NavLink
+                                to = "/all-collection"
+                            >Faqs</NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >Search</NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >About Us</NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >Contact Us</NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >Privacy Policy</NavLink>
                         </div>
                     </div>
                     <div className="col-2">
                         <div className="title">Information</div>
                         <div className="links">
-                            <a href="http://localhost:3000/">Return Info</a>
-                            <a href="http://localhost:3000/">Delivery Info</a>
-                            <a href="http://localhost:3000/">Shopping Info</a>
-                            <a href="http://localhost:3000/">Size Cart Info</a>
-                            <a href="http://localhost:3000/">About Product</a>
+                            <NavLink
+                                to = "/all-collection"
+                            >
+                                Return Info
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >
+                                Delivery Info
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >
+                                Shopping Info
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >
+                                Size Cart Info
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >
+                                About Product
+                            </NavLink>
                         </div>
                     </div>
                     <div className="col-2">
                         <div className="title">Gallery</div>
                         <div className="links">
-                            <a href="http://localhost:3000/">Customer Service</a>
-                            <a href="http://localhost:3000/">Terms &#38; condition</a>
-                            <a href="http://localhost:3000/">Shipping &#38; Refund</a>
-                            <a href="http://localhost:3000/">Returns</a>
-                            <a href="http://localhost:3000/">Delivery Information</a>
+                            <NavLink
+                                to = "/all-collection"
+                            >
+                                Customer Service
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >
+                                Terms &#38; condition
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >
+                                Shipping &#38; Refund
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >
+                                Returns
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                            >
+                                Delivery Information
+                            </NavLink>
                         </div>
                     </div>
                     <div className="col-3">
@@ -61,21 +112,36 @@ const Footer = () => {
                         </form>
                         <div className="title social">Social Links</div>
                         <div className="social-links">
-                            <a href="http://localhost:3000/" title="Facebook">
+                            <NavLink
+                                to = "/all-collection"
+                                title="Facebook"
+                            >
                                 <FontAwesomeIcon icon={['fab', 'facebook-f']} className="icon"/>
-                            </a>
-                            <a href="http://localhost:3000/" title="Twitter">
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                                title="Twitter"
+                            >
                                 <FontAwesomeIcon icon={['fab', 'twitter']} className="icon"/>
-                            </a>
-                            <a href="http://localhost:3000/" title="Google-plus">
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                                title="Google-plus"
+                            >
                                 <FontAwesomeIcon icon={['fab', 'google-plus-g']} className="icon"/>
-                            </a>
-                            <a href="http://localhost:3000/" title="Instagram">
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                                title="Instagram"
+                            >
                                 <FontAwesomeIcon icon={['fab', 'instagram']} className="icon"/>
-                            </a>
-                            <a href="http://localhost:3000/" title="LinkedIn">
+                            </NavLink>
+                            <NavLink
+                                to = "/all-collection"
+                                title="LinkedIn"
+                            >
                                 <FontAwesomeIcon icon={['fab', 'linkedin-in']} className="icon"/>
-                            </a>
+                            </NavLink>
                         </div>
                     </div>
                 </div>

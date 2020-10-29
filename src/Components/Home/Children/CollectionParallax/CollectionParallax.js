@@ -28,7 +28,7 @@ const CollectionParallax = (props) => {
                             <div className="des">Collections or collections includes all forms of competitive physical activity or games which, through casual or organised participation, aim to use, maintain or improve physical ability and skills while providing enjoyment to participants, and in some cases.</div>
                             <div className="link">
                                 <NavLink
-                                    to = "/"
+                                    to = "/all-collection"
                                     exact = {true}
                                 >
                                     SHOP NOW

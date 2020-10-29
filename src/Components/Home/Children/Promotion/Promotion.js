@@ -8,7 +8,7 @@ const Promotion = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-4">
-                        <NavLink to = "/" exact = {true}>
+                        <NavLink to = "/all-collection" exact = {true}>
                             <div className="wrapper coat">
                                 <div className="content">
                                     <div className="shop">SHOP NOW</div>
@@ -19,7 +19,7 @@ const Promotion = () => {
                         </NavLink>
                     </div>
                     <div className="col-4">
-                        <NavLink to = "/" exact = {true}>
+                        <NavLink to = "/all-collection" exact = {true}>
                             <div className="wrapper men">
                                 <div className="content">
                                     <div className="des">SALE OFF</div>
@@ -30,7 +30,7 @@ const Promotion = () => {
                         </NavLink>
                     </div>
                     <div className="col-4">
-                        <NavLink to = "/" exact = {true}>
+                        <NavLink to = "/all-collection" exact = {true}>
                             <div className="wrapper women">
                                 <div className="content">
                                     <div className="shop">SHOP NOW</div>

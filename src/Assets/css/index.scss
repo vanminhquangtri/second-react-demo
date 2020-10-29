@@ -2149,24 +2149,97 @@ $white-color: rgb(223, 223, 223);
             color: $hover-color-red;
             font-size: 20px;
         }
+        .detail-wrap {
+            display: flex;
+        }
+        .row.title {
+            .col {
+                h4 {
+                    color: blue;
+                }
+            }
+        }
+        .row.order-summary {
+            margin-top: 20px;
+            margin-right: 30px;
+            .col {
+                h5 {
+                    font-weight: bold;
+                    text-decoration: underline red;
+                }
+                table {
+                    font-family: 'Roboto', sans-serif;
+                    box-shadow: 1px 1px 10px 10px $hover-color-gray;
+                    width: 100%;
+                    td {
+                        padding: 10px;
+                    }
+                    .product {
+                        .name {
+                            font-weight: bold;
+                        }
+                        .quantity {
+                            text-align: center;
+                            color: $hover-color-red;
+                        }
+                        .price, .amount {
+                            text-align: right;
+                            font-weight: bold;
+                        }
+                        
+                    }
+                    .total-amount {
+                        .title {
+                            text-align: center;
+                            font-weight: bold;
+                        }
+                        .money {
+                            text-align: right;
+                            font-weight: bold;
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        }
         .row.order-contact {
             margin-top: 20px;
             .col {
                 h5 {
                     font-weight: bold;
+                    text-decoration: underline red;
                 }
                 table {
                     font-family: 'Roboto', sans-serif;
-                    box-shadow: 1px 1px 3px 3px $hover-color-gray;
+                    box-shadow: 1px 1px 10px 10px $hover-color-gray;
+                    width: 100%;
                     td {
                         padding: 10px;
-                        
                     }
                     td.item {
                         width: 100px;
                     }
                     td.value {
                         font-weight: bold;
+                    }
+                }
+            }
+        }
+        .navigate {
+            margin-top: 20px;
+            .wrap {
+                a {
+                    padding: 10px;
+                    border-radius: 10px;
+                    background: $hover-color-red;
+                    color: white;
+                    transition: .3s;
+                    font-weight: bold;
+                    .icon {
+                        margin-right: 5px;
+                    }
+                    &:hover {
+                        background: black;
                     }
                 }
             }

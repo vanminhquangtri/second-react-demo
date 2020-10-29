@@ -7,10 +7,8 @@ import CheckoutPayment from './CheckoutPayment';
 import CheckoutCompleted from './CheckoutCompleted';
 const CheckoutShoppingCart = (props) => {
     const {Products, Cart, Currency, Country, Orders} = props.Data;
-    console.log(Orders);
     const {dispatch} = props;
     const [state, setState] = useState({
-        shipping_fee: 0,
         form_stt: "contact-shipping",
         order_info: {
             order_id: "",
@@ -32,7 +30,8 @@ const CheckoutShoppingCart = (props) => {
                 street: "",
                 more: ""
             },
-            cart: Cart
+            cart: Cart,
+            shipping_fee: 0,
         },
         billing_same_shipping: true
     })
@@ -134,12 +133,11 @@ const CheckoutShoppingCart = (props) => {
                     fee = 0;
                 }
             })
-        }   
-        setState((prevState) => {
-            return {
-                ...prevState,
-                shipping_fee: parseFloat(fee)
-            }
+        }  
+        const currentState = {...state};
+        currentState.order_info.shipping_fee = fee;
+        setState(() => {
+            return currentState
         })
     }
     // update state of form (contact-shipping, billing, payment or completed) when press "return to ..." or "continue to ..."
@@ -329,12 +327,12 @@ const CheckoutShoppingCart = (props) => {
                                     <tr className="product">
                                         <td className="name">Shipping Fee</td>
                                         <td className="quantity">{state.shipping_fee === 0 ? 0 : 1}</td>
-                                        <td className="price">{showMoneyTotal(Currency.currency, state.shipping_fee)}</td>
-                                        <td className="amount">{showMoneyTotal(Currency.currency, state.shipping_fee)}</td>
+                                        <td className="price">{showMoneyTotal(Currency.currency, state.order_info.shipping_fee)}</td>
+                                        <td className="amount">{showMoneyTotal(Currency.currency, state.order_info.shipping_fee)}</td>
                                     </tr>
                                         <tr className="total-amount">
                                         <td className="title" colSpan={3}>Total</td>
-                                        <td className="money">{showMoneyTotal(Currency.currency, state.shipping_fee + totalAmount)}</td>
+                                        <td className="money">{showMoneyTotal(Currency.currency, state.order_info.shipping_fee + totalAmount)}</td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect} from "react-redux";
 import ProductModal from '../ProductModal/ProductModal';
 
 const HotCollection = (props) => {
     const {Products} = props.Data;
+    // move to top of page 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
     return (
         <section className="best-sell hot-collection">
             <div className="container">

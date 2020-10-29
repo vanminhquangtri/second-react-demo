@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect} from "react-redux";
 import ProductModal from '../ProductModal/ProductModal';
 
 const FeaturedCollection = (props) => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
     const {Products} = props.Data;
     return (
         <section className="best-sell featured-collection">

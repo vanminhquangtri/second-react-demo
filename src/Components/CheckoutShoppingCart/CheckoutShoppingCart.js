@@ -1,5 +1,5 @@
 // direct child of RouterURL
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import CheckoutContactShipping from './CheckoutContactShipping';
 import {connect} from "react-redux";
 import CheckoutBilling from './CheckoutBilling';
@@ -253,6 +253,10 @@ const CheckoutShoppingCart = (props) => {
                 return "$ " + value
         }
     }
+    // move to top of page 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
     return (
         <section className="check-out">
             <div className="container">

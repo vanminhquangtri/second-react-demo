@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import BestSell from './Children/BestSell/BestSell';
 import BrandSlide from './Children/BrandSlide/BrandSlide';
 import CollectionParallax from './Children/CollectionParallax/CollectionParallax';
@@ -8,6 +8,10 @@ import Promotion from './Children/Promotion/Promotion';
 import TopSlide from './Children/TopSlide/TopSlide';
 
 const Home = (props) => {
+    // move to top of page 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
     return (
         <section className="home">
             <TopSlide></TopSlide>

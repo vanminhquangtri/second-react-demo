@@ -1,5 +1,5 @@
 // direct child of CheckoutShoppingCart
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReplyAll} from "@fortawesome/free-solid-svg-icons";
@@ -20,6 +20,10 @@ const CheckoutContactShipping = (props) => {
             }
         })
     }
+    // move to top of page 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
     return (
         <div className="check-out-form contact-shipping">
             <label className="form-field">Shipping Address</label>

@@ -1,5 +1,5 @@
 // direct child of CheckoutShoppingCart
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReplyAll} from "@fortawesome/free-solid-svg-icons";
 const CheckoutBilling = (props) => {
@@ -54,6 +54,10 @@ const CheckoutBilling = (props) => {
             setBillingSameAsShipping(true)
         }
     }
+    // move to top of page 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
     return (
         <div className="check-out-form billing">
             <label className="form-field">Billing Address</label>

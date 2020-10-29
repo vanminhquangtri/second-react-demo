@@ -1,5 +1,5 @@
 // direct child of ShoppingCartDetail, render each product in shopping cart
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect} from "react-redux";
 import OrderDetail from './OrderDetail';
 
@@ -45,6 +45,10 @@ const OrderManagement = (props) => {
             })
         }
     }
+    // move to top of page 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
     return (
         <section className="order-management">
             <div className="container">

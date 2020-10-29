@@ -1,9 +1,13 @@
 // direct child of CheckoutShoppingCart
-import React from 'react';
+import React, {useEffect} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReplyAll} from "@fortawesome/free-solid-svg-icons";
 const CheckoutPayment = (props) => {
     const {changeFormStt, dispatchOrder} = props;
+    // move to top of page 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
     return (
         <div className="check-out-form payment">
             <label className="form-field">Payment</label>

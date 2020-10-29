@@ -1,5 +1,5 @@
 // direct child of RouterURL
-import React from 'react';
+import React, {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReplyAll, faLock} from "@fortawesome/free-solid-svg-icons";
@@ -62,7 +62,10 @@ const ShoppingCartDetail = (props) => {
                 return "$ " + value;
         }
     }
-    
+    // move to top of page 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
     return (
         <section className="shopping-cart-detail">
             <div className="container">

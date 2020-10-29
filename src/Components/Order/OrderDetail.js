@@ -1,5 +1,5 @@
 // direct child of ShoppingCartDetail, render each product in shopping cart
-import React from 'react';
+import React, {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGifts} from "@fortawesome/free-solid-svg-icons";
@@ -107,6 +107,10 @@ const OrderDetail = (props) => {
                 return "$ " + value;
         }
     }
+    // move to top of page 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
     return (
         <div className="row order-detail">
             <div className="container">
@@ -141,7 +145,7 @@ const OrderDetail = (props) => {
                                     </tr>
                                     <tr className="total-amount">
                                         <td className="title" colSpan={3}>Total</td>
-                                        <td className="money">{showMoneyTotal(Currency.currency, totalAmount)}</td>
+                                        <td className="money">{showMoneyTotal(Currency.currency, totalAmount + currentOrder.shipping_fee)}</td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -30,6 +30,7 @@ const ProductModal = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    
     return (
         <div className="col-3">
             <div className="content">
@@ -63,7 +64,7 @@ const ProductModal = (props) => {
                                 title="add to shopping cart"
                                 onClick = {()=>{dispatch({type: "ADD", id: Products.id, quantity: 1})}}
                             >
-                                <div className="icon-container">
+                                <div className="icon-container add-cart">
                                     <FontAwesomeIcon 
                                         icon = {faShoppingCart} 
                                         className="icon"

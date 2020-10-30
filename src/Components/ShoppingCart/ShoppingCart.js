@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, Component} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTrashAlt} from "@fortawesome/free-solid-svg-icons";
@@ -185,7 +185,7 @@ const ShoppingCart = (props) => {
                                     })
                                 }
                                 <div className="total">
-                                    <span>Total: { showMoneyTotal(Currency.currency, totalAmount) }</span>
+                                    <span>Total: {showMoneyTotal(Currency.currency, totalAmount) }</span>
                                 </div>
                             </div>
                         )

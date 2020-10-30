@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './Assets/css/index.scss';
 import {BrowserRouter as Router} from "react-router-dom";
 import RouterURL from './Components/RouterURL/RouterURL';

@@ -142,7 +142,16 @@ const CheckoutShoppingCart = (props) => {
         })
     }
     // update state of form (contact-shipping, billing, payment or completed) when press "return to ..." or "continue to ..."
-    const changeFormStt = (ev, value) => {
+    const changeFormStt = (value) => {
+        // ev.preventDefault();
+        setState((prevState) => {
+            return {
+                ...prevState,
+                form_stt: value
+            }
+        })
+    } 
+    const changeFormSttWithEv = (ev, value) => {
         ev.preventDefault();
         setState((prevState) => {
             return {
@@ -289,6 +298,7 @@ const CheckoutShoppingCart = (props) => {
                                         orderInfo = {state.order_info}
                                         billing_same_shipping = {state.billing_same_shipping}
                                         changeStateBilling_same_shipping = {changeStateBilling_same_shipping}
+                                        changeFormSttWithEv = {changeFormSttWithEv}
                                     />
                                 )) ||
                                 ((state.form_stt === "payment") && (
@@ -297,6 +307,7 @@ const CheckoutShoppingCart = (props) => {
                                         changeShippingFee = {changeShippingFee}
                                         changeFormStt = {changeFormStt}
                                         dispatchOrder = {dispatchOrder}
+                                        changeFormSttWithEv = {changeFormSttWithEv}
                                     />
                                 )) ||
                                 ((state.form_stt === "completed") && (

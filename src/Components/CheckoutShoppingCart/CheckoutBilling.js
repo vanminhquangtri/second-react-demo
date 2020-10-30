@@ -7,7 +7,7 @@ const CheckoutBilling = (props) => {
         country: "",
         reuse_contact_address: true
     })
-    const {Countries, changeFormStt, updateOrderId, updateOrderInfo, setBillingSameAsShipping, orderInfo, billing_same_shipping, changeStateBilling_same_shipping} = props;
+    const {Countries, changeFormStt, updateOrderId, updateOrderInfo, setBillingSameAsShipping, orderInfo, billing_same_shipping, changeStateBilling_same_shipping, changeFormSttWithEv} = props;
     const currentCountry = Countries.find((ct) => {
         return ct.code === state.country
     })
@@ -68,7 +68,7 @@ const CheckoutBilling = (props) => {
                 <label htmlFor="no">Use different address</label><br />
             </div>
             <form 
-                onSubmit = {(ev)=>{changeFormStt(ev, "payment"); updateOrderId(ev); setBillingSameAsShippingOnSubmit(billing_same_shipping)}}
+                onSubmit = {(ev)=>{changeFormSttWithEv(ev, "payment"); updateOrderId(ev); setBillingSameAsShippingOnSubmit(billing_same_shipping)}}
                 id="billing-form"
             >
             {
@@ -105,7 +105,7 @@ const CheckoutBilling = (props) => {
                         <div className="col-6">
                             <div className="wrap pre">
                                 <div className="wrap next"
-                                    onClick = {(ev)=>{changeFormStt(ev, "contact-shipping")}}
+                                    onClick = {()=>{changeFormStt("contact-shipping")}}
                                 >
                                     <FontAwesomeIcon icon = {faReplyAll} className="icon"/>
                                     Return to Shipping Address

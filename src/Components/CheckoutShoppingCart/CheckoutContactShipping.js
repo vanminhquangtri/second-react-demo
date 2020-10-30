@@ -3,11 +3,17 @@ import React, {useState, useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReplyAll} from "@fortawesome/free-solid-svg-icons";
+import {useForm} from "react-hook-form";
 const CheckoutContactShipping = (props) => {
     const [state, setState] = useState({
         country: ""
     })
     const {Countries, changeShippingFee, changeFormStt, updateOrderInfo, orderInfo} = props;
+    const {handleSubmit} = useForm();
+    const onSubmit = () => {
+        changeFormStt("billing")
+    };
+    // get the country that is chosen
     const currentCountry = Countries.find((ct) => {
         return ct.code === state.country
     })
@@ -28,7 +34,7 @@ const CheckoutContactShipping = (props) => {
         <div className="check-out-form contact-shipping">
             <label className="form-field">Shipping Address</label>
             <form 
-                onSubmit = {(ev)=>{changeFormStt(ev, "billing")}}
+                onSubmit = {handleSubmit(onSubmit)}
                 id="contact-shipping-form"
             >
                 <input required className="field" name="first-name" type="text" placeholder="Your first name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "first_name")}} defaultValue = {orderInfo.shipping.first_name}/>

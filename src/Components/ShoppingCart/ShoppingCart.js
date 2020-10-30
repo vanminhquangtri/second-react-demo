@@ -139,6 +139,7 @@ const ShoppingCart = (props) => {
                                             <NavLink
                                                 to = "/check-out"
                                                 exact = {true}
+                                                onClick = {()=>{dispatch({type: "BUY_WHOLE_CART"})}}
                                             >
                                                 Checkout
                                             </NavLink>

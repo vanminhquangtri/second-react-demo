@@ -1020,11 +1020,12 @@ const Currency_reducer = (init = currency, action) => {
 }
 /*---shopping cart---*/
 const Cart = [];
+var currentCart;
 const Cart_reducer = (init = Cart, action) => {
     const product = Product.find((product) => {
         return product.id === action.id;
     })
-    let currentCart = [...init];
+    currentCart = [...init];
     switch (action.type) {
         case "ADD":
             for (let i = 0; i < action.quantity; i++){
@@ -1150,9 +1151,10 @@ const Order_reducer = (init = orders, action) => {
     return currentOrders
 }
 /*---bought product (when buy separate product, not the whole shopping cart)---*/
-const BoughtProduct = ["bought product"]
+const BoughtProduct = ["bought product"];
+var currentBoughtProduct;
 const BoughtProduct_reducer = (init = BoughtProduct, action) => {
-    var currentBoughtProduct = [...init]; 
+    currentBoughtProduct = [...init]; 
     switch (action.type) {
         case "BUY_PRODUCT":
             currentBoughtProduct = [];
@@ -1163,13 +1165,33 @@ const BoughtProduct_reducer = (init = BoughtProduct, action) => {
     }
     return currentBoughtProduct
 }
+/*---define check out whole shopping cart or separate product---(use Store Cart or Bought Product)*/
+const BoughtTarget = {
+    target: ""
+}
+const BoughtTarget_reducer = (init = BoughtTarget, action) => {
+    var currentBoughtTarget = {...init}; 
+    switch (action.type) {
+        case "BUY_WHOLE_CART":
+            currentBoughtTarget.target = currentCart
+            return currentBoughtTarget
+        case "BUY_SEPARATE":
+            currentBoughtTarget.target = currentBoughtProduct
+            return currentBoughtTarget
+        default:
+            break;
+    }
+    return currentBoughtTarget
+}
+
 const All_reducer = redux.combineReducers({
     Products: Product_reducer,
     Currency: Currency_reducer,
     Cart: Cart_reducer,
     Country: Country_reducer,
     Orders: Order_reducer,
-    BoughtProduct: BoughtProduct_reducer
+    BoughtProduct: BoughtProduct_reducer,
+    BoughtTarget: BoughtTarget_reducer
 })
 const Store = redux.createStore(All_reducer);
 export default Store;

@@ -24,11 +24,9 @@ const ProductDetail = (props) => {
         added_quantity: 1
     });
     const {added_quantity} = state;
-    const {Products, Currency, BoughtProduct} = props.Data;
+    const {Products, Currency} = props.Data;
     const {dispatch} = props;
     const {nameSlug} = props.match.params;
-    console.log(BoughtProduct);
-
     // format thounds seperator
     function formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
@@ -229,8 +227,9 @@ const ProductDetail = (props) => {
                                                     <div className="col-6 link">
                                                         <div className="content">
                                                             <NavLink
-                                                                to="/"
+                                                                to="/check-out"
                                                                 exact = {true}
+                                                                onClick = {()=>{dispatch({type: "BUY_SEPARATE"})}}
                                                             >
                                                                 Buy Now
                                                             </NavLink>

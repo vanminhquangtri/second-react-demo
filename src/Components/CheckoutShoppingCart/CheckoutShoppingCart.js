@@ -6,7 +6,8 @@ import CheckoutBilling from './CheckoutBilling';
 import CheckoutPayment from './CheckoutPayment';
 import CheckoutCompleted from './CheckoutCompleted';
 const CheckoutShoppingCart = (props) => {
-    const {Products, Cart, Currency, Country} = props.Data;
+    const {Products, Currency, Country, BoughtTarget} = props.Data;
+    // Bought target will be whole cart or separate product, depending on the dispatch value of component before navigate to check out
     const {dispatch} = props;
     const [state, setState] = useState({
         form_stt: "contact-shipping",
@@ -30,7 +31,7 @@ const CheckoutShoppingCart = (props) => {
                 street: "",
                 more: ""
             },
-            cart: Cart,
+            cart: BoughtTarget.target,
             shipping_fee: 0,
         },
         billing_same_shipping: true
@@ -175,7 +176,7 @@ const CheckoutShoppingCart = (props) => {
     // count quantity of a product in Shopping Cart to show to order summary
     const countProduct = (id) => {
         let count = 0;
-        Cart.forEach((product) => {
+        BoughtTarget.target.forEach((product) => {
             if (product.id === id) {
                 count += 1;
             }
@@ -183,7 +184,7 @@ const CheckoutShoppingCart = (props) => {
         return count;
     }
     /* Remove duplicate product in Cart arr based on ID*/
-        const currentCart = [...Cart];
+        const currentCart = [...BoughtTarget.target];
         // get ID list of current Cart
         let currentIdList = [];
         currentCart.forEach((product) => {

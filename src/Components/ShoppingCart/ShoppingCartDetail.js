@@ -8,6 +8,7 @@ import ShoppingCartProduct from './ShoppingCartProduct';
 
 const ShoppingCartDetail = (props) => {
     const {Cart, Products, Currency} = props.Data;
+    const {dispatch} = props;
     // format thounds seperator
     function formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
@@ -113,6 +114,7 @@ const ShoppingCartDetail = (props) => {
                                         <NavLink
                                             to="/check-out"
                                             exact={true}
+                                            onClick = {()=>{dispatch({type: "BUY_WHOLE_CART"})}}
                                         >
                                             Proceed To Checkout
                                         </NavLink>

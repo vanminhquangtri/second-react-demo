@@ -1,12 +1,15 @@
 // direct child of CheckoutShoppingCart
-import React from 'react';
+import React, {useEffect} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGifts, faSearch} from "@fortawesome/free-solid-svg-icons";
 import {NavLink} from "react-router-dom";
 const CheckoutCompleted = (props) => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
     const {order_id} = props;
     return (
-        <div className="check-out-form completed">
+        <div className="check-out-form completed animate__animated animate__fadeInBottomRight">
             <div className="congrat">
                 <h3>Congratulation, you had successful purchase !</h3>
             </div>

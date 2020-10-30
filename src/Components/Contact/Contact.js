@@ -36,20 +36,20 @@ const Contact = (props) => {
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta aperiam et laboriosam nulla. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta aperiam et laboriosam nulla.</p>
                                     <form onSubmit = {(ev)=>{changeSubmitStt(ev)}}>
                                         <label>Your name: </label>
-                                        <input type="text" name="name"/> <br/>
-                                        <label>Your phone number: </label>
-                                        <input type="tel" name="name"/> <br/>
+                                        <input required type="text" name="name"/> <br/>
+                                        <label>Your phone number </label>
+                                        <input required type="tel" name="name"/> <br/>
                                         <label>Your email address </label>
-                                        <input type="email" name="name"/> <br/>
+                                        <input required type="email" name="name"/> <br/>
                                         <label>Share your thoughts with us </label>
-                                        <textarea name="comment" row={10}></textarea><br/>
+                                        <textarea required name="comment" row={10}></textarea><br/>
                                         <input type="submit" value="Send Us Your Feedbacks"/>
                                     </form>
                                 </div>
                             </div>
                         )) ||
                         ((submit_stt === true) && (
-                            <div className="col-9 submit-success animate__animated animate__backInRight">
+                            <div className="col-9 submit-success animate__animated animate__fadeInBottomRight">
                                 <div className="content">
                                     <h3 className="title">Thank you so much for your Feedback</h3>
                                     <span className="other-feedback" onClick = {(ev)=>{changeSubmitStt(ev)}}>Send Us Another Feedback</span> <br/>

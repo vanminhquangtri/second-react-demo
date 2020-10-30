@@ -1024,7 +1024,7 @@ const Cart_reducer = (init = Cart, action) => {
     const product = Product.find((product) => {
         return product.id === action.id;
     })
-    const currentCart = [...init];
+    let currentCart = [...init];
     switch (action.type) {
         case "ADD":
             for (let i = 0; i < action.quantity; i++){
@@ -1139,7 +1139,7 @@ const Country_reducer = (init = countryData, action) => {
 /*---orders---*/
 const orders = []
 const Order_reducer = (init = orders, action) => {
-    const currentOrders = [...init]; 
+    let currentOrders = [...init]; 
     switch (action.type) {
         case "ADD_ORDER":
             currentOrders.push(action.order)
@@ -1149,12 +1149,27 @@ const Order_reducer = (init = orders, action) => {
     }
     return currentOrders
 }
+/*---bought product (when buy separate product, not the whole shopping cart)---*/
+const BoughtProduct = ["bought product"]
+const BoughtProduct_reducer = (init = BoughtProduct, action) => {
+    var currentBoughtProduct = [...init]; 
+    switch (action.type) {
+        case "BUY_PRODUCT":
+            currentBoughtProduct = [];
+            currentBoughtProduct.push(action.product)
+            return currentBoughtProduct
+        default:
+            break;
+    }
+    return currentBoughtProduct
+}
 const All_reducer = redux.combineReducers({
     Products: Product_reducer,
     Currency: Currency_reducer,
     Cart: Cart_reducer,
     Country: Country_reducer,
-    Orders: Order_reducer
+    Orders: Order_reducer,
+    BoughtProduct: BoughtProduct_reducer
 })
 const Store = redux.createStore(All_reducer);
 export default Store;

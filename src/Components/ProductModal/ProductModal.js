@@ -8,7 +8,7 @@ import {Modal, Button} from "react-bootstrap";
 import ModalDetail from './ModalDetail';
 import {connect} from "react-redux";
 import urlSlug from "url-slug";
-
+/* this component will dispatch the displayed product to BoughtProduct Store when click on name of product */
 const ProductModal = (props) => {
     const {Products, dispatch, navSlector} = props;
     const {Currency} = props.Data;
@@ -41,6 +41,7 @@ const ProductModal = (props) => {
                 <NavLink
                     to = {`/product/${urlSlug(Products.name)}`}
                     exact = {true}
+                    onClick = {()=>{dispatch({type: "BUY_PRODUCT", product: Products})}}
                 >
                     <div className="info">
                         <div className="name">{Products.name}</div>

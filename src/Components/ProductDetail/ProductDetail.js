@@ -24,9 +24,11 @@ const ProductDetail = (props) => {
         added_quantity: 1
     });
     const {added_quantity} = state;
-    const {Products, Currency} = props.Data;
+    const {Products, Currency, BoughtProduct} = props.Data;
     const {dispatch} = props;
     const {nameSlug} = props.match.params;
+    console.log(BoughtProduct);
+
     // format thounds seperator
     function formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')

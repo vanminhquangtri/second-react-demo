@@ -1285,6 +1285,7 @@ $white-color: rgb(223, 223, 223);
 .product-detail {
     padding: 30px 0;
     .container.current-product {
+        /* big title at the to show name of product */
         .row.title {
             .col {
                 .product-title {
@@ -1319,7 +1320,9 @@ $white-color: rgb(223, 223, 223);
                 }
             }
         }
+        /* slide, button (add to cart, buy,...) */
         .row.with-slide {
+            /* slide */
             .col-6.image {
                 .tns-outer {
                     display: flex;
@@ -1361,10 +1364,13 @@ $white-color: rgb(223, 223, 223);
                     }
                 }
             }
+            /* detail about product: name, collection, price ,... until share */
             .col-6.info {
+                /* title */
                 .col-3 {
                     font-size: 15px;
                 }
+                /* information of title */
                 .col-9 {
                     font-size: 17px;
                 }
@@ -1401,6 +1407,7 @@ $white-color: rgb(223, 223, 223);
                             }
                         }
                     }
+                    /* show quantity, total amount, button add to cart and link to buy, refund policy, payment, share icon */
                     .action {
                         .quantity {
                             align-items: center;
@@ -1456,6 +1463,7 @@ $white-color: rgb(223, 223, 223);
                             color: white;
                             text-align: center;
                             margin-top: 20px;
+                            /* add to cart button */
                             .cart {
                                 .content {
                                     background: $hover-color-red;
@@ -1473,6 +1481,7 @@ $white-color: rgb(223, 223, 223);
                                     }
                                 }
                             }
+                            /* button navigate to buy displayed product (not whole shopping cart) */
                             .link {
                                 .content {
                                     background: black;
@@ -1481,6 +1490,7 @@ $white-color: rgb(223, 223, 223);
                                     line-height: 40px;
                                     a {
                                         color: white;
+                                        display: block;
                                     }
                                 }
                             }

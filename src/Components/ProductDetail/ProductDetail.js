@@ -121,6 +121,10 @@ const ProductDetail = (props) => {
             })
         }
     })
+    useEffect(() => {
+        // scroll to top of page after first render
+        window.scrollTo(0, 0)
+    },[])
     return (
         <section className="product-detail">
             {

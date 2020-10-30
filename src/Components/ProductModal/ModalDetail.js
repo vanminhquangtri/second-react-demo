@@ -169,6 +169,7 @@ const ModalDetail = (props) => {
                                             <NavLink
                                                 to = {`/product/${urlSlug(Products.name)}`}
                                                 exact = {true}
+                                                onClick = {()=>{window.scrollTo(0, 0)}}
                                             >
                                                 View Details
                                             </NavLink>

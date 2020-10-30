@@ -45,6 +45,7 @@ const AlsoLikeModal = (props) => {
                 <NavLink
                     to = {`/product/${urlSlug(Products.name)}`}
                     exact = {true}
+                    onClick = {()=>{window.scrollTo(0, 0)}}
                 >
                     <div className="info">
                         <div className="name">{Products.name}</div>
@@ -55,7 +56,7 @@ const AlsoLikeModal = (props) => {
                     <div 
                         className="blur"
                         css = {css`
-                            background-image: url(${Products.main__image})
+                            background-image: url(${Products.main__image.default})
                         `}
                     >
                     </div>

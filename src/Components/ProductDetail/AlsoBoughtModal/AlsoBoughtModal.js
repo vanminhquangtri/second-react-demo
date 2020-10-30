@@ -45,6 +45,7 @@ const AlsoBoughtModal = (props) => {
                 <NavLink
                     to = {`/product/${urlSlug(Products.name)}`}
                     exact = {true}
+                    onClick = {()=>{window.scrollTo(0, 0)}}
                 >
                     <div className="info">
                         <div className="name">{Products.name}</div>

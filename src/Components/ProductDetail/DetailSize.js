@@ -5,7 +5,7 @@ const DetailSize = (props) => {
     return (
         <div className="col size">
             <div className="content">
-                <img src = {require("../../Assets/images/section-product-detail/size-chart_2_1024x1024.webp")}
+                <img src = {require("../../Assets/images/section-product-detail/size-chart_2_1024x1024.webp").default}
                     alt="size"
                 />
             </div>

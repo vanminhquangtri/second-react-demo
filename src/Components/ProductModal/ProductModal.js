@@ -51,7 +51,7 @@ const ProductModal = (props) => {
                     <div 
                         className="blur"
                         css = {css`
-                            background-image: url(${Products.main__image})
+                            background-image: url(${Products.main__image.default})
                         `}
                     >
                     </div>

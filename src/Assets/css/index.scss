@@ -2345,3 +2345,13 @@ $gray-border: rgb(207, 205, 205);
     }
 }
 /*----- end contact -----*/
+
+.fly-points {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    border-radius: 50%;
+    background: green;
+    transition: 1s;
+    z-index: 2000;
+}

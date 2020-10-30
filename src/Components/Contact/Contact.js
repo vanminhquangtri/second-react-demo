@@ -22,7 +22,7 @@ const Contact = (props) => {
             <div className="container-fluid map">
                 <div className="row">
                     <div className="col">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5169875974734!2d106.70237131411646!3d10.77165946222879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4138cf4909%3A0xaa966d5f7d098671!2sTh%C3%A1p%20Bitexco%20Financial%20Tower!5e0!3m2!1svi!2s!4v1604051492468!5m2!1svi!2s" width={600} height={450} frameBorder={0} style={{border: 0}} allowFullScreen aria-hidden="false" tabIndex={0} />
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5169875974734!2d106.70237131411646!3d10.77165946222879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4138cf4909%3A0xaa966d5f7d098671!2sTh%C3%A1p%20Bitexco%20Financial%20Tower!5e0!3m2!1svi!2s!4v1604051492468!5m2!1svi!2s" title="location map" height={450} frameBorder={0} style={{border: 0}} allowFullScreen aria-hidden="false" tabIndex={0} />
                     </div>
                 </div>
             </div>

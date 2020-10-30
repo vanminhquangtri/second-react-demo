@@ -8,12 +8,8 @@ import Footer from './Components/Footer/Footer';
 import TopNav from './Components/TopNav/TopNav';
 import Store from "./Store/Store";
 import {Provider} from "react-redux";
-import Rotate from "./Components/GeneralModules/RotateCartAmount";
 
 const App = (props) => {
-    useEffect(() => {
-        Rotate()
-    })
     return (
         <Provider store = {Store}>
             <Router>

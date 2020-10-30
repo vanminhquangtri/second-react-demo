@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTrashAlt} from "@fortawesome/free-solid-svg-icons";
@@ -89,6 +89,20 @@ const ShoppingCart = (props) => {
                 return "$ " + value;
         }
     }
+    // rotate the quantity button when quantity change (add to cart, update, delete)
+    useEffect(() => {
+        const currentAmount = document.querySelector(".current-amount");
+        currentAmount.style.transition = "1s";
+        const currentRotate = currentAmount.style.transform;
+        if (currentRotate === "rotate(0deg)"){
+            currentAmount.style.transform = "rotate(360deg)";
+            currentAmount.style.transition = "1s";
+        }
+        if (currentRotate === "rotate(360deg)"){
+            currentAmount.style.transform = "rotate(0deg)";
+            currentAmount.style.transition = "1s";
+        }
+    })
     return (
         <div className="cart">
             <div className="cart-amount">

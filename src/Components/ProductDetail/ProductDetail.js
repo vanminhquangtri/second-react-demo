@@ -205,10 +205,10 @@ const ProductDetail = (props) => {
                                                     >-</span>
                                                     <input type="number" min="1" className="added-amount"
                                                         value = {added_quantity}
-                                                        onChange = {(ev)=>changeAddedAmount(ev)}
+                                                        onChange = {(ev)=>{changeAddedAmount(ev)}}
                                                     />
                                                     <span className="button increase"
-                                                        onClick = {()=>{increaseAddedAmount()}}
+                                                        onClick = {()=>increaseAddedAmount()}
                                                     >+</span>
                                                     </div>
                                                 </div>
@@ -229,7 +229,7 @@ const ProductDetail = (props) => {
                                                             <NavLink
                                                                 to="/check-out"
                                                                 exact = {true}
-                                                                onClick = {()=>{dispatch({type: "BUY_SEPARATE"})}}
+                                                                onClick = {()=>{dispatch({type: "CHANGE_QUANTITY_BUY_PRODUCT", product: Product, quantity: added_quantity}); dispatch({type: "BUY_SEPARATE"})}}
                                                             >
                                                                 Buy Now
                                                             </NavLink>

@@ -1020,7 +1020,7 @@ const Currency_reducer = (init = currency, action) => {
 }
 /*---shopping cart---*/
 const Cart = [];
-var currentCart;
+var currentCart; // to use for BoughtTarget below
 const Cart_reducer = (init = Cart, action) => {
     const product = Product.find((product) => {
         return product.id === action.id;
@@ -1152,13 +1152,19 @@ const Order_reducer = (init = orders, action) => {
 }
 /*---bought product (when buy separate product, not the whole shopping cart)---*/
 const BoughtProduct = ["bought product"];
-var currentBoughtProduct;
+var currentBoughtProduct; // to use for BoughtTarget below
 const BoughtProduct_reducer = (init = BoughtProduct, action) => {
     currentBoughtProduct = [...init]; 
     switch (action.type) {
-        case "BUY_PRODUCT":
+        case "BUY_PRODUCT": // when click name of product of components Modal
             currentBoughtProduct = [];
             currentBoughtProduct.push(action.product)
+            return currentBoughtProduct
+        case "CHANGE_QUANTITY_BUY_PRODUCT": // when click buy now of component product detail
+            currentBoughtProduct = [];
+            for (let i = 0; i < action.quantity; i++){
+                currentBoughtProduct.push(action.product)
+            }
             return currentBoughtProduct
         default:
             break;

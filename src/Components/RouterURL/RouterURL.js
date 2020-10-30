@@ -8,6 +8,7 @@ import LatestCollection from '../Collections/LatestCollection';
 import MinimalCollection from '../Collections/MinimalCollection';
 import ModernCollection from '../Collections/ModernCollection';
 import SummerCollection from '../Collections/SummerCollection';
+import Contact from '../Contact/Contact';
 import Home from '../Home/Home';
 import OrderManagement from '../Order/OrderManagement';
 import ProductDetail from '../ProductDetail/ProductDetail';
@@ -27,6 +28,7 @@ const RouterURL = (props) => {
             <Route path = "/shopping-cart" exact = {true} component = {ShoppingCartDetail}></Route>
             <Route path = "/check-out" exact = {true} component = {CheckoutShoppingCart}></Route>
             <Route path = "/order" exact = {true} component = {OrderManagement}></Route>
+            <Route path = "/contact" exact = {true} component = {Contact}></Route>
             <Route component = {Home}></Route>
         </Switch>
     );

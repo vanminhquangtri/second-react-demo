@@ -5,6 +5,7 @@
 $hover-color-red: rgb(211, 9, 9);
 $hover-color-gray: rgb(245, 245, 245);
 $white-color: rgb(223, 223, 223);
+$gray-border: rgb(207, 205, 205);
 /*----- top-bar -----*/
 .top-bar {
     .container {
@@ -1934,7 +1935,7 @@ $white-color: rgb(223, 223, 223);
                             margin: 5px 0;
                             padding: 10px;
                             border-radius: 10px;
-                            border: 1px solid rgb(207, 205, 205);
+                            border: 1px solid $gray-border;
                             color: rgb(51, 51, 51);
                             outline: none;
                         }
@@ -2260,3 +2261,87 @@ $white-color: rgb(223, 223, 223);
     }
 }
 /*----- end order management -----*/
+/*----- contact -----*/
+.contact {
+    padding: 20px 0;
+    /*map*/
+    .map {
+        .row {
+            .col {
+                padding: 0;
+                iframe {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    /*contact-form and contact detail*/
+    .form-contact {
+        margin-top: 20px;
+        .row {
+            .title {
+                font-weight: bold;
+            }
+            /*contact-form*/
+            .col-9.form {
+                .content {
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        input, textarea {
+                            width: 75%;
+                            outline: none;
+                            border: 1px solid $gray-border;
+                            border-radius: 5px;
+                            padding: 5px;
+                        }
+                        label {
+                            font-weight: bold;
+                        }
+                        input[type=submit]{
+                            background: $hover-color-red;
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .col-3.address {
+                .content {
+                    table {
+                        td {
+                            padding: 5px 10px 5px 0;
+                        }
+                    }
+                }
+            }
+            .col-9.submit-success {
+                .content {
+                    .other-feedback, .navigate {
+                        display: inline-block;
+                        color: white;
+                        font-size: 20px;
+                        padding: 10px;
+                        border-radius: 5px;
+                        font-weight: bold;
+                        transition: .3s;
+                    }
+                    .other-feedback {
+                        margin: 20px 0;
+                        background: black;
+                        cursor: pointer;
+                        &:hover {
+                            background: $hover-color-red;
+                        }
+                    }
+                    .navigate {
+                        background: $hover-color-red;
+                        &:hover {
+                            background: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*----- end contact -----*/

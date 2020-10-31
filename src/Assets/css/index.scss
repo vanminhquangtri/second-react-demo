@@ -1899,6 +1899,11 @@ $gray-border: rgb(207, 205, 205);
 /*----- end shopping cart detail -----*/
 /*----- check out -----*/
 .check-out {
+    .errors {
+        color: blue;
+        font-weight: bold;
+        padding-left: 10px;
+    }
     padding: 20px 0;
     .container {
         .row.title {

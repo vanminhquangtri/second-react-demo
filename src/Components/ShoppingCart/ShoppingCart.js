@@ -55,22 +55,22 @@ class ShoppingCart extends React.Component {
                 return "$ " + value;
         }
     }
-    componentDidUpdate(){
-        // rotate the quantity button when quantity change (add to cart, update, delete)
-        const currentAmount = document.querySelector(".current-amount");
-        currentAmount.style.transition = "1s";
-        const currentRotate = currentAmount.style.transform;
-        if (currentRotate === "rotate(0deg)"){
-            currentAmount.style.transform = "rotate(360deg)";
-            currentAmount.style.transition = "1s";
-        }
-        if (currentRotate === "rotate(360deg)"){
-            currentAmount.style.transform = "rotate(0deg)";
-            currentAmount.style.transition = "1s";
-        } 
-    }
-    // only re-render if cart length change or currency change
     shouldComponentUpdate(nextProps) {
+        // rotate the quantity button when quantity change (add to cart, update, delete)
+        if (this.props.Data.Cart.length !== nextProps.Data.Cart.length ) {
+            const currentAmount = document.querySelector(".current-amount");
+            currentAmount.style.transition = "1s";
+            const currentRotate = currentAmount.style.transform;
+            if (currentRotate === "rotate(0deg)"){
+                currentAmount.style.transform = "rotate(360deg)";
+                currentAmount.style.transition = "1s";
+            }
+            if (currentRotate === "rotate(360deg)"){
+                currentAmount.style.transform = "rotate(0deg)";
+                currentAmount.style.transition = "1s";
+            } 
+        }
+        // only re-render if cart length change or currency change
         if (this.props.Data.Cart.length !== nextProps.Data.Cart.length || 
             this.props.Data.Currency.currency !== nextProps.Data.Currency.currency
             ) {return true} else {return false}

@@ -7,11 +7,13 @@ const BestSell = (props) => {
     return (
         <section className="best-sell">
             <div className="container">
+                {/* big title */}
                 <div className="row title-row">
                     <div className="col">
                         <span className="title">BEST SELL OF WEEK</span>
                     </div>
                 </div>
+                {/* Each product is a modal call ProductModal */}
                 <div className="row product-row">
                     {
                         Products.map((product, index) => {

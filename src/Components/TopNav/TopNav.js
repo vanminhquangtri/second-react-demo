@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown, faHome} from "@fortawesome/free-solid-svg-icons";
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 
-const TopNav = (props) => {
+const TopNav = () => {
     useEffect(() => {
         // fix top-nav when scrollY more than height of top-nav
         const topNav = document.querySelector(".top-nav");        
@@ -35,13 +35,16 @@ const TopNav = (props) => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col">
+                        {/* nav: home icon, link */}
                         <div className="nav">
                             <ul>
+                                {/* home icon */}
                                 <li className="home">
                                     <NavLink to = "/" exact = {true} activeClassName="active">
                                         <FontAwesomeIcon icon = {faHome} className="icon"/>
                                     </NavLink>
                                 </li>
+                                {/* all-collection */}
                                 <li>
                                     <NavLink to = "/all-collection" exact = {true} activeClassName="active">
                                         SHOP
@@ -91,6 +94,7 @@ const TopNav = (props) => {
                                 </li>
                             </ul>
                         </div>
+                        {/* shopping cart */}
                         <ShoppingCart></ShoppingCart>
                     </div>
                 </div>

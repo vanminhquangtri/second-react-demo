@@ -6,6 +6,7 @@ const CollectionSum = (props) => {
         <section className="collection-sum">
             <div className="container">
                 <div className="row">
+                    {/* all collections */}
                     <div className="col-4 all">
                         <NavLink to = "/all-collection" exact = {true}>
                             <div className="wrapper">
@@ -20,6 +21,7 @@ const CollectionSum = (props) => {
                             </div>
                         </NavLink>
                     </div>
+                    {/* each collection */}
                     <div className="col-8">
                         <div className="row">
                             <div className="col-4">

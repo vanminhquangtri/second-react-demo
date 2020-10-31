@@ -12,6 +12,7 @@ const Footer = () => {
         <section className="footer">
             <div className="container">
                 <div className="row">
+                    {/* About */}
                     <div className="col-3">
                         <div className="title">About</div>
                         <div className="content">
@@ -22,6 +23,7 @@ const Footer = () => {
                         </div>
                         <div className="copy-right">© Themetidy. All Rights Reserved</div>
                     </div>
+                    {/* The Service */}
                     <div className="col-2">
                         <div className="title">The Service</div>
                         <div className="links">
@@ -42,6 +44,7 @@ const Footer = () => {
                             >Privacy Policy</NavLink>
                         </div>
                     </div>
+                    {/* Information */}
                     <div className="col-2">
                         <div className="title">Information</div>
                         <div className="links">
@@ -72,6 +75,7 @@ const Footer = () => {
                             </NavLink>
                         </div>
                     </div>
+                    {/* Gallery */}
                     <div className="col-2">
                         <div className="title">Gallery</div>
                         <div className="links">
@@ -102,6 +106,7 @@ const Footer = () => {
                             </NavLink>
                         </div>
                     </div>
+                    {/* Newsletter */}
                     <div className="col-3">
                         <div className="title">Newsletter</div>
                         <form className="subscribe-form">
@@ -110,6 +115,7 @@ const Footer = () => {
                                 <FontAwesomeIcon icon = {faShareSquare}/>
                             </button>
                         </form>
+                        {/* Social Links */}
                         <div className="title social">Social Links</div>
                         <div className="social-links">
                             <NavLink

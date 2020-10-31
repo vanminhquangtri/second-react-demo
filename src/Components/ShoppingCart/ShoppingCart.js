@@ -1,25 +1,62 @@
-import React, {Component} from 'react';
+// direct child of top-nav
+import React from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
 import urlSlug from "url-slug";
 // start component
-class ShoppingCart extends Component {
-    componentDidMount(){
-        const currentAmount = document.querySelector(".current-amount");
-        currentAmount.style.transition = "1s";
-        const currentRotate = currentAmount.style.transform;
-        if (currentRotate === "rotate(0deg)"){
-            currentAmount.style.transform = "rotate(360deg)";
-            currentAmount.style.transition = "1s";
+class ShoppingCart extends React.Component {
+    // format thounds seperator
+    formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
+    // fortmat money (currency and operator and decimal)
+    showMoney(currency, quantity, item) {
+        const value = this.formatNumber((item.price * quantity * this.props.Data.Currency.rate).toFixed(2));
+        switch (currency) {
+            case "USD":
+                return "$ " + value;
+
+            case "EUR":
+                return "€ " + value;
+
+            case "GBP":
+                return "£ " + value;
+
+            default:
+                return "$ " + value;
         }
-        if (currentRotate === "rotate(360deg)"){
-            currentAmount.style.transform = "rotate(0deg)";
-            currentAmount.style.transition = "1s";
+    }
+    // count quantity of a product in Shopping Cart
+    countProduct(id) {
+        let count = 0;
+        this.props.Data.Cart.forEach((product) => {
+            if (product.id === id) {
+                count += 1;
+            }
+        })
+        return count;
+    }
+    // fortmat money (currency and operator and decimal)
+    showMoneyTotal(currency, amount) {
+        const value = this.formatNumber((amount * this.props.Data.Currency.rate).toFixed(2));
+        switch (currency) {
+            case "USD":
+                return "$ " + value;
+
+            case "EUR":
+                return "€ " + value;
+
+            case "GBP":
+                return "£ " + value;
+
+            default:
+                return "$ " + value;
         }
     }
     componentDidUpdate(){
+        // rotate the quantity button when quantity change (add to cart, update, delete)
         const currentAmount = document.querySelector(".current-amount");
         currentAmount.style.transition = "1s";
         const currentRotate = currentAmount.style.transform;
@@ -32,41 +69,15 @@ class ShoppingCart extends Component {
             currentAmount.style.transition = "1s";
         } 
     }
+    // only re-render if cart length change or currency change
+    shouldComponentUpdate(nextProps) {
+        if (this.props.Data.Cart.length !== nextProps.Data.Cart.length || 
+            this.props.Data.Currency.currency !== nextProps.Data.Currency.currency
+            ) {return true} else {return false}
+    }
     render(){
         const {Cart, Products, Currency} = this.props.Data;
         const {dispatch} = this.props;
-        console.log(Cart);
-        // format thounds seperator
-        function formatNumber(num) {
-            return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-        }
-        // fortmat money (currency and operator and decimal)
-        const showMoney = (currency, quantity, item) => {
-            const value = formatNumber((item.price * quantity * Currency.rate).toFixed(2));
-            switch (currency) {
-                case "USD":
-                    return "$ " + value;
-
-                case "EUR":
-                    return "€ " + value;
-
-                case "GBP":
-                    return "£ " + value;
-
-                default:
-                    return "$ " + value;
-            }
-        }
-        // count quantity of a product in Shopping Cart
-        const countProduct = (id) => {
-            let count = 0;
-            Cart.forEach((product) => {
-                if (product.id === id) {
-                    count += 1;
-                }
-            })
-            return count;
-        }
         /* Remove duplicate product in Cart arr based on ID*/
             const currentCart = [...Cart];
             // get ID list of current Cart
@@ -100,25 +111,6 @@ class ShoppingCart extends Component {
                 }
             })
         })
-        // fortmat money (currency and operator and decimal)
-        const showMoneyTotal = (currency, amount) => {
-            const value = formatNumber((amount * Currency.rate).toFixed(2));
-            switch (currency) {
-                case "USD":
-                    return "$ " + value;
-
-                case "EUR":
-                    return "€ " + value;
-
-                case "GBP":
-                    return "£ " + value;
-
-                default:
-                    return "$ " + value;
-            }
-        }
-        // rotate the quantity button when quantity change (add to cart, update, delete)
-        
         return (
             <div className="cart">
                 <div className="cart-amount">
@@ -189,8 +181,8 @@ class ShoppingCart extends Component {
                                                                         onClick = {()=>{dispatch({type: "REMOVE", id: item.id})}}
                                                                     />
                                                                     <div className="money">
-                                                                        <span className="unit">{countProduct(item.id)} x</span>
-                                                                        <span className="price">{showMoney(Currency.currency, 1, item)}</span>
+                                                                        <span className="unit">{this.countProduct(item.id)} x</span>
+                                                                        <span className="price">{this.showMoney(Currency.currency, 1, item)}</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -201,7 +193,7 @@ class ShoppingCart extends Component {
                                         })
                                     }
                                     <div className="total">
-                                        <span>Total: {showMoneyTotal(Currency.currency, totalAmount) }</span>
+                                        <span>Total: {this.showMoneyTotal(Currency.currency, totalAmount) }</span>
                                     </div>
                                 </div>
                             )

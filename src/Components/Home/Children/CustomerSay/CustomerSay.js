@@ -13,11 +13,13 @@ const CustomerSay = () => {
                         <h1 className="title">What our customers say</h1>
                         <TinySlider settings = {settings} className="slide">
                             <div className="comment">
+                                {/* avatar of customer */}
                                 <img 
                                     alt="avatar"
                                     className="avatar"
                                     src = {require("../../../../Assets/images/section-customer-say/1.webp").default}
                                 />
+                                {/* detail of comment */}
                                 <div className="content">
                                     <div className="say">
                                         "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme &#38; template is so Special. Because we have unique and vary clean simple design."
@@ -28,11 +30,13 @@ const CustomerSay = () => {
                                 </div>
                             </div>
                             <div className="comment">
+                                {/* avatar of customer */}
                                 <img 
                                     alt="avatar"
                                     className="avatar"
                                     src = {require("../../../../Assets/images/section-customer-say/2.webp").default}
                                 />
+                                {/* detail of comment */}
                                 <div className="content">
                                     <div className="say">
                                         "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme &#38; template is so Special. Because we have unique and vary clean simple design."
@@ -43,11 +47,13 @@ const CustomerSay = () => {
                                 </div>
                             </div>
                             <div className="comment">
+                                {/* avatar of customer */}
                                 <img 
                                     alt="avatar"
                                     className="avatar"
                                     src = {require("../../../../Assets/images/section-customer-say/3.webp").default}
                                 />
+                                {/* detail of comment */}
                                 <div className="content">
                                     <div className="say">
                                         "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme &#38; template is so Special. Because we have unique and vary clean simple design."
@@ -58,11 +64,13 @@ const CustomerSay = () => {
                                 </div>
                             </div>
                             <div className="comment">
+                                {/* avatar of customer */}
                                 <img 
                                     alt="avatar"
                                     className="avatar"
                                     src = {require("../../../../Assets/images/section-customer-say/4.webp").default}
                                 />
+                                {/* detail of comment */}
                                 <div className="content">
                                     <div className="say">
                                         "Our leggings shopify theme is a best, popular, modern and clean. Why our shopify theme &#38; template is so Special. Because we have unique and vary clean simple design."

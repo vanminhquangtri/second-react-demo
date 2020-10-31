@@ -1276,7 +1276,7 @@ $gray-border: rgb(207, 205, 205);
     }
 }
 /*----- end customer say -----*/
-/*----- promotion -----*/
+/*----- promotion (three large images above footer) -----*/
 .promotion {
     padding-top: 30px;
     .container {
@@ -1284,9 +1284,11 @@ $gray-border: rgb(207, 205, 205);
             height: 400px;
             margin: 0;
             padding: 0;
+            /* each image is a col-4 div */
             .col-4 {
                 padding: 0;
                 overflow: hidden;
+                /* navlink wrap all content */
                 a {
                     text-decoration: none;
                     .wrapper {
@@ -1304,13 +1306,14 @@ $gray-border: rgb(207, 205, 205);
                             display: flex;
                             flex-direction: column;
                             align-items: center;
-
+                            /* title SHOP NOW, FOR STYLIST, SALE OFF */
                             .shop, .des {
                                 background: rgba($color: red, $alpha: 0.7);
                                 display: inline;
                                 padding: 5px;
                                 border-radius: 10px;
                             }
+                            /* title WOMEN, WOMEN COAT */
                             .title {
                                 background: rgba($color: black, $alpha: 0.7);
                                 display: inline;
@@ -1324,6 +1327,7 @@ $gray-border: rgb(207, 205, 205);
                 .wrapper.coat {
                     background-image: url("../images/section-promotion/1.jpg")
                 }
+                /* image between */
                 .wrapper.men {
                     background-image: url("../images/section-promotion/2.jpg");
                     .des {
@@ -1335,6 +1339,7 @@ $gray-border: rgb(207, 205, 205);
                         display: flex;
                     }
                 }
+                /* image on the right side */
                 .wrapper.women {
                     background-image: url("../images/section-promotion/3.jpg");
                     .des {
@@ -1351,6 +1356,7 @@ $gray-border: rgb(207, 205, 205);
                         }
                     }
                 }
+                /* zoom image when hover */
                 &:hover {
                     .wrapper {
                         transform: scale(1.15)
@@ -1584,6 +1590,7 @@ $gray-border: rgb(207, 205, 205);
                         .refund {
                             margin-top: 10px;
                         }
+                        /* payment card */
                         .payment {
                             margin-top: 10px;
                             align-items: center;
@@ -1604,6 +1611,7 @@ $gray-border: rgb(207, 205, 205);
                                 }
                             }
                         }
+                        /* share icons (face, twitter, ...) */
                         .share {
                             margin-top: 10px;
                             align-items: center;
@@ -1637,9 +1645,11 @@ $gray-border: rgb(207, 205, 205);
                 }
             }
         }
+        /* show regulations below share icons: description, size chart, payment shipping, refund */
         .row.term {
             padding-top: 20px;
             .container {
+                /* big title at the top: Product Description, Size Chart, Shipping and Payment, Refund Policy */
                 .row.title {
                     padding: 0;
                     margin: 0;
@@ -1658,6 +1668,7 @@ $gray-border: rgb(207, 205, 205);
                         }
                     }
                 }
+                /* show detail of when click each title */
                 .row.detail {
                     padding: 0;
                     margin: 0;
@@ -1684,7 +1695,7 @@ $gray-border: rgb(207, 205, 205);
                 }
             }
         }
-        /*--- also-bought and also-like (similar with best-sell but smaller)---*/
+        /*--- also-bought and also-like (similar with best-sell but smaller) ---*/
         .row.also {
             padding-top: 20px;
             .container-fluid {

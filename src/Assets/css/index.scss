@@ -13,28 +13,19 @@ $gray-border: rgb(207, 205, 205);
             align-items: center;
             padding-top: 10px;
             padding-bottom: 10px;
-            .col-3 {
+            .col-2.logo-container {
                 .logo {
                     img {
                         height: 30px;
                     }
                 }
-                .search-form {
+                
+            }
+            .col-4.date-time-container{
+                .date-time {
                     border-bottom: 1px solid black;
                     padding: 5px 0;
-                    form {
-                        text-align: right;
-                        display: flex;
-                        justify-content: space-between;
-                        input, button {
-                            border: none;
-                            outline: none;
-                            background: transparent;
-                        }
-                        input {
-                            flex: 1;
-                        }
-                    }
+                    display: inline-block;
                 }
             }
             .col-auto {

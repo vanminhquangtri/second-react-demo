@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
 import logo from "../../Assets/images/section-top-bar/logo.webp";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSearch, faChevronDown} from "@fortawesome/free-solid-svg-icons";
+import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import {NavLink} from "react-router-dom";
 import {connect} from "react-redux";
+import DateTime from './DateTime';
 
 const TopBar = (props) => {
     const {dispatch} = props;
@@ -51,23 +52,15 @@ const TopBar = (props) => {
         <section className="top-bar">
             <div className="container">
                 <div className="row">
-                    <div className="col-3">
+                    <div className="col-2 logo-container">
                         <div className="logo">
                             <img src = {logo} alt="logo"/>
                         </div>
                     </div>
-                    <div className="col-3">
-                        <div className="search-form">
-                            <form>
-                                <input type="search" placeholder="Search for..."></input>
-                                <button type="submit"><FontAwesomeIcon icon = {faSearch}/></button>
-                            </form>
-                        </div>
-                    </div>
+                    <DateTime></DateTime>
                     <div className="col-auto">
                         <div className="account-currency">
-                            <NavLink to="/acount/login">Login</NavLink>
-                            <NavLink to="/acount/register">Register</NavLink>
+                            <NavLink to="/">Currency</NavLink>
                             <span className="currency" style = {{"paddingRight": 0}}>
                                 {showCurrency(Currency.currency)} &nbsp; 
                                 <FontAwesomeIcon icon = {faChevronDown} className="icon currency-sign" style = {{"margin": 0}}/>

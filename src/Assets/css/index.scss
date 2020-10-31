@@ -2178,68 +2178,61 @@ $gray-border: rgb(207, 205, 205);
                 }
             }
         }
-        .row.order-summary {
+        .order-summary {
             margin-top: 20px;
-            margin-right: 30px;
-            .col {
-                h5 {
-                    font-weight: bold;
-                    text-decoration: underline red;
+            h5 {
+                font-weight: bold;
+            }
+            table {
+                box-shadow: 1px 1px 10px 10px $hover-color-gray;
+                width: 100%;
+                td {
+                    padding: 10px;
                 }
-                table {
-                    box-shadow: 1px 1px 10px 10px $hover-color-gray;
-                    width: 100%;
-                    td {
-                        padding: 10px;
+                .product {
+                    .name {
+                        font-weight: bold;
                     }
-                    .product {
-                        .name {
-                            font-weight: bold;
-                        }
-                        .quantity {
-                            text-align: center;
-                            color: $hover-color-red;
-                        }
-                        .price, .amount {
-                            text-align: right;
-                            font-weight: bold;
-                        }
-                        
+                    .quantity {
+                        text-align: center;
+                        color: $hover-color-red;
                     }
-                    .total-amount {
-                        .title {
-                            text-align: center;
-                            font-weight: bold;
-                        }
-                        .money {
-                            text-align: right;
-                            font-weight: bold;
-                            font-size: 25px;
-                        }
+                    .price, .amount {
+                        text-align: right;
+                        font-weight: bold;
+                    }
+                    
+                }
+                .total-amount {
+                    .title {
+                        text-align: center;
+                        font-weight: bold;
+                    }
+                    .money {
+                        text-align: right;
+                        font-weight: bold;
+                        font-size: 25px;
                     }
                 }
             }
         }
-        .row.order-contact {
+        .order-contact {
             margin-top: 20px;
-            .col {
-                h5 {
-                    font-weight: bold;
-                    text-decoration: underline red;
+            h5 {
+                font-weight: bold;
+            }
+            table {
+                font-family: 'Roboto', sans-serif;
+                box-shadow: 1px 1px 10px 10px $hover-color-gray;
+                width: 100%;
+                td {
+                    padding: 10px;
                 }
-                table {
-                    font-family: 'Roboto', sans-serif;
-                    box-shadow: 1px 1px 10px 10px $hover-color-gray;
-                    width: 100%;
-                    td {
-                        padding: 10px;
-                    }
-                    td.item {
-                        width: 100px;
-                    }
-                    td.value {
-                        font-weight: bold;
-                    }
+                td.item {
+                    width: 100px;
+                }
+                td.value {
+                    font-weight: bold;
                 }
             }
         }

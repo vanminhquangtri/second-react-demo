@@ -119,10 +119,9 @@ const OrderDetail = (props) => {
                         <h4>Your order detail: <strong>{order_number}</strong></h4>
                     </div>
                 </div>
-                <div className="detail-wrap">
-                    <div className="row order-summary">
-                        <div className="col">
-                            <h5>Order summary</h5>
+                <div className="row detail-wrap">
+                    <div className="col-6 order-summary">
+                    <h5>Order summary</h5>
                             <table>
                                 <tbody>
                                     {
@@ -149,32 +148,29 @@ const OrderDetail = (props) => {
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
                     </div>
-                    <div className="row order-contact">
-                        <div className="col">
-                            <h5>Shipping address</h5>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td className="item">Name</td>
-                                        <td className="value">{currentOrder.shipping.first_name} {currentOrder.shipping.last_name}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="item">Phone</td>
-                                        <td className="value">{currentOrder.shipping.phone}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="item">City</td>
-                                        <td className="value">{currentOrder.shipping.city}, {countryName(currentOrder.shipping.country)}</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="item">Street</td>
-                                        <td className="value">{currentOrder.shipping.street}, {currentOrder.shipping.more}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div className="col-6 order-contact">
+                        <h5>Shipping address</h5>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td className="item">Name</td>
+                                    <td className="value">{currentOrder.shipping.first_name} {currentOrder.shipping.last_name}</td>
+                                </tr>
+                                <tr>
+                                    <td className="item">Phone</td>
+                                    <td className="value">{currentOrder.shipping.phone}</td>
+                                </tr>
+                                <tr>
+                                    <td className="item">City</td>
+                                    <td className="value">{currentOrder.shipping.city}, {countryName(currentOrder.shipping.country)}</td>
+                                </tr>
+                                <tr>
+                                    <td className="item">Street</td>
+                                    <td className="value">{currentOrder.shipping.street}, {currentOrder.shipping.more}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <div className="navigate">

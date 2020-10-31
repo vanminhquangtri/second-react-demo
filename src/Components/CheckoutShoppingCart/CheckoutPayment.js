@@ -51,18 +51,19 @@ const CheckoutPayment = (props) => {
                     <option disabled value="Airtel">Airtel (Currently under maintenance)</option>
                 </select>
                 <label className="label">Card owner</label>
-                <input required className="field" name="first-name" type="text" placeholder="Card Owner"/>
+                <input ref={register({pattern: /^[a-zA-Z ]*$/})} required className="field" name="card_owner" type="text" placeholder="Card Owner"/>
+                <span className="errors">{errors.card_owner && "First name should be alphabet letters only"}</span>
                 <label className="label">Card number (maximum 16 digits)</label>
-                <input ref={register({required: true, maxLength: 16, minLength: 16})} className="field" name="card_number" type="number" placeholder="Card Number" value = {state.card_number} onChange = {(ev)=>updateCardNumber(ev)}/>
-                {errors.card_number && "Sorry card number should have 16 digits"}
+                <input ref={register({maxLength: 16, minLength: 16})} required className="field" name="card_number" type="number" placeholder="Card Number" value = {state.card_number} onChange = {(ev)=>updateCardNumber(ev)}/>
+                <span className="errors">{errors.card_number && "Card number should have 16 digits"}</span>
                 <label className="label">Card expiration</label>
-                <input ref={register({required: true, maxLength: 2, minLength: 2})} className="field" name="month" type="number" placeholder="Expired Month"/>                        
-                {errors.month && "Sorry expired month should have 2 digits"}
-                <input ref={register({ required: true, maxLength: 4, minLength: 4})} className="field" name="year" type="number" placeholder="Expired Year"/>
-                {errors.year && "Sorry expired year should have 4 digits"}
+                <input ref={register({maxLength: 2, minLength: 2})} required className="field" name="month" type="number" placeholder="Expired Month"/>                        
+                <span className="errors">{errors.month && "Expired month should have 2 digits"}</span>
+                <input ref={register({maxLength: 4, minLength: 4})} required className="field" name="year" type="number" placeholder="Expired Year"/>
+                <span className="errors">{errors.year && "Expired year should have 4 digits"}</span>
                 <label className="label">CVC code</label>
-                <input ref={register({required: true, maxLength: 3, minLength: 3})} className="field" name="pass" type="password" placeholder="Card's CVC code"/>                        
-                {errors.pass && "Sorry CVC code should have 3 digits"}
+                <input ref={register({maxLength: 3, minLength: 3})} required className="field" name="pass" type="password" placeholder="Card's CVC code"/>                        
+                <span className="errors">{errors.pass && "CVC code should have 3 digits"}</span>
             </form>
             <div className="navigate">
                 <div className="container">

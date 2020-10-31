@@ -66,13 +66,16 @@ const ShoppingCartProduct = (props) => {
     } 
     return (
         <div className="row product-row">
+            {/* main image */}
             <div className="col-2 img">
                 <img 
                     alt="product"
                     src = {Product.main__image.default}
                 />
             </div>
+            {/* container of name, price, quantity, button + -, update, remove */}
             <div className="col-10 product-detail">
+                {/* name */}
                 <div className="row name">
                     <div className="col">
                         <NavLink
@@ -83,6 +86,7 @@ const ShoppingCartProduct = (props) => {
                         </NavLink>
                     </div>
                 </div>
+                {/* price */}
                 <div className="row price">
                     <div className="col">{showMoney(Currency.currency, 1, Product)}</div>
                 </div>
@@ -91,13 +95,15 @@ const ShoppingCartProduct = (props) => {
                         Quantity
                     </div>
                 </div>
+                {/* container button + -, show quantity, button, update, remove */}
                 <div className="row quantity-row">
-                    <div className="col-3 quantity">
+                    <div className="col-4 quantity">
                         <div className="wrap">
                             <span 
                                 className="decrease"
                                 onClick = {()=>{decreaseAddedAmount()}}
                             >-</span>
+                            {/* show quanity */}
                             <span className='count'>
                                 {state.update_quantity}
                             </span>
@@ -107,6 +113,7 @@ const ShoppingCartProduct = (props) => {
                             >+</span>
                         </div>
                     </div>
+                    {/* button update */}
                     <div className="col-3 update-quantity">
                         <div 
                             className="wrap" 
@@ -116,6 +123,7 @@ const ShoppingCartProduct = (props) => {
                             Update
                         </div>
                     </div>
+                    {/* button remove */}
                     <div className="col-3 remove-product">
                         <div 
                             className="wrap"

@@ -1827,11 +1827,12 @@ $gray-border: rgb(207, 205, 205);
     }
 }
 /*----- end product detail -----*/
-/*----- shopping cart detail -----*/
+/*----- shopping cart detail, appear when click "View Cart" while cart is not empty -----*/
 .shopping-cart-detail {
     padding-top: 20px;
     .container {
-        .row.title { /*Your Shopping Cart*/
+        .row.title {
+            /* big title at top (Your Shopping Cart) */
             .col {
                 h4 {
                     position: relative;
@@ -1849,6 +1850,7 @@ $gray-border: rgb(207, 205, 205);
                     }
                 }
             }
+            /* button continue shopping on the right side */
             .col-auto {
                 a {
                     color: black;
@@ -1863,6 +1865,7 @@ $gray-border: rgb(207, 205, 205);
                 }
             }
         }
+        /* container of order summary on the left and total amount on the right */
         .row.shopping-cart-content {
             padding: unset;
             .content {
@@ -1873,15 +1876,17 @@ $gray-border: rgb(207, 205, 205);
                         padding: 10px;
                     }
             }
-            /*---order summary---*/
+            /* order summary on the left */
             .col-6.order {
                 padding-top: 0;
                 .content {
                     .info {
                         .container {
                             padding-top: 10px;
+                            /* each product is a row */
                             .product-row {
                                 margin-bottom: 15px;
+                                /* main image */
                                 .col-2.img {
                                     padding-left: 10px;
                                     img {
@@ -1889,11 +1894,13 @@ $gray-border: rgb(207, 205, 205);
                                         height: 80px
                                     }
                                 }
+                                /* container of name, price, quantity, button + -, update, remove */
                                 .col-10.product-detail {
                                     .row {
                                         margin-bottom: 5px;
                                     }
                                     padding: 0;
+                                    /* name */
                                     .row.name {
                                         font-weight: bold;
                                         a {
@@ -1904,6 +1911,7 @@ $gray-border: rgb(207, 205, 205);
                                             }
                                         }
                                     }
+                                    /* price */
                                     .row.price {
                                         font-weight: bold;
                                         font-size: 18px;
@@ -1911,21 +1919,15 @@ $gray-border: rgb(207, 205, 205);
                                     .row.quantity-title {
                                         margin-bottom: 0;
                                     }
+                                    /* container button + -, show quantity, button, update, remove */
                                     .row.quantity-row {
                                         align-items: center;
                                         .wrap {
                                             line-height: 30px;
                                         }
-                                        .col-3.quantity {
-                                            input {
-                                                width: 100%;
-                                                text-align: center;
-                                                border: 1px solid rgb(230, 230, 230);
-                                                border-radius: 5px;
-                                                outline: none;
-                                                height: 30px;
-                                            }
-                                            span { // increase and decrease button
+                                        .col-4.quantity {
+                                            /* increase and decrease button */
+                                            span {
                                                 font-weight: bold;
                                                 display: inline-block;
                                                 background: $hover-color-gray;
@@ -1937,11 +1939,13 @@ $gray-border: rgb(207, 205, 205);
                                                     color: white;
                                                 }
                                             }
+                                            /* show quanity */
                                             .count {
                                                 padding: 0 5px;
                                                 background: transparent;
                                             }
                                         }
+                                        /* button update & remove */
                                         .col-3.update-quantity .wrap, .col-3.remove-product .wrap {
                                             text-align: center;
                                             background: $hover-color-gray;
@@ -1963,15 +1967,17 @@ $gray-border: rgb(207, 205, 205);
                     }
                 }
             }
-            /*---total amount---*/
+            /* total amount on the right */
             .col-3.total-amount {
                 .content {
                     .info {
+                        /* total amount */
                         .money {
                             padding: 10px;
                             font-size: 30px;
                             font-weight: bold;
                         }
+                        /* button check out */
                         .check-out {
                             padding: 10px;
                             .wrap {
@@ -1988,6 +1994,7 @@ $gray-border: rgb(207, 205, 205);
                                 }
                             }
                         }
+                        /* image payment cart */
                         .payment-card {
                             padding: 10px;
                             img {

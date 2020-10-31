@@ -1,4 +1,4 @@
-// direct child of RouterURL
+// direct child of RouterURL, appear when click "View Cart" while cart is not empty
 import React, {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -71,9 +71,11 @@ const ShoppingCartDetail = (props) => {
         <section className="shopping-cart-detail">
             <div className="container">
                 <div className="row title">
+                    {/* big title at top */}
                     <div className="col">
                         <h4>Your Shopping Cart</h4>
                     </div>
+                    {/* button continue shopping on the right side */}
                     <div className="col-auto">
                         <NavLink
                             to = "/all-collection"
@@ -84,12 +86,15 @@ const ShoppingCartDetail = (props) => {
                         </NavLink>
                     </div>
                 </div>
+                {/* container of order summary on the left and total amount on the right */}
                 <div className="row shopping-cart-content">
+                    {/* order summary on the left */}
                     <div className="col-6 order">
                         <div className="content">
                             <div className="title">Order Summary</div>
                             <div className="info">
                                 <div className="container">
+                                    {/* render information of each product in shopping cart */}
                                     {
                                         splicedProductsList.map((product, index) => {
                                             return (
@@ -101,13 +106,16 @@ const ShoppingCartDetail = (props) => {
                             </div>
                         </div>
                     </div>
+                    {/* total amount on the right */}
                     <div className="col-3 total-amount">
                         <div className="content">
                             <div className="title">Your Cart Total</div>
                             <div className="info">
+                                {/* total amount */}
                                 <div className="money">
                                     <span> {showMoneyTotal(Currency.currency, totalAmount)} </span>
                                 </div>
+                                {/* button check out */}
                                 <div className="check-out">
                                     <div className="wrap">
                                         <FontAwesomeIcon icon = {faLock} className = "icon"/>
@@ -120,6 +128,7 @@ const ShoppingCartDetail = (props) => {
                                         </NavLink>
                                     </div>
                                 </div>
+                                {/* payment cart */}
                                 <div className="payment-card">
                                     <img
                                         alt="payment-card"

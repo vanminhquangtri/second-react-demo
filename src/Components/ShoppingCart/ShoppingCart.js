@@ -68,7 +68,7 @@ class ShoppingCart extends React.Component {
             if (currentRotate === "rotate(360deg)"){
                 currentAmount.style.transform = "rotate(0deg)";
                 currentAmount.style.transition = "1s";
-            } 
+            }
         }
         // only re-render if cart length change or currency change
         if (this.props.Data.Cart.length !== nextProps.Data.Cart.length || 

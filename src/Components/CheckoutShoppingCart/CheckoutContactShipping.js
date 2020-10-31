@@ -37,8 +37,8 @@ const CheckoutContactShipping = (props) => {
                 onSubmit = {handleSubmit(onSubmit)}
                 id="contact-shipping-form"
             >
-                <input required className="field" name="first-name" type="text" placeholder="Your first name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "first_name")}} defaultValue = {orderInfo.shipping.first_name}/>
-                <input required className="field" name="last-name" type="text" placeholder="Your last name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "last_name")}} defaultValue = {orderInfo.shipping.last_name}/>
+                <input required className="field" name="first_name" type="text" placeholder="Your first name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "first_name")}} defaultValue = {orderInfo.shipping.first_name}/>
+                <input required className="field" name="last_name" type="text" placeholder="Your last name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "last_name")}} defaultValue = {orderInfo.shipping.last_name}/>
                 <select required name="country" className="field" onChange = {(ev)=> {changeCountry(ev); updateOrderInfo(ev, "shipping", "country")}} defaultValue = {orderInfo.shipping.country}>
                     <option value="">Please Choose Your Country</option>
                     <option value="UK">UNITED KINGDOM</option>

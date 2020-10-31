@@ -2,15 +2,23 @@
 import React, {useState, useEffect} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faReplyAll} from "@fortawesome/free-solid-svg-icons";
+import {useForm} from "react-hook-form";
 const CheckoutBilling = (props) => {
     const [state, setState] = useState({
         country: "",
         reuse_contact_address: true
     })
-    const {Countries, changeFormStt, updateOrderId, updateOrderInfo, setBillingSameAsShipping, orderInfo, billing_same_shipping, changeStateBilling_same_shipping, changeFormSttWithEv} = props;
+    const {Countries, changeFormStt, updateOrderId, updateOrderInfo, setBillingSameAsShipping, orderInfo, billing_same_shipping, changeStateBilling_same_shipping} = props;
     const currentCountry = Countries.find((ct) => {
         return ct.code === state.country
     })
+    // use react-hook-form
+    const {handleSubmit, register, errors} = useForm();
+    const onSubmit = () => {
+        changeFormStt("payment");
+        updateOrderId();
+        setBillingSameAsShippingOnSubmit(billing_same_shipping)
+    };
     // defind which checkbox to be checked on page load ("same as billing" or "use different address")
     const defaultChecked = (condition) => {
         if (condition === true) {
@@ -68,14 +76,16 @@ const CheckoutBilling = (props) => {
                 <label htmlFor="no">Use different address</label><br />
             </div>
             <form 
-                onSubmit = {(ev)=>{changeFormSttWithEv(ev, "payment"); updateOrderId(ev); setBillingSameAsShippingOnSubmit(billing_same_shipping)}}
+                onSubmit = {handleSubmit(onSubmit)}
                 id="billing-form"
             >
             {
                 (billing_same_shipping === false) && (
                     <>
-                        <input required className="field" name="first-name" type="text" placeholder="Your first name" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "first_name")}} defaultValue = {orderInfo.billing.first_name}/>
-                        <input required className="field" name="last-name" type="text" placeholder="Your last name" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "last_name")}} defaultValue = {orderInfo.billing.last_name}/>
+                        <input ref={register({pattern: /^[a-zA-Z ]*$/})} required className="field" name="first_name" type="text" placeholder="Your first name" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "first_name")}} defaultValue = {orderInfo.billing.first_name}/>
+                        <span className="errors">{errors.first_name && "First name should be alphabet letters only"}</span>
+                        <input ref={register({pattern: /^[a-zA-Z ]*$/})} required className="field" name="last_name" type="text" placeholder="Your last name" onChange = {(ev)=>{updateOrderInfo(ev, "billing", "last_name")}} defaultValue = {orderInfo.billing.last_name}/>
+                        <span className="errors">{errors.last_name && "Last name should be alphabet letters only"}</span>
                         <select required name="country" className="field" onChange = {(ev)=> {changeCountry(ev); updateOrderInfo(ev, "billing", "country")}} defaultValue = {orderInfo.billing.country}>
                             <option value="">Please Choose Your Country</option>
                             <option value="UK">UNITED KINGDOM</option>

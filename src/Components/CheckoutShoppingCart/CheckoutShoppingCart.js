@@ -170,8 +170,8 @@ const CheckoutShoppingCart = (props) => {
     const n7 = Math.round(Math.random() * 9);
     const newId = `ORDER-${n1}${n2}${n3}${n4}${n5}${n6}${n7}`;
     // update state order_id when press "continue to payment"
-    const updateOrderId = (ev) => {
-        ev.preventDefault();
+    const updateOrderId = () => {
+        // ev.preventDefault();
         setState((prevState) => {
             return {
                 ...prevState,

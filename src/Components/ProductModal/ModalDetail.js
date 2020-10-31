@@ -77,6 +77,7 @@ const ModalDetail = (props) => {
         <div className="modal-detail">
             <div className="container-fluid">
                 <div className="row">
+                    {/* slider show on the left side */}
                     <div className="col-6 image">
                         <TinySlider settings = {settings}>
                             {
@@ -92,8 +93,10 @@ const ModalDetail = (props) => {
                             }
                         </TinySlider>
                     </div>
+                    {/* information on the right side */}
                     <div className="col-6 info">
                         <div className="content">
+                            {/* name and collection */}
                             <div className="title">
                                 <div className="row name">
                                     <div className="col-4">Name:</div>
@@ -104,6 +107,7 @@ const ModalDetail = (props) => {
                                     <div className="col-8">{Products.category}</div>
                                 </div>
                             </div>
+                            {/* price, avails, description, color */}
                             <div className="info">
                                 <div className="row price">
                                     <div className="col-4">Price</div>
@@ -134,7 +138,9 @@ const ModalDetail = (props) => {
                                     </div>
                                 </div>
                             </div>
+                            {/* show quantity, subtotal amount, button add to cart, view detail */}
                             <div className="action">
+                                {/* quantity */}
                                 <div className="row quantity">
                                     <div className="col-4">Quantity</div>
                                     <div className="col-8">
@@ -150,6 +156,7 @@ const ModalDetail = (props) => {
                                         >+</span>
                                     </div>
                                 </div>
+                                {/* total amount */}
                                 <div className="row sub-total">
                                     <div className="col-4">Total</div>
                                     <div className="col-8">
@@ -157,6 +164,7 @@ const ModalDetail = (props) => {
                                     </div>
                                 </div>
                                 <div className="row cart-link">
+                                    {/* button add to cart */}
                                     <div className="col-6 cart">
                                         <div className="content"
                                         onClick = {()=>{dispatch({type: "ADD", id: Products.id, quantity: added_quantity})}}
@@ -164,6 +172,7 @@ const ModalDetail = (props) => {
                                             Add To Cart
                                         </div>
                                     </div>
+                                    {/* button view detail */}
                                     <div className="col-6 link">
                                         <div className="content">
                                             <NavLink

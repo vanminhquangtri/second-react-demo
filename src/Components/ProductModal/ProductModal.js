@@ -32,13 +32,17 @@ const ProductModal = (props) => {
     const handleShow = () => setShow(true);
     
     return (
+        // each product is a col-3 div
         <div className="col-3">
+            {/* wrap all content */}
             <div className="content">
+                {/* main image */}
                 <img
                     src = {Products.main__image.default}
                     alt = {Products.name}
                     className="product-img"
                 />
+                {/* product name and price */}
                 <NavLink
                     to = {`/product/${urlSlug(Products.name)}`}
                     exact = {true}
@@ -49,7 +53,9 @@ const ProductModal = (props) => {
                         <div className="price">{showPrice(Currency.currency)}</div>
                     </div>
                 </NavLink>
+                {/* overlay appear when hover product */}
                 <div className="overlay">
+                    {/* background image */}
                     <div 
                         className="blur"
                         css = {css`
@@ -57,21 +63,24 @@ const ProductModal = (props) => {
                         `}
                     >
                     </div>
+                    {/* container of icon add to cart and zoom */}
                     <div className="cart-zoom">
                         <div className="row">
+                            {/* button add to cart */}
                             <div 
                                 className="col-6 add-to-cart" 
                                 title="add to shopping cart"
                                 onClick = {()=>{dispatch({type: "ADD", id: Products.id, quantity: 1})}}
                             >
-                                <div className="icon-container add-cart">
+                                <div className="icon-container">
                                     <FontAwesomeIcon 
                                         icon = {faShoppingCart} 
                                         className="icon"
                                     />
                                 </div>
                             </div>
-                            <div className="col-6">
+                            {/* button zoom out, click this will show the modal */}
+                            <div className="col-6 zoom out">
                                 <div className="icon-container">
                                     <Button variant="primary" onClick={()=>handleShow()}  title="see more details">
                                         <FontAwesomeIcon 
@@ -79,6 +88,7 @@ const ProductModal = (props) => {
                                             className="icon"
                                         />
                                     </Button>
+                                    {/* top - up modal */}
                                     <Modal show={show} onHide={handleClose}>
                                         <Modal.Header closeButton>
                                             <Modal.Title>{Products.name}</Modal.Title>

@@ -1,4 +1,4 @@
-// direct child of component Product Detail
+// direct child of component Product Detail, show 6 product same category with current product
 import React from 'react';
 import {connect} from "react-redux"
 import AlsoBoughtModal from './AlsoBoughtModal';
@@ -16,12 +16,14 @@ const AlsoBought = (props) => {
     return (
         <div className="row also-bought also">
             <div className="container-fluid">
+                {/* big title at the top */}
                 <div className="row title-row">
                     <div className="col">
                         <h4 className="title">Customers who bought this item also bought</h4>
                     </div>
                 </div>
                 <div className="row other-products product-row">
+                    {/* show 6 product, each product is a col-2 div */}
                     {
                         sameCatProducts.map((product, index) => {
                             if (index < 6) {

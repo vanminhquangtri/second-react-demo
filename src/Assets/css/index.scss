@@ -1695,10 +1695,11 @@ $gray-border: rgb(207, 205, 205);
                 }
             }
         }
-        /*--- also-bought and also-like (similar with best-sell but smaller) ---*/
+        /* also-bought and also-like (similar with best-sell but smaller) */
         .row.also {
             padding-top: 20px;
             .container-fluid {
+                /* big title of each part : Customers who bought ..., You may also like....*/
                 .title-row {
                     .col {
                         .title {
@@ -1716,9 +1717,9 @@ $gray-border: rgb(207, 205, 205);
                                 border-top: 2px solid red;
                             }
                         }
-                        
                     }
                 }
+                /* show 6 product, each product is a col-2 div */
                 .product-row {
                     .col-2 {
                         .content {
@@ -1726,10 +1727,12 @@ $gray-border: rgb(207, 205, 205);
                             position: relative;
                             margin-bottom: 20px;
                             cursor: pointer;
+                            /* main image */
                             .product-img {
                                 width: 100%;
                                 height: 240px; // height of image of modal
                             }
+                            /* link containing name and price */
                             a {
                                 text-decoration: none;
                                 color: black;
@@ -1751,6 +1754,7 @@ $gray-border: rgb(207, 205, 205);
                                     }
                                 }
                             }
+                            /* overlay appear when hover on product */
                             .overlay {
                                 position: absolute;
                                 top: 0;
@@ -1761,6 +1765,7 @@ $gray-border: rgb(207, 205, 205);
                                 flex-direction: column;
                                 transform: scale(0);
                                 transition: .5s;
+                                /* background image */
                                 .blur {
                                     flex: 1;
                                     background : {
@@ -1769,6 +1774,7 @@ $gray-border: rgb(207, 205, 205);
                                         repeat: no-repeat;
                                     }
                                 }
+                                /* container button add to cart and zoom out */
                                 .cart-zoom {
                                     background: black;
                                     transition: .3s;
@@ -1781,6 +1787,7 @@ $gray-border: rgb(207, 205, 205);
                                                 display: flex;
                                                 align-items: center;
                                                 transition: .3s;
+                                                /* button add to cart */
                                                 .icon {
                                                     color: white;
                                                     margin: auto;
@@ -1791,6 +1798,7 @@ $gray-border: rgb(207, 205, 205);
                                                 &:hover {
                                                     background: red;
                                                 }
+                                                /* button zoom out, will top op the modal detail */
                                                 button {
                                                     background: green;
                                                     border: none !important;
@@ -1804,6 +1812,7 @@ $gray-border: rgb(207, 205, 205);
                                     }
                                 }
                             }
+                            /* show overlay when hover product */
                             &:hover {
                                 .overlay {
                                     left: 0;

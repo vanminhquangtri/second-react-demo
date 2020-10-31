@@ -35,6 +35,7 @@ const TermDetail = (props) => {
     return (
         <div className="row term">
             <div className="container">
+            {/* big title at the top: Product Description, Size Chart, Shipping and Payment, Refund Policy */}
                 <div className="row title">
                     <div className="col">
                         <div className="content des"
@@ -59,6 +60,7 @@ const TermDetail = (props) => {
                         </div>
                     </div>
                 </div>
+                {/* show detail of when click each title */}
                 <div className="row detail">
                     {
                         ((detail_status === "des") && <DetailDescription Product = {Product}></DetailDescription>) ||

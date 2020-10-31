@@ -37,11 +37,13 @@ const AlsoLikeModal = (props) => {
     return (
         <div className="col-2">
             <div className="content">
+                {/* main image */}
                 <img
                     src = {Products.main__image.default}
                     alt = {Products.name}
                     className="product-img"
                 />
+                {/* link containing name and price */}
                 <NavLink
                     to = {`/product/${urlSlug(Products.name)}`}
                     exact = {true}
@@ -52,7 +54,9 @@ const AlsoLikeModal = (props) => {
                         <div className="price">{showPrice(Currency.currency)}</div>
                     </div>
                 </NavLink>
+                {/* overlay appear when hover on product */}
                 <div className="overlay">
+                    {/* background image */}
                     <div 
                         className="blur"
                         css = {css`
@@ -60,8 +64,10 @@ const AlsoLikeModal = (props) => {
                         `}
                     >
                     </div>
+                    {/* container button add to cart and zoom out */}
                     <div className="cart-zoom">
                         <div className="row">
+                            {/* button add to cart */}
                             <div 
                                 className="col-6 add-to-cart" 
                                 title="add to shopping cart"
@@ -74,6 +80,7 @@ const AlsoLikeModal = (props) => {
                                     />
                                 </div>
                             </div>
+                            {/* button zoom out, will top op the modal detail */}
                             <div className="col-6">
                                 <div className="icon-container">
                                     <Button variant="primary" onClick={()=>handleShow()}  title="see more details">

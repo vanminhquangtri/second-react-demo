@@ -132,12 +132,15 @@ const ProductDetail = (props) => {
                     if (urlSlug(Product.name) === nameSlug) {
                         return (
                             <div className="container current-product" key = {index}>
+                                {/* big title at the top: name of product */}
                                 <div className="row title">
                                     <div className="col">
                                         <h5 className="product-title">{Product.name}</h5>
                                     </div>
                                 </div>
+                                {/* container of slider and detail information, from slider to share icons */}
                                 <div className="row with-slide">
+                                    {/* slider on the left */}
                                     <div className="col-6 image">
                                         <TinySlider settings = {settings}>
                                             {
@@ -154,8 +157,10 @@ const ProductDetail = (props) => {
                                             }
                                         </TinySlider>
                                     </div>
+                                    {/* detail about product: name, collection, price ,... until share */}
                                     <div className="col-6 info">
                                         <div className="content">
+                                            {/* container name and collection category */}
                                             <div className="title">
                                                 <div className="row name">
                                                     <div className="col-3">Name:</div>
@@ -166,6 +171,7 @@ const ProductDetail = (props) => {
                                                     <div className="col-9">{Product.category}</div>
                                                 </div>
                                             </div>
+                                            {/* price, avails, des, colors */}
                                             <div className="info">
                                                 <div className="row price">
                                                     <div className="col-3">Price</div>
@@ -196,10 +202,12 @@ const ProductDetail = (props) => {
                                                     </div>
                                                 </div>
                                             </div>
+                                            {/* show quantity, subtotal, button add to cart and button buy */}
                                             <div className="action">
                                                 <div className="row quantity">
                                                     <div className="col-3">Quantity</div>
                                                     <div className="col-9">
+                                                    {/* button + - and show quantity */}
                                                     <span className="button decrease"
                                                         onClick = {()=>decreaseAddedAmount()}
                                                     >-</span>
@@ -212,6 +220,7 @@ const ProductDetail = (props) => {
                                                     >+</span>
                                                     </div>
                                                 </div>
+                                                {/* sub total amount */}
                                                 <div className="row sub-total">
                                                     <div className="col-3">Total</div>
                                                     <div className="col-9">
@@ -219,11 +228,13 @@ const ProductDetail = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="row cart-link">
+                                                    {/* button add to cart */}
                                                     <div className="col-6 cart">
                                                         <div className="content"
                                                             onClick = {()=>{dispatch({type: "ADD", id: Product.id, quantity: added_quantity})}}
                                                         >Add To Cart</div>
                                                     </div>
+                                                    {/* button buy */}
                                                     <div className="col-6 link">
                                                         <div className="content">
                                                             <NavLink
@@ -242,6 +253,7 @@ const ProductDetail = (props) => {
                                                         Our policy lasts 30 days. If 30 days have gone by since your purchase, unfortunately we can’t offer you a refund or exchange.
                                                     </div>
                                                 </div>
+                                                {/* payment card */}
                                                 <div className="row payment">
                                                     <div className="col-3">Payment accepted</div>
                                                     <div className="col-9">
@@ -254,6 +266,7 @@ const ProductDetail = (props) => {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                {/* share icons, use fab icon, not fas */}
                                                 <div className="row share">
                                                     <div className="col-3">Share</div>
                                                     <div className="col-9">

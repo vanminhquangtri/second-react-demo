@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import logo from "../../Assets/images/section-top-bar/logo.webp";
+import logo from "../../Assets/images/section-top-bar/logo.png";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import {NavLink} from "react-router-dom";
@@ -52,12 +52,28 @@ const TopBar = (props) => {
         <section className="top-bar">
             <div className="container">
                 <div className="row">
+                    {/* logo */}
                     <div className="col-2 logo-container">
                         <div className="logo">
                             <img src = {logo} alt="logo"/>
                         </div>
                     </div>
+                    {/* clock */}
                     <DateTime></DateTime>
+                    {/* latest collection */}
+                    <div className="col-3 lastest">
+                        <NavLink
+                            to = "latest-collection"
+                        >
+                            <span>Our Latest Collections</span>
+                            <img
+                                alt="latest-collection"
+                                src={require("../../Assets/images/section-top-bar/new.svg").default}
+                            />
+                        </NavLink>
+                        
+                    </div>
+                    {/* currency */}
                     <div className="col-auto">
                         <div className="account-currency">
                             <NavLink to="/">Currency</NavLink>

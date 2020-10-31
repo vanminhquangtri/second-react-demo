@@ -13,21 +13,41 @@ $gray-border: rgb(207, 205, 205);
             align-items: center;
             padding-top: 10px;
             padding-bottom: 10px;
+            /* logo */
             .col-2.logo-container {
                 .logo {
                     img {
-                        height: 30px;
+                        height: 40px;
                     }
                 }
                 
             }
+            /* clock */
             .col-4.date-time-container{
                 .date-time {
-                    border-bottom: 1px solid black;
                     padding: 5px 0;
                     display: inline-block;
                 }
             }
+            /* latest collection*/
+            .col-3.lastest {
+                a {
+                    display: flex;
+                    align-items: center;
+                    color: black;
+                    text-decoration: none;
+                    transition: .3s;
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        margin-left: 15px
+                    }
+                    &:hover {
+                        color: $hover-color-red;
+                    }
+                }
+            }
+            /* currency */
             .col-auto {
                 flex: 1;
                 text-align: right;

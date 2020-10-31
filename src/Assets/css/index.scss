@@ -1187,7 +1187,7 @@ $gray-border: rgb(207, 205, 205);
     }
 }
 /*----- end collection parallax -----*/
-/*----- customer say -----*/
+/*----- customer say, use Tiny Slider React -----*/
 .customer-say {
     background: $hover-color-gray;
     .container {
@@ -1195,6 +1195,7 @@ $gray-border: rgb(207, 205, 205);
             height: 400px;
             align-items: center;
             .col {
+                /* big title (What our customers say) */
                 .title {
                     text-align: center;
                     position: relative;
@@ -1210,6 +1211,7 @@ $gray-border: rgb(207, 205, 205);
                     }
                 }
                 .tns-outer {
+                    /* arrow next & previous */
                     .tns-controls {
                         position: absolute;
                         z-index: 1;
@@ -1225,7 +1227,7 @@ $gray-border: rgb(207, 205, 205);
                             outline: none;
                             background: transparent;
                             color: transparent;
-                            width: 30px;
+                            width: 30px; // width and height of arrow
                             height: 30px;
                             background : {
                                 size: cover;
@@ -1246,9 +1248,11 @@ $gray-border: rgb(207, 205, 205);
                                 .tns-item {
                                     display: inline-flex;
                                     align-items: flex-start;
+                                    /* avatar image */
                                     .avatar {
                                         margin-top: 5px;
                                     }
+                                    /* detail of comment */
                                     .content {
                                         padding: 0 10px;
                                         .say {
@@ -1260,6 +1264,7 @@ $gray-border: rgb(207, 205, 205);
                             }
                         }
                     }
+                    /* arrow appear when hove to slider area */
                     &:hover {
                         .tns-controls {
                             opacity: 1;

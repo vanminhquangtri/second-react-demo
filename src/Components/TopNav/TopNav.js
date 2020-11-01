@@ -87,7 +87,7 @@ const TopNav = () => {
                                     <NavLink to = "/order" exact = {true} activeClassName="active">YOUR ORDER</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to = "/contact" exact = {true} activeClassName="active">CONTACT</NavLink>
+                                    <NavLink to = "/contact" exact = {true} activeClassName="active">CONTACT US</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to = "/about" exact = {true} activeClassName="active">ABOUT US</NavLink>

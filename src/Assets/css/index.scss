@@ -2831,3 +2831,33 @@ $gray-border: rgb(207, 205, 205);
     }
 }
 /*----- end contact -----*/
+
+/*----- about us -----*/
+.about-us {
+    .container-fluid {
+        .row {
+            .col {
+                padding: 0;
+                .content {
+                    height: 600px;
+                    padding: 120px;
+                    .icon {
+                        margin-right: 20px;
+                    }
+                    .title {
+                        font-weight: bold;
+                    }
+                    h4 {
+                        font-weight: bold;
+                        line-height: 60px;
+                    }
+                }
+                .content.mission {
+                    color: white;
+                    padding-top: 70px;
+                }
+            }
+        }
+    }
+}
+/*----- end about us -----*/

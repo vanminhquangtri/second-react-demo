@@ -1,5 +1,6 @@
 import React from 'react';
 import {Switch, Route} from "react-router-dom";
+import AboutUs from '../AboutUs/AboutUs';
 import CheckoutShoppingCart from '../CheckoutShoppingCart/CheckoutShoppingCart';
 import AllCollection from '../Collections/AllCollection';
 import FeaturedCollection from '../Collections/FeaturedCollection';
@@ -29,6 +30,7 @@ const RouterURL = (props) => {
             <Route path = "/check-out" exact = {true} component = {CheckoutShoppingCart}></Route>
             <Route path = "/order" exact = {true} component = {OrderManagement}></Route>
             <Route path = "/contact" exact = {true} component = {Contact}></Route>
+            <Route path = "/about" exact = {true} component = {AboutUs}></Route>
             <Route component = {Home}></Route>
         </Switch>
     );

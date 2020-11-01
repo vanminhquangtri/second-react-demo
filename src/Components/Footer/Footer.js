@@ -34,7 +34,7 @@ const Footer = () => {
                                 to = "/all-collection"
                             >Search</NavLink>
                             <NavLink
-                                to = "/all-collection"
+                                to = "/about"
                             >About Us</NavLink>
                             <NavLink
                                 to = "/all-collection"

@@ -68,7 +68,9 @@ const CheckoutBilling = (props) => {
     },[])
     return (
         <div className="check-out-form billing">
+            {/* name of form: Billing Address */}
             <label className="form-field">Billing Address</label>
+            {/* determine whether billing address is same with shipping address at the previous stage */}
             <div className="choose">
                 <input type="radio" id="yes" name="re-use" value="same" defaultChecked = {defaultChecked(billing_same_shipping)} onInput = {(ev)=>{changeReuseContactAddress(ev); setBillingSameAsShipping(true); changeStateBilling_same_shipping(ev)}}/> &nbsp;
                 <label htmlFor="yes">Same as shipping address</label><br />

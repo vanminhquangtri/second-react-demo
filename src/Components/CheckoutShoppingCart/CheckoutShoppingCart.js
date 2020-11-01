@@ -270,12 +270,15 @@ const CheckoutShoppingCart = (props) => {
     return (
         <section className="check-out">
             <div className="container">
+                {/* big title at top Welcome to Payment Portal */}
                 <div className="row title">
                     <div className="col">
                         <h4 onClick = {()=>{dispatch({type: "ADD_ORDER", order: [1, 2, 3]})}}>Welcome to Payment Portal</h4>
                     </div>
                 </div>
+                {/* container of forms in the left and order summary on the right */}
                 <div className="row payment">
+                    {/* forms in the left, each form is shown based on state form_stt */}
                     <div className="col-7 payment-process">
                         <div className="content">
                             {
@@ -321,6 +324,7 @@ const CheckoutShoppingCart = (props) => {
                             }
                         </div>
                     </div>
+                    {/* order summary on the right */}
                     <div className="col-5 summary">
                         <div className="title">
                             <h5>Your Order Summary</h5>
@@ -328,6 +332,7 @@ const CheckoutShoppingCart = (props) => {
                         <div className="content">
                             <table>
                                 <tbody>
+                                    {/* render each product in a row, each product appear once only even when quantity is more than 1 */}
                                     {
                                         splicedProductsList.map((product) => {
                                             return (
@@ -340,11 +345,13 @@ const CheckoutShoppingCart = (props) => {
                                             )
                                         })
                                     }
+                                    {/* shipping fee of order */}
                                     <tr className="product">
                                         <td className="name">Shipping Fee</td>
                                         <td className="quantity">{state.shipping_fee === 0 ? 0 : 1}</td>
                                         <td className="price">{showMoneyTotal(Currency.currency, state.order_info.shipping_fee)}</td>
                                         <td className="amount">{showMoneyTotal(Currency.currency, state.order_info.shipping_fee)}</td>
+                                    {/* total amount of order including product and shipping fee */}
                                     </tr>
                                         <tr className="total-amount">
                                         <td className="title" colSpan={3}>Total</td>

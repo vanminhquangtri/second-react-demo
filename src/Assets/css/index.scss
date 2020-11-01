@@ -1963,7 +1963,6 @@ $gray-border: rgb(207, 205, 205);
                                 }
                             }
                         }
-                        
                     }
                 }
             }
@@ -2009,8 +2008,9 @@ $gray-border: rgb(207, 205, 205);
     }
 }
 /*----- end shopping cart detail -----*/
-/*----- check out -----*/
+/*----- check out, use for both whole shopping cart and separate product -----*/
 .check-out {
+    /* show errors if form is not filled correctly */
     .errors {
         color: blue;
         font-weight: bold;
@@ -2018,6 +2018,7 @@ $gray-border: rgb(207, 205, 205);
     }
     padding: 20px 0;
     .container {
+        /* big title at top Welcome to Payment Portal */
         .row.title {
             .col {
                 h4 {
@@ -2037,17 +2038,21 @@ $gray-border: rgb(207, 205, 205);
                 }
             }
         }
+        /* container of forms in the left and order summary on the right */
         .row.payment {
-            /*---payment form---*/
+            /* forms in the left */
             .col-7.payment-process {
                 .content {
+                    /* name of form: Shipping Address, Billing Address, Payment */
                     .form-field {
                         font-weight: bold;
                         font-size: 20px;
                     }
+                    /* general style of all forms */
                     form {
                         display: flex;
                         flex-direction: column;
+                        /* input tag */
                         .field {
                             margin: 5px 0;
                             padding: 10px;
@@ -2057,7 +2062,7 @@ $gray-border: rgb(207, 205, 205);
                             outline: none;
                         }
                     }
-                    /*payment form*/
+                    /* payment form */
                     .check-out-form.payment {
                         form {
                             .field {
@@ -2070,7 +2075,7 @@ $gray-border: rgb(207, 205, 205);
                                 margin: 0;
                                 margin-top: 10px;
                             }
-                            // remove default scroll of number input tag
+                            /* remove default scroll of number input tag */
                             input::-webkit-outer-spin-button,
                             input::-webkit-inner-spin-button {
                             -webkit-appearance: none;
@@ -2082,13 +2087,15 @@ $gray-border: rgb(207, 205, 205);
                             }
                         }
                     }
-                    /*submit completed*/
+                    /* submit completed */
                     .check-out-form.completed {
+                        /* title Congratulation, you had successful purchase */
                         .congrat {
                             h3 {
                                 font-weight: bold;
                             }
                         }
+                        /* container of order number, "You order number is:" & "You will need this number to review your order detail" */
                         .order-number {
                             .number {
                                 font-weight: bold;
@@ -2099,6 +2106,7 @@ $gray-border: rgb(207, 205, 205);
                                 }
                             }
                         }
+                        /* container of button Review Order or Continue Shopping */
                         .navigate {
                             .col-6 {
                                 padding: 0;
@@ -2169,8 +2177,9 @@ $gray-border: rgb(207, 205, 205);
                     
                 }
             }
-            /*---order summary---*/
+            /* order summary on the right */
             .col-5.summary {
+                /* title Your Order Summary */
                 .title {
                     h5 {
                         font-weight: bold;
@@ -2178,7 +2187,7 @@ $gray-border: rgb(207, 205, 205);
                     }
                 }
                 .content {
-                    box-shadow: 1px 1px 3px 3px $hover-color-gray;
+                    box-shadow: 1px 1px 5px 5px $gray-border;
                     padding: 0 5px;
                     table {
                         width: 100%;
@@ -2186,11 +2195,13 @@ $gray-border: rgb(207, 205, 205);
                         td {
                             padding: 10px 0;
                         }
+                        /* render each product in a row, each product appear once only even when quantity is more than 1 */
                         tr.product {
-                            
+                            /* name of product */
                             .name {
                                 font-weight: bold;
                             }
+                            /* quanity */
                             .quantity {
                                 text-align: center;
                                 color: $hover-color-red;
@@ -2204,6 +2215,7 @@ $gray-border: rgb(207, 205, 205);
                                 text-align: right;
                             }
                         }
+                        /* total amount of order including product and shipping fee */
                         tr.total-amount {
                             font-size: 20px;
                             font-weight: bold;

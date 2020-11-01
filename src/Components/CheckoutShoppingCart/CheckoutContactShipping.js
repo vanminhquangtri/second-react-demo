@@ -32,6 +32,7 @@ const CheckoutContactShipping = (props) => {
     },[])
     return (
         <div className="check-out-form contact-shipping">
+            {/* name of form: Shipping Address */}
             <label className="form-field">Shipping Address</label>
             <form 
                 onSubmit = {handleSubmit(onSubmit)}
@@ -41,12 +42,14 @@ const CheckoutContactShipping = (props) => {
                 <span className="errors">{errors.first_name && "First name should be alphabet letters only"}</span>
                 <input required ref={register({pattern: /^[a-zA-Z ]*$/})} className="field" name="last_name" type="text" placeholder="Your last name" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "last_name")}} defaultValue = {orderInfo.shipping.last_name}/>
                 <span className="errors">{errors.last_name && "Last name should be alphabet letters only"}</span>
+                {/* country selection */}
                 <select required name="country" className="field" onChange = {(ev)=> {changeCountry(ev); updateOrderInfo(ev, "shipping", "country")}} defaultValue = {orderInfo.shipping.country}>
                     <option value="">Please Choose Your Country</option>
                     <option value="UK">UNITED KINGDOM</option>
                     <option value="US">UNITED STATES</option>
                     <option value="FR">FRANCE</option>
                 </select>
+                {/* city selection */}
                 <select required name="city" className="field" onChange = {(ev)=>{changeShippingFee(ev, state.country); updateOrderInfo(ev, "shipping", "city")}} defaultValue = {orderInfo.shipping.city}>
                     {/* render city name base on country name */}
                     <option value="">Please Choose Your City</option>
@@ -63,9 +66,11 @@ const CheckoutContactShipping = (props) => {
                 <input required className="field" name="phone" type="tel" placeholder="Your phone number" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "phone")}} defaultValue = {orderInfo.shipping.phone}/>
                 <input required className="field" name="email" type="email" placeholder="Email address" onChange = {(ev)=>{updateOrderInfo(ev, "shipping", "email")}} defaultValue = {orderInfo.shipping.email}/>
             </form>
+            {/* container navigate button: return ... & continue ... */}
             <div className="navigate">
                 <div className="container">
                     <div className="row">
+                        {/* Button Return */}
                         <div className="col-6">
                             <div className="wrap pre" >
                                 <NavLink
@@ -77,6 +82,7 @@ const CheckoutContactShipping = (props) => {
                                 </NavLink>
                             </div>
                         </div>
+                        {/* Button Continue */}
                         <div className="col-6">
                             <div className="wrap next">
                                 <input form="contact-shipping-form" className="field" name="street" type="submit" value="Continue to Billing"/>

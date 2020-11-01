@@ -18,8 +18,9 @@ const CheckoutCompleted = (props) => {
                 <h5 className="number"> {order_id} </h5>
                 <h5>You will need this number to review your order detail</h5>
             </div>
+            {/* container of button Review Order or Continue Shopping */}
             <div className="navigate">
-                <div className="col-6">
+                <div className="col-6 review">
                     <NavLink
                         to = "/order"
                     >
@@ -27,7 +28,7 @@ const CheckoutCompleted = (props) => {
                         Review Your Order
                     </NavLink>
                 </div>
-                <div className="col-6">
+                <div className="col-6 continue">
                     <NavLink
                         to = "/"
                     >

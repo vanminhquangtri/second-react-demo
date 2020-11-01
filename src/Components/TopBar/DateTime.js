@@ -5,6 +5,8 @@ import {faClock} from "@fortawesome/free-solid-svg-icons";
 const DateTime = () => {
     const returnWeekday = (day) => {
         switch (day) {
+            case 0:
+                return "Sunday, " 
             case 1:
                 return "Monday, "
             case 2:
@@ -17,8 +19,6 @@ const DateTime = () => {
                 return "Friday, "
             case 6:
                 return "Saturday, "
-            case 7:
-                return "Sunday, " 
             default:
                 break;
         }
@@ -62,7 +62,7 @@ const DateTime = () => {
         const timer = setInterval(() => {
             const time = new Date();
             const weekday = returnWeekday(time.getDay());
-            const date = time.getDate();
+            const date = addZero(time.getDate());
             const month = returnMonth(time.getMonth());
             const year = time.getFullYear();
             const hour = addZero(time.getHours());

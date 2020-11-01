@@ -30,6 +30,7 @@ const CheckoutPayment = (props) => {
     },[])
     return (
         <div className="check-out-form payment">
+            {/* name of form: Payment */}
             <label className="form-field">Payment</label>
             <div className="payment-card">
                 <img
@@ -42,6 +43,7 @@ const CheckoutPayment = (props) => {
                 id="payment-form"
             >
                 <label className="label">Type of payment</label>
+                {/* choose card type */}
                 <select required name="card-type" className="field">
                     <option value="">Please choose type of payment</option>
                     <option value="Mastercard">Mastercard</option>
@@ -51,6 +53,7 @@ const CheckoutPayment = (props) => {
                     <option disabled value="Airtel">Airtel (Currently under maintenance)</option>
                 </select>
                 <label className="label">Card owner</label>
+                {/* card owner can be alphabet letters and whitespace */}
                 <input ref={register({pattern: /^[a-zA-Z ]*$/})} required className="field" name="card_owner" type="text" placeholder="Card Owner"/>
                 <span className="errors">{errors.card_owner && "First name should be alphabet letters only"}</span>
                 <label className="label">Card number (maximum 16 digits)</label>
@@ -65,9 +68,11 @@ const CheckoutPayment = (props) => {
                 <input ref={register({maxLength: 3, minLength: 3})} required className="field" name="pass" type="password" placeholder="Card's CVC code"/>                        
                 <span className="errors">{errors.pass && "CVC code should have 3 digits"}</span>
             </form>
+            {/* container navigate button: return ... & continue ... */}
             <div className="navigate">
                 <div className="container">
                     <div className="row">
+                        {/* Button Return */}
                         <div className="col-6">
                             <div className="wrap pre">
                                 <div className="wrap next"
@@ -78,6 +83,7 @@ const CheckoutPayment = (props) => {
                                 </div>
                             </div>
                         </div>
+                        {/* Button Continue */}
                         <div className="col-6">
                             <div className="wrap next">
                                 <input form="payment-form" className="field" name="street" type="submit" value="Complete Payment"/>

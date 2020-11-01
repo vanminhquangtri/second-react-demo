@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUserFriends, faMapMarkedAlt, faPhone, faEnvelope, faClock} from "@fortawesome/free-solid-svg-icons"
@@ -17,6 +17,10 @@ const Contact = (props) => {
         })
     }
     const {submit_stt} = state;
+    // move to top of page on the first render
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
     return (
         <section className="contact">
             {/* location map at the top */}
@@ -38,7 +42,7 @@ const Contact = (props) => {
                                     <h3 className="title">Send Us A Feedback</h3>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta aperiam et laboriosam nulla. Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam dicta aperiam et laboriosam nulla.</p>
                                     <form onSubmit = {(ev)=>{changeSubmitStt(ev)}}>
-                                        <label>Your name: </label>
+                                        <label>Your name </label>
                                         <input required type="text" name="name"/> <br/>
                                         <label>Your phone number </label>
                                         <input required type="tel" name="name"/> <br/>
@@ -92,13 +96,13 @@ const Contact = (props) => {
                                         <td className="icon">
                                             <FontAwesomeIcon icon = {faPhone}/>
                                         </td>
-                                        <td className="info">Phone</td>
+                                        <td className="info">Phone Number</td>
                                     </tr>
                                     <tr>
                                         <td className="icon">
                                             <FontAwesomeIcon icon = {faEnvelope}/>
                                         </td>
-                                        <td className="info">Email</td>
+                                        <td className="info">Email Address</td>
                                     </tr>
                                     <tr>
                                         <td className="icon">

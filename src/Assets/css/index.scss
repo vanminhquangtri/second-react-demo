@@ -2,18 +2,21 @@
 base on design of https://sports-fashion-theme.myshopify.com
 */
 * {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 $hover-color-red: rgb(211, 9, 9);
 $hover-color-gray: rgb(245, 245, 245);
 $white-color: rgb(223, 223, 223);
 $gray-border: rgb(207, 205, 205);
-/*----- top-bar (logo, data time, currency) -----*/
+/*----- top-bar (logo, date time, currency) -----*/
 .top-bar {
     .container {
         .row {
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             padding-top: 10px;
             padding-bottom: 10px;
             /* logo */
@@ -35,10 +38,16 @@ $gray-border: rgb(207, 205, 205);
             /* latest collection*/
             .col-3.lastest {
                 a {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    align-items: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
                     color: black;
                     text-decoration: none;
+                    -webkit-transition: .3s;
+                    -o-transition: .3s;
                     transition: .3s;
                     img {
                         width: 50px;
@@ -52,7 +61,9 @@ $gray-border: rgb(207, 205, 205);
             }
             /* currency */
             .col-auto {
-                flex: 1;
+                -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                        flex: 1;
                 text-align: right;
                 /* wrap all content */
                 .account-currency {
@@ -69,9 +80,15 @@ $gray-border: rgb(207, 205, 205);
                     }
                     .currency {
                         cursor: pointer;
+                        display: -webkit-inline-box;
+                        display: -ms-inline-flexbox;
                         display: inline-flex;
-                        align-items: center;
-                        justify-content: flex-end;
+                        -webkit-box-align: center;
+                            -ms-flex-align: center;
+                                align-items: center;
+                        -webkit-box-pack: end;
+                            -ms-flex-pack: end;
+                                justify-content: flex-end;
                         &:hover {
                             span, .icon {
                                 color: $hover-color-red
@@ -98,6 +115,8 @@ $gray-border: rgb(207, 205, 205);
                         max-height: 0;
                         background: white;
                         overflow: hidden;
+                        -webkit-transition: .3s;
+                        -o-transition: .3s;
                         transition: .3s;
                         ul {
                             margin: 0;
@@ -106,8 +125,12 @@ $gray-border: rgb(207, 205, 205);
                             li {
                                 padding: 10px;
                                 cursor: pointer;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                align-items: center;
+                                -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                        align-items: center;
                                 &:hover {
                                     color: $hover-color-red;
                                     text-decoration: underline;
@@ -137,7 +160,11 @@ $gray-border: rgb(207, 205, 205);
     border: 1px solid white;
     cursor: pointer;
     color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
     transition: .5s;
     .icon {
         margin: auto;
@@ -168,6 +195,8 @@ $gray-border: rgb(207, 205, 205);
             /* subscribe-form at newsletter */
             .subscribe-form {
                 border: 1px solid white;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
                 padding: 5px;
                 input, button {
@@ -177,7 +206,21 @@ $gray-border: rgb(207, 205, 205);
                     color: $white-color;
                 }
                 input {
-                    flex: 1;
+                    -webkit-box-flex: 1;
+                        -ms-flex: 1;
+                            flex: 1;
+                }
+                ::-webkit-input-placeholder {
+                    color: $white-color;
+                }
+                ::-moz-placeholder {
+                    color: $white-color;
+                }
+                :-ms-input-placeholder {
+                    color: $white-color;
+                }
+                ::-ms-input-placeholder {
+                    color: $white-color;
                 }
                 ::placeholder {
                     color: $white-color;
@@ -185,8 +228,12 @@ $gray-border: rgb(207, 205, 205);
             }
             /* social-links icons: face, twitter,... */
             .social-links {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                justify-content: space-between;
+                -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                        justify-content: space-between;
                 a {
                     display: block;
                     width: 40px;
@@ -212,6 +259,8 @@ $gray-border: rgb(207, 205, 205);
             a {
                 color: $white-color;
                 display: block;
+                -webkit-transition: .3s;
+                -o-transition: .3s;
                 transition: .3s;
                 margin-bottom: 5px;
                 &:hover {
@@ -225,35 +274,48 @@ $gray-border: rgb(207, 205, 205);
 /*----- top nav -----*/
 .top-nav {
     background: black;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
     .container-fluid {
         .row {
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             .col {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
                 /* nav: home icon, links */
                 .nav {
-                    width: 95%; // width of nav
+                    width: 95%; /* width of nav */
                     > ul {
                         padding: 0;
                         margin: 0;
                         list-style-type: none;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        align-items: center;
-                        flex-wrap: wrap;
+                        -webkit-box-align: center;
+                            -ms-flex-align: center;
+                                align-items: center;
+                        -ms-flex-wrap: wrap;
+                            flex-wrap: wrap;
                         .active {
                             color: $hover-color-red;
                             text-decoration: underline;
                         }
                         > li {
-                            margin-right: 20px; // space between li tag
+                            margin-right: 20px; /* space between li tag */
                             position: relative;
                             > a {
                                 color: $white-color;
                                 display: block;
+                                -webkit-transition: .3s;
+                                -o-transition: .3s;
                                 transition: .3s;
                                 font-weight: bold;
-                                font-size: 17px; // font size of links
+                                font-size: 17px; /* font size of links */
                                 &:hover {
                                     color: $hover-color-red;
                                 }
@@ -267,8 +329,13 @@ $gray-border: rgb(207, 205, 205);
                                 position: absolute;
                                 z-index: 99;
                                 background: white;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                flex-direction: column;
+                                -webkit-box-orient: vertical;
+                                -webkit-box-direction: normal;
+                                    -ms-flex-direction: column;
+                                        flex-direction: column;
                                 list-style-type: none;
                                 padding: 0;
                                 margin: 0;
@@ -276,6 +343,8 @@ $gray-border: rgb(207, 205, 205);
                                 li {
                                     a {
                                         color: black;
+                                        -webkit-transition: .3s;
+                                        -o-transition: .3s;
                                         transition: .3s;
                                         font-weight: bold;
                                         display: block;
@@ -290,6 +359,8 @@ $gray-border: rgb(207, 205, 205);
                             }
                             &:hover {
                                 .sub-menu {
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
                                 }
                             }
@@ -299,7 +370,7 @@ $gray-border: rgb(207, 205, 205);
                         }
                         /* home icon */
                         .home {
-                            padding: 8px 0; // this controll height of top - nav
+                            padding: 8px 0; /* this controll height of top - nav */
                             a {
                                 .icon {
                                     font-size: 18px !important;
@@ -314,19 +385,32 @@ $gray-border: rgb(207, 205, 205);
                 /* shopping cart */
                 .cart {
                     width: 5%;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    flex-direction: column;
-                    justify-content: center;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
                     .cart-amount {
                         text-align: right;
                         position: relative;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        justify-content: flex-end;
-                        align-items: center;
+                        -webkit-box-pack: end;
+                            -ms-flex-pack: end;
+                                justify-content: flex-end;
+                        -webkit-box-align: center;
+                            -ms-flex-align: center;
+                                align-items: center;
                         cursor: pointer;
                         /* cart icon */
                         .icon {
-                            fill: $white-color; // use flat icon
+                            fill: $white-color; /* use flat icon */
                             width: 20px;
                             height: 20px;
                         }
@@ -342,10 +426,11 @@ $gray-border: rgb(207, 205, 205);
                         }
                         /* cart top up when hove on icon cart or the red box*/
                         .cart-top-up {
-                            box-shadow: 1px 3px 4px rgb(197, 197, 197);
+                            -webkit-box-shadow: 1px 3px 4px rgb(197, 197, 197);
+                                    box-shadow: 1px 3px 4px rgb(197, 197, 197);
                             position: absolute;
                             top: 100%;
-                            width: 650%; // width of top up
+                            width: 650%; /* width of top up */
                             right: 0;
                             z-index: 100;
                             background: white;
@@ -367,6 +452,8 @@ $gray-border: rgb(207, 205, 205);
                             }
                             /* empty top up if no product added to cart */
                             .empty-cart {
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
                                 .content {
                                     margin: auto;
@@ -389,7 +476,9 @@ $gray-border: rgb(207, 205, 205);
                                     /* each product is contained in a container-fluid */
                                     .container-fluid {
                                         .row {
-                                            align-items: flex-start;
+                                            -webkit-box-align: start;
+                                                -ms-flex-align: start;
+                                                    align-items: flex-start;
                                             /* col image */
                                             .img {
                                                 padding-right: 0;
@@ -413,18 +502,32 @@ $gray-border: rgb(207, 205, 205);
                                                 height: 90px;
                                                 .cal {
                                                     height: 100%;
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
                                                     display: flex;
-                                                    flex-direction: column;
-                                                    align-items: center;
-                                                    justify-content: space-between;
+                                                    -webkit-box-orient: vertical;
+                                                    -webkit-box-direction: normal;
+                                                        -ms-flex-direction: column;
+                                                            flex-direction: column;
+                                                    -webkit-box-align: center;
+                                                        -ms-flex-align: center;
+                                                            align-items: center;
+                                                    -webkit-box-pack: justify;
+                                                        -ms-flex-pack: justify;
+                                                            justify-content: space-between;
                                                     /* delete icon */
                                                     .icon {
                                                         color: black;
                                                     }
                                                     /* quantity and price */
                                                     .money {
+                                                        display: -webkit-box;
+                                                        display: -ms-flexbox;
                                                         display: flex;
-                                                        flex-direction: column;
+                                                        -webkit-box-orient: vertical;
+                                                        -webkit-box-direction: normal;
+                                                            -ms-flex-direction: column;
+                                                                flex-direction: column;
                                                         font-weight: bold;
                                                         text-align: center;
                                                         font-size: 16px;
@@ -490,7 +593,7 @@ $gray-border: rgb(207, 205, 205);
     padding: 20px 0;
     /*----- use Boostrap Carousel combined library https://animate.style -----*/
     .top-slide {
-        height: 400px; // height of visible content
+        height: 400px; /* height of visible content */
         overflow: hidden;
         .container-fluid {
             .row {
@@ -507,16 +610,20 @@ $gray-border: rgb(207, 205, 205);
                                     left: 12%;
                                     right: 12%;
                                     .animate__animated {
-                                        animation-duration: .7s;
+                                        -webkit-animation-duration: .7s;
+                                                animation-duration: .7s;
                                     }
                                     .title {
-                                        animation-delay: .3s;
+                                        -webkit-animation-delay: .3s;
+                                                animation-delay: .3s;
                                     }
                                     .des {
-                                        animation-delay: .7s;
+                                        -webkit-animation-delay: .7s;
+                                                animation-delay: .7s;
                                     }
                                     .link {
-                                        animation-delay: 1s;
+                                        -webkit-animation-delay: 1s;
+                                                animation-delay: 1s;
                                     }
                                 }
                                 .carousel-caption.slide-1, .carousel-caption.slide-3 {
@@ -548,6 +655,8 @@ $gray-border: rgb(207, 205, 205);
                                             font-weight: bold;
                                             padding: 10px;
                                             border-radius: 10px;
+                                            -webkit-transition: .3s;
+                                            -o-transition: .3s;
                                             transition: .3s;
                                             &:hover {
                                                 color: $hover-color-red
@@ -580,6 +689,8 @@ $gray-border: rgb(207, 205, 205);
                                             font-weight: bold;
                                             padding: 10px;
                                             border-radius: 10px;
+                                            -webkit-transition: .3s;
+                                            -o-transition: .3s;
                                             transition: .3s;
                                             &:hover {
                                                 color: $hover-color-red
@@ -612,19 +723,27 @@ $gray-border: rgb(207, 205, 205);
             .col {
                 .tns-outer {
                     position: relative;
-                    height: 150px; // height of the whole slide
+                    height: 150px; /* height of the whole slide */
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    align-items: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
                     cursor: pointer;
                     .brand-item {
                         text-align: center;
                     }
-                    /*----- container of arrows previous and next -----*/
+                    /* container of arrows previous and next */
                     .tns-controls {
                         position: absolute;
                         width: 100%;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        justify-content: space-between;
+                        -webkit-box-pack: justify;
+                            -ms-flex-pack: justify;
+                                justify-content: space-between;
                         top: 35%;
                         z-index: 1;
                         button {
@@ -636,7 +755,7 @@ $gray-border: rgb(207, 205, 205);
                                 size: 70%;
                                 repeat: no-repeat;
                             }
-                            width: 50px; // width and height of each arrow 
+                            width: 50px; /* width and height of each arrow */
                             height: 50px;
                             &:first-child {
                                 background : {
@@ -680,6 +799,8 @@ $gray-border: rgb(207, 205, 205);
                     /* wrap all contents inside, will be zoomed out when hover */
                     .wrapper {
                         height: 100%;
+                        -webkit-transition: .3s;
+                        -o-transition: .3s;
                         transition: .3s;
                         background : {
                             image: url("../images/section-collection-sum/all.jpg");
@@ -696,13 +817,22 @@ $gray-border: rgb(207, 205, 205);
                             /* OFF 50% */
                             .off {
                                 background: rgba($color: #000000, $alpha: 0.7);
+                                display: -webkit-inline-box;
+                                display: -ms-inline-flexbox;
                                 display: inline-flex;
-                                flex-direction: column;
+                                -webkit-box-orient: vertical;
+                                -webkit-box-direction: normal;
+                                    -ms-flex-direction: column;
+                                        flex-direction: column;
                                 height: 85px;
                                 width: 85px;
                                 border-radius: 50%;
-                                justify-content: center;
-                                align-items: center;
+                                -webkit-box-pack: center;
+                                    -ms-flex-pack: center;
+                                        justify-content: center;
+                                -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                        align-items: center;
                                 span {
                                     &:first-child {
                                         font-size: 20px;
@@ -729,7 +859,9 @@ $gray-border: rgb(207, 205, 205);
                 /* zoom out wrapper when hover */
                 &:hover {
                     .wrapper {
-                        transform: scale(1.1)
+                        -webkit-transform: scale(1.1);
+                            -ms-transform: scale(1.1);
+                                transform: scale(1.1)
                     }
                 }
             }
@@ -738,7 +870,7 @@ $gray-border: rgb(207, 205, 205);
                 margin: 0;
                 padding: 0;
                 .row {
-                    height: 50%; // height of each collection
+                    height: 50%; /* height of each collection */
                     .col-4 {
                         padding: 0; 
                         position: relative;
@@ -753,6 +885,8 @@ $gray-border: rgb(207, 205, 205);
                                 bottom: 0;
                                 left: 0;
                                 z-index: -1;
+                                -webkit-transition: .3s;
+                                -o-transition: .3s;
                                 transition: .3s;
                                 background : {
                                     size: cover;
@@ -794,9 +928,16 @@ $gray-border: rgb(207, 205, 205);
                             .title {
                                 width: 100%;
                                 height: 100%;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                flex-direction: column;
-                                justify-content: flex-end;
+                                -webkit-box-orient: vertical;
+                                -webkit-box-direction: normal;
+                                    -ms-flex-direction: column;
+                                        flex-direction: column;
+                                -webkit-box-pack: end;
+                                    -ms-flex-pack: end;
+                                        justify-content: flex-end;
                                 padding-left: 15px;
                                 padding-bottom: 10px;
                                 font-weight: bold;
@@ -806,9 +947,12 @@ $gray-border: rgb(207, 205, 205);
                         /* zoom out when hover */
                         &:hover {
                             a {
-                                text-decoration-color: $hover-color-red;
+                                -webkit-text-decoration-color: $hover-color-red;
+                                        text-decoration-color: $hover-color-red;
                                 .background {
-                                    transform: scale(1.1)
+                                    -webkit-transform: scale(1.1);
+                                        -ms-transform: scale(1.1);
+                                            transform: scale(1.1)
                                 }
                             }
                         }
@@ -867,6 +1011,8 @@ $gray-border: rgb(207, 205, 205);
                             text-align: center;
                             /* name */
                             .name {
+                                -webkit-transition: .5s;
+                                -o-transition: .5s;
                                 transition: .5s;
                                 height: 52px;
                                 &:hover {
@@ -888,13 +1034,24 @@ $gray-border: rgb(207, 205, 205);
                         left: -100%;
                         width: 100%;
                         height: 366px;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        flex-direction: column;
-                        transform: scale(0);
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                                flex-direction: column;
+                        -webkit-transform: scale(0);
+                            -ms-transform: scale(0);
+                                transform: scale(0);
+                        -webkit-transition: .5s;
+                        -o-transition: .5s;
                         transition: .5s;
                         /* background image */
                         .blur {
-                            flex: 1;
+                            -webkit-box-flex: 1;
+                                -ms-flex: 1;
+                                    flex: 1;
                             background : {
                                 position: center;
                                 size: cover;
@@ -904,6 +1061,8 @@ $gray-border: rgb(207, 205, 205);
                         /* container of icon add to cart and zoom */
                         .cart-zoom {
                             background: black;
+                            -webkit-transition: .3s;
+                            -o-transition: .3s;
                             transition: .3s;
                             .row {
                                 margin: 0;
@@ -911,8 +1070,14 @@ $gray-border: rgb(207, 205, 205);
                                     padding: 0;
                                     .icon-container {
                                         height: 40px;
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
                                         display: flex;
-                                        align-items: center;
+                                        -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                                align-items: center;
+                                        -webkit-transition: .3s;
+                                        -o-transition: .3s;
                                         transition: .3s;
                                         .icon {
                                             color: white;
@@ -940,7 +1105,9 @@ $gray-border: rgb(207, 205, 205);
                     &:hover {
                         .overlay {
                             left: 0;
-                            transform: scale(1);
+                            -webkit-transform: scale(1);
+                                -ms-transform: scale(1);
+                                    transform: scale(1);
                         }
                     }
                 }
@@ -972,12 +1139,21 @@ $gray-border: rgb(207, 205, 205);
                         .col-6.image {
                             padding: 0;
                             .tns-outer {
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                flex-direction: column-reverse;
+                                -webkit-box-orient: vertical;
+                                -webkit-box-direction: reverse;
+                                    -ms-flex-direction: column-reverse;
+                                        flex-direction: column-reverse;
                                 /* nav (small images) */
                                 .tns-nav {
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
-                                    justify-content: space-between;
+                                    -webkit-box-pack: justify;
+                                        -ms-flex-pack: justify;
+                                            justify-content: space-between;
                                     z-index: 1;
                                     margin-top: 5px;
                                     button {
@@ -997,7 +1173,7 @@ $gray-border: rgb(207, 205, 205);
                                     .tns-inner {
                                         .tns-slider {
                                             img {
-                                                height: 468px; // height of the big image
+                                                height: 468px; /* height of the big image */
                                             }
                                         }
                                     }
@@ -1034,15 +1210,23 @@ $gray-border: rgb(207, 205, 205);
                                         margin-bottom: 10px;
                                         .col-8 {
                                             .colors-container {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
                                             display: flex;
-                                            flex-direction: row;
-                                            justify-content: flex-start;
+                                            -webkit-box-orient: horizontal;
+                                            -webkit-box-direction: normal;
+                                                -ms-flex-direction: row;
+                                                    flex-direction: row;
+                                            -webkit-box-pack: start;
+                                                -ms-flex-pack: start;
+                                                    justify-content: flex-start;
                                             padding-left: 2px;
                                                 .color {
                                                     width: 30px;
                                                     height: 20px;
                                                     margin-right: 10px;
-                                                    box-shadow: 1px 1px 3px 3px rgb(209, 209, 209);
+                                                    -webkit-box-shadow: 1px 1px 3px 3px rgb(209, 209, 209);
+                                                            box-shadow: 1px 1px 3px 3px rgb(209, 209, 209);
                                                 }
                                             }
                                         }
@@ -1051,13 +1235,21 @@ $gray-border: rgb(207, 205, 205);
                                 /* show quantity, subtotal amount, button add to cart, view detail */
                                 .action {
                                     .quantity {
-                                        align-items: center;
+                                        -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                                align-items: center;
                                         margin-bottom: 10px;
                                         /* button + - and tag input of quantity */
                                         .col-8 {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
                                             display: flex;
-                                            align-items: center;
-                                            justify-content: flex-start;
+                                            -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                    align-items: center;
+                                            -webkit-box-pack: start;
+                                                -ms-flex-pack: start;
+                                                    justify-content: flex-start;
                                             .button, input {
                                                 height: 30px;
                                             }
@@ -1115,6 +1307,8 @@ $gray-border: rgb(207, 205, 205);
                                                 border-radius: 5px;
                                                 height: 40px;
                                                 line-height: 40px;
+                                                -webkit-transition: .3s;
+                                                -o-transition: .3s;
                                                 transition: .3s;
                                                 cursor: pointer;
                                                 &:hover {
@@ -1178,6 +1372,8 @@ $gray-border: rgb(207, 205, 205);
                             color: white;  
                             font-size: 30px;
                             text-decoration: underline;
+                            -webkit-transition: .3s;
+                            -o-transition: .3s;
                             transition: .3s;
                             &:hover {
                                 color: $hover-color-red
@@ -1196,7 +1392,9 @@ $gray-border: rgb(207, 205, 205);
     .container {
         .row {
             height: 400px;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             .col {
                 /* big title (What our customers say) */
                 .title {
@@ -1219,10 +1417,16 @@ $gray-border: rgb(207, 205, 205);
                         position: absolute;
                         z-index: 1;
                         top: 100%;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        justify-content: center;
+                        -webkit-box-pack: center;
+                            -ms-flex-pack: center;
+                                justify-content: center;
                         width: 100%;
                         opacity: 0;
+                        -webkit-transition: .5s;
+                        -o-transition: .5s;
                         transition: .5s;
                         button {
                             margin: 10px;
@@ -1230,7 +1434,7 @@ $gray-border: rgb(207, 205, 205);
                             outline: none;
                             background: transparent;
                             color: transparent;
-                            width: 30px; // width and height of arrow
+                            width: 30px; /* width and height of arrow */
                             height: 30px;
                             background : {
                                 size: cover;
@@ -1249,8 +1453,12 @@ $gray-border: rgb(207, 205, 205);
                         .tns-inner {
                             .tns-slider {
                                 .tns-item {
+                                    display: -webkit-inline-box;
+                                    display: -ms-inline-flexbox;
                                     display: inline-flex;
-                                    align-items: flex-start;
+                                    -webkit-box-align: start;
+                                        -ms-flex-align: start;
+                                            align-items: flex-start;
                                     /* avatar image */
                                     .avatar {
                                         margin-top: 5px;
@@ -1296,6 +1504,8 @@ $gray-border: rgb(207, 205, 205);
                     text-decoration: none;
                     .wrapper {
                         height: 100%;
+                        -webkit-transition: .3s;
+                        -o-transition: .3s;
                         transition: .3s;
                         background: {
                             position: center;
@@ -1306,9 +1516,16 @@ $gray-border: rgb(207, 205, 205);
                             padding-top: 160px;
                             color: white;
                             font-weight: bold;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
-                            flex-direction: column;
-                            align-items: center;
+                            -webkit-box-orient: vertical;
+                            -webkit-box-direction: normal;
+                                -ms-flex-direction: column;
+                                    flex-direction: column;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
                             /* title SHOP NOW, FOR STYLIST, SALE OFF */
                             .shop, .des {
                                 background: rgba($color: red, $alpha: 0.7);
@@ -1339,6 +1556,8 @@ $gray-border: rgb(207, 205, 205);
                         height: 100px;
                         line-height: 100px;
                         text-align: center;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
                     }
                 }
@@ -1350,6 +1569,8 @@ $gray-border: rgb(207, 205, 205);
                         width: 70px;
                         height: 70px;
                         border-radius: 50% !important;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
                         margin-top: 15px;
                         span {
@@ -1362,7 +1583,9 @@ $gray-border: rgb(207, 205, 205);
                 /* zoom image when hover */
                 &:hover {
                     .wrapper {
-                        transform: scale(1.15)
+                        -webkit-transform: scale(1.15);
+                            -ms-transform: scale(1.15);
+                                transform: scale(1.15)
                     }
                 }
             }
@@ -1420,14 +1643,26 @@ $gray-border: rgb(207, 205, 205);
             /* slide */
             .col-6.image {
                 .tns-outer {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    flex-direction: row;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row;
                     .tns-nav {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        flex-direction: column;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                                flex-direction: column;
                         z-index: 1;
                         margin-right: 30px;
-                        justify-content: space-between;
+                        -webkit-box-pack: justify;
+                            -ms-flex-pack: justify;
+                                justify-content: space-between;
                         button {
                             width: 60px;
                             height: 80px;
@@ -1488,15 +1723,23 @@ $gray-border: rgb(207, 205, 205);
                             margin-bottom: 10px;
                             .col-9 {
                                 .colors-container {
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                flex-direction: row;
-                                justify-content: flex-start;
+                                -webkit-box-orient: horizontal;
+                                -webkit-box-direction: normal;
+                                    -ms-flex-direction: row;
+                                        flex-direction: row;
+                                -webkit-box-pack: start;
+                                    -ms-flex-pack: start;
+                                        justify-content: flex-start;
                                 padding-left: 2px;
                                     .color {
                                         width: 30px;
                                         height: 20px;
                                         margin-right: 10px;
-                                        box-shadow: 1px 1px 3px 3px rgb(209, 209, 209);
+                                        -webkit-box-shadow: 1px 1px 3px 3px rgb(209, 209, 209);
+                                                box-shadow: 1px 1px 3px 3px rgb(209, 209, 209);
                                     }
                                 }
                             }
@@ -1505,12 +1748,20 @@ $gray-border: rgb(207, 205, 205);
                     /* show quantity, total amount, button add to cart and link to buy, refund policy, payment, share icon */
                     .action {
                         .quantity {
-                            align-items: center;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
                             margin-bottom: 10px;
                             .col-9 {
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                align-items: center;
-                                justify-content: flex-start;
+                                -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                        align-items: center;
+                                -webkit-box-pack: start;
+                                    -ms-flex-pack: start;
+                                        justify-content: flex-start;
                                 .button, input {
                                     height: 30px;
                                 }
@@ -1535,7 +1786,7 @@ $gray-border: rgb(207, 205, 205);
                                     outline: none;
                                     font-weight: bold;
                                 }
-                                // remove default scroll of number input tag
+                                /* remove default scroll of number input tag */
                                 input::-webkit-outer-spin-button,
                                 input::-webkit-inner-spin-button {
                                 -webkit-appearance: none;
@@ -1565,6 +1816,8 @@ $gray-border: rgb(207, 205, 205);
                                     border-radius: 5px;
                                     height: 40px;
                                     line-height: 40px;
+                                    -webkit-transition: .3s;
+                                    -o-transition: .3s;
                                     transition: .3s;
                                     cursor: pointer;
                                     &:hover {
@@ -1596,15 +1849,24 @@ $gray-border: rgb(207, 205, 205);
                         /* payment card */
                         .payment {
                             margin-top: 10px;
-                            align-items: center;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
                             .col-9 {
                                 .payment-card {
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
-                                    flex-direction: row;
+                                    -webkit-box-orient: horizontal;
+                                    -webkit-box-direction: normal;
+                                        -ms-flex-direction: row;
+                                            flex-direction: row;
                                     .icon {
                                         width: 50px;
                                         height: 35px;
                                         margin-right: 5px;
+                                        -webkit-transition: .3s;
+                                        -o-transition: .3s;
                                         transition: .3s;
                                         color: $hover-color-red;
                                         &:hover {
@@ -1617,22 +1879,37 @@ $gray-border: rgb(207, 205, 205);
                         /* share icons (face, twitter, ...) */
                         .share {
                             margin-top: 10px;
-                            align-items: center;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
                             .col-9 {
                                 .link {
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
-                                    flex-direction: row;
+                                    -webkit-box-orient: horizontal;
+                                    -webkit-box-direction: normal;
+                                        -ms-flex-direction: row;
+                                            flex-direction: row;
                                     .link-container {
                                         width: 30px;
                                         height: 30px;
                                         margin-right: 10px;
                                         border: 1px solid $hover-color-red;
                                         border-radius: 50%;
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
                                         display: flex;
-                                        justify-content: center;
-                                        align-items: center;
+                                        -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                                justify-content: center;
+                                        -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                                align-items: center;
                                         line-height: 40px;
                                         .icon {
+                                            -webkit-transition: .3s;
+                                            -o-transition: .3s;
                                             transition: .3s;
                                             color: $hover-color-red;
                                             margin: auto;
@@ -1657,6 +1934,8 @@ $gray-border: rgb(207, 205, 205);
                     padding: 0;
                     margin: 0;
                     .col {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
                         background: $hover-color-gray;
                         padding: 0;
@@ -1676,6 +1955,8 @@ $gray-border: rgb(207, 205, 205);
                     padding: 0;
                     margin: 0;
                     .col {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
                         border: 1px solid $hover-color-gray;
                         .content {
@@ -1733,7 +2014,7 @@ $gray-border: rgb(207, 205, 205);
                             /* main image */
                             .product-img {
                                 width: 100%;
-                                height: 240px; // height of image of modal
+                                height: 240px; /* height of image of modal */
                             }
                             /* link containing name and price */
                             a {
@@ -1743,6 +2024,8 @@ $gray-border: rgb(207, 205, 205);
                                     padding: 3px 7px;
                                     text-align: center;
                                     .name {
+                                        -webkit-transition: .5s;
+                                        -o-transition: .5s;
                                         transition: .5s;
                                         height: 45px;
                                         font-size: 13px;
@@ -1763,14 +2046,25 @@ $gray-border: rgb(207, 205, 205);
                                 top: 0;
                                 left: -100%;
                                 width: 100%;
-                                height: 241px; // height of image of overlay
+                                height: 241px; /* height of image of overlay */
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                flex-direction: column;
-                                transform: scale(0);
+                                -webkit-box-orient: vertical;
+                                -webkit-box-direction: normal;
+                                    -ms-flex-direction: column;
+                                        flex-direction: column;
+                                -webkit-transform: scale(0);
+                                    -ms-transform: scale(0);
+                                        transform: scale(0);
+                                -webkit-transition: .5s;
+                                -o-transition: .5s;
                                 transition: .5s;
                                 /* background image */
                                 .blur {
-                                    flex: 1;
+                                    -webkit-box-flex: 1;
+                                        -ms-flex: 1;
+                                            flex: 1;
                                     background : {
                                         position: center;
                                         size: cover;
@@ -1780,15 +2074,23 @@ $gray-border: rgb(207, 205, 205);
                                 /* container button add to cart and zoom out */
                                 .cart-zoom {
                                     background: black;
+                                    -webkit-transition: .3s;
+                                    -o-transition: .3s;
                                     transition: .3s;
                                     .row {
                                         margin: 0;
                                         .col-6 {
                                             padding: 0;
                                             .icon-container {
-                                                height: 25px; // height of icon bar
+                                                height: 25px; /* height of icon bar */
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
                                                 display: flex;
-                                                align-items: center;
+                                                -webkit-box-align: center;
+                                                    -ms-flex-align: center;
+                                                        align-items: center;
+                                                -webkit-transition: .3s;
+                                                -o-transition: .3s;
                                                 transition: .3s;
                                                 /* button add to cart */
                                                 .icon {
@@ -1819,7 +2121,9 @@ $gray-border: rgb(207, 205, 205);
                             &:hover {
                                 .overlay {
                                     left: 0;
-                                    transform: scale(1);
+                                    -webkit-transform: scale(1);
+                                        -ms-transform: scale(1);
+                                            transform: scale(1);
                                 }
                             }
                         }
@@ -1861,6 +2165,8 @@ $gray-border: rgb(207, 205, 205);
                     .icon {
                         margin-right: 3px;
                     }
+                    -webkit-transition: .3s;
+                    -o-transition: .3s;
                     transition: .3s;
                     &:hover {
                         color: $hover-color-red;
@@ -1908,6 +2214,8 @@ $gray-border: rgb(207, 205, 205);
                                         font-weight: bold;
                                         a {
                                             color: black;
+                                            -webkit-transition: .3s;
+                                            -o-transition: .3s;
                                             transition: .3s;
                                             &:hover {
                                                 color: $hover-color-red;
@@ -1924,7 +2232,9 @@ $gray-border: rgb(207, 205, 205);
                                     }
                                     /* container button + -, show quantity, button, update, remove */
                                     .row.quantity-row {
-                                        align-items: center;
+                                        -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                                align-items: center;
                                         .wrap {
                                             line-height: 30px;
                                         }
@@ -2053,8 +2363,13 @@ $gray-border: rgb(207, 205, 205);
                     }
                     /* general style of all forms */
                     form {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        flex-direction: column;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                                flex-direction: column;
                         /* input tag */
                         .field {
                             margin: 5px 0;
@@ -2127,11 +2442,17 @@ $gray-border: rgb(207, 205, 205);
                     /* nav button (back or next) for shipping, billing, payment */
                     .navigate { 
                         margin-top: 20px;
-                        align-items: center;
+                        -webkit-box-align: center;
+                            -ms-flex-align: center;
+                                align-items: center;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
                         .container {
                             .row {
-                                align-items: center;
+                                -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                        align-items: center;
                                 .col-6 {
                                     .wrap {
                                         text-align: center;
@@ -2140,6 +2461,8 @@ $gray-border: rgb(207, 205, 205);
                                         margin: auto;
                                         cursor: pointer;
                                         height: 100%;
+                                        -webkit-transition: .3s;
+                                        -o-transition: .3s;
                                         transition: .3s;
                                     }
                                     /* return button */
@@ -2192,7 +2515,8 @@ $gray-border: rgb(207, 205, 205);
                     }
                 }
                 .content {
-                    box-shadow: 1px 1px 5px 5px $gray-border;
+                    -webkit-box-shadow: 1px 1px 5px 5px $gray-border;
+                            box-shadow: 1px 1px 5px 5px $gray-border;
                     padding: 0 5px;
                     table {
                         width: 100%;
@@ -2276,8 +2600,13 @@ $gray-border: rgb(207, 205, 205);
                         padding: 5px;
                         width: 50%;
                     }
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    flex-direction: column;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
                     .label {
                         font-weight: bold;
                     }
@@ -2285,6 +2614,8 @@ $gray-border: rgb(207, 205, 205);
                         background: $hover-color-red;
                         color: white;
                         font-weight: bold;
+                        -webkit-transition: .3s;
+                        -o-transition: .3s;
                         transition: .3s;
                         &:hover {
                             background: black
@@ -2302,6 +2633,8 @@ $gray-border: rgb(207, 205, 205);
         }
         /* container or product detail and shipping address */
         .detail-wrap {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
         }
         /* title Your order detail */
@@ -2319,7 +2652,8 @@ $gray-border: rgb(207, 205, 205);
                 font-weight: bold;
             }
             table {
-                box-shadow: 1px 1px 10px 10px $hover-color-gray;
+                -webkit-box-shadow: 1px 1px 10px 10px $hover-color-gray;
+                        box-shadow: 1px 1px 10px 10px $hover-color-gray;
                 width: 100%;
                 td {
                     padding: 10px;
@@ -2361,7 +2695,8 @@ $gray-border: rgb(207, 205, 205);
             }
             table {
                 font-family: 'Roboto', sans-serif;
-                box-shadow: 1px 1px 10px 10px $hover-color-gray;
+                -webkit-box-shadow: 1px 1px 10px 10px $hover-color-gray;
+                        box-shadow: 1px 1px 10px 10px $hover-color-gray;
                 width: 100%;
                 td {
                     padding: 10px;
@@ -2383,6 +2718,8 @@ $gray-border: rgb(207, 205, 205);
                     border-radius: 10px;
                     background: $hover-color-red;
                     color: white;
+                    -webkit-transition: .3s;
+                    -o-transition: .3s;
                     transition: .3s;
                     font-weight: bold;
                     .icon {
@@ -2422,8 +2759,13 @@ $gray-border: rgb(207, 205, 205);
             .col-9.form {
                 .content {
                     form {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        flex-direction: column;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                                flex-direction: column;
                         input, textarea {
                             width: 75%;
                             outline: none;
@@ -2461,6 +2803,8 @@ $gray-border: rgb(207, 205, 205);
                         padding: 10px;
                         border-radius: 5px;
                         font-weight: bold;
+                        -webkit-transition: .3s;
+                        -o-transition: .3s;
                         transition: .3s;
                     }
                     /* button other feedback */

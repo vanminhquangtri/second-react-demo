@@ -54,9 +54,14 @@ const TopBar = (props) => {
                 <div className="row">
                     {/* logo */}
                     <div className="col-2 logo-container">
-                        <div className="logo">
-                            <img src = {logo} alt="logo"/>
-                        </div>
+                        <NavLink
+                            to="/"
+                        >
+                            <div className="logo">
+                                <img src = {logo} alt="logo"/>
+                            </div>
+                        </NavLink>
+                        
                     </div>
                     {/* clock */}
                     <DateTime></DateTime>

@@ -21,7 +21,7 @@ const Footer = () => {
                         <div className="payment">
                             <img src = {payment} alt="payment cards"/>
                         </div>
-                        <div className="copy-right">© Themetidy. All Rights Reserved</div>
+                        <div className="copy-right">© All Rights Reserved</div>
                     </div>
                     {/* The Service */}
                     <div className="col-2">

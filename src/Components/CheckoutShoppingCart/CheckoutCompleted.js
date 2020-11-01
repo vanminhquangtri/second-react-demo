@@ -9,6 +9,7 @@ const CheckoutCompleted = (props) => {
     })
     const {order_id} = props;
     return (
+        // use library https://animate.style
         <div className="check-out-form completed animate__animated animate__fadeInBottomRight">
             <div className="congrat">
                 <h3>Congratulation, you had successful purchase !</h3>

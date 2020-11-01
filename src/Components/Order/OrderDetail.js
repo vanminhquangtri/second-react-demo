@@ -119,36 +119,42 @@ const OrderDetail = (props) => {
                         <h4>Your order detail: <strong>{order_number}</strong></h4>
                     </div>
                 </div>
+                {/* container or product detail and shipping address */}
                 <div className="row detail-wrap">
+                    {/* order summary on the left */}
                     <div className="col-6 order-summary">
-                    <h5>Order summary</h5>
-                            <table>
-                                <tbody>
-                                    {
-                                        splicedProductsList.map((product) => {
-                                            return (
-                                                <tr className="product" key = {product.id}>
-                                                    <td className="name">{product.name}</td>
-                                                    <td className="quantity">{countProduct(product.id)}</td>
-                                                    <td className="price">{showMoney(Currency.currency, 1, product)}</td>
-                                                    <td className="amount">{showMoneyTotal(Currency.currency, product.price * countProduct(product.id))}</td>
-                                                </tr>
-                                            )
-                                        })
-                                    }
-                                    <tr className="product">
-                                        <td className="name">Shipping Fee</td>
-                                        <td className="quantity">1</td>
-                                        <td className="price">{showMoneyTotal(Currency.currency, currentOrder.shipping_fee)}</td>
-                                        <td className="amount">{showMoneyTotal(Currency.currency, currentOrder.shipping_fee)}</td>
-                                    </tr>
-                                    <tr className="total-amount">
-                                        <td className="title" colSpan={3}>Total</td>
-                                        <td className="money">{showMoneyTotal(Currency.currency, totalAmount + currentOrder.shipping_fee)}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <h5>Order summary</h5>
+                        <table>
+                            <tbody>
+                                {/* render each product is a row of table */}
+                                {
+                                    splicedProductsList.map((product) => {
+                                        return (
+                                            <tr className="product" key = {product.id}>
+                                                <td className="name">{product.name}</td>
+                                                <td className="quantity">{countProduct(product.id)}</td>
+                                                <td className="price">{showMoney(Currency.currency, 1, product)}</td>
+                                                <td className="amount">{showMoneyTotal(Currency.currency, product.price * countProduct(product.id))}</td>
+                                            </tr>
+                                        )
+                                    })
+                                }
+                                {/* shipping fee */}
+                                <tr className="product">
+                                    <td className="name">Shipping Fee</td>
+                                    <td className="quantity">1</td>
+                                    <td className="price">{showMoneyTotal(Currency.currency, currentOrder.shipping_fee)}</td>
+                                    <td className="amount">{showMoneyTotal(Currency.currency, currentOrder.shipping_fee)}</td>
+                                </tr>
+                                {/* total amount of product and shipping fee */}
+                                <tr className="total-amount">
+                                    <td className="title" colSpan={3}>Total</td>
+                                    <td className="money">{showMoneyTotal(Currency.currency, totalAmount + currentOrder.shipping_fee)}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                    {/* shipping address on the right */}
                     <div className="col-6 order-contact">
                         <h5>Shipping address</h5>
                         <table>
@@ -173,6 +179,7 @@ const OrderDetail = (props) => {
                         </table>
                     </div>
                 </div>
+                {/* button continue shopping */}
                 <div className="navigate">
                     <div className="wrap">
                         <NavLink

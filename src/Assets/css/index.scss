@@ -1,3 +1,6 @@
+/*
+base on design of https://sports-fashion-theme.myshopify.com
+*/
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     box-sizing: border-box;
@@ -485,7 +488,7 @@ $gray-border: rgb(207, 205, 205);
 /*----- top slide -----*/
 .home {
     padding: 20px 0;
-    /*----- use Boostrap Carousel combined animate.css library -----*/
+    /*----- use Boostrap Carousel combined library https://animate.style -----*/
     .top-slide {
         height: 400px; // height of visible content
         overflow: hidden;
@@ -2121,7 +2124,7 @@ $gray-border: rgb(207, 205, 205);
                             }
                         }
                     }
-                    /*nav button (back or next)*/
+                    /* nav button (back or next) for shipping, billing, payment */
                     .navigate { 
                         margin-top: 20px;
                         align-items: center;
@@ -2139,6 +2142,7 @@ $gray-border: rgb(207, 205, 205);
                                         height: 100%;
                                         transition: .3s;
                                     }
+                                    /* return button */
                                     .wrap.pre {
                                         background: black;
                                         color: white;
@@ -2155,6 +2159,7 @@ $gray-border: rgb(207, 205, 205);
                                             background: $hover-color-red;
                                         }
                                     }
+                                    /* continue button */
                                     .wrap.next {
                                         input {
                                             background: $hover-color-red;
@@ -2237,6 +2242,7 @@ $gray-border: rgb(207, 205, 205);
 .order-management {
     padding: 20px 0;
     .container {
+        /* big title Welcome to Order Management Portal */
         .row.title {
             .col {
                 h1 {
@@ -2255,6 +2261,7 @@ $gray-border: rgb(207, 205, 205);
                 }
             }
         }
+        /* show form if not access successfully or errors */
         .row.order-verify {
             .col {
                 h4 {
@@ -2286,15 +2293,18 @@ $gray-border: rgb(207, 205, 205);
                 }
             }
         }
+        /* show errors if order number or email is not matched with store */
         .row.announcement {
             margin-top: 20px;
             font-weight: bold;
             color: $hover-color-red;
             font-size: 20px;
         }
+        /* container or product detail and shipping address */
         .detail-wrap {
             display: flex;
         }
+        /* title Your order detail */
         .row.title {
             .col {
                 h4 {
@@ -2302,6 +2312,7 @@ $gray-border: rgb(207, 205, 205);
                 }
             }
         }
+        /* order summary on the left */
         .order-summary {
             margin-top: 20px;
             h5 {
@@ -2313,6 +2324,7 @@ $gray-border: rgb(207, 205, 205);
                 td {
                     padding: 10px;
                 }
+                /* render each product is a row of table */
                 .product {
                     .name {
                         font-weight: bold;
@@ -2327,6 +2339,7 @@ $gray-border: rgb(207, 205, 205);
                     }
                     
                 }
+                /* total amount of product and shipping fee */
                 .total-amount {
                     .title {
                         text-align: center;
@@ -2340,6 +2353,7 @@ $gray-border: rgb(207, 205, 205);
                 }
             }
         }
+        /* shipping address on the right */
         .order-contact {
             margin-top: 20px;
             h5 {
@@ -2360,6 +2374,7 @@ $gray-border: rgb(207, 205, 205);
                 }
             }
         }
+        /* button continue shopping */
         .navigate {
             margin-top: 20px;
             .wrap {
@@ -2385,7 +2400,7 @@ $gray-border: rgb(207, 205, 205);
 /*----- contact -----*/
 .contact {
     padding: 20px 0;
-    /*map*/
+    /* map */
     .map {
         .row {
             .col {
@@ -2396,14 +2411,14 @@ $gray-border: rgb(207, 205, 205);
             }
         }
     }
-    /*contact-form and contact detail*/
+    /* contact-form and contact detail */
     .form-contact {
         margin-top: 20px;
         .row {
             .title {
                 font-weight: bold;
             }
-            /*contact-form*/
+            /* contact-form on the left */
             .col-9.form {
                 .content {
                     form {
@@ -2426,6 +2441,7 @@ $gray-border: rgb(207, 205, 205);
                     }
                 }
             }
+            /* company information in the right: name,  phone, email,... */
             .col-3.address {
                 .content {
                     table {
@@ -2435,6 +2451,7 @@ $gray-border: rgb(207, 205, 205);
                     }
                 }
             }
+            /* show announcement if submit successfully, use library https://animate.style */
             .col-9.submit-success {
                 .content {
                     .other-feedback, .navigate {
@@ -2446,6 +2463,7 @@ $gray-border: rgb(207, 205, 205);
                         font-weight: bold;
                         transition: .3s;
                     }
+                    /* button other feedback */
                     .other-feedback {
                         margin: 20px 0;
                         background: black;
@@ -2454,6 +2472,7 @@ $gray-border: rgb(207, 205, 205);
                             background: $hover-color-red;
                         }
                     }
+                    /* button continue shopping */
                     .navigate {
                         background: $hover-color-red;
                         &:hover {
@@ -2466,13 +2485,3 @@ $gray-border: rgb(207, 205, 205);
     }
 }
 /*----- end contact -----*/
-
-.fly-points {
-    width: 30px;
-    height: 30px;
-    position: fixed;
-    border-radius: 50%;
-    background: green;
-    transition: 1s;
-    z-index: 2000;
-}

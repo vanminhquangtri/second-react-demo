@@ -1,4 +1,4 @@
-// direct child of ShoppingCartDetail, render each product in shopping cart
+// direct child of Router URL
 import React, {useState, useEffect} from 'react';
 import {connect} from "react-redux";
 import OrderDetail from './OrderDetail';
@@ -52,11 +52,13 @@ const OrderManagement = (props) => {
     return (
         <section className="order-management">
             <div className="container">
+                {/* big title */}
                 <div className="row title">
                     <div className="col">
                         <h1>Welcome to Order Management Portal</h1>
                     </div>
                 </div>
+                {/* show form if not access successfully or errors */}
                 {
                     (stage === "verify" || stage === "failed") && (
                         <div className="row order-verify">
@@ -73,6 +75,7 @@ const OrderManagement = (props) => {
                         </div>
                     )
                 }
+                {/* show errors if order number or email is not matched with store */}
                 {
                     stage === "failed" && (
                         <div className="row announcement">
@@ -82,6 +85,7 @@ const OrderManagement = (props) => {
                     </div>
                     )
                 }
+                {/* show details of order if order number or email is matched with store */}
                 {
                     stage === "success" && (
                         <OrderDetail

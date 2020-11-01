@@ -19,6 +19,7 @@ const Contact = (props) => {
     const {submit_stt} = state;
     return (
         <section className="contact">
+            {/* location map at the top */}
             <div className="container-fluid map">
                 <div className="row">
                     <div className="col">
@@ -26,10 +27,12 @@ const Contact = (props) => {
                     </div>
                 </div>
             </div>
+            {/* container of contact form, company information & annoucement when submited successfully */}
             <div className="container form-contact">
                 <div className="row">
                     {
                         ((submit_stt === false) && (
+                            // show contact form if have not completed
                             <div className="col-9 form">
                                 <div className="content">
                                     <h3 className="title">Send Us A Feedback</h3>
@@ -49,10 +52,13 @@ const Contact = (props) => {
                             </div>
                         )) ||
                         ((submit_stt === true) && (
+                            // show announcement if submit successfully, use library https://animate.style/
                             <div className="col-9 submit-success animate__animated animate__fadeInBottomRight">
                                 <div className="content">
                                     <h3 className="title">Thank you so much for your Feedback</h3>
+                                    {/* button other feedback */}
                                     <span className="other-feedback" onClick = {(ev)=>{changeSubmitStt(ev)}}>Send Us Another Feedback</span> <br/>
+                                    {/* button continue shopping */}
                                     <NavLink
                                         to = "/all-collection"
                                         exact = {true}
@@ -64,6 +70,7 @@ const Contact = (props) => {
                             </div>
                         ))
                     }
+                    {/* company information in the right: name,  phone, email,... */}
                     <div className="col-3 address">
                         <div className="content">
                             <h3 className="title">Or Reach Us</h3>

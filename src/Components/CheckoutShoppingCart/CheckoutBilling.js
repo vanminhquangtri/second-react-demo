@@ -114,6 +114,7 @@ const CheckoutBilling = (props) => {
             <div className="navigate">
                 <div className="container">
                     <div className="row">
+                        {/* Button Return */}
                         <div className="col-6">
                             <div className="wrap pre">
                                 <div className="wrap next"
@@ -124,6 +125,7 @@ const CheckoutBilling = (props) => {
                                 </div>
                             </div>
                         </div>
+                        {/* Button Continue */}
                         <div className="col-6">
                             <div className="wrap next">
                                 <input form="billing-form" className="field" name="street" type="submit" value="Continue to Payment Stage"/>

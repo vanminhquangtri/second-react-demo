@@ -1,5 +1,4 @@
 import React from 'react';
-import './Assets/css/index.scss';
 import {BrowserRouter as Router} from "react-router-dom";
 import RouterURL from './Components/RouterURL/RouterURL';
 import TopBar from './Components/TopBar/TopBar';
@@ -8,8 +7,7 @@ import Footer from './Components/Footer/Footer';
 import TopNav from './Components/TopNav/TopNav';
 import Store from "./Store/Store";
 import {Provider} from "react-redux";
-
-const App = (props) => {
+const App = () => {
     return (
         <Provider store = {Store}>
             <Router>

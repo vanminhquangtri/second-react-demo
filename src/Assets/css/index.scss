@@ -316,6 +316,7 @@ $gray-border: rgb(207, 205, 205);
                                 transition: .3s;
                                 font-weight: bold;
                                 font-size: 17px; /* font size of links */
+                                padding: 5px 0; /* control height of nav bar */
                                 &:hover {
                                     color: $hover-color-red;
                                 }
@@ -370,7 +371,7 @@ $gray-border: rgb(207, 205, 205);
                         }
                         /* home icon */
                         .home {
-                            padding: 8px 0; /* this controll height of top - nav */
+                            padding: 0; /* this controll height of top - nav */
                             a {
                                 .icon {
                                     font-size: 18px !important;
@@ -396,6 +397,7 @@ $gray-border: rgb(207, 205, 205);
                         -ms-flex-pack: center;
                             justify-content: center;
                     .cart-amount {
+                        height: 100%;
                         text-align: right;
                         position: relative;
                         display: -webkit-box;

@@ -69,27 +69,33 @@ const TopNav = () => {
                                         <li>
                                             <NavLink to="/summer-collection" exact={true} activeClassName="active">Summer Collection</NavLink>
                                         </li>
+                                        <li className="show-767" style={{display: "none"}}>
+                                            <NavLink to = "/contact" exact = {true} activeClassName="active">Contact Us</NavLink>
+                                        </li>
+                                        <li className="show-767" style={{display: "none"}}>
+                                            <NavLink to = "/about" exact = {true} activeClassName="active">About Us</NavLink>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li className="hide-1249">
                                     <NavLink to = "/latest-collection" exact = {true} activeClassName="active">LATEST COLLECTION</NavLink>
                                 </li>
-                                <li>
+                                <li className="hide-1249">
                                     <NavLink to = "/featured-collection" exact = {true} activeClassName="active">FEATURED COLLECTION</NavLink>
                                 </li>
-                                <li>
+                                <li className="hide-1249">
                                     <NavLink to = "/modern-collection" exact = {true} activeClassName="active">MODERN COLLECTION</NavLink>
                                 </li>
-                                <li>
+                                <li className="hide-1249">
                                     <NavLink to = "/minimal-collection" exact = {true} activeClassName="active">MINIMAL COLLECTION</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to = "/order" exact = {true} activeClassName="active">YOUR ORDER</NavLink>
                                 </li>
-                                <li>
+                                <li className="hide-767">
                                     <NavLink to = "/contact" exact = {true} activeClassName="active">CONTACT US</NavLink>
                                 </li>
-                                <li>
+                                <li className="hide-767">
                                     <NavLink to = "/about" exact = {true} activeClassName="active">ABOUT US</NavLink>
                                 </li>
                             </ul>

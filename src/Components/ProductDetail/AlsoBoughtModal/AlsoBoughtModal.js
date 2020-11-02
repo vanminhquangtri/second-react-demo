@@ -107,6 +107,17 @@ const AlsoBoughtModal = (props) => {
                         </div>
                     </div>
                 </div>
+                {/* sales off, only appear if sale property of product is not false */}
+                {
+                    Products.sale__off && (
+                        <div className="sale-off">
+                            <span className="sale-rate">
+                                SALE <br/>
+                                {Products.sale__off}
+                            </span>
+                        </div>
+                    )
+                }
             </div>
         </div>
     );

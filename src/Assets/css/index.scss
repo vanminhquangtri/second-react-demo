@@ -420,7 +420,7 @@ $gray-border: rgb(207, 205, 205);
                             font-size: 20px;
                             font-weight: bold;
                             display: inline-block;
-                            background: red;
+                            background: $hover-color-red;
                             padding: 0 10px;
                             margin-left: 10px;
                         }
@@ -988,7 +988,7 @@ $gray-border: rgb(207, 205, 205);
                 
             }
         }
-        /* Each product is a modal call ProductModal */
+        /* Each product is a col-3 div */
         .product-row {
             .col-3 {
                 /* wrap all content */
@@ -1108,6 +1108,26 @@ $gray-border: rgb(207, 205, 205);
                             -webkit-transform: scale(1);
                                 -ms-transform: scale(1);
                                     transform: scale(1);
+                        }
+                    }
+                    /* sales off */
+                    .sale-off {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        background: $hover-color-red;
+                        color: white;
+                        text-align: center;
+                        font-size: 12px;
+                        font-weight: bold;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        .sale-rate {
+                            margin: auto;
                         }
                     }
                 }
@@ -1346,18 +1366,13 @@ $gray-border: rgb(207, 205, 205);
 /*----- end best sell -----*/
 /*----- collection parallax -----*/
 .collection-parallax {
-    height: 600px;
-    padding-top: 70px;
     margin-top: 20px;
-    background : {
-        image: url("../images/section-collection-parallax/parallax.jpg");
-        size: cover;
-        repeat: no-repeat;
-    }
     .container {
         .row {
             .col {
                 .content {
+                    height: 600px;
+                    padding-top: 100px;
                     color: white; 
                     font-weight: bold;
                     .title {
@@ -2126,6 +2141,26 @@ $gray-border: rgb(207, 205, 205);
                                     -webkit-transform: scale(1);
                                         -ms-transform: scale(1);
                                             transform: scale(1);
+                                }
+                            }
+                            /* sales off */
+                            .sale-off {
+                                position: absolute;
+                                top: 5px;
+                                right: 5px;
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                                background: $hover-color-red;
+                                color: white;
+                                text-align: center;
+                                font-size: 10px;
+                                font-weight: bold;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                .sale-rate {
+                                    margin: auto;
                                 }
                             }
                         }

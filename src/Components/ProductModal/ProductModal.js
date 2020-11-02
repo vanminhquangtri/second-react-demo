@@ -30,7 +30,6 @@ const ProductModal = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    
     return (
         // each product is a col-3 div
         <div className="col-3">
@@ -107,6 +106,17 @@ const ProductModal = (props) => {
                         </div>
                     </div>
                 </div>
+                {/* sales off, only appear if sale property of product is not false */}
+                {
+                    Products.sale__off && (
+                        <div className="sale-off">
+                            <span className="sale-rate">
+                                SALE <br/>
+                                {Products.sale__off}
+                            </span>
+                        </div>
+                    )
+                }
             </div>
         </div>
     );

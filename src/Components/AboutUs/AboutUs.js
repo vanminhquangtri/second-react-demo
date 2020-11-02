@@ -18,7 +18,6 @@ const AboutUs = () => {
                                 bgImage={require("../../Assets/images/section-about-us/parrallax1.jpg").default} 
                                 bgImageAlt="the cat"
                                 strength={400}
-                                blur={0}
                             >
                                 <div className="content mission">
                                     <h1 className="title">Our Missions</h1>
@@ -49,7 +48,6 @@ const AboutUs = () => {
                                 bgImage={require("../../Assets/images/section-about-us/parrallax2.jpg").default} 
                                 bgImageAlt="the cat"
                                 strength={400}
-                                blur={5}
                             >
                                 <div className="content service">
                                     <h1 className="title">Our Services</h1>

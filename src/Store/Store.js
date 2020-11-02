@@ -8,7 +8,7 @@ const Product = [
     name: "Featured Beauty Women Clothing White",
     category: "Featured",
     price: 410,
-    sale__off: false,
+    sale__off: "20%",
     best__sell: false,
     main__image: require("../Assets/images/products/Featured/Featured Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
@@ -68,7 +68,7 @@ const Product = [
     name: "Featured Fashion For Female High",
     category: "Featured",
     price: 200,
-    sale__off: false,
+    sale__off: "20%",
     best__sell: false,
     main__image: require("../Assets/images/products/Featured/Featured Fashion For Female High/main/main.jpg"),
     slide__image: [
@@ -88,7 +88,7 @@ const Product = [
     name: "Featured Fashion Women Digital",
     category: "Featured",
     price: 270,
-    sale__off: false,
+    sale__off: "30%",
     best__sell: true,
     main__image: require("../Assets/images/products/Featured/Featured Fashion Women Digital/main/main.jpg"),
     slide__image: [
@@ -128,7 +128,7 @@ const Product = [
     name: "Featured Beauty Women Clothing",
     category: "Featured",
     price: 225,
-    sale__off: false,
+    sale__off: "30%",
     best__sell: false,
     main__image: require("../Assets/images/products/Featured/Featured Beauty Women Clothing/main/main.jpg"),
     slide__image: [
@@ -170,7 +170,7 @@ const Product = [
     name: "Hot Beauty Women Clothing White",
     category: "Hot",
     price: 300,
-    sale__off: false,
+    sale__off: "20%",
     best__sell: false,
     main__image: require("../Assets/images/products/Hot/Hot Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
@@ -274,7 +274,7 @@ const Product = [
     name: "Hot Women Print Fashion Low",
     category: "Hot",
     price: 250,
-    sale__off: false,
+    sale__off: "25%",
     best__sell: false,
     main__image: require("../Assets/images/products/Hot/Hot Women Print Fashion Low/main/main.jpg"),
     slide__image: [
@@ -295,7 +295,7 @@ const Product = [
     name: "Hot Beauty Women Clothing",
     category: "Hot",
     price: 225,
-    sale__off: false,
+    sale__off: "20%",
     best__sell: false,
     main__image: require("../Assets/images/products/Hot/Hot Beauty Women Clothing/main/main.jpg"),
     slide__image: [
@@ -338,7 +338,7 @@ const Product = [
     name: "Latest Beauty Women Clothing White",
     category: "Latest",
     price: 395,
-    sale__off: false,
+    sale__off: "40%",
     best__sell: false,
     main__image: require("../Assets/images/products/Latest/Latest Beauty Women Clothing White/main/main.jpg"),
     slide__image: [
@@ -358,7 +358,7 @@ const Product = [
     name: "Latest Black Sporting Leggings",
     category: "Latest",
     price: 385,
-    sale__off: false,
+    sale__off: "15%",
     best__sell: true,
     main__image: require("../Assets/images/products/Latest/Latest Black Sporting Leggings/main/main.jpg"),
     slide__image: [
@@ -419,7 +419,7 @@ const Product = [
     name: "Latest Fashion Women Digital",
     category: "Latest",
     price: 355,
-    sale__off: false,
+    sale__off: "30%",
     best__sell: false,
     main__image: require("../Assets/images/products/Latest/Latest Fashion Women Digital/main/main.jpg"),
     slide__image: [
@@ -479,7 +479,7 @@ const Product = [
     name: "Latest New Fashion Women Leggings",
     category: "Latest",
     price: 245,
-    sale__off: false,
+    sale__off: "10%",
     best__sell: false,
     main__image: require("../Assets/images/products/Latest/Latest New Fashion Women Leggings/main/main.jpg"),
     slide__image: [
@@ -521,7 +521,7 @@ const Product = [
     name: "Minimal Black Sporting Leggings",
     category: "Minimal",
     price: 382,
-    sale__off: false,
+    sale__off: "10%",
     best__sell: false,
     main__image: require("../Assets/images/products/Minimal/Minimal Black Sporting Leggings/main/main.jpg"),
     slide__image: [
@@ -541,7 +541,7 @@ const Product = [
     name: "Minimal Cool Women Casual",
     category: "Minimal",
     price: 372,
-    sale__off: false,
+    sale__off: "20%",
     best__sell: true,
     main__image: require("../Assets/images/products/Minimal/Minimal Cool Women Casual/main/main.jpg"),
     slide__image: [
@@ -621,7 +621,7 @@ const Product = [
     name: "Minimal Beauty Women Clothing",
     category: "Minimal",
     price: 225,
-    sale__off: false,
+    sale__off: "5%",
     best__sell: false,
     main__image: require("../Assets/images/products/Minimal/Minimal Beauty Women Clothing/main/main.jpg"),
     slide__image: [
@@ -703,7 +703,7 @@ const Product = [
     name: "Modern Cool Women Casual",
     category: "Modern",
     price: 315,
-    sale__off: false,
+    sale__off: "10%",
     best__sell: false,
     main__image: require("../Assets/images/products/Modern/Modern Cool Women Casual/main/main.jpg"),
     slide__image: [
@@ -783,7 +783,7 @@ const Product = [
     name: "Modern Beauty Women Clothing",
     category: "Modern",
     price: 225,
-    sale__off: false,
+    sale__off: "20%",
     best__sell: false,
     main__image: require("../Assets/images/products/Modern/Modern Beauty Women Clothing/main/main.jpg"),
     slide__image: [
@@ -845,7 +845,7 @@ const Product = [
     name: "Summer Black Sporting Leggings",
     category: "Summer",
     price: 210,
-    sale__off: false,
+    sale__off: "20%",
     best__sell: true,
     main__image: require("../Assets/images/products/Summer/Summer Black Sporting Leggings/main/main.jpg"),
     slide__image: [
@@ -865,7 +865,7 @@ const Product = [
     name: "Summer Cool Women Casual",
     category: "Summer",
     price: 230,
-    sale__off: false,
+    sale__off: "20%",
     best__sell: true,
     main__image: require("../Assets/images/products/Summer/Summer Cool Women Casual/main/main.jpg"),
     slide__image: [
@@ -905,7 +905,7 @@ const Product = [
     name: "Summer Fashion Women Digital",
     category: "Summer",
     price: 275,
-    sale__off: false,
+    sale__off: "10%",
     best__sell: false,
     main__image: require("../Assets/images/products/Summer/Summer Fashion Women Digital/main/main.jpg"),
     slide__image: [

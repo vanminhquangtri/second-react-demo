@@ -69,6 +69,12 @@ const TopNav = () => {
                                         <li>
                                             <NavLink to="/summer-collection" exact={true} activeClassName="active">Summer Collection</NavLink>
                                         </li>
+                                        <li className="show-767" style={{display: "none"}}>
+                                            <NavLink to = "/contact" exact = {true} activeClassName="active">Contact Us</NavLink>
+                                        </li>
+                                        <li className="show-767" style={{display: "none"}}>
+                                            <NavLink to = "/about" exact = {true} activeClassName="active">About Us</NavLink>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li className="hide-1249">
@@ -86,10 +92,10 @@ const TopNav = () => {
                                 <li>
                                     <NavLink to = "/order" exact = {true} activeClassName="active">YOUR ORDER</NavLink>
                                 </li>
-                                <li>
+                                <li className="hide-767">
                                     <NavLink to = "/contact" exact = {true} activeClassName="active">CONTACT US</NavLink>
                                 </li>
-                                <li>
+                                <li className="hide-767">
                                     <NavLink to = "/about" exact = {true} activeClassName="active">ABOUT US</NavLink>
                                 </li>
                             </ul>

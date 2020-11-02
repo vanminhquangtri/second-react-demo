@@ -1,6 +1,5 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import "animate.css";
 
 const TopSlide = (props) => {
     return (

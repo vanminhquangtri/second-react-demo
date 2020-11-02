@@ -7,6 +7,10 @@ $gray-border: rgb(207, 205, 205);
 /*----- from Ipad Pro (1024) up -----*/
 /*----- top-bar (logo, date time, currency) -----*/
 .top-bar {
+    position: fixed;
+    bottom: 0;
+    background: white;
+    z-index: 1000;
     .container {
         .row {
             -webkit-box-align: center;

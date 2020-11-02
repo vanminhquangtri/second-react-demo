@@ -71,16 +71,16 @@ const TopNav = () => {
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li className="hide-1249">
                                     <NavLink to = "/latest-collection" exact = {true} activeClassName="active">LATEST COLLECTION</NavLink>
                                 </li>
-                                <li>
+                                <li className="hide-1249">
                                     <NavLink to = "/featured-collection" exact = {true} activeClassName="active">FEATURED COLLECTION</NavLink>
                                 </li>
-                                <li>
+                                <li className="hide-1249">
                                     <NavLink to = "/modern-collection" exact = {true} activeClassName="active">MODERN COLLECTION</NavLink>
                                 </li>
-                                <li>
+                                <li className="hide-1249">
                                     <NavLink to = "/minimal-collection" exact = {true} activeClassName="active">MINIMAL COLLECTION</NavLink>
                                 </li>
                                 <li>

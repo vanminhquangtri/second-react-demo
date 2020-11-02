@@ -1,15 +1,9 @@
-/*
-base on design of https://sports-fashion-theme.myshopify.com
-*/
-* {
-    font-family: 'Source Sans Pro', sans-serif;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-}
+/*--- RESPONSIVE ---*/
 $hover-color-red: rgb(211, 9, 9);
 $hover-color-gray: rgb(245, 245, 245);
 $white-color: rgb(223, 223, 223);
 $gray-border: rgb(207, 205, 205);
+@media screen and (max-width: 1249px){
 /*----- top-bar (logo, date time, currency) -----*/
 .top-bar {
     .container {
@@ -21,6 +15,9 @@ $gray-border: rgb(207, 205, 205);
             padding-bottom: 10px;
             /* logo */
             .col-2.logo-container {
+                flex: 30% !important; /**************************************/
+                max-width: 30% !important; /**************************************/
+                text-align: right; /**************************************/
                 .logo {
                     img {
                         height: 35px;
@@ -30,6 +27,7 @@ $gray-border: rgb(207, 205, 205);
             }
             /* clock */
             .col-4.date-time-container{
+                display: none; /**************************************/
                 .date-time {
                     padding: 5px 0;
                     display: inline-block;
@@ -37,6 +35,8 @@ $gray-border: rgb(207, 205, 205);
             }
             /* latest collection*/
             .col-3.lastest {
+                flex: 30% !important; /**************************************/
+                max-width: 30% !important; /**************************************/
                 a {
                     display: -webkit-box;
                     display: -ms-flexbox;
@@ -49,6 +49,9 @@ $gray-border: rgb(207, 205, 205);
                     -webkit-transition: .3s;
                     -o-transition: .3s;
                     transition: .3s;
+                    justify-content: center; /**************************************/
+                    font-weight: bold; /**************************************/
+                    font-size: 20px; /**************************************/
                     img {
                         width: 50px;
                         height: 50px;
@@ -61,13 +64,13 @@ $gray-border: rgb(207, 205, 205);
             }
             /* currency */
             .col-auto {
+                max-width: 30% !important; /**************************************/
                 -webkit-box-flex: 1;
                     -ms-flex: 1;
                         flex: 1;
-                text-align: right;
                 /* wrap all content */
                 .account-currency {
-                    float: right;
+                    float: left; /**************************************/
                     position: relative;
                     /* "Currency" and name of currency */
                     a, span {
@@ -236,10 +239,10 @@ $gray-border: rgb(207, 205, 205);
                         justify-content: space-between;
                 a {
                     display: block;
-                    width: 40px;
-                    height: 40px;
+                    width: 35px; /**************************************/
+                    height: 35px; /**************************************/
                     border: 1px solid $white-color;
-                    line-height: 40px;
+                    line-height: 35px; /**************************************/
                     border-radius: 50%;
                     text-align: center;
                     .icon {
@@ -286,9 +289,11 @@ $gray-border: rgb(207, 205, 205);
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
+                padding-left: 40px; /**************************************/
+                padding-right: 40px; /**************************************/
                 /* nav: home icon, links */
                 .nav {
-                    width: 95%; /* width of nav */
+                    width: 100%; /* width of nav */
                     > ul {
                         padding: 0;
                         margin: 0;
@@ -306,7 +311,7 @@ $gray-border: rgb(207, 205, 205);
                             text-decoration: underline;
                         }
                         > li {
-                            margin-right: 20px; /* space between li tag */
+                            margin-right: 50px; /* space between li tag */ /**************************************/
                             position: relative;
                             > a {
                                 color: $white-color;
@@ -368,6 +373,9 @@ $gray-border: rgb(207, 205, 205);
                                 margin-right: 0;
                             }
                         }
+                        li.hide-1249 {
+                            display: none; /**************************************/
+                        }
                         /* home icon */
                         .home {
                             padding: 8px 0; /* this controll height of top - nav */
@@ -384,7 +392,7 @@ $gray-border: rgb(207, 205, 205);
                 /* end nav: home icon, links */
                 /* shopping cart */
                 .cart {
-                    width: 5%;
+                    width: 10%; /**************************************/
                     display: -webkit-box;
                     display: -ms-flexbox;
                     display: flex;
@@ -411,8 +419,8 @@ $gray-border: rgb(207, 205, 205);
                         /* cart icon */
                         .icon {
                             fill: $white-color; /* use flat icon */
-                            width: 20px;
-                            height: 20px;
+                            width: 30px; /**************************************/
+                            height: 30px; /**************************************/
                         }
                         /* cart quantity (the red box) */
                         .current-amount{
@@ -430,7 +438,7 @@ $gray-border: rgb(207, 205, 205);
                                     box-shadow: 1px 3px 4px rgb(197, 197, 197);
                             position: absolute;
                             top: 100%;
-                            width: 650%; /* width of top up */
+                            width: 550%; /* width of top up */ /**************************************/
                             right: 0;
                             z-index: 100;
                             background: white;
@@ -484,7 +492,7 @@ $gray-border: rgb(207, 205, 205);
                                                 padding-right: 0;
                                                 img {
                                                     width: 100%;
-                                                    height: 90px;
+                                                    height: 80px; /**************************************/
                                                 }
                                             }
                                             /* col name */
@@ -499,7 +507,7 @@ $gray-border: rgb(207, 205, 205);
                                             }
                                             /* col containing delete icon and quantity and price */
                                             .amount {
-                                                height: 90px;
+                                                height: 80px; /**************************************/
                                                 .cal {
                                                     height: 100%;
                                                     display: -webkit-box;
@@ -604,7 +612,7 @@ $gray-border: rgb(207, 205, 205);
                             .carousel-item {
                                 /*----- carousel-caption -----*/
                                 .carousel-caption {
-                                    padding: 160px 0 0 0;
+                                    padding: 100px 0 0 0; /**************************************/
                                     top: 0;
                                     z-index: 0.5;
                                     left: 12%;
@@ -736,6 +744,7 @@ $gray-border: rgb(207, 205, 205);
                     }
                     /* container of arrows previous and next */
                     .tns-controls {
+                        display: none !important; /**************************************/
                         position: absolute;
                         width: 100%;
                         display: -webkit-box;
@@ -1000,7 +1009,7 @@ $gray-border: rgb(207, 205, 205);
                     /* main image */
                     .product-img {
                         width: 100%;
-                        height: 365px;
+                        height: 315px; /**************************************/
                     }
                     /* product name and price */
                     a {
@@ -1033,7 +1042,7 @@ $gray-border: rgb(207, 205, 205);
                         top: 0;
                         left: -100%;
                         width: 100%;
-                        height: 366px;
+                        height: 316px; /**************************************/
                         display: -webkit-box;
                         display: -ms-flexbox;
                         display: flex;
@@ -1069,7 +1078,7 @@ $gray-border: rgb(207, 205, 205);
                                 .col-6 {
                                     padding: 0;
                                     .icon-container {
-                                        height: 40px;
+                                        height: 30px; /**************************************/
                                         display: -webkit-box;
                                         display: -ms-flexbox;
                                         display: flex;
@@ -1083,8 +1092,8 @@ $gray-border: rgb(207, 205, 205);
                                             color: white;
                                             margin: auto;
                                             display: block;
-                                            width: 25px;
-                                            height: 25px;
+                                            width: 20px; /**************************************/
+                                            height: 20px; /**************************************/
                                         }
                                         &:hover {
                                             background: red;
@@ -1139,7 +1148,7 @@ $gray-border: rgb(207, 205, 205);
 .modal-dialog {
     max-width: 100% !important;
     .modal-content {
-        width: 50%;
+        width: 90%; /**************************************/
         margin: auto !important;
         .modal-header, .modal-body {
             padding: 0;
@@ -1157,6 +1166,8 @@ $gray-border: rgb(207, 205, 205);
                     .row {
                         /* slider show on the left side */
                         .col-6.image {
+                            flex: 40% !important; /**************************************/
+                            max-width: 40% !important; /**************************************/
                             padding: 0;
                             .tns-outer {
                                 display: -webkit-box;
@@ -1371,15 +1382,15 @@ $gray-border: rgb(207, 205, 205);
         .row {
             .col {
                 .content {
-                    height: 600px;
+                    height: 500px;
                     padding-top: 100px;
                     color: white; 
                     font-weight: bold;
                     .title {
-                        font-size: 70px;
+                        font-size: 50px;
                     }
                     .des {
-                        font-size: 25px;
+                        font-size: 20px;
                     }
                     .link {
                         margin-top: 20px;
@@ -1403,6 +1414,7 @@ $gray-border: rgb(207, 205, 205);
 /*----- end collection parallax -----*/
 /*----- customer say, use Tiny Slider React -----*/
 .customer-say {
+    display: none; /**************************************/
     background: $hover-color-gray;
     .container {
         .row {
@@ -2031,7 +2043,7 @@ $gray-border: rgb(207, 205, 205);
                             /* main image */
                             .product-img {
                                 width: 100%;
-                                height: 240px; /* height of image of modal */
+                                height: 200px; /* height of image of modal */ /**************************************/
                             }
                             /* link containing name and price */
                             a {
@@ -2044,7 +2056,7 @@ $gray-border: rgb(207, 205, 205);
                                         -webkit-transition: .5s;
                                         -o-transition: .5s;
                                         transition: .5s;
-                                        height: 45px;
+                                        height: 55px; /**************************************/
                                         font-size: 13px;
                                         &:hover {
                                             color: $hover-color-red;
@@ -2063,7 +2075,7 @@ $gray-border: rgb(207, 205, 205);
                                 top: 0;
                                 left: -100%;
                                 width: 100%;
-                                height: 241px; /* height of image of overlay */
+                                height: 201px; /* height of image of overlay */ /**************************************/
                                 display: -webkit-box;
                                 display: -ms-flexbox;
                                 display: flex;
@@ -2099,7 +2111,7 @@ $gray-border: rgb(207, 205, 205);
                                         .col-6 {
                                             padding: 0;
                                             .icon-container {
-                                                height: 25px; /* height of icon bar */
+                                                height: 20px; /* height of icon bar */ /**************************************/
                                                 display: -webkit-box;
                                                 display: -ms-flexbox;
                                                 display: flex;
@@ -2114,8 +2126,8 @@ $gray-border: rgb(207, 205, 205);
                                                     color: white;
                                                     margin: auto;
                                                     display: block;
-                                                    width: 15px;
-                                                    height: 15px;
+                                                    width: 12px; /**************************************/
+                                                    height: 12px; /**************************************/
                                                 }
                                                 &:hover {
                                                     background: red;
@@ -2448,6 +2460,7 @@ $gray-border: rgb(207, 205, 205);
                         .congrat {
                             h3 {
                                 font-weight: bold;
+                                font-size: 20px; /**************************************/
                             }
                         }
                         /* container of order number, "You order number is:" & "You will need this number to review your order detail" */
@@ -2684,6 +2697,8 @@ $gray-border: rgb(207, 205, 205);
         }
         /* order summary on the left */
         .order-summary {
+            flex: 70% !important; /**************************************/
+            max-width: 70% !important; /**************************************/
             margin-top: 20px;
             h5 {
                 font-weight: bold;
@@ -2726,6 +2741,8 @@ $gray-border: rgb(207, 205, 205);
         }
         /* shipping address on the right */
         .order-contact {
+            flex: 70% !important; /**************************************/
+            max-width: 70% !important; /**************************************/
             margin-top: 20px;
             h5 {
                 font-weight: bold;
@@ -2781,6 +2798,7 @@ $gray-border: rgb(207, 205, 205);
                 padding: 0;
                 iframe {
                     width: 100%;
+                    height: 350px !important; /**************************************/
                 }
             }
         }
@@ -2794,6 +2812,8 @@ $gray-border: rgb(207, 205, 205);
             }
             /* contact-form on the left */
             .col-9.form {
+                flex: 60% !important; /**************************************/
+                max-width: 60% !important; /**************************************/
                 .content {
                     form {
                         display: -webkit-box;
@@ -2804,7 +2824,7 @@ $gray-border: rgb(207, 205, 205);
                             -ms-flex-direction: column;
                                 flex-direction: column;
                         input, textarea {
-                            width: 75%;
+                            width: 100%; /**************************************/
                             outline: none;
                             border: 1px solid $gray-border;
                             border-radius: 5px;
@@ -2822,6 +2842,8 @@ $gray-border: rgb(207, 205, 205);
             }
             /* company information in the right: name,  phone, email,... */
             .col-3.address {
+                flex: 40% !important; /**************************************/
+                max-width: 40% !important; /**************************************/
                 .content {
                     table {
                         td {
@@ -2832,6 +2854,8 @@ $gray-border: rgb(207, 205, 205);
             }
             /* show announcement if submit successfully, use library https://animate.style */
             .col-9.submit-success {
+                flex: 60% !important; /**************************************/
+                max-width: 60% !important; /**************************************/
                 .content {
                     .other-feedback, .navigate {
                         display: inline-block;
@@ -2874,8 +2898,8 @@ $gray-border: rgb(207, 205, 205);
             .col {
                 padding: 0;
                 .content {
-                    height: 600px;
-                    padding: 120px;
+                    height: 500px; /**************************************/
+                    padding: 100px; /**************************************/
                     .icon {
                         margin-right: 20px;
                     }
@@ -2884,15 +2908,16 @@ $gray-border: rgb(207, 205, 205);
                     }
                     h4 {
                         font-weight: bold;
-                        line-height: 60px;
+                        line-height: 40px; /**************************************/
                     }
                 }
                 .content.mission {
                     color: white;
-                    padding-top: 70px;
+                    padding-top: 50px; /**************************************/
                 }
             }
         }
     }
 }
 /*----- end about us -----*/
+}

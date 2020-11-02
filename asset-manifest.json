@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/second-react-demo/static/css/main.3c3e36ac.chunk.css",
-    "main.js": "/second-react-demo/static/js/main.2efdc258.chunk.js",
-    "main.js.map": "/second-react-demo/static/js/main.2efdc258.chunk.js.map",
+    "main.css": "/second-react-demo/static/css/main.5f5a0813.chunk.css",
+    "main.js": "/second-react-demo/static/js/main.4139b72f.chunk.js",
+    "main.js.map": "/second-react-demo/static/js/main.4139b72f.chunk.js.map",
     "runtime-main.js": "/second-react-demo/static/js/runtime-main.bcb2a9d0.js",
     "runtime-main.js.map": "/second-react-demo/static/js/runtime-main.bcb2a9d0.js.map",
     "static/css/2.494ee3e6.chunk.css": "/second-react-demo/static/css/2.494ee3e6.chunk.css",
-    "static/js/2.250927d6.chunk.js": "/second-react-demo/static/js/2.250927d6.chunk.js",
-    "static/js/2.250927d6.chunk.js.map": "/second-react-demo/static/js/2.250927d6.chunk.js.map",
+    "static/js/2.a1634956.chunk.js": "/second-react-demo/static/js/2.a1634956.chunk.js",
+    "static/js/2.a1634956.chunk.js.map": "/second-react-demo/static/js/2.a1634956.chunk.js.map",
     "index.html": "/second-react-demo/index.html",
     "static/css/2.494ee3e6.chunk.css.map": "/second-react-demo/static/css/2.494ee3e6.chunk.css.map",
-    "static/css/main.3c3e36ac.chunk.css.map": "/second-react-demo/static/css/main.3c3e36ac.chunk.css.map",
-    "static/js/2.250927d6.chunk.js.LICENSE.txt": "/second-react-demo/static/js/2.250927d6.chunk.js.LICENSE.txt",
+    "static/css/main.5f5a0813.chunk.css.map": "/second-react-demo/static/css/main.5f5a0813.chunk.css.map",
+    "static/js/2.a1634956.chunk.js.LICENSE.txt": "/second-react-demo/static/js/2.a1634956.chunk.js.LICENSE.txt",
     "static/media/1.jpg": "/second-react-demo/static/media/1.7019d728.jpg",
-    "static/media/index.scss": "/second-react-demo/static/media/summer.be12d1e5.jpg",
+    "static/media/responsive.scss": "/second-react-demo/static/media/summer.be12d1e5.jpg",
     "static/media/1.webp": "/second-react-demo/static/media/1.912f919b.webp",
     "static/media/2.jpg": "/second-react-demo/static/media/2.743322e3.jpg",
     "static/media/2.webp": "/second-react-demo/static/media/2.d448c7a0.webp",
@@ -39,8 +39,8 @@
   "entrypoints": [
     "static/js/runtime-main.bcb2a9d0.js",
     "static/css/2.494ee3e6.chunk.css",
-    "static/js/2.250927d6.chunk.js",
-    "static/css/main.3c3e36ac.chunk.css",
-    "static/js/main.2efdc258.chunk.js"
+    "static/js/2.a1634956.chunk.js",
+    "static/css/main.5f5a0813.chunk.css",
+    "static/js/main.4139b72f.chunk.js"
   ]
 }

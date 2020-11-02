@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/second-react-demo/static/css/main.15b9e540.chunk.css",
-    "main.js": "/second-react-demo/static/js/main.f9fe1625.chunk.js",
-    "main.js.map": "/second-react-demo/static/js/main.f9fe1625.chunk.js.map",
+    "main.css": "/second-react-demo/static/css/main.3c3e36ac.chunk.css",
+    "main.js": "/second-react-demo/static/js/main.2efdc258.chunk.js",
+    "main.js.map": "/second-react-demo/static/js/main.2efdc258.chunk.js.map",
     "runtime-main.js": "/second-react-demo/static/js/runtime-main.bcb2a9d0.js",
     "runtime-main.js.map": "/second-react-demo/static/js/runtime-main.bcb2a9d0.js.map",
-    "static/css/2.c892ab69.chunk.css": "/second-react-demo/static/css/2.c892ab69.chunk.css",
-    "static/js/2.93f59e11.chunk.js": "/second-react-demo/static/js/2.93f59e11.chunk.js",
-    "static/js/2.93f59e11.chunk.js.map": "/second-react-demo/static/js/2.93f59e11.chunk.js.map",
+    "static/css/2.494ee3e6.chunk.css": "/second-react-demo/static/css/2.494ee3e6.chunk.css",
+    "static/js/2.250927d6.chunk.js": "/second-react-demo/static/js/2.250927d6.chunk.js",
+    "static/js/2.250927d6.chunk.js.map": "/second-react-demo/static/js/2.250927d6.chunk.js.map",
     "index.html": "/second-react-demo/index.html",
-    "static/css/2.c892ab69.chunk.css.map": "/second-react-demo/static/css/2.c892ab69.chunk.css.map",
-    "static/css/main.15b9e540.chunk.css.map": "/second-react-demo/static/css/main.15b9e540.chunk.css.map",
-    "static/js/2.93f59e11.chunk.js.LICENSE.txt": "/second-react-demo/static/js/2.93f59e11.chunk.js.LICENSE.txt",
+    "static/css/2.494ee3e6.chunk.css.map": "/second-react-demo/static/css/2.494ee3e6.chunk.css.map",
+    "static/css/main.3c3e36ac.chunk.css.map": "/second-react-demo/static/css/main.3c3e36ac.chunk.css.map",
+    "static/js/2.250927d6.chunk.js.LICENSE.txt": "/second-react-demo/static/js/2.250927d6.chunk.js.LICENSE.txt",
     "static/media/1.jpg": "/second-react-demo/static/media/1.7019d728.jpg",
     "static/media/index.scss": "/second-react-demo/static/media/summer.be12d1e5.jpg",
     "static/media/1.webp": "/second-react-demo/static/media/1.912f919b.webp",
@@ -25,7 +25,8 @@
     "static/media/logo.aab59987.png": "/second-react-demo/static/media/logo.aab59987.png",
     "static/media/main.jpg": "/second-react-demo/static/media/main.fd75edfb.jpg",
     "static/media/new.svg": "/second-react-demo/static/media/new.0b4ab5b4.svg",
-    "static/media/parrallax1.jpg": "/second-react-demo/static/media/parrallax1.c0aaa2f2.jpg",
+    "static/media/parallax.jpg": "/second-react-demo/static/media/parallax.4eeaaf79.jpg",
+    "static/media/parrallax1.jpg": "/second-react-demo/static/media/parrallax1.017aff12.jpg",
     "static/media/parrallax2.jpg": "/second-react-demo/static/media/parrallax2.ad3c8559.jpg",
     "static/media/payment.webp": "/second-react-demo/static/media/payment.5254bb14.webp",
     "static/media/side1.jpg": "/second-react-demo/static/media/side1.4d3158f7.jpg",
@@ -37,9 +38,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.bcb2a9d0.js",
-    "static/css/2.c892ab69.chunk.css",
-    "static/js/2.93f59e11.chunk.js",
-    "static/css/main.15b9e540.chunk.css",
-    "static/js/main.f9fe1625.chunk.js"
+    "static/css/2.494ee3e6.chunk.css",
+    "static/js/2.250927d6.chunk.js",
+    "static/css/main.3c3e36ac.chunk.css",
+    "static/js/main.2efdc258.chunk.js"
   ]
 }

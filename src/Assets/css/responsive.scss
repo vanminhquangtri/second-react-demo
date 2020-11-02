@@ -7,10 +7,6 @@ $gray-border: rgb(207, 205, 205);
 /*----- from Ipad Pro (1024) up -----*/
 /*----- top-bar (logo, date time, currency) -----*/
 .top-bar {
-    position: fixed;
-    bottom: 0;
-    background: white;
-    z-index: 1000;
     .container {
         .row {
             -webkit-box-align: center;
@@ -20,9 +16,9 @@ $gray-border: rgb(207, 205, 205);
             padding-bottom: 10px;
             /* logo */
             .col-2.logo-container {
-                flex: 30% !important; /**************************************/
-                max-width: 30% !important; /**************************************/
-                text-align: right; /**************************************/
+                flex: 30% !important; 
+                max-width: 30% !important; 
+                text-align: right; 
                 .logo {
                     img {
                         height: 35px;
@@ -8610,6 +8606,17 @@ $gray-border: rgb(207, 205, 205);
     /*----- mobile phone from 375 to 599px -----*/
     /*----- top-bar (logo, date time, currency) -----*/
     .top-bar {
+        width: 100%;
+        .hide-599 {
+            display: none;/**************************************/
+        }
+        .show-599 {
+            display: inline !important; /**************************************/
+        }
+        position: fixed; /**************************************/
+        bottom: 0; /**************************************/
+        background: white; /**************************************/
+        z-index: 1000; /**************************************/
         .container {
             .row {
                 -webkit-box-align: center;
@@ -8617,20 +8624,23 @@ $gray-border: rgb(207, 205, 205);
                         align-items: center;
                 padding-top: 10px;
                 padding-bottom: 10px;
+                flex-wrap: nowrap; /**************************************/
                 /* logo */
                 .col-2.logo-container {
+                    padding: 0; /**************************************/
                     flex: 30% !important; 
                     max-width: 30% !important; 
-                    text-align: right; 
+                    text-align: center; /**************************************/
                     .logo {
                         img {
-                            height: 35px;
+                            height: 25px;
                         }
                     }
                     
                 }
                 /* clock */
-                .col-4.date-time-container{
+                .col-4.date-time-container {
+                    padding: 0; 
                     display: none; 
                     .date-time {
                         padding: 5px 0;
@@ -8639,8 +8649,9 @@ $gray-border: rgb(207, 205, 205);
                 }
                 /* latest collection*/
                 .col-3.lastest {
-                    flex: 40% !important;
-                    max-width: 40% !important;
+                    padding: 0; /**************************************/
+                    flex: 40% !important; /**************************************/
+                    max-width: 40% !important; /**************************************/
                     a {
                         display: -webkit-box;
                         display: -ms-flexbox;
@@ -8657,9 +8668,10 @@ $gray-border: rgb(207, 205, 205);
                         font-weight: bold; 
                         font-size: 15px; 
                         img {
-                            width: 40px; /**************************************/
-                            height: 40px; /**************************************/
-                            margin-left: 5px /**************************************/
+                            width: 30px; /**************************************/
+                            height: 30px; /**************************************/
+                            margin-left: 0px; /**************************************/
+                            margin-right: 3px !important; /**************************************/
                         }
                         &:hover {
                             color: $hover-color-red;
@@ -8668,18 +8680,19 @@ $gray-border: rgb(207, 205, 205);
                 }
                 /* currency */
                 .col-auto {
+                    flex: 30% !important; /**************************************/
                     max-width: 30% !important;  /**************************************/
                     -webkit-box-flex: 1;
                         -ms-flex: 1;
                             flex: 1;
                     /* wrap all content */
                     .account-currency {
-                        float: left; 
+                        float: right; /**************************************/
                         position: relative;
                         /* "Currency" and name of currency */
                         a, span {
                             display: inline-block;
-                            padding: 0 10px;
+                            padding: 0 5px; /**************************************/
                             color: black;
                             &:hover {
                                 color: $hover-color-red;
@@ -8704,8 +8717,8 @@ $gray-border: rgb(207, 205, 205);
                         }
                         /* drop down icon */
                         .icon {
-                            font-size: 13px;
-                            margin-right: 3px;
+                            font-size: 10px; /**************************************/
+                            margin-right: 0; /**************************************/
                             display: inline-block;
                             color: rgb(102, 101, 101);
                             &:hover {
@@ -8757,8 +8770,9 @@ $gray-border: rgb(207, 205, 205);
     /*----- end top bar -----*/
     /*----- button back to top -----*/
     .back-top-btn {
-        width: 30px; /**************************************/
-        height: 30px; /**************************************/
+        display: none !important; /**************************************/
+        width: 30px; 
+        height: 30px; 
         position: fixed;
         right: 10px;
         bottom: 30px;

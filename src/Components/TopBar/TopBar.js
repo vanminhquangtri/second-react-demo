@@ -70,11 +70,12 @@ const TopBar = (props) => {
                         <NavLink
                             to = "latest-collection"
                         >
-                            <span>Our Latest Collections</span>
+                            <span className="hide-599">Our Latest Collections</span>
                             <img
                                 alt="latest-collection"
                                 src={require("../../Assets/images/section-top-bar/new.svg").default}
                             />
+                            <span className="show-599" style={{display: "none"}}>Collections</span>
                         </NavLink>
                         
                     </div>

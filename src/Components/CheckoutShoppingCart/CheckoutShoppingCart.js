@@ -338,8 +338,8 @@ const CheckoutShoppingCart = (props) => {
                                             return (
                                                 <tr className="product" key = {product.id}>
                                                     <td className="name">{product.name}</td>
-                                                    <td className="quantity">{countProduct(product.id)}</td>
-                                                    <td className="price">{showMoney(Currency.currency, 1, product)}</td>
+                                                    <td className="quantity hide-1023">{countProduct(product.id)}</td>
+                                                    <td className="price hide-1023">{showMoney(Currency.currency, 1, product)}</td>
                                                     <td className="amount">{showMoneyTotal(Currency.currency, product.price * countProduct(product.id))}</td>
                                                 </tr>
                                             )
@@ -348,8 +348,8 @@ const CheckoutShoppingCart = (props) => {
                                     {/* shipping fee of order */}
                                     <tr className="product">
                                         <td className="name">Shipping Fee</td>
-                                        <td className="quantity">{state.shipping_fee === 0 ? 0 : 1}</td>
-                                        <td className="price">{showMoneyTotal(Currency.currency, state.order_info.shipping_fee)}</td>
+                                        <td className="quantity hide-1023">{state.shipping_fee === 0 ? 0 : 1}</td>
+                                        <td className="price hide-1023">{showMoneyTotal(Currency.currency, state.order_info.shipping_fee)}</td>
                                         <td className="amount">{showMoneyTotal(Currency.currency, state.order_info.shipping_fee)}</td>
                                     {/* total amount of order including product and shipping fee */}
                                     </tr>

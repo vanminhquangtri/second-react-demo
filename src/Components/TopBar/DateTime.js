@@ -59,7 +59,7 @@ const DateTime = () => {
         } else return value
     }
     useEffect(() => {
-        const timer = setInterval(() => {
+        var timer = setInterval(() => {
             const time = new Date();
             const weekday = returnWeekday(time.getDay());
             const date = addZero(time.getDate());
@@ -75,7 +75,7 @@ const DateTime = () => {
         return () => {
             clearInterval(timer)
         }
-    },[])
+    }, [])
     return (
         <div className="col-4 date-time-container">
             <div className="date-time">

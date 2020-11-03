@@ -6405,7 +6405,7 @@ $gray-border: rgb(207, 205, 205);
         padding: 20px 0;
         /*----- use Boostrap Carousel combined library https://animate.style -----*/
         .top-slide {
-            height: 400px; /* height of visible content */ /**************************************/
+            height: 370px; /* height of visible content */ /**************************************/
             overflow: hidden;
             .container-fluid {
                 .row {
@@ -8606,9 +8606,10 @@ $gray-border: rgb(207, 205, 205);
     /*----- mobile phone from 375 to 599px -----*/
     /*----- top-bar (logo, date time, currency) -----*/
     .top-bar {
-        width: 100%;
+        width: 100%; /**************************************/
+        border-top: 1px solid $hover-color-gray;
         .hide-599 {
-            display: none;/**************************************/
+            display: none; /**************************************/
         }
         .show-599 {
             display: inline !important; /**************************************/
@@ -8731,7 +8732,9 @@ $gray-border: rgb(207, 205, 205);
                             position: absolute;
                             z-index: 1000;
                             width: 100%;
-                            top: 100%;
+                            top: unset; /**************************************/
+                            bottom: 100%; /**************************************/
+                            border-bottom: none !important; /**************************************/
                             max-height: 0;
                             background: white;
                             overflow: hidden;

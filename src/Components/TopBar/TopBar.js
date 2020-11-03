@@ -69,12 +69,14 @@ const TopBar = (props) => {
                     <div className="col-3 lastest">
                         <NavLink
                             to = "latest-collection"
-                        >
-                            <span className="hide-599">Our Latest Collections</span>
+                        >   
+                            {/* this will be hiden for max-width 599px */}
+                            <span className="hide-599">Our Latest Collections</span> 
                             <img
                                 alt="latest-collection"
                                 src={require("../../Assets/images/section-top-bar/new.svg").default}
                             />
+                            {/* this will be show for max-width 599px */}
                             <span className="show-599" style={{display: "none"}}>Collections</span>
                         </NavLink>
                         

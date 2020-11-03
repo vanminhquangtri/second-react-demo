@@ -3228,6 +3228,9 @@ $gray-border: rgb(207, 205, 205);
     /*----- end footer -----*/
     /*----- top nav -----*/
     .top-nav {
+        .hide-1023 {
+            display: none !important; /**************************************/
+        }
         background: black;
         -webkit-transition: 0.5s;
         -o-transition: 0.5s;
@@ -3428,6 +3431,7 @@ $gray-border: rgb(207, 205, 205);
                                 }
                                 /* detail top up if product(s) added to cart */
                                 .added-cart {
+                                    padding-bottom: 10px; /**************************************/
                                     /* display each product in shopping cart top up */
                                     .added-product {
                                         margin-top: 10px;

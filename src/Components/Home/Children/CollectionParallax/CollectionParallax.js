@@ -1,6 +1,5 @@
 import React from 'react';
 import {Parallax} from 'react-parallax';
-
 import {NavLink} from "react-router-dom";
 
 const CollectionParallax = (props) => {

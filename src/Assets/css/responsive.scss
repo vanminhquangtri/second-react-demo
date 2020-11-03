@@ -9256,7 +9256,7 @@ $gray-border: rgb(207, 205, 205);
                         padding: 0;
                         #top-slide {
                             .carousel-control-prev, .carousel-control-next {
-                                bottom: 40% !important;
+                                bottom: 40% !important; /**************************************/
                             }
                             .carousel-inner {
                                 .carousel-item {
@@ -9385,14 +9385,14 @@ $gray-border: rgb(207, 205, 205);
     .collection-sum {
         .container {
             .row {
-                height: 810px; /**************************************/
+                height: 810px; 
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
                 /* all collections */
                 .col-4.all {
-                    flex: 100% !important; /**************************************/
-                    max-width: 100% !important; /**************************************/
+                    flex: 100% !important; 
+                    max-width: 100% !important; 
                     margin: 0;
                     padding: 0;
                     overflow: hidden;
@@ -9415,10 +9415,10 @@ $gray-border: rgb(207, 205, 205);
                                 color: white;
                                 font-weight: bold;
                                 padding-top: 30%;
-                                padding-right: 40px; /**************************************/
+                                padding-right: 40px; 
                                 /* OFF 50% */
                                 .off {
-                                    background: rgba($color: #000000, $alpha: 0.7);
+                                    background: rgba($color: red, $alpha: 0.7); /**************************************/
                                     display: -webkit-inline-box;
                                     display: -ms-inline-flexbox;
                                     display: inline-flex;
@@ -9469,8 +9469,8 @@ $gray-border: rgb(207, 205, 205);
                 }
                 /* each collections */
                 .col-8 {
-                    flex: 100% !important; /**************************************/
-                    max-width: 100% !important; /**************************************/
+                    flex: 100% !important;
+                    max-width: 100% !important;
                     margin: 0;
                     padding: 0;
                     .row {
@@ -9577,7 +9577,7 @@ $gray-border: rgb(207, 205, 205);
                     .title {
                         position: relative;
                         font-weight: bold;
-                        font-size: 30px;
+                        font-size: 25px; /**************************************/
                         margin-bottom: 10px;
                         display: inline-block;
                         &::after {
@@ -9595,8 +9595,8 @@ $gray-border: rgb(207, 205, 205);
             /* Each product is a col-3 div */
             .product-row {
                 .col-3 {
-                    flex: 50% !important; /**************************************/
-                    max-width: 50% !important; /**************************************/
+                    flex: 50% !important;
+                    max-width: 50% !important;
                     /* wrap all content */
                     .content {
                         overflow: hidden;
@@ -9606,21 +9606,22 @@ $gray-border: rgb(207, 205, 205);
                         /* main image */
                         .product-img {
                             width: 100%;
-                            height: 315px; 
+                            height: 215px; /**************************************/
                         }
                         /* product name and price */
                         a {
                             text-decoration: none;
                             color: black;
                             .info {
-                                padding: 3px 7px;
+                                padding: 3px; /**************************************/
                                 text-align: center;
                                 /* name */
                                 .name {
                                     -webkit-transition: .5s;
                                     -o-transition: .5s;
                                     transition: .5s;
-                                    height: 52px;
+                                    height: 40px; /**************************************/
+                                    font-size: 13px; /**************************************/
                                     &:hover {
                                         color: $hover-color-red;
                                         text-decoration: underline;
@@ -9639,7 +9640,7 @@ $gray-border: rgb(207, 205, 205);
                             top: 0;
                             left: -100%;
                             width: 100%;
-                            height: 316px; 
+                            height: 216px;  /**************************************/
                             display: -webkit-box;
                             display: -ms-flexbox;
                             display: flex;
@@ -9675,7 +9676,7 @@ $gray-border: rgb(207, 205, 205);
                                     .col-6 {
                                         padding: 0;
                                         .icon-container {
-                                            height: 30px; 
+                                            height: 20px; /**************************************/
                                             display: -webkit-box;
                                             display: -ms-flexbox;
                                             display: flex;
@@ -9685,15 +9686,16 @@ $gray-border: rgb(207, 205, 205);
                                             -webkit-transition: .3s;
                                             -o-transition: .3s;
                                             transition: .3s;
+                                            background: red; /**************************************/
                                             .icon {
                                                 color: white;
                                                 margin: auto;
                                                 display: block;
-                                                width: 20px; 
-                                                height: 20px; 
+                                                width: 13px; /**************************************/ 
+                                                height: 13px;  /**************************************/
                                             }
-                                            &:hover {
-                                                background: red;
+                                            &:active {
+                                                background: green; /**************************************/
                                             }
                                             button {
                                                 background: green;

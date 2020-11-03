@@ -11721,7 +11721,7 @@ $gray-border: rgb(207, 205, 205);
         padding: 20px 0;
         /*----- use Boostrap Carousel combined library https://animate.style -----*/
         .top-slide {
-            height: 250px; /* height of visible content */ /**************************************/
+            height: 280px; /* height of visible content */ /**************************************/
             overflow: hidden;
             .container-fluid {
                 .row {
@@ -11933,11 +11933,11 @@ $gray-border: rgb(207, 205, 205);
                     margin: 0;
                     padding: 0;
                     .row {
-                        height: auti; /* height of each collection */ /**************************************/
+                        height: auto; /* height of each collection */ /**************************************/
                         .col-4 {
                             flex: 100% !important;  /**************************************/
                             max-width: 100% !important; /**************************************/
-                            height: 150px; /**************************************/
+                            height: 250px; /**************************************/
                             padding: 0; 
                             position: relative;
                             overflow: hidden;
@@ -12067,7 +12067,7 @@ $gray-border: rgb(207, 205, 205);
                         /* main image */
                         .product-img {
                             width: 100%;
-                            height: 180px; /**************************************/
+                            height: 200px; /**************************************/
                         }
                         /* product name and price */
                         a {
@@ -12099,7 +12099,7 @@ $gray-border: rgb(207, 205, 205);
                             top: 0;
                             left: -100%;
                             width: 100%;
-                            height: 181px;  /**************************************/
+                            height: 201px;  /**************************************/
                             display: -webkit-box;
                             display: -ms-flexbox;
                             display: flex;
@@ -12260,7 +12260,7 @@ $gray-border: rgb(207, 205, 205);
                                         .tns-inner {
                                             .tns-slider {
                                                 img {
-                                                    height: 360px; /* height of the big image */ /**************************************/
+                                                    height: 390px; /* height of the big image */ /**************************************/
                                                 }
                                             }
                                         }
@@ -12837,7 +12837,7 @@ $gray-border: rgb(207, 205, 205);
                                 /* main image */
                                 .product-img {
                                     width: 100%;
-                                    height: 185px; /* height of image of modal */ /**************************************/ 
+                                    height: 205px; /* height of image of modal */ /**************************************/ 
                                 }
                                 /* link containing name and price */
                                 a {
@@ -12869,7 +12869,7 @@ $gray-border: rgb(207, 205, 205);
                                     top: 0;
                                     left: -100%;
                                     width: 100%;
-                                    height: 185px; /* height of image of overlay */ /**************************************/
+                                    height: 205px; /* height of image of overlay */ /**************************************/
                                     display: -webkit-box;
                                     display: -ms-flexbox;
                                     display: flex;

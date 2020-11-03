@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/second-react-demo/static/css/main.61e8e5fc.chunk.css",
-    "main.js": "/second-react-demo/static/js/main.36b37468.chunk.js",
-    "main.js.map": "/second-react-demo/static/js/main.36b37468.chunk.js.map",
+    "main.css": "/second-react-demo/static/css/main.0455515d.chunk.css",
+    "main.js": "/second-react-demo/static/js/main.39335962.chunk.js",
+    "main.js.map": "/second-react-demo/static/js/main.39335962.chunk.js.map",
     "runtime-main.js": "/second-react-demo/static/js/runtime-main.bcb2a9d0.js",
     "runtime-main.js.map": "/second-react-demo/static/js/runtime-main.bcb2a9d0.js.map",
     "static/css/2.494ee3e6.chunk.css": "/second-react-demo/static/css/2.494ee3e6.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.c14fbd8a.chunk.js.map": "/second-react-demo/static/js/2.c14fbd8a.chunk.js.map",
     "index.html": "/second-react-demo/index.html",
     "static/css/2.494ee3e6.chunk.css.map": "/second-react-demo/static/css/2.494ee3e6.chunk.css.map",
-    "static/css/main.61e8e5fc.chunk.css.map": "/second-react-demo/static/css/main.61e8e5fc.chunk.css.map",
+    "static/css/main.0455515d.chunk.css.map": "/second-react-demo/static/css/main.0455515d.chunk.css.map",
     "static/js/2.c14fbd8a.chunk.js.LICENSE.txt": "/second-react-demo/static/js/2.c14fbd8a.chunk.js.LICENSE.txt",
     "static/media/1.jpg": "/second-react-demo/static/media/1.7019d728.jpg",
     "static/media/responsive.scss": "/second-react-demo/static/media/summer.be12d1e5.jpg",
@@ -40,7 +40,7 @@
     "static/js/runtime-main.bcb2a9d0.js",
     "static/css/2.494ee3e6.chunk.css",
     "static/js/2.c14fbd8a.chunk.js",
-    "static/css/main.61e8e5fc.chunk.css",
-    "static/js/main.36b37468.chunk.js"
+    "static/css/main.0455515d.chunk.css",
+    "static/js/main.39335962.chunk.js"
   ]
 }

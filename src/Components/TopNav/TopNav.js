@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChevronDown, faHome} from "@fortawesome/free-solid-svg-icons";
+import {faChevronDown, faHome, faTimesCircle, faBars} from "@fortawesome/free-solid-svg-icons";
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 
 const TopNav = () => {
@@ -29,6 +29,21 @@ const TopNav = () => {
                 nextEl.style.marginTop = "unset"
             }
         })
+        // toogle submenu for max-width 1249px 
+        const openSubMenuBtn = document.querySelector(".sub-menu-btn.open");
+        const closeSubMenuBtn = document.querySelector(".sub-menu-btn.close");
+        const subMenu = document.querySelector(".nav > ul.sub-menu");
+            // show submenu and close icon when click open
+            openSubMenuBtn.addEventListener("click", () => {
+                closeSubMenuBtn.style.display = "block";
+                closeSubMenuBtn.style.color = "white";
+                subMenu.style.display = "block";
+            })
+            // hide submenu and close icon when click close
+            closeSubMenuBtn.addEventListener("click", () => {
+                subMenu.style.display = "none";
+                closeSubMenuBtn.style.display = "none";
+            })
     },[])
     return (
         <section className="top-nav">
@@ -37,19 +52,52 @@ const TopNav = () => {
                     <div className="col">
                         {/* nav: home icon, link */}
                         <div className="nav">
+                            {/* this sub menu no display on default, only appear when max-width 1249px */}
+                            <ul className="sub-menu">
+                                <li>
+                                    <NavLink to="/featured-collection" exact={true} activeClassName="active">Feature Collection</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/latest-collection" exact={true} activeClassName="active">Latest Collection</NavLink>
+                                </li>
+                                <li>
+                                <   NavLink to="/hot-collection" exact={true} activeClassName="active">Hot Collection</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/minimal-collection" exact={true} activeClassName="active">Minimal Collection</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/modern-collection" exact={true} activeClassName="active">Modern Collection</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/summer-collection" exact={true} activeClassName="active">Summer Collection</NavLink>
+                                </li>
+                                <li className="show-767" style={{display: "none"}}>
+                                    <NavLink to = "/contact" exact = {true} activeClassName="active">Contact Us</NavLink>
+                                </li>
+                                <li className="show-767" style={{display: "none"}}>
+                                    <NavLink to = "/about" exact = {true} activeClassName="active">About Us</NavLink>
+                                </li>
+                            </ul>
+                            {/* main menu */}
                             <ul>
-                                {/* home icon */}
-                                <li className="home">
+                                <li className="home"> {/* home icon */}
                                     <NavLink to = "/" exact = {true} activeClassName="active">
                                         <FontAwesomeIcon icon = {faHome} className="icon"/>
                                     </NavLink>
                                 </li>
-                                {/* all-collection */}
-                                <li>
+                                <li className="sub-menu-btn open show-1249" style={{display: "none"}}>
+                                    <FontAwesomeIcon icon = {faBars} className="icon"/>
+                                </li>
+                                <li className="sub-menu-btn close" style={{display: "none"}}> {/* only appear when click open button */}
+                                    <FontAwesomeIcon icon = {faTimesCircle} className="icon"/>
+                                </li>
+                                <li className="hide-1249">
                                     <NavLink to = "/all-collection" exact = {true} activeClassName="active">
                                         SHOP
                                         <FontAwesomeIcon icon = {faChevronDown} className="icon"/>
                                     </NavLink>
+                                    {/* this sub menu only appear when max-width > 1249px */}
                                     <ul className="sub-menu">
                                         <li>
                                             <NavLink to="/featured-collection" exact={true} activeClassName="active">Feature Collection</NavLink>

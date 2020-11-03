@@ -305,6 +305,10 @@ $gray-border: rgb(207, 205, 205);
                             color: $hover-color-red;
                             text-decoration: underline;
                         }
+                        .sub-menu-btn {
+                            color: white;
+                            font-size: 20px;
+                        }
                         > li {
                             margin-right: 20px; /* space between li tag */
                             position: relative;
@@ -332,7 +336,6 @@ $gray-border: rgb(207, 205, 205);
                                 background: white;
                                 display: -webkit-box;
                                 display: -ms-flexbox;
-                                display: flex;
                                 -webkit-box-orient: vertical;
                                 -webkit-box-direction: normal;
                                     -ms-flex-direction: column;
@@ -362,7 +365,7 @@ $gray-border: rgb(207, 205, 205);
                                 .sub-menu {
                                     display: -webkit-box;
                                     display: -ms-flexbox;
-                                    display: flex;
+                                    display: flex !important;
                                 }
                             }
                             &:last-child {
@@ -380,7 +383,32 @@ $gray-border: rgb(207, 205, 205);
                             }
                         }
                     }
-                    
+                    /* sub menu open when max-width 1249 */
+                    > ul.sub-menu {
+                        position: absolute;
+                        z-index: 2000;
+                        top: 100%;
+                        left: 0;
+                        background: white;
+                        display: none;
+                        li {
+                            width: 100%;
+                            a {
+                                color: black;
+                                -webkit-transition: .3s;
+                                -o-transition: .3s;
+                                transition: .3s;
+                                font-weight: bold;
+                                display: block;
+                                padding: 10px;
+                                white-space: nowrap;
+                                &:hover {
+                                    color: $hover-color-red;
+                                    background: $hover-color-gray;
+                                }
+                            }
+                        }
+                    }
                 }
                 /* end nav: home icon, links */
                 /* shopping cart */

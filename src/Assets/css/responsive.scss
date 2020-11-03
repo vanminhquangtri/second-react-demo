@@ -277,6 +277,12 @@ $gray-border: rgb(207, 205, 205);
 /*----- end footer -----*/
 /*----- top nav -----*/
 .top-nav {
+    .show-1249 {
+        display: inline !important; /**************************************/
+    }
+    .show-1249 {
+        display: inline !important; /**************************************/
+    }
     background: black;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
@@ -8913,10 +8919,10 @@ $gray-border: rgb(207, 205, 205);
     /*----- top nav -----*/
     .top-nav {
         .hide-767 {
-            display: none; /**************************************/
+            display: none;
         }
         .show-767 {
-            display: block !important; /**************************************/
+            display: block !important;
         }
         background: black;
         -webkit-transition: 0.5s;
@@ -8931,8 +8937,8 @@ $gray-border: rgb(207, 205, 205);
                     display: -webkit-box;
                     display: -ms-flexbox;
                     display: flex;
-                    padding-left: 40px; 
-                    padding-right: 40px; 
+                    padding-left: 5px; /**************************************/
+                    padding-right: 5px; /**************************************/
                     /* nav: home icon, links */
                     .nav {
                         width: 100%; /* width of nav */
@@ -8953,7 +8959,7 @@ $gray-border: rgb(207, 205, 205);
                                 text-decoration: underline;
                             }
                             > li {
-                                margin-right: 50px; /* space between li tag */ 
+                                margin-right: 20px; /* space between li tag */ /**************************************/
                                 position: relative;
                                 > a {
                                     color: $white-color;

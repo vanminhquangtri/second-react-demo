@@ -466,7 +466,7 @@ $gray-border: rgb(207, 205, 205);
                             background: white;
                             text-align: left;
                             font-size: 13px;
-                            display: none;
+                            display: block;
                             /* delete icon */
                             .icon {
                                 width: 15px;
@@ -603,12 +603,6 @@ $gray-border: rgb(207, 205, 205);
                                         }
                                     }
                                 }
-                            }
-                        }
-                        /* show cart top up when hover on cart icon or cart amount (red box) */
-                        &:hover {
-                            .cart-top-up {
-                                display: block;
                             }
                         }
                     }
@@ -2926,7 +2920,3 @@ $gray-border: rgb(207, 205, 205);
     }
 }
 /*----- end about us -----*/
-
-.toogle-cart-top-up {
-    display: block !important
-}

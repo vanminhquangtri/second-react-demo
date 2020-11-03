@@ -18,6 +18,7 @@ const AboutUs = () => {
                                 bgImage={require("../../Assets/images/section-about-us/parrallax1.jpg").default} 
                                 bgImageAlt="the cat"
                                 strength={400}
+                                blur={10}
                             >
                                 <div className="content mission">
                                     <h1 className="title">Our Missions</h1>

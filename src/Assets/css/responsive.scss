@@ -8819,6 +8819,7 @@ $gray-border: rgb(207, 205, 205);
                     display: -ms-flexbox;
                     display: flex;
                     padding: 5px;
+                    width: 50%; /**************************************/
                     input, button {
                         border: none;
                         outline: none;
@@ -9229,7 +9230,7 @@ $gray-border: rgb(207, 205, 205);
         padding: 20px 0;
         /*----- use Boostrap Carousel combined library https://animate.style -----*/
         .top-slide {
-            height: 300px; /* height of visible content */ /**************************************/
+            height: 270px; /* height of visible content */ /**************************************/
             overflow: hidden;
             .container-fluid {
                 .row {
@@ -9786,7 +9787,7 @@ $gray-border: rgb(207, 205, 205);
                                         .tns-inner {
                                             .tns-slider {
                                                 img {
-                                                    height: 468px; /* height of the big image */ /**************************************/
+                                                    height: 400px; /* height of the big image */ /**************************************/
                                                 }
                                             }
                                         }
@@ -10579,7 +10580,7 @@ $gray-border: rgb(207, 205, 205);
                     h4 {
                         position: relative;
                         font-weight: bold;
-                        font-size: 20px;
+                        font-size: 18px;
                         margin-bottom: 20px;
                         display: inline-block;
                         &::after {
@@ -10634,22 +10635,28 @@ $gray-border: rgb(207, 205, 205);
                                     margin-bottom: 15px;
                                     /* main image */
                                     .col-2.img {
+                                        flex: 40% !important; /**************************************/
+                                        max-width: 40% !important; /**************************************/
                                         padding-left: 10px;
                                         img {
-                                            width: 55px;
-                                            height: 80px
+                                            width: 100px; /**************************************/
+                                            height: 150px /**************************************/
                                         }
                                     }
                                     /* container of name, price, quantity, button + -, update, remove */
                                     .col-10.product-detail {
+                                        margin-top: -7px; /**************************************/
+                                        flex: 60% !important; /**************************************/
+                                        max-width: 60% !important; /**************************************/
                                         .row {
                                             margin-bottom: 5px;
                                         }
-                                        padding: 0;
                                         /* name */
                                         .row.name {
+                                            margin-top: 0;
                                             font-weight: bold;
                                             a {
+                                                font-size: 16px; /**************************************/
                                                 color: black;
                                                 -webkit-transition: .3s;
                                                 -o-transition: .3s;
@@ -10662,10 +10669,12 @@ $gray-border: rgb(207, 205, 205);
                                         /* price */
                                         .row.price {
                                             font-weight: bold;
-                                            font-size: 18px;
+                                            font-size: 15px; /**************************************/
                                         }
                                         .row.quantity-title {
                                             margin-bottom: 0;
+                                            font-size: 15px; 
+                                            display: none; /**************************************/
                                         }
                                         /* container button + -, show quantity, button, update, remove */
                                         .row.quantity-row {
@@ -10676,12 +10685,16 @@ $gray-border: rgb(207, 205, 205);
                                                 line-height: 30px;
                                             }
                                             .col-4.quantity {
+                                                flex: 100% !important; /**************************************/
+                                                max-width: 100% !important; /**************************************/
+                                                margin-bottom: 10px; /**************************************/
                                                 /* increase and decrease button */
                                                 span {
                                                     font-weight: bold;
                                                     display: inline-block;
-                                                    background: $hover-color-gray;
-                                                    padding: 0 12px;
+                                                    background: $hover-color-red; /**************************************/
+                                                    padding: 0 20px; /**************************************/
+                                                    color: white; /**************************************/
                                                     border-radius: 5px;
                                                     cursor: pointer;
                                                     &:active {
@@ -10691,17 +10704,24 @@ $gray-border: rgb(207, 205, 205);
                                                 }
                                                 /* show quanity */
                                                 .count {
-                                                    padding: 0 5px;
+                                                    padding: 0 15px;/**************************************/
                                                     background: transparent;
+                                                    color: black; /**************************************/
                                                 }
                                             }
                                             /* button update & remove */
                                             .col-3.update-quantity, .col-3.remove-product  {
-                                                flex-basis: 30% !important; 
-                                                max-width: 30% !important; 
+                                                font-size: 13px; /**************************************/
+                                                font-weight: bold; /**************************************/
+                                                flex: 40% !important; /**************************************/
+                                                max-width: 40% !important; /**************************************/
+                                            }
+                                            .col-3.remove-product {
+                                                padding-left: 0;/**************************************/
                                             }
                                             .col-3.update-quantity .wrap, .col-3.remove-product .wrap {
-                                                background: $hover-color-gray;
+                                                background: black; /**************************************/
+                                                color: white; /**************************************/
                                                 border-radius: 5px;
                                                 cursor: pointer;
                                                 .icon {
@@ -10895,7 +10915,7 @@ $gray-border: rgb(207, 205, 205);
                         }
                         /* nav button (back or next) for shipping, billing, payment */
                         .navigate { 
-                            margin-top: 20px;
+                            margin-top: 15px; /**************************************/
                             -webkit-box-align: center;
                                 -ms-flex-align: center;
                                     align-items: center;
@@ -10911,7 +10931,7 @@ $gray-border: rgb(207, 205, 205);
                                         .wrap {
                                             text-align: center;
                                             border-radius: 10px;
-                                            font-size: 15px; /**************************************/
+                                            font-size: 15px;
                                             margin: auto;
                                             cursor: pointer;
                                             height: 100%;
@@ -10922,6 +10942,7 @@ $gray-border: rgb(207, 205, 205);
                                         /* return button */
                                         .wrap.pre {
                                             background: black;
+                                            height: 45px; 
                                             color: white;
                                             a {
                                                 color: white;
@@ -10941,7 +10962,7 @@ $gray-border: rgb(207, 205, 205);
                                             input {
                                                 background: $hover-color-red;
                                                 color: white;
-                                                padding: 0 10px;
+                                                height: 45px; /**************************************/
                                                 margin: 0;
                                                 width: 100%;
                                                 border: none;
@@ -10976,9 +10997,9 @@ $gray-border: rgb(207, 205, 205);
                         padding: 0 5px;
                         table {
                             width: 100%;
-                            font-size: 16px;
+                            font-size: 15px;
                             td {
-                                padding: 10px 0;
+                                padding: 2px 0;
                             }
                             /* render each product in a row, each product appear once only even when quantity is more than 1 */
                             tr.product {
@@ -10991,9 +11012,11 @@ $gray-border: rgb(207, 205, 205);
                                     text-align: center;
                                     color: $hover-color-red;
                                     font-weight: bold;
+                                    opacity: 0; 
                                 }
                                 .price {
                                     text-align: right;
+                                    opacity: 0; 
                                 }
                                 .amount {
                                     font-weight: bold;
@@ -11002,7 +11025,7 @@ $gray-border: rgb(207, 205, 205);
                             }
                             /* total amount of order including product and shipping fee */
                             tr.total-amount {
-                                font-size: 20px;
+                                font-size: 18px;
                                 font-weight: bold;
                                 td[colspan="3"]{
                                     text-align: center;
@@ -11026,7 +11049,7 @@ $gray-border: rgb(207, 205, 205);
             .row.title {
                 .col {
                     h1 {
-                        font-size: 30px; /**************************************/
+                        font-size: 20px; /**************************************/
                         position: relative;
                         font-weight: bold;
                         margin-bottom: 20px;
@@ -11048,6 +11071,7 @@ $gray-border: rgb(207, 205, 205);
                     h4 {
                         font-weight: bold;
                         margin-bottom: 20px;
+                        font-size: 18px; 
                     }
                     form {
                         input {
@@ -11055,7 +11079,7 @@ $gray-border: rgb(207, 205, 205);
                             border: 1px solid $hover-color-gray;
                             border-radius: 5px;
                             padding: 5px;
-                            width: 100%; /**************************************/
+                            width: 100%;
                         }
                         display: -webkit-box;
                         display: -ms-flexbox;
@@ -11106,7 +11130,7 @@ $gray-border: rgb(207, 205, 205);
             .order-summary {
                 flex: 100% !important;
                 max-width: 100% !important;
-                margin-top: 20px;
+                margin-top: 10px; /**************************************/
                 h5 {
                     font-weight: bold;
                 }
@@ -11120,15 +11144,25 @@ $gray-border: rgb(207, 205, 205);
                     /* render each product is a row of table */
                     .product {
                         .name {
-                            font-weight: bold;
+                            font-weight: normal; /**************************************/
                         }
                         .quantity {
                             text-align: center;
                             color: $hover-color-red;
+                            
                         }
                         .price, .amount {
                             text-align: right;
                             font-weight: bold;
+                            width: 25%;
+                            padding-left: 0;
+                        }
+                        .price {
+                            font-weight: normal; /**************************************/
+                            padding: 0;
+                        }
+                        .amount {
+                            width: 20%;
                         }
                         
                     }
@@ -11268,8 +11302,8 @@ $gray-border: rgb(207, 205, 205);
                         .other-feedback, .navigate {
                             display: inline-block;
                             color: white;
-                            font-size: 15px; /**************************************/
-                            padding: 5px; /**************************************/
+                            font-size: 15px; 
+                            padding: 5px; 
                             border-radius: 5px;
                             font-weight: bold;
                             -webkit-transition: .3s;
@@ -11306,8 +11340,8 @@ $gray-border: rgb(207, 205, 205);
                 .col {
                     padding: 0;
                     .content {
-                        height: 500px; 
-                        padding: 50px; /**************************************/
+                        height: 400px; /**************************************/
+                        padding: 20px; /**************************************/
                         .icon {
                             margin-right: 20px;
                         }
@@ -11317,11 +11351,12 @@ $gray-border: rgb(207, 205, 205);
                         h4 {
                             font-weight: bold;
                             line-height: 30px; /**************************************/
+                            font-size: 20px; /**************************************/
                         }
                     }
                     .content.mission {
                         color: white;
-                        padding-top: 50px;
+                        padding-top: 20px; /**************************************/
                     }
                 }
             }

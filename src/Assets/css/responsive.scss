@@ -9039,7 +9039,7 @@ $gray-border: rgb(207, 205, 205);
                     /* end nav: home icon, links */
                     /* shopping cart */
                     .cart {
-                        width: 20%; /**************************************/
+                        width: 20%;
                         display: -webkit-box;
                         display: -ms-flexbox;
                         display: flex;
@@ -9085,7 +9085,7 @@ $gray-border: rgb(207, 205, 205);
                                         box-shadow: 1px 3px 4px rgb(197, 197, 197);
                                 position: absolute;
                                 top: 100%;
-                                width: 650%; /* width of top up */ /**************************************/
+                                width: 600%; /* width of top up */ /**************************************/
                                 right: 0;
                                 z-index: 100;
                                 background: white;
@@ -9139,7 +9139,7 @@ $gray-border: rgb(207, 205, 205);
                                                     padding-right: 0;
                                                     img {
                                                         width: 100%;
-                                                        height: 70px; /**************************************/
+                                                        height: 70px; 
                                                     }
                                                 }
                                                 /* col name */
@@ -9154,7 +9154,7 @@ $gray-border: rgb(207, 205, 205);
                                                 }
                                                 /* col containing delete icon and quantity and price */
                                                 .amount {
-                                                    height: 70px; /**************************************/
+                                                    height: 70px; 
                                                     .cal {
                                                         height: 100%;
                                                         display: -webkit-box;
@@ -9185,7 +9185,7 @@ $gray-border: rgb(207, 205, 205);
                                                                     flex-direction: column;
                                                             font-weight: bold;
                                                             text-align: center;
-                                                            font-size: 14px; /**************************************/
+                                                            font-size: 14px; 
                                                         }
                                                     }
                                                 }
@@ -9197,7 +9197,7 @@ $gray-border: rgb(207, 205, 205);
                                         text-align: right;
                                         padding: 15px;
                                         font-weight: bold;
-                                        font-size: 19px;
+                                        font-size: 16px; /**************************************/
                                     }
                                     /* button view cart and check out */
                                     .navigate {
@@ -9248,23 +9248,26 @@ $gray-border: rgb(207, 205, 205);
         padding: 20px 0;
         /*----- use Boostrap Carousel combined library https://animate.style -----*/
         .top-slide {
-            height: 400px; /* height of visible content */ /**************************************/
+            height: 300px; /* height of visible content */ /**************************************/
             overflow: hidden;
             .container-fluid {
                 .row {
                     .col {
                         padding: 0;
                         #top-slide {
+                            .carousel-control-prev, .carousel-control-next {
+                                bottom: 40% !important;
+                            }
                             .carousel-inner {
                                 .carousel-item {
                                     /*----- carousel-caption -----*/
                                     .carousel-caption {
-                                        position: relative; /**************************************/
-                                        padding: 0; /**************************************/
+                                        position: relative; 
+                                        padding: 0; 
                                         top: 0;
                                         z-index: 0.5;
-                                        left: 0; /**************************************/
-                                        right: 0; /**************************************/
+                                        left: 0; 
+                                        right: 0; 
                                         margin-top: 10px;
                                         .animate__animated {
                                             -webkit-animation-duration: .7s;
@@ -9286,20 +9289,20 @@ $gray-border: rgb(207, 205, 205);
                                     .carousel-caption.slide-1, .carousel-caption.slide-3 {
                                         text-align: left;
                                         .title {
-                                            margin-bottom: 10px; /**************************************/
+                                            margin-bottom: 5px; /**************************************/
                                             span {
-                                                background: none; /**************************************/
+                                                background: none; 
                                                 color: black;
                                                 padding: 10px;
                                                 border-radius: 10px;
-                                                font-size: 20px; /**************************************/
+                                                font-size: 18px; /**************************************/
                                                 font-weight: bold; 
                                             }
                                         }
                                         .des {
                                             margin-bottom: 10px;
-                                            font-size: 18px; 
-                                            background: none; /**************************************/
+                                            font-size: 15px; /**************************************/
+                                            background: none; 
                                             color: black;
                                             font-style: italic;
                                             padding: 0 10px;
@@ -9308,7 +9311,7 @@ $gray-border: rgb(207, 205, 205);
                                         .link {
                                             a {
                                                 font-size: 18px; /**************************************/
-                                                background: none; /**************************************/
+                                                background: none; 
                                                 color: black;
                                                 text-decoration: underline;
                                                 font-weight: bold;
@@ -9325,27 +9328,28 @@ $gray-border: rgb(207, 205, 205);
                                     }
                                     .carousel-caption.slide-2 {
                                         text-align: right; 
+                                        padding-right: 5px;/**************************************/
                                         .title {
-                                            margin: 0 0 10px; /**************************************/
+                                            margin: 0 0 5px 0; /**************************************/
                                             span {
                                                 color: black;
-                                                font-size: 20px; /**************************************/
+                                                font-size: 18px; /**************************************/
                                                 font-weight: bold;
                                                 text-align: right; 
                                             }
                                         }
                                         .des {
-                                            margin-bottom: 10px;
-                                            font-size: 18px; /**************************************/
-                                            color: black; /**************************************/
+                                            margin-bottom: 5px; /**************************************/
+                                            font-size: 15px; /**************************************/
+                                            color: black; 
                                             font-style: italic;
-                                            font-weight: normal; /**************************************/
+                                            font-weight: normal; 
                                         }
                                         .link {
                                             a {
-                                                font-size: 20px; /**************************************/
-                                                background: none; /**************************************/
-                                                text-decoration: underline; /**************************************/
+                                                font-size: 18px; /**************************************/
+                                                background: none; 
+                                                text-decoration: underline;
                                                 color: black;
                                                 font-weight: bold;
                                                 padding: 5px; 

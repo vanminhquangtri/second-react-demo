@@ -84,7 +84,7 @@ const TopBar = (props) => {
                     {/* currency */}
                     <div className="col-auto">
                         <div className="account-currency">
-                            <NavLink to="/" className="hide-1023">Currency</NavLink>
+                            <NavLink to="/">Currency</NavLink>
                             <span className="currency" style = {{"paddingRight": 0}}>
                                 {showCurrency(Currency.currency)} &nbsp; 
                                 <FontAwesomeIcon icon = {faChevronDown} className="icon currency-sign" style = {{"margin": 0}}/>

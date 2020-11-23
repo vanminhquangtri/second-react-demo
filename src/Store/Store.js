@@ -1158,18 +1158,18 @@ const BoughtProduct_reducer = (init = BoughtProduct, action) => {
     switch (action.type) {
         case "BUY_PRODUCT": // when click name of product of components Modal
             currentBoughtProduct = [];
-            currentBoughtProduct.push(action.product)
-            return currentBoughtProduct
+            currentBoughtProduct.push(action.product);
+            return currentBoughtProduct;
         case "CHANGE_QUANTITY_BUY_PRODUCT": // when click buy now of component product detail
             currentBoughtProduct = [];
             for (let i = 0; i < action.quantity; i++){
                 currentBoughtProduct.push(action.product)
             }
-            return currentBoughtProduct
+            return currentBoughtProduct;
         default:
             break;
     }
-    return currentBoughtProduct
+    return currentBoughtProduct;
 }
 /*---define check out whole shopping cart or separate product---(use Store Cart or Bought Product)*/
 const BoughtTarget = {

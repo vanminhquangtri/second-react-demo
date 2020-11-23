@@ -1,5 +1,5 @@
 // direct child of top-nav
-import React, {useEffect} from 'react';
+import React from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTrashAlt, faTimesCircle} from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +12,7 @@ class ShoppingCart extends React.Component {
         this.state = {
             cart_top_up: false
         }
-    }
+    };
     toggleCartTopUp(){
         this.setState((state) => {
             return {
@@ -20,12 +20,11 @@ class ShoppingCart extends React.Component {
                 cart_top_up: !state.cart_top_up
             }
         })
-    }
-    
+    };    
     // format thounds seperator
     formatNumber(num) {
         return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-    }
+    };
     // fortmat money (currency and operator and decimal)
     showMoney(currency, quantity, item) {
         const value = this.formatNumber((item.price * quantity * this.props.Data.Currency.rate).toFixed(2));
@@ -42,7 +41,7 @@ class ShoppingCart extends React.Component {
             default:
                 return "$ " + value;
         }
-    }
+    };
     // count quantity of a product in Shopping Cart
     countProduct(id) {
         let count = 0;
@@ -52,7 +51,7 @@ class ShoppingCart extends React.Component {
             }
         })
         return count;
-    }
+    };
     // fortmat money (currency and operator and decimal)
     showMoneyTotal(currency, amount) {
         const value = this.formatNumber((amount * this.props.Data.Currency.rate).toFixed(2));
@@ -69,7 +68,7 @@ class ShoppingCart extends React.Component {
             default:
                 return "$ " + value;
         }
-    }
+    };
     shouldComponentUpdate(nextProps, nextState) {
         // rotate the quantity button when quantity change (add to cart, update, delete)
         if (this.props.Data.Cart.length !== nextProps.Data.Cart.length ) {
@@ -90,7 +89,7 @@ class ShoppingCart extends React.Component {
             this.props.Data.Currency.currency !== nextProps.Data.Currency.currency ||
             this.state.cart_top_up != nextState.cart_top_up
             ) {return true} else {return false}
-    }
+    };
     render(){
         const {Cart, Products, Currency} = this.props.Data;
         const {dispatch} = this.props;

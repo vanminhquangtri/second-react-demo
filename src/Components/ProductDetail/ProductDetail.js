@@ -12,7 +12,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import TermDetail from './TermDetail';
 import AlsoBought from './AlsoBoughtModal/AlsoBought';
 import AlsoLike from './AlsoLikeModal/AlsoLike';
-library.add(fab)
+library.add(fab);
 
 const settings = {
     nav: true,
@@ -76,7 +76,7 @@ const ProductDetail = (props) => {
                 }
             })
         }
-    }
+    };
     useEffect(() => {
         // set slide image for background of each nav button
         const navBtn = document.querySelectorAll(".tns-nav button");
@@ -120,11 +120,11 @@ const ProductDetail = (props) => {
                 })
             })
         }
-    })
+    });
     useEffect(() => {
         // scroll to top of page after first render
         window.scrollTo(0, 0)
-    },[])
+    },[]);
     return (
         <section className="product-detail">
             {
